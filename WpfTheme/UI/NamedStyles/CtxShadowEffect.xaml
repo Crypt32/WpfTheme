@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DropShadowEffect x:Key="CtxShadowEffect"
+                      Color="Gainsboro"
+                      Opacity="0.5"
+                      Direction="320"
+                      ShadowDepth="8"/>
+</ResourceDictionary>

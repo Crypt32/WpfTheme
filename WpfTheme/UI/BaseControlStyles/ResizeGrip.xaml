@@ -1,0 +1,35 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <Style TargetType="ResizeGrip">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Grid>
+                        <Path Data="M7,0L11,0 11,11 0,11 0,8 3,8 3,4 5,4 8,4z">
+                            <Path.Fill>
+                                <DrawingBrush ViewportUnits="Absolute"
+                                              ViewboxUnits="Absolute"
+                                              Viewport="0,0,4,4"
+                                              Viewbox="0,0,4,4"
+                                              TileMode="Tile">
+                                    <DrawingBrush.Drawing>
+                                        <DrawingGroup>
+                                            <DrawingGroup.Children>
+                                                <GeometryDrawing Brush="#00FFFFFF">
+                                                    <GeometryDrawing.Geometry>
+                                                        <RectangleGeometry Rect="0,0,1,1" />
+                                                    </GeometryDrawing.Geometry>
+                                                </GeometryDrawing>
+                                                <GeometryDrawing Brush="#FFB1C9E8" Geometry="M1,1L3,1 3,3 1,3z" />
+                                                <GeometryDrawing Brush="#FF455D80" Geometry="M0,0L2,0 2,2 0,2z" />
+                                            </DrawingGroup.Children>
+                                        </DrawingGroup>
+                                    </DrawingBrush.Drawing>
+                                </DrawingBrush>
+                            </Path.Fill>
+                        </Path>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

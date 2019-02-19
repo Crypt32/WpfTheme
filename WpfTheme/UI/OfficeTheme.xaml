@@ -1,0 +1,38 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Brushes/DefaultColorTheme.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/Button.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/CheckBox.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/ClosableTabControl.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/ClosableTabItem.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/ContextMenu.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/DataGrid.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/GridSplitter.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/GroupBox.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/GroupItem.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/HeaderedContentControl.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/Image.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/ListBox.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/ListBoxItem.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/ListView.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/Menu.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/MenuItem.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/MenuItem2.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/PasswordBox.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/ProgressBar.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/RadioButton.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/ResizeGrip.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/RichTextBox.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/ScrollableTabControl.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/ScrollBar.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/StatusBar.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/TabControl.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/TabItem.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/TextBlock.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/TextBox.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/ToolBar.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/ToolBarTray.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/TreeView.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/Window.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
