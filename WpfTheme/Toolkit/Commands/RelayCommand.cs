@@ -1,11 +1,11 @@
 ﻿using System;
 
 namespace SysadminsLV.WPF.OfficeTheme.Toolkit.Commands {
-    public abstract class RelayCommand<T> : CommandBase<T> where T : class {
+    public class RelayCommand<T> : CommandBase<T> where T : class {
         readonly Action<T> _execute;
 
         // constructors
-        protected RelayCommand(Action<T> execute, Predicate<T> canExecute = null) : base(canExecute) {
+        public RelayCommand(Action<T> execute, Predicate<T> canExecute = null) : base(canExecute) {
             _execute = execute;
         }
 
@@ -16,5 +16,4 @@ namespace SysadminsLV.WPF.OfficeTheme.Toolkit.Commands {
     public sealed class RelayCommand : RelayCommand<Object> {
         public RelayCommand(Action<Object> execute, Predicate<Object> canExecute = null) : base(execute, canExecute) { }
     }
-    
 }

@@ -61,6 +61,7 @@
     <Compile Include="Toolkit\Commands\IAsyncCommand.cs" />
     <Compile Include="Toolkit\Commands\RelayAsyncCommand.cs" />
     <Compile Include="Toolkit\Converters\BooleanToVisibilityReverse.cs" />
+    <Compile Include="Toolkit\MsgBox.cs" />
     <Compile Include="Toolkit\ViewModels\ViewModelBase.cs" />
     <Compile Include="UI\HeaderPanelUC.xaml.cs">
       <DependentUpon>HeaderPanelUC.xaml</DependentUpon>
