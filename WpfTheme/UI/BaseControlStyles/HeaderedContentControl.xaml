@@ -3,12 +3,12 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../Brushes/Solidcolors.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-    <Style x:Key="{x:Type HeaderedContentControl}" TargetType="{x:Type HeaderedContentControl}">
+    <Style TargetType="{x:Type HeaderedContentControl}">
         <Setter Property="Foreground" Value="#334F63"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type HeaderedContentControl}">
-                    <Border BorderThickness="1,1,0,0" BorderBrush="#6592CE">
+                    <Border BorderThickness="1" BorderBrush="#6592CE">
                         <DockPanel>
                             <Grid DockPanel.Dock="Top">
                                 <Border BorderThickness="0,0,0,1" BorderBrush="#FFB1CFF5">
