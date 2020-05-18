@@ -2,19 +2,17 @@
 using System.Diagnostics;
 using System.IO;
 using System.Text;
-using AdcsCollectorAnalyzer.Core.Abstractions;
 using SysadminsLV.WPF.OfficeTheme.Toolkit.ViewModels;
 
-namespace AdcsCollectorAnalyzer.Wpf.UI.Utils {
-    class RuntimeLogWriter : ViewModelBase, IRuntimeLogWriter {
-        readonly String basePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"PKI Solutions\ADCS Analyzer");
+namespace SysadminsLV.WPF.OfficeTheme.Toolkit.Log {
+    public class RuntimeLogWriter : ViewModelBase, IRuntimeLogWriter {
         readonly StreamWriter sessionStream;
         readonly StringBuilder _builder = new StringBuilder();
 
-        public RuntimeLogWriter() {
-            Directory.CreateDirectory(Path.Combine(basePath, "Logs"));
+        public RuntimeLogWriter(String path) {
+            Directory.CreateDirectory(Path.Combine(path, "Logs"));
             String dt = "Log-" + DateTime.Now.ToString("yyyyMMddHHmmss");
-            sessionStream = new StreamWriter(Path.Combine(basePath, "Logs", $"{dt}-{Process.GetCurrentProcess().Id}.log")) { AutoFlush = true };
+            sessionStream = new StreamWriter(Path.Combine(path, "Logs", $"{dt}-{Process.GetCurrentProcess().Id}.log")) { AutoFlush = true };
         }
 
         void write(String text) {
