@@ -51,10 +51,6 @@ namespace SysadminsLV.WPF.OfficeTheme.Controls {
             }
         }
 
-        public new FlowDocument Document {
-            get => (FlowDocument)GetValue(DocumentProperty);
-            set => SetValue(DocumentProperty, value);
-        }
         public Boolean ObserveCaret {
             get => (Boolean)GetValue(ObserveCaretProperty);
             set => SetValue(ObserveCaretProperty, value);
