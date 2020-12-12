@@ -61,11 +61,11 @@
     <Compile Include="Toolkit\Commands\IAsyncCommand.cs" />
     <Compile Include="Toolkit\Commands\RelayAsyncCommand.cs" />
     <Compile Include="Toolkit\Converters\BooleanToVisibilityReverse.cs" />
+    <Compile Include="Toolkit\IUIWindowDialogService.cs" />
+    <Compile Include="Toolkit\Log\IRuntimeLogWriter.cs" />
+    <Compile Include="Toolkit\Log\RuntimeLogWriter.cs" />
     <Compile Include="Toolkit\MsgBox.cs" />
     <Compile Include="Toolkit\ViewModels\ViewModelBase.cs" />
-    <Compile Include="UI\HeaderPanelUC.xaml.cs">
-      <DependentUpon>HeaderPanelUC.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Controls\ScrollChrome.cs" />
     <Compile Include="Toolkit\Behaviors\BrowserBehavior.cs" />
     <Compile Include="Toolkit\Commands\CommandManagerHelper.cs" />
@@ -201,10 +201,6 @@
     <Page Include="UI\Brushes\SolidColors.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UI\HeaderPanelUC.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\NamedStyles\BorderGapMaskConverter.xaml">
       <Generator>MSBuild:Compile</Generator>

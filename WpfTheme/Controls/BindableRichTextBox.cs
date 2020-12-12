@@ -50,7 +50,10 @@ namespace SysadminsLV.WPF.OfficeTheme.Controls {
                     : lineStartPosition.GetOffsetToPosition(rtb.CaretPosition) - 1;
             }
         }
-
+        public new FlowDocument Document {
+            get => (FlowDocument)GetValue(DocumentProperty);
+            set => SetValue(DocumentProperty, value);
+        }
         public Boolean ObserveCaret {
             get => (Boolean)GetValue(ObserveCaretProperty);
             set => SetValue(ObserveCaretProperty, value);
@@ -65,7 +68,7 @@ namespace SysadminsLV.WPF.OfficeTheme.Controls {
         }
 
         public static void OnDocumentChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args) {
-            if (!(obj is BindableRichTextBox rtb)) {
+            if (!(obj is RichTextBox rtb)) {
                 return;
             }
             rtb.Document = args.NewValue == null
