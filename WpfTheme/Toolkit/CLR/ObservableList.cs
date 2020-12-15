@@ -139,13 +139,12 @@ namespace SysadminsLV.WPF.OfficeTheme.Toolkit.CLR {
         /// </summary>
         /// <param name="item">The object to remove.</param>
         public new void Remove(T item) {
-            if (base.Remove(item)) {
-                if (IsNotifyingNested && item is INotifyPropertyChanged vm) {
-                    vm.PropertyChanged -= onNestedPropertyChanged;
-                }
-                var e = new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, item);
-                OnCollectionChanged(e);
+            base.Remove(item);
+            if (IsNotifyingNested && item is INotifyPropertyChanged vm) {
+                vm.PropertyChanged -= onNestedPropertyChanged;
             }
+            var e = new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, item);
+            OnCollectionChanged(e);
         }
         /// <summary>
         /// Removes all the elements that match the conditions defined by the specified predicate.
