@@ -235,7 +235,7 @@ namespace SysadminsLV.WPF.OfficeTheme.Toolkit.CLR {
         }
 
         void onNestedPropertyChanged(Object sender, PropertyChangedEventArgs args) {
-            var e = new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Replace, sender, sender);
+            var e = new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset);
             OnCollectionChanged(e);
         }
 
