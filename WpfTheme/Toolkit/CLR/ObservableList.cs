@@ -219,6 +219,7 @@ namespace SysadminsLV.WPF.OfficeTheme.Toolkit.CLR {
                         vm2.PropertyChanged += onNestedPropertyChanged;
                     }
                 }
+                base[index] = value;
                 NotifyCollectionChangedEventArgs e =
                     new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Replace, value, oldValue);
                 OnCollectionChanged(e);
@@ -235,8 +236,11 @@ namespace SysadminsLV.WPF.OfficeTheme.Toolkit.CLR {
         }
 
         void onNestedPropertyChanged(Object sender, PropertyChangedEventArgs args) {
-            var e = new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset);
-            OnCollectionChanged(e);
+            Int32 index = IndexOf((T)sender);
+            if (index >= 0) {
+                var e = new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Replace, sender, sender, index);
+                //OnCollectionChanged(e);
+            }
         }
 
         /// <summary>
