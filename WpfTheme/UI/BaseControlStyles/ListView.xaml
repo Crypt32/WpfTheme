@@ -3,19 +3,9 @@
                     xmlns:themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../Brushes/DefaultColorTheme.xaml"/>
+        <ResourceDictionary Source="GridView/GridViewColumnHeader.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-    <Style x:Key="ListViewItemFocusVisual">
-        <Setter Property="Control.Template">
-            <Setter.Value>
-                <ControlTemplate>
-                    <Rectangle StrokeThickness="1"
-                               RadiusX="2"
-                               RadiusY="2"
-                               Stroke="#8E6EA6F5"/>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
+
     <Style x:Key="{x:Static GridView.GridViewStyleKey}" TargetType="{x:Type ListView}">
         <Setter Property="Background"
                 Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
