@@ -9,10 +9,37 @@
         Height="480"
         Width="640">
     <Grid>
-        <StackPanel>
-            <TextBox Margin="5"></TextBox>
-            <TextBox Margin="5"></TextBox>
-            <TextBox Margin="5"></TextBox>
-        </StackPanel>
+        <HeaderedContentControl Header="Hello">
+            <StackPanel>
+                <TextBox Margin="5"/>
+                <TextBox Margin="5" IsEnabled="False"/>
+                <ComboBox IsEditable="False"
+                          Margin="5">
+                    <ComboBoxItem>One</ComboBoxItem>
+                    <ComboBoxItem>One</ComboBoxItem>
+                    <ComboBoxItem>One</ComboBoxItem>
+                </ComboBox>
+                <ComboBox IsEditable="False"
+                          IsEnabled="False"
+                          Margin="5">
+                    <ComboBoxItem>One</ComboBoxItem>
+                    <ComboBoxItem>One</ComboBoxItem>
+                    <ComboBoxItem>One</ComboBoxItem>
+                </ComboBox>
+                <ComboBox IsEditable="True"
+                          Margin="5">
+                    <ComboBoxItem>One</ComboBoxItem>
+                    <ComboBoxItem>One</ComboBoxItem>
+                    <ComboBoxItem>One</ComboBoxItem>
+                </ComboBox>
+                <ComboBox IsEditable="True"
+                          IsEnabled="False"
+                          Margin="5">
+                    <ComboBoxItem>One</ComboBoxItem>
+                    <ComboBoxItem>One</ComboBoxItem>
+                    <ComboBoxItem>One</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+        </HeaderedContentControl>
     </Grid>
 </Window>

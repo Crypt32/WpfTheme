@@ -5,6 +5,7 @@
         <ResourceDictionary Source="BaseControlStyles/CheckBox.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/ClosableTabControl.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/ClosableTabItem.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/ComboBox.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/ContextMenu.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/DataGrid.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/GridSplitter.xaml"/>

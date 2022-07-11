@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <ContextMenu x:Key="CtxTextBoxBase">
+    <ContextMenu x:Key="TextBoxBaseContextMenu">
         <MenuItem Header="Cut"
                   InputGestureText="Ctrl + X"
                   Command="ApplicationCommands.Cut">

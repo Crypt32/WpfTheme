@@ -39,15 +39,15 @@
         <GradientStop Color="#FEDC5D" Offset="0" />
     </LinearGradientBrush>
     <!-- TextControlsBrushes-->
-    <LinearGradientBrush x:Key="TextControlBorderBrush"  EndPoint="0.5,1" StartPoint="0.5,0">
+    <!--<LinearGradientBrush x:Key="TextControlBorderBrush"  EndPoint="0.5,1" StartPoint="0.5,0">
         <GradientStop Color="#FFABC1DE"/>
         <GradientStop Color="#FFABC1DE" Offset="1"/>
-    </LinearGradientBrush>
+    </LinearGradientBrush>-->
 
-    <LinearGradientBrush x:Key="DisabledTextControlBackgroundBrush"  EndPoint="0.5,1" StartPoint="0.5,0">
+    <!--<LinearGradientBrush x:Key="DisabledTextControlBackgroundBrush"  EndPoint="0.5,1" StartPoint="0.5,0">
         <GradientStop Color="#FFEAF2FB"/>
         <GradientStop Color="#FFEAF2FB" Offset="1"/>
-    </LinearGradientBrush>
+    </LinearGradientBrush>-->
     <!-- Menu -->
     <LinearGradientBrush x:Key="MenuHoverFill" StartPoint="0,0" EndPoint="0,1">
         <LinearGradientBrush.GradientStops>

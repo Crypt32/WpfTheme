@@ -7,13 +7,12 @@
     <Style x:Key="{x:Type TextBoxBase}" TargetType="{x:Type TextBoxBase}" BasedOn="{x:Null}">
         <Setter Property="BorderBrush" Value="{StaticResource TextControlBorderBrush}"/>
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-        <Setter Property="Background" Value="White"/>
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="Padding" Value="2.75"/>
         <Setter Property="AllowDrop" Value="true"/>
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-        <Setter Property="ContextMenu" Value="{StaticResource CtxTextBoxBase}"/>
+        <Setter Property="ContextMenu" Value="{StaticResource TextBoxBaseContextMenu}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBoxBase}">
@@ -43,5 +42,5 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style BasedOn="{StaticResource {x:Type TextBoxBase}}" TargetType="{x:Type TextBox}"></Style>
+    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBoxBase}}"/>
 </ResourceDictionary>
