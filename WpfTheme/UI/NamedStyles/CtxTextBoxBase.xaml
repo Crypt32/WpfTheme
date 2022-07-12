@@ -24,7 +24,7 @@
         </MenuItem>
         <MenuItem Header="Delete"
                   InputGestureText="Del"
-                  Command="ApplicationCommands.Delete">
+                  Command="EditingCommands.Delete">
             <MenuItem.Icon>
                 <Image Source="../Images/delete_16x16.png"/>
             </MenuItem.Icon>
