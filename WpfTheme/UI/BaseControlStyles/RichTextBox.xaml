@@ -2,10 +2,9 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:controls="clr-namespace:SysadminsLV.WPF.OfficeTheme.Controls">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="../NamedStyles/CtxTextBoxBase.xaml"/>
+        <ResourceDictionary Source="TextBox.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-    <Style TargetType="{x:Type RichTextBox}" BasedOn="{StaticResource {x:Type RichTextBox}}">
-        <Setter Property="ContextMenu" Value="{StaticResource TextBoxBaseContextMenu}"/>
+    <Style TargetType="{x:Type RichTextBox}" BasedOn="{StaticResource {x:Type TextBoxBase}}">
         <Style.Triggers>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Opacity" Value="0.5"/>
