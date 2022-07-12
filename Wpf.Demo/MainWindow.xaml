@@ -39,6 +39,7 @@
                     <ComboBoxItem>One</ComboBoxItem>
                     <ComboBoxItem>One</ComboBoxItem>
                 </ComboBox>
+                <RichTextBox Margin="5"/>
             </StackPanel>
         </HeaderedContentControl>
     </Grid>
