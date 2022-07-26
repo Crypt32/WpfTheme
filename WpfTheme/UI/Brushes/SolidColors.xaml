@@ -3,6 +3,10 @@
     <!--Colors-->
     <Color x:Key="PanelBackgroundColor" A="#FF" R="#D8" G="#E3" B="#F0"/>
     <!-- Solid Brushes -->
+    <SolidColorBrush x:Key="Brush-Transparent"              Color="Transparent"/>
+    <SolidColorBrush x:Key="Brush-CornflowerBlue"           Color="CornflowerBlue"/>
+    <SolidColorBrush x:Key="Brush-Navy"                     Color="Navy"/>
+
     <SolidColorBrush x:Key="MenuBackgroundNormal"           Color="#BFDBFF"/>
     <SolidColorBrush x:Key="ToolbarTrayBackgroundNormal"    Color="#BFDBFF"/>
     <SolidColorBrush x:Key="ToolbarBottomBorder"            Color="#6F9DD9"/>

@@ -8,7 +8,12 @@
         Title="MainWindow"
         Height="480"
         Width="640">
-    <Grid>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="One">
+                <MenuItem Header="Two"></MenuItem>
+            </MenuItem>
+        </Menu>
         <HeaderedContentControl Header="Hello">
             <StackPanel>
                 <TextBox Margin="5"/>
@@ -42,5 +47,5 @@
                 <RichTextBox Margin="5"/>
             </StackPanel>
         </HeaderedContentControl>
-    </Grid>
+    </DockPanel>
 </Window>
