@@ -25,7 +25,7 @@
                             </Grid>
                             <Grid>
                                 <Border Background="#FFD7E8F7"/>
-                                <ContentPresenter ContentSource="Content" Margin="5"/>
+                                <ContentPresenter ContentSource="Content"/>
                             </Grid>
                         </DockPanel>
                     </Border>
