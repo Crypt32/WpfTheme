@@ -9,7 +9,11 @@
         <Setter Property="Control.Template">
             <Setter.Value>
                 <ControlTemplate>
-                    <Rectangle StrokeDashArray="1 2" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="True" Margin="2"/>
+                    <Rectangle StrokeDashArray="1 2"
+                               StrokeThickness="1"
+                               Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"
+                               SnapsToDevicePixels="True"
+                               Margin="2"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -71,7 +75,10 @@
                             BorderBrush="{StaticResource TextControlBorderBrush}">
                         <Border x:Name="splitBorder"
                                 Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}"
-                                SnapsToDevicePixels="True" Margin="0" HorizontalAlignment="Right" BorderThickness="1"
+                                SnapsToDevicePixels="True"
+                                Margin="0"
+                                HorizontalAlignment="Right"
+                                BorderThickness="1"
                                 BorderBrush="Transparent">
                             <Path x:Name="arrow"
                                   VerticalAlignment="Center"
