@@ -15,6 +15,19 @@
                 <MenuItem Header="Two"></MenuItem>
             </MenuItem>
         </Menu>
+        <ListView x:Name="ListView" DockPanel.Dock="Bottom" Height="100">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="One" DisplayMemberBinding="{Binding FriendlyName}"/>
+                    <GridViewColumn Header="Two" DisplayMemberBinding="{Binding Value}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListBox DockPanel.Dock="Bottom" Height="100">
+            <ListBoxItem>One</ListBoxItem>
+            <ListBoxItem>One</ListBoxItem>
+            <ListBoxItem>One</ListBoxItem>
+        </ListBox>
         <Grid>
             <HeaderedContentControl Header="Hello">
                 <StackPanel>
@@ -49,7 +62,6 @@
                     <RichTextBox Margin="5"/>
                 </StackPanel>
             </HeaderedContentControl>
-            <controls:LoadingSpinner Visibility="Visible"/>
         </Grid>
     </DockPanel>
 </Window>
