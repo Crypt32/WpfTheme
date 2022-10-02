@@ -17,6 +17,7 @@
         <ResourceDictionary Source="BaseControlStyles/ListBoxItem.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/ListView.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/ListViewItem.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/LoadingSpinner.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/Menu.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/MenuItem.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/MenuItem2.xaml"/>

@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Controls\ClosableTabControl.cs" />
     <Compile Include="Controls\ClosableTabItem.cs" />
+    <Compile Include="Controls\LoadingSpinner.cs" />
     <Compile Include="Controls\ScrollableTabPanel.cs" />
     <Compile Include="Toolkit\Behaviors\CaretBehavior.cs" />
     <Compile Include="Toolkit\Behaviors\MarginSetter.cs" />
@@ -88,6 +89,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="UI\BaseControlStyles\ListViewItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\BaseControlStyles\LoadingSpinner.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
