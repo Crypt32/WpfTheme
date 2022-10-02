@@ -4,7 +4,7 @@
         <ResourceDictionary Source="../Brushes/DefaultColorTheme.xaml"/>
         <ResourceDictionary Source="../NamedStyles/CtxTextBoxBase.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-    <Style x:Key="{x:Type TextBoxBase}" TargetType="{x:Type TextBoxBase}" BasedOn="{x:Null}">
+    <Style x:Key="{x:Type TextBoxBase}" TargetType="{x:Type TextBoxBase}">
         <Setter Property="BorderBrush" Value="{StaticResource TextControlBorderBrush}"/>
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
