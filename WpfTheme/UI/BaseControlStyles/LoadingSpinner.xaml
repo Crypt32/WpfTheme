@@ -13,7 +13,7 @@
 
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="Control">
+                <ControlTemplate TargetType="{x:Type controls:LoadingSpinner}">
                     <ControlTemplate.Resources>
                         <Storyboard x:Key="Animation0" BeginTime="00:00:00.0" RepeatBehavior="Forever">
                             <ColorAnimationUsingKeyFrames Storyboard.TargetName="ellipse0" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
