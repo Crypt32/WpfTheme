@@ -10,7 +10,7 @@
            TargetType="{x:Type RadioButton}">
         <!--<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>-->
         <Setter Property="Foreground" Value="Navy"/>
-        <Setter Property="Background" Value="#F4F4F4"/>
+        <Setter Property="Background" Value="{StaticResource CheckBoxFillNormal}"/>
         <Setter Property="BorderBrush" Value="{StaticResource CheckBoxStroke}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Template">

@@ -26,6 +26,8 @@
     <SolidColorBrush x:Key="CheckBoxFillNormal"             Color="#F4F4F4"/>
     <SolidColorBrush x:Key="CheckBoxStroke"                 Color="#8E8F8F"/>
 
+    <SolidColorBrush x:Key="ContextMenuBackground"          Color="#F4F4F4"></SolidColorBrush>
+
     <SolidColorBrush x:Key="TextControlBorderBrush"             Color="#FFABC1DE"/>
     <SolidColorBrush x:Key="DisabledTextControlBackgroundBrush" Color="#FFEAF2FB"/>
 </ResourceDictionary>
