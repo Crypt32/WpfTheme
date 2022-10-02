@@ -39,6 +39,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,6 +49,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -70,7 +72,47 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Compile Include="Views\UserControls\ComboBoxUC.xaml.cs">
+      <DependentUpon>ComboBoxUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\ListBoxUC.xaml.cs">
+      <DependentUpon>ListBoxUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\ListViewUC.xaml.cs">
+      <DependentUpon>ListViewUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\MenuUC.xaml.cs">
+      <DependentUpon>MenuUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\RadioUC.xaml.cs">
+      <DependentUpon>RadioUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\StatusBarUC.xaml.cs">
+      <DependentUpon>StatusBarUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\TextBoxBaseUC.xaml.cs">
+      <DependentUpon>TextBoxBaseUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\ToolBarUC.xaml.cs">
+      <DependentUpon>ToolBarUC.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\UserControls\CheckBoxUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\ComboBoxUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\ListBoxUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\ListViewUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -78,10 +120,33 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Views\UserControls\CheckBoxUC.xaml.cs">
+      <DependentUpon>CheckBoxUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\UserControls\MenuUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\RadioUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\StatusBarUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\TextBoxBaseUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\ToolBarUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -126,6 +191,10 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Views\Images\paste_16x16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

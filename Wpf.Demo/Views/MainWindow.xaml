@@ -1,0 +1,40 @@
+﻿<Window x:Class="Wpf.Demo.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:uc="clr-namespace:Wpf.Demo.Views.UserControls"
+        mc:Ignorable="d"
+        Background="{StaticResource PanelBackgroundBrush}"
+        ResizeMode="CanResizeWithGrip"
+        WindowStyle="SingleBorderWindow"
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow"
+        Height="480"
+        Width="640">
+    <DockPanel>
+        <uc:MenuUC DockPanel.Dock="Top"/>
+        <uc:ToolBarUC DockPanel.Dock="Top"/>
+        <uc:StatusBarUC DockPanel.Dock="Bottom"/>
+        <TabControl>
+            <TabItem Header="Checkbox">
+                <uc:CheckBoxUC/>
+            </TabItem>
+            <TabItem Header="ComboBox">
+                <uc:ComboBoxUC/>
+            </TabItem>
+            <TabItem Header="ListBox">
+                <uc:ListBoxUC/>
+            </TabItem>
+            <TabItem Header="ListView">
+                <uc:ListViewUC/>
+            </TabItem>
+            <TabItem Header="Radio">
+                <uc:RadioUC/>
+            </TabItem>
+            <TabItem Header="TextBox">
+                <uc:TextBoxBaseUC/>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>
