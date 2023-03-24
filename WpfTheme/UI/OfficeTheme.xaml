@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Brushes/DefaultColorTheme.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/Badge.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/Button.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/CheckBox.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/ClosableTabControl.xaml"/>

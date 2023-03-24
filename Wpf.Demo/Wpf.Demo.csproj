@@ -72,6 +72,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\UserControls\BadgesUC.xaml.cs">
+      <DependentUpon>BadgesUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserControls\ComboBoxUC.xaml.cs">
       <DependentUpon>ComboBoxUC.xaml</DependentUpon>
     </Compile>
@@ -96,6 +99,10 @@
     <Compile Include="Views\UserControls\ToolBarUC.xaml.cs">
       <DependentUpon>ToolBarUC.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\UserControls\BadgesUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\UserControls\CheckBoxUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

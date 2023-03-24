@@ -35,6 +35,9 @@
             <TabItem Header="TextBox">
                 <uc:TextBoxBaseUC/>
             </TabItem>
+            <TabItem Header="Badge">
+                <uc:BadgesUC/>
+            </TabItem>
         </TabControl>
     </DockPanel>
 </Window>

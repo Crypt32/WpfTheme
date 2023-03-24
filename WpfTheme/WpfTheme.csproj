@@ -47,6 +47,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\Badge.cs" />
+    <Compile Include="Controls\BadgeStyle.cs" />
+    <Compile Include="Controls\BadgeThemeColor.cs" />
     <Compile Include="Controls\ClosableTabControl.cs" />
     <Compile Include="Controls\ClosableTabItem.cs" />
     <Compile Include="Controls\LoadingSpinner.cs" />
@@ -76,6 +79,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="UI\BaseControlStyles\Badge.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\BaseControlStyles\ClosableTabControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
