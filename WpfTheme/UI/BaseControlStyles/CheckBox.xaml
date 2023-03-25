@@ -8,7 +8,6 @@
     </ResourceDictionary.MergedDictionaries>
     
     <Style TargetType="{x:Type CheckBox}">
-        <!--<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>-->
         <Setter Property="Foreground" Value="Navy"/>
         <Setter Property="Background" Value="{StaticResource CheckBoxFillNormal}"/>
         <Setter Property="BorderBrush" Value="{StaticResource CheckBoxStroke}"/>

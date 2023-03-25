@@ -7,7 +7,7 @@
     <Style x:Key="{x:Type ListBox}"
            TargetType="{x:Type ListBox}">
         <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource ListBorder}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource PanelBorderBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
@@ -29,14 +29,12 @@
                         </ScrollViewer>
                     </Border>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsEnabled"
-                                 Value="false">
+                        <Trigger Property="IsEnabled" Value="false">
                             <Setter TargetName="Bd"
                                     Property="Background"
                                     Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
                         </Trigger>
-                        <Trigger Property="IsGrouping"
-                                 Value="true">
+                        <Trigger Property="IsGrouping" Value="true">
                             <Setter Property="ScrollViewer.CanContentScroll"
                                     Value="false"/>
                         </Trigger>

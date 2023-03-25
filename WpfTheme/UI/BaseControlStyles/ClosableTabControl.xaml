@@ -36,9 +36,9 @@
                         to avoid).
                      -->
                         <Border BorderThickness="1,0,1,1"
-                                    Grid.Row="1"
-                                    BorderBrush="{StaticResource TabItemBorderBrushSelected}"
-                                    Background="{StaticResource TabControlBackgroundBrushBase}">
+                                Grid.Row="1"
+                                BorderBrush="{StaticResource TabItemBorderBrushSelected}"
+                                Background="{StaticResource TabControlBackgroundBrushBase}">
                             <!-- This is the first/outer Border drawn on the TabPage -->
                             <Border BorderThickness="1" BorderBrush="{StaticResource TabPageInnerBorderBrushDark}" CornerRadius="3" Margin="5">
                                 <!-- 
@@ -46,16 +46,15 @@
                               This Border is drawn with a horizontal Gradient that is transparent
                               on the left which produces the fading effect.
                            -->
-                                <Border BorderThickness="1" 
-                                   BorderBrush="{StaticResource TabPageInnerBorderBrushBright}" 
-                                   CornerRadius="2" 
-                                   Margin="0" 
-                                   Padding="2,2,3,3"
-                                   >
+                                <Border BorderThickness="1"
+                                        BorderBrush="{StaticResource TabPageInnerBorderBrushBright}" 
+                                        CornerRadius="2" 
+                                        Margin="0" 
+                                        Padding="2,2,3,3">
                                     <!-- 
-                                 This is where the Content of the selected TabPage 
-                                 will be rendered. 
-                              -->
+                                         This is where the Content of the selected TabPage 
+                                         will be rendered. 
+                                    -->
                                     <ContentPresenter ContentSource="SelectedContent" Margin="0"/>
                                 </Border>
                             </Border>
