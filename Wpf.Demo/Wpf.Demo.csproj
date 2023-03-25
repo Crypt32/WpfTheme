@@ -94,6 +94,9 @@
     <Compile Include="Views\UserControls\StatusBarUC.xaml.cs">
       <DependentUpon>StatusBarUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\UserControls\TabControlUC.xaml.cs">
+      <DependentUpon>TabControlUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserControls\TextBoxBaseUC.xaml.cs">
       <DependentUpon>TextBoxBaseUC.xaml</DependentUpon>
     </Compile>
@@ -144,6 +147,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UserControls\StatusBarUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\TabControlUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

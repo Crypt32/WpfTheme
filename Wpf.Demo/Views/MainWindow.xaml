@@ -42,6 +42,9 @@
             <TabItem Header="Badge">
                 <uc:BadgesUC/>
             </TabItem>
+            <TabItem Header="TabControl">
+                <uc:TabControlUC/>
+            </TabItem>
         </TabControl>
     </DockPanel>
 </Window>

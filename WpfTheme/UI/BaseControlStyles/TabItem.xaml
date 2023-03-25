@@ -9,9 +9,9 @@
                 <ControlTemplate TargetType="{x:Type TabItem}">
                     <Grid>
                         <Border Name="Border"
-                                Background="#80A8E1"
-                                BorderBrush="CornflowerBlue"
-                                BorderThickness="1,1,1,1"
+                                Background="{StaticResource NormalBlueGradientBrush}"
+                                BorderBrush="{StaticResource Brush-CornflowerBlue}"
+                                BorderThickness="1,1,1,0"
                                 CornerRadius="2,2,0,0">
                             <ContentPresenter x:Name="ContentSite"
                                               VerticalAlignment="Center"
@@ -21,12 +21,21 @@
                         </Border>
                     </Grid>
                     <ControlTemplate.Triggers>
+                        <!--Default is top-->
+                        <Trigger Property="TabStripPlacement" Value="Left">
+                            <Setter TargetName="Border" Property="BorderThickness" Value="1,1,0,1"/>
+                            <Setter TargetName="Border" Property="CornerRadius" Value="2,0,0,2"/>
+                        </Trigger>
+                        <Trigger Property="TabStripPlacement" Value="Right">
+                            <Setter TargetName="Border" Property="BorderThickness" Value="0,1,1,1"/>
+                            <Setter TargetName="Border" Property="CornerRadius" Value="0,2,2,0"/>
+                        </Trigger>
+                        <Trigger Property="TabStripPlacement" Value="Bottom">
+                            <Setter TargetName="Border" Property="BorderThickness" Value="1,0,1,1"/>
+                            <Setter TargetName="Border" Property="CornerRadius" Value="0,0,2,2"/>
+                        </Trigger>
                         <Trigger Property="IsSelected" Value="True">
                             <Setter TargetName="Border" Property="Background" Value="{StaticResource TabSelected}"/>
-                            <Setter TargetName="Border" Property="BorderThickness" Value="1,1,1,0"/>
-                        </Trigger>
-                        <Trigger Property="IsSelected" Value="False">
-                            <Setter TargetName="Border" Property="Background" Value="{StaticResource NormalBlueGradientBrush}"/>
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
