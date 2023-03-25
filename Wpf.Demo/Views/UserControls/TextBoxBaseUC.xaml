@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             mc:Ignorable="d" 
+             xmlns:vm="clr-namespace:Wpf.Demo.ViewModels"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance vm:FormViewModel}"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <Style TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
@@ -15,7 +17,7 @@
     </UserControl.Resources>
     <StackPanel>
         <TextBlock Text="TextBox"/>
-        <TextBox/>
+        <TextBox Text="{Binding Number, UpdateSourceTrigger=PropertyChanged}"/>
 
         <TextBlock Text="TextBox read-only"/>
         <TextBox IsReadOnly="True"/>

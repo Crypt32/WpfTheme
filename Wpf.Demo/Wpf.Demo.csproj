@@ -72,6 +72,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\FormViewModel.cs" />
     <Compile Include="Views\UserControls\BadgesUC.xaml.cs">
       <DependentUpon>BadgesUC.xaml</DependentUpon>
     </Compile>
