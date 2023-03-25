@@ -202,7 +202,7 @@
                 <Setter TargetName="templateRoot" Property="CornerRadius" Value="2"/>
             </Trigger>
             <Trigger Property="IsPressed" Value="True">
-                <Setter TargetName="templateRoot" Property="Background" Value="{StaticResource PressedBlueGradientBrush}"/>
+                <Setter TargetName="templateRoot" Property="Background" Value="{StaticResource HorizontalYellowPressedGradientBrush}"/>
                 <Setter TargetName="templateRoot" Property="BorderBrush" Value="#F4AD56"/>
                 <Setter TargetName="templateRoot" Property="CornerRadius" Value="2"/>
             </Trigger>

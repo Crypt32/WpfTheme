@@ -265,7 +265,7 @@
                 <Setter TargetName="InnerBorder" Property="Stroke" Value="#40FFFFFF"/>
             </Trigger>
             <Trigger Property="IsPressed" Value="true">
-                <Setter TargetName="Bg" Property="Fill" Value="{StaticResource PressedBlueGradientBrush}"/>
+                <Setter TargetName="Bg" Property="Fill" Value="{StaticResource HorizontalYellowPressedGradientBrush}"/>
                 <Setter TargetName="Bg" Property="Stroke" Value="#FEBC69"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
@@ -385,7 +385,7 @@
                 <Setter TargetName="Bg" Property="Stroke" Value="#FEBC69"/>
             </Trigger>
             <Trigger Property="IsPressed" Value="true">
-                <Setter TargetName="Bg" Property="Fill" Value="{StaticResource PressedBlueGradientBrush}"/>
+                <Setter TargetName="Bg" Property="Fill" Value="{StaticResource HorizontalYellowPressedGradientBrush}"/>
                 <Setter TargetName="Bg" Property="Stroke" Value="#FEBC69"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">

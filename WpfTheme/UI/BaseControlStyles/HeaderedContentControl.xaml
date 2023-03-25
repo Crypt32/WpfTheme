@@ -13,7 +13,7 @@
                             <Grid DockPanel.Dock="Top">
                                 <Border BorderThickness="0,0,0,1"
                                         BorderBrush="{StaticResource Brush-CornflowerBlue}"
-                                        Background="{StaticResource NormalBlueGradientBrush}">
+                                        Background="{StaticResource HorizontalBlueGradientBrush}">
                                     <ContentPresenter ContentSource="Header" Margin="5,3"/>
                                 </Border>
                             </Grid>

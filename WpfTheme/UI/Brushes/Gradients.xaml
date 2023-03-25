@@ -9,31 +9,51 @@
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
 
-    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="NormalBlueGradientBrush">
+    <LinearGradientBrush x:Key="HorizontalBlueGradientBrush" StartPoint="0,0" EndPoint="0,1">
         <LinearGradientBrush.GradientStops>
             <GradientStop Color="#FFE3EFFF" Offset="0"/>
             <GradientStop Color="#FFAFD2FF" Offset="1"/>
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="PressedBlueGradientBrush" StartPoint="0,0" EndPoint="0,1">
+    <LinearGradientBrush x:Key="HorizontalYellowHoverGradient" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#FEFBEC" Offset="0" />
+        <GradientStop Color="#FEDC5D" Offset="0.5" />
+        <GradientStop Color="#FEECA8" Offset="1" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="HorizontalYellowPressedGradientBrush" StartPoint="0,0" EndPoint="0,1">
         <LinearGradientBrush.GradientStops>
             <GradientStop Color="#FFED91" Offset="0" />
             <GradientStop Color="#FED22B" Offset="0.5" />
             <GradientStop Color="#FCA301" Offset="1" />
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="TabHover" EndPoint="0,1" StartPoint="0,0">
+
+    <LinearGradientBrush x:Key="VerticalBlueGradientBrush" StartPoint="0,0" EndPoint="1,0">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#FFE3EFFF" Offset="0"/>
+            <GradientStop Color="#FFAFD2FF" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="VerticalYellowHoverGradient" StartPoint="0,0" EndPoint="1,0">
         <GradientStop Color="#FEFBEC" Offset="0" />
         <GradientStop Color="#FEDC5D" Offset="0.5" />
         <GradientStop Color="#FEECA8" Offset="1" />
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="SubmenuHover" EndPoint="0,1" StartPoint="0,0">
+    <LinearGradientBrush x:Key="VerticalYellowPressedGradientBrush" StartPoint="0,0" EndPoint="1,0">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#FFED91" Offset="0" />
+            <GradientStop Color="#FED22B" Offset="0.5" />
+            <GradientStop Color="#FCA301" Offset="1" />
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="SubmenuHover" StartPoint="0,0" EndPoint="0,1">
         <GradientStop Color="#FEFEF9" Offset="0" />
         <GradientStop Color="#FEEA9F" Offset="0.49" />
         <GradientStop Color="#FEDC5D" Offset="0.5" />
         <GradientStop Color="#FEECA8" Offset="1" />
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="TabSelected" EndPoint="0,1" StartPoint="0,0">
+    <LinearGradientBrush x:Key="TabSelected" StartPoint="0,0" EndPoint="0,1">
         <GradientStop Color="#FEFBEC" Offset="1" />
         <GradientStop Color="#FEDC5D" Offset="0" />
     </LinearGradientBrush>
@@ -130,13 +150,13 @@
     </LinearGradientBrush>
     
     <!--progress bar-->
-    <LinearGradientBrush x:Key="ProgressBarBorderBrush" EndPoint="0,1" StartPoint="0,0">
+    <LinearGradientBrush x:Key="ProgressBarBorderBrush" StartPoint="0,0" EndPoint="0,1">
         <LinearGradientBrush.GradientStops>
             <GradientStop Color="#B2B2B2" Offset="0"/>
             <GradientStop Color="#8C8C8C" Offset="1"/>
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="ProgressBarBackground" EndPoint="1,0" StartPoint="0,0">
+    <LinearGradientBrush x:Key="ProgressBarBackground" StartPoint="0,0" EndPoint="0,1">
         <LinearGradientBrush.GradientStops>
             <GradientStop Color="#BABABA" Offset="0"/>
             <GradientStop Color="#C7C7C7" Offset="0.5"/>

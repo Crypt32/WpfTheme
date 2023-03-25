@@ -79,6 +79,9 @@
     <Compile Include="Views\UserControls\ComboBoxUC.xaml.cs">
       <DependentUpon>ComboBoxUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\UserControls\GridUC.xaml.cs">
+      <DependentUpon>GridUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserControls\ListBoxUC.xaml.cs">
       <DependentUpon>ListBoxUC.xaml</DependentUpon>
     </Compile>
@@ -112,6 +115,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UserControls\ComboBoxUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\GridUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

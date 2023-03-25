@@ -9,7 +9,7 @@
                 <ControlTemplate TargetType="{x:Type TabItem}">
                     <Grid>
                         <Border Name="Border"
-                                Background="{StaticResource NormalBlueGradientBrush}"
+                                Background="{StaticResource HorizontalBlueGradientBrush}"
                                 BorderBrush="{StaticResource Brush-CornflowerBlue}"
                                 BorderThickness="1,1,1,0"
                                 CornerRadius="2,2,0,0">
@@ -42,7 +42,7 @@
                                 <Condition Property="IsMouseOver" Value="True"/>
                                 <Condition Property="IsSelected" Value="False"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" TargetName="Border" Value="{StaticResource TabHover}"/>
+                            <Setter Property="Background" TargetName="Border" Value="{StaticResource HorizontalYellowHoverGradient}"/>
                         </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
