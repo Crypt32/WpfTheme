@@ -4,18 +4,25 @@
     <Color x:Key="PanelBackgroundColor" A="#FF" R="#D8" G="#E3" B="#F0"/>
     <!-- Solid Brushes -->
     <SolidColorBrush x:Key="Brush-Transparent"      Color="Transparent"/>
-    <SolidColorBrush x:Key="Brush-DefaultSolid"     Color="Black"/>
-    <SolidColorBrush x:Key="Brush-DefaultSoft"      Color="#6d798b"/>
-    <SolidColorBrush x:Key="Brush-PrimarySolid"     Color="#004fa3"/>
-    <SolidColorBrush x:Key="Brush-PrimarySoft"      Color="#cce5ff"/>
-    <SolidColorBrush x:Key="Brush-SecondarySolid"   Color="#748194"/>
-    <SolidColorBrush x:Key="Brush-SecondarySoft"    Color="#e3e6ea"/>
-    <SolidColorBrush x:Key="Brush-SuccessSolid"     Color="#28a745"/>
-    <SolidColorBrush x:Key="Brush-SuccessSoft"      Color="#d4edda"/>
-    <SolidColorBrush x:Key="Brush-WarningSolid"     Color="#fd7e14"/>
-    <SolidColorBrush x:Key="Brush-WarningSoft"      Color="#ffe3cb"/>
-    <SolidColorBrush x:Key="Brush-DangerSolid"      Color="#dc3545"/>
-    <SolidColorBrush x:Key="Brush-DangerSoft"       Color="#f8d7da"/>
+
+    <SolidColorBrush x:Key="Brush-DefaultSolidBg"   Color="#343a40"/>
+    <SolidColorBrush x:Key="Brush-DefaultSoftBg"    Color="#d6d8d9"/>
+    <SolidColorBrush x:Key="Brush-DefaultSoftFg"    Color="#1b1e21"/>
+    <SolidColorBrush x:Key="Brush-PrimarySolidBg"   Color="#004fa3"/>
+    <SolidColorBrush x:Key="Brush-PrimarySoftBg"    Color="#cce5ff"/>
+    <SolidColorBrush x:Key="Brush-PrimarySoftFg"    Color="#004fa3"/>
+    <SolidColorBrush x:Key="Brush-SecondarySolidBg" Color="#748194"/>
+    <SolidColorBrush x:Key="Brush-SecondarySoftBg"  Color="#e3e6ea"/>
+    <SolidColorBrush x:Key="Brush-SecondarySoftFg"  Color="#748194"/>
+    <SolidColorBrush x:Key="Brush-SuccessSolidBg"   Color="#28a745"/>
+    <SolidColorBrush x:Key="Brush-SuccessSoftBg"    Color="#d4edda"/>
+    <SolidColorBrush x:Key="Brush-SuccessSoftFg"    Color="#28a745"/>
+    <SolidColorBrush x:Key="Brush-WarningSolidBg"   Color="#fd7e14"/>
+    <SolidColorBrush x:Key="Brush-WarningSoftBg"    Color="#ffe3cb"/>
+    <SolidColorBrush x:Key="Brush-WarningSoftFg"    Color="#fd7e14"/>
+    <SolidColorBrush x:Key="Brush-DangerSolidBg"    Color="#dc3545"/>
+    <SolidColorBrush x:Key="Brush-DangerSoftBg"     Color="#f8d7da"/>
+    <SolidColorBrush x:Key="Brush-DangerSoftFg"     Color="#dc3545"/>
     <SolidColorBrush x:Key="Brush-CornflowerBlue"   Color="CornflowerBlue"/>
     <SolidColorBrush x:Key="Brush-Navy"             Color="Navy"/>
 
