@@ -8,14 +8,14 @@ namespace SysadminsLV.WPF.OfficeTheme.Controls {
     public class Badge : Label {
         public static readonly DependencyProperty ThemeColorProperty = DependencyProperty.Register(
             nameof(ThemeColor),
-            typeof(BadgeThemeColor),
+            typeof(ThemedColor),
             typeof(Badge),
-            new FrameworkPropertyMetadata(BadgeThemeColor.Default));
+            new FrameworkPropertyMetadata(ThemedColor.Default));
         /// <summary>
         /// Gets or sets badge color theme.
         /// </summary>
-        public BadgeThemeColor ThemeColor {
-            get => (BadgeThemeColor)GetValue(ThemeColorProperty);
+        public ThemedColor ThemeColor {
+            get => (ThemedColor)GetValue(ThemeColorProperty);
             set => SetValue(ThemeColorProperty, value);
         }
 

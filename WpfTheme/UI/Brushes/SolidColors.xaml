@@ -3,9 +3,21 @@
     <!--Colors-->
     <Color x:Key="PanelBackgroundColor" A="#FF" R="#D8" G="#E3" B="#F0"/>
     <!-- Solid Brushes -->
-    <SolidColorBrush x:Key="Brush-Transparent"              Color="Transparent"/>
-    <SolidColorBrush x:Key="Brush-CornflowerBlue"           Color="CornflowerBlue"/>
-    <SolidColorBrush x:Key="Brush-Navy"                     Color="Navy"/>
+    <SolidColorBrush x:Key="Brush-Transparent"      Color="Transparent"/>
+    <SolidColorBrush x:Key="Brush-DefaultSolid"     Color="Black"/>
+    <SolidColorBrush x:Key="Brush-DefaultSoft"      Color="#6d798b"/>
+    <SolidColorBrush x:Key="Brush-PrimarySolid"     Color="#004fa3"/>
+    <SolidColorBrush x:Key="Brush-PrimarySoft"      Color="#cce5ff"/>
+    <SolidColorBrush x:Key="Brush-SecondarySolid"   Color="#748194"/>
+    <SolidColorBrush x:Key="Brush-SecondarySoft"    Color="#e3e6ea"/>
+    <SolidColorBrush x:Key="Brush-SuccessSolid"     Color="#28a745"/>
+    <SolidColorBrush x:Key="Brush-SuccessSoft"      Color="#d4edda"/>
+    <SolidColorBrush x:Key="Brush-WarningSolid"     Color="#fd7e14"/>
+    <SolidColorBrush x:Key="Brush-WarningSoft"      Color="#ffe3cb"/>
+    <SolidColorBrush x:Key="Brush-DangerSolid"      Color="#dc3545"/>
+    <SolidColorBrush x:Key="Brush-DangerSoft"       Color="#f8d7da"/>
+    <SolidColorBrush x:Key="Brush-CornflowerBlue"   Color="CornflowerBlue"/>
+    <SolidColorBrush x:Key="Brush-Navy"             Color="Navy"/>
 
     <SolidColorBrush x:Key="MenuBackgroundNormal"           Color="#BFDBFF"/>
     <SolidColorBrush x:Key="ToolbarTrayBackgroundNormal"    Color="#BFDBFF"/>
@@ -26,7 +38,7 @@
     <SolidColorBrush x:Key="CheckBoxFillNormal"             Color="#F4F4F4"/>
     <SolidColorBrush x:Key="CheckBoxStroke"                 Color="#8E8F8F"/>
 
-    <SolidColorBrush x:Key="ContextMenuBackground"          Color="#F4F4F4"></SolidColorBrush>
+    <SolidColorBrush x:Key="ContextMenuBackground"          Color="#F4F4F4"/>
 
     <SolidColorBrush x:Key="TextControlBorderBrush"             Color="#FFABC1DE"/>
     <SolidColorBrush x:Key="DisabledTextControlBackgroundBrush" Color="#FFEAF2FB"/>

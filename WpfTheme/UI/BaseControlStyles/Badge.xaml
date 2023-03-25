@@ -1,19 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:c="clr-namespace:SysadminsLV.WPF.OfficeTheme.Controls">
-
-    <SolidColorBrush x:Key="BadgeDefaultSolid" Color="Black"/>
-    <SolidColorBrush x:Key="BadgeDefaultSoft" Color="#6d798b"/>
-    <SolidColorBrush x:Key="BadgePrimarySolid" Color="#004fa3"/>
-    <SolidColorBrush x:Key="BadgePrimarySoft" Color="#cce5ff"/>
-    <SolidColorBrush x:Key="BadgeSecondarySolid" Color="#748194"/>
-    <SolidColorBrush x:Key="BadgeSecondarySoft" Color="#e3e6ea"/>
-    <SolidColorBrush x:Key="BadgeSuccessSolid" Color="#28a745"/>
-    <SolidColorBrush x:Key="BadgeSuccessSoft" Color="#d4edda"/>
-    <SolidColorBrush x:Key="BadgeWarningSolid" Color="#fd7e14"/>
-    <SolidColorBrush x:Key="BadgeWarningSoft" Color="#ffe3cb"/>
-    <SolidColorBrush x:Key="BadgeDangerSolid" Color="#dc3545"/>
-    <SolidColorBrush x:Key="BadgeDangerSoft" Color="#f8d7da"/>
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Brushes/SolidColors.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="c:Badge" BasedOn="{StaticResource {x:Type Label}}">
         <Setter Property="HorizontalContentAlignment" Value="Left" />
@@ -42,7 +32,7 @@
                                 <Condition Property="c:Badge.ThemeColor" Value="Default"/>
                                 <Condition Property="c:Badge.BadgeStyle" Value="Outline"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="Foreground" Value="{StaticResource BadgeDefaultSolid}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Brush-DefaultSolid}"/>
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
@@ -50,15 +40,15 @@
                                 <Condition Property="c:Badge.BadgeStyle" Value="Solid"/>
                             </MultiTrigger.Conditions>
                             <Setter Property="Foreground" Value="White"/>
-                            <Setter TargetName="bBorder" Property="Background" Value="{StaticResource BadgeDefaultSolid}"/>
+                            <Setter TargetName="bBorder" Property="Background" Value="{StaticResource Brush-DefaultSolid}"/>
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="c:Badge.ThemeColor" Value="Default"/>
                                 <Condition Property="c:Badge.BadgeStyle" Value="SolidSoft"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="Foreground" Value="{StaticResource BadgeDefaultSolid}"/>
-                            <Setter TargetName="bBorder" Property="Background" Value="{StaticResource BadgeDefaultSoft}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Brush-DefaultSolid}"/>
+                            <Setter TargetName="bBorder" Property="Background" Value="{StaticResource Brush-DefaultSoft}"/>
                         </MultiTrigger>
 
                         <!--Primary color-->
@@ -67,7 +57,7 @@
                                 <Condition Property="c:Badge.ThemeColor" Value="Primary"/>
                                 <Condition Property="c:Badge.BadgeStyle" Value="Outline"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="Foreground" Value="{StaticResource BadgePrimarySolid}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Brush-PrimarySolid}"/>
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
@@ -75,15 +65,15 @@
                                 <Condition Property="c:Badge.BadgeStyle" Value="Solid"/>
                             </MultiTrigger.Conditions>
                             <Setter Property="Foreground" Value="White"/>
-                            <Setter TargetName="bBorder" Property="Background" Value="{StaticResource BadgePrimarySolid}"/>
+                            <Setter TargetName="bBorder" Property="Background" Value="{StaticResource Brush-PrimarySolid}"/>
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="c:Badge.ThemeColor" Value="Primary"/>
                                 <Condition Property="c:Badge.BadgeStyle" Value="SolidSoft"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="Foreground" Value="{StaticResource BadgePrimarySolid}"/>
-                            <Setter TargetName="bBorder" Property="Background" Value="{StaticResource BadgePrimarySoft}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Brush-PrimarySolid}"/>
+                            <Setter TargetName="bBorder" Property="Background" Value="{StaticResource Brush-PrimarySoft}"/>
                         </MultiTrigger>
 
                         <!--Secondary color-->
@@ -92,7 +82,7 @@
                                 <Condition Property="c:Badge.ThemeColor" Value="Secondary"/>
                                 <Condition Property="c:Badge.BadgeStyle" Value="Outline"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="Foreground" Value="{StaticResource BadgeSecondarySolid}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Brush-SecondarySolid}"/>
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
@@ -100,15 +90,15 @@
                                 <Condition Property="c:Badge.BadgeStyle" Value="Solid"/>
                             </MultiTrigger.Conditions>
                             <Setter Property="Foreground" Value="White"/>
-                            <Setter TargetName="bBorder" Property="Background" Value="{StaticResource BadgeSecondarySolid}"/>
+                            <Setter TargetName="bBorder" Property="Background" Value="{StaticResource Brush-SecondarySolid}"/>
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="c:Badge.ThemeColor" Value="Secondary"/>
                                 <Condition Property="c:Badge.BadgeStyle" Value="SolidSoft"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="Foreground" Value="{StaticResource BadgeSecondarySolid}"/>
-                            <Setter TargetName="bBorder" Property="Background" Value="{StaticResource BadgeSecondarySoft}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Brush-SecondarySolid}"/>
+                            <Setter TargetName="bBorder" Property="Background" Value="{StaticResource Brush-SecondarySoft}"/>
                         </MultiTrigger>
 
                         <!--Success color-->
@@ -117,7 +107,7 @@
                                 <Condition Property="c:Badge.ThemeColor" Value="Success"/>
                                 <Condition Property="c:Badge.BadgeStyle" Value="Outline"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="Foreground" Value="{StaticResource BadgeSuccessSolid}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Brush-SuccessSolid}"/>
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
@@ -125,15 +115,15 @@
                                 <Condition Property="c:Badge.BadgeStyle" Value="Solid"/>
                             </MultiTrigger.Conditions>
                             <Setter Property="Foreground" Value="White"/>
-                            <Setter TargetName="bBorder" Property="Background" Value="{StaticResource BadgeSuccessSolid}"/>
+                            <Setter TargetName="bBorder" Property="Background" Value="{StaticResource Brush-SuccessSolid}"/>
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="c:Badge.ThemeColor" Value="Success"/>
                                 <Condition Property="c:Badge.BadgeStyle" Value="SolidSoft"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="Foreground" Value="{StaticResource BadgeSuccessSolid}"/>
-                            <Setter TargetName="bBorder" Property="Background" Value="{StaticResource BadgeSuccessSoft}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Brush-SuccessSolid}"/>
+                            <Setter TargetName="bBorder" Property="Background" Value="{StaticResource Brush-SuccessSoft}"/>
                         </MultiTrigger>
 
                         <!--Warning color-->
@@ -142,7 +132,7 @@
                                 <Condition Property="c:Badge.ThemeColor" Value="Warning"/>
                                 <Condition Property="c:Badge.BadgeStyle" Value="Outline"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="Foreground" Value="{StaticResource BadgeWarningSolid}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Brush-WarningSolid}"/>
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
@@ -150,15 +140,15 @@
                                 <Condition Property="c:Badge.BadgeStyle" Value="Solid"/>
                             </MultiTrigger.Conditions>
                             <Setter Property="Foreground" Value="White"/>
-                            <Setter TargetName="bBorder" Property="Background" Value="{StaticResource BadgeWarningSolid}"/>
+                            <Setter TargetName="bBorder" Property="Background" Value="{StaticResource Brush-WarningSolid}"/>
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="c:Badge.ThemeColor" Value="Warning"/>
                                 <Condition Property="c:Badge.BadgeStyle" Value="SolidSoft"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="Foreground" Value="{StaticResource BadgeWarningSolid}"/>
-                            <Setter TargetName="bBorder" Property="Background" Value="{StaticResource BadgeWarningSoft}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Brush-WarningSolid}"/>
+                            <Setter TargetName="bBorder" Property="Background" Value="{StaticResource Brush-WarningSoft}"/>
                         </MultiTrigger>
 
                         <!--Danger color-->
@@ -167,7 +157,7 @@
                                 <Condition Property="c:Badge.ThemeColor" Value="Danger"/>
                                 <Condition Property="c:Badge.BadgeStyle" Value="Outline"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="Foreground" Value="{StaticResource BadgeDangerSolid}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Brush-DangerSolid}"/>
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
@@ -175,34 +165,34 @@
                                 <Condition Property="c:Badge.BadgeStyle" Value="Solid"/>
                             </MultiTrigger.Conditions>
                             <Setter Property="Foreground" Value="White"/>
-                            <Setter TargetName="bBorder" Property="Background" Value="{StaticResource BadgeDangerSolid}"/>
+                            <Setter TargetName="bBorder" Property="Background" Value="{StaticResource Brush-DangerSolid}"/>
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="c:Badge.ThemeColor" Value="Danger"/>
                                 <Condition Property="c:Badge.BadgeStyle" Value="SolidSoft"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="Foreground" Value="{StaticResource BadgeDangerSolid}"/>
-                            <Setter TargetName="bBorder" Property="Background" Value="{StaticResource BadgeDangerSoft}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Brush-DangerSolid}"/>
+                            <Setter TargetName="bBorder" Property="Background" Value="{StaticResource Brush-DangerSoft}"/>
                         </MultiTrigger>
 
                         <Trigger Property="c:Badge.ThemeColor" Value="Default">
-                            <Setter TargetName="bBorder" Property="BorderBrush" Value="{StaticResource BadgeDefaultSolid}"/>
+                            <Setter TargetName="bBorder" Property="BorderBrush" Value="{StaticResource Brush-DefaultSolid}"/>
                         </Trigger>
                         <Trigger Property="c:Badge.ThemeColor" Value="Primary">
-                            <Setter TargetName="bBorder" Property="BorderBrush" Value="{StaticResource BadgePrimarySolid}"/>
+                            <Setter TargetName="bBorder" Property="BorderBrush" Value="{StaticResource Brush-PrimarySolid}"/>
                         </Trigger>
                         <Trigger Property="c:Badge.ThemeColor" Value="Secondary">
-                            <Setter TargetName="bBorder" Property="BorderBrush" Value="{StaticResource BadgeSecondarySolid}"/>
+                            <Setter TargetName="bBorder" Property="BorderBrush" Value="{StaticResource Brush-SecondarySolid}"/>
                         </Trigger>
                         <Trigger Property="c:Badge.ThemeColor" Value="Success">
-                            <Setter TargetName="bBorder" Property="BorderBrush" Value="{StaticResource BadgeSuccessSolid}"/>
+                            <Setter TargetName="bBorder" Property="BorderBrush" Value="{StaticResource Brush-SuccessSolid}"/>
                         </Trigger>
                         <Trigger Property="c:Badge.ThemeColor" Value="Warning">
-                            <Setter TargetName="bBorder" Property="BorderBrush" Value="{StaticResource BadgeWarningSolid}"/>
+                            <Setter TargetName="bBorder" Property="BorderBrush" Value="{StaticResource Brush-WarningSolid}"/>
                         </Trigger>
                         <Trigger Property="c:Badge.ThemeColor" Value="Danger">
-                            <Setter TargetName="bBorder" Property="BorderBrush" Value="{StaticResource BadgeDangerSolid}"/>
+                            <Setter TargetName="bBorder" Property="BorderBrush" Value="{StaticResource Brush-DangerSolid}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

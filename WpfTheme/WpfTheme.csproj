@@ -49,7 +49,7 @@
   <ItemGroup>
     <Compile Include="Controls\Badge.cs" />
     <Compile Include="Controls\BadgeStyle.cs" />
-    <Compile Include="Controls\BadgeThemeColor.cs" />
+    <Compile Include="Controls\ThemedColor.cs" />
     <Compile Include="Controls\ClosableTabControl.cs" />
     <Compile Include="Controls\ClosableTabItem.cs" />
     <Compile Include="Controls\LoadingSpinner.cs" />

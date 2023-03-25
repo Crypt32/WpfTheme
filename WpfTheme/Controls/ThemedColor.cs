@@ -2,7 +2,7 @@
     /// <summary>
     /// Defines different badge color themes.
     /// </summary>
-    public enum BadgeThemeColor {
+    public enum ThemedColor {
         /// <summary>
         /// Black.
         /// </summary>
