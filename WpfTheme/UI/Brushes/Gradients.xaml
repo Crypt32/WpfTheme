@@ -9,11 +9,10 @@
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
 
-    <LinearGradientBrush x:Key="NormalBlueGradientBrush" StartPoint="0,0" EndPoint="0,1">
+    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="NormalBlueGradientBrush">
         <LinearGradientBrush.GradientStops>
-            <GradientStop Color="#E2EEFE" Offset="0" />
-            <GradientStop Color="#E2EEFE" Offset="0.5" />
-            <GradientStop Color="#B0D2FE" Offset="1" />
+            <GradientStop Color="#FFE3EFFF" Offset="0"/>
+            <GradientStop Color="#FFAFD2FF" Offset="1"/>
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="PressedBlueGradientBrush" StartPoint="0,0" EndPoint="0,1">
@@ -38,16 +37,7 @@
         <GradientStop Color="#FEFBEC" Offset="1" />
         <GradientStop Color="#FEDC5D" Offset="0" />
     </LinearGradientBrush>
-    <!-- TextControlsBrushes-->
-    <!--<LinearGradientBrush x:Key="TextControlBorderBrush"  EndPoint="0.5,1" StartPoint="0.5,0">
-        <GradientStop Color="#FFABC1DE"/>
-        <GradientStop Color="#FFABC1DE" Offset="1"/>
-    </LinearGradientBrush>-->
 
-    <!--<LinearGradientBrush x:Key="DisabledTextControlBackgroundBrush"  EndPoint="0.5,1" StartPoint="0.5,0">
-        <GradientStop Color="#FFEAF2FB"/>
-        <GradientStop Color="#FFEAF2FB" Offset="1"/>
-    </LinearGradientBrush>-->
     <!-- Menu -->
     <LinearGradientBrush x:Key="MenuHoverFill" StartPoint="0,0" EndPoint="0,1">
         <LinearGradientBrush.GradientStops>
@@ -63,7 +53,15 @@
             <GradientStop Color="#8FB8ED" Offset="1"/>
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
+
     <!-- ToolBar -->
+    <LinearGradientBrush x:Key="ToolbarGradientBrush" StartPoint="0,0" EndPoint="0,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#E2EEFE" Offset="0" />
+            <GradientStop Color="#E2EEFE" Offset="0.5" />
+            <GradientStop Color="#B0D2FE" Offset="1" />
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
     <LinearGradientBrush x:Key="ToolBarBackgroundFill" StartPoint="0,0" EndPoint="0,1">
         <LinearGradientBrush.GradientStops>
             <GradientStop Color="#E3EFFF" Offset="0"/>

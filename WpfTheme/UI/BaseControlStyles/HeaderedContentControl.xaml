@@ -1,27 +1,21 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="../Brushes/Solidcolors.xaml"/>
+        <ResourceDictionary Source="../Brushes/DefaultColorTheme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     <Style TargetType="{x:Type HeaderedContentControl}">
-        <Setter Property="Foreground" Value="#334F63"/>
+        <Setter Property="Foreground" Value="{StaticResource HeaderedControlForeground}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type HeaderedContentControl}">
-                    <Border BorderThickness="1" BorderBrush="#6592CE">
+                    <Border BorderThickness="1" BorderBrush="{StaticResource PanelBorderBrush}">
                         <DockPanel>
                             <Grid DockPanel.Dock="Top">
-                                <Border BorderThickness="0,0,0,1" BorderBrush="#FFB1CFF5">
-                                    <Border.Background>
-                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                                            <LinearGradientBrush.GradientStops>
-                                                <GradientStop Color="#FFE3EFFF" Offset="0" />
-                                                <GradientStop Color="#FFAFD2FF" Offset="1" />
-                                            </LinearGradientBrush.GradientStops>
-                                        </LinearGradientBrush>
-                                    </Border.Background>
+                                <Border BorderThickness="0,0,0,1"
+                                        BorderBrush="{StaticResource Brush-CornflowerBlue}"
+                                        Background="{StaticResource NormalBlueGradientBrush}">
+                                    <ContentPresenter ContentSource="Header" Margin="5,3"/>
                                 </Border>
-                                <ContentPresenter ContentSource="Header" Margin="5,3,5,3"/>
                             </Grid>
                             <Grid>
                                 <Border Background="#FFD7E8F7"/>

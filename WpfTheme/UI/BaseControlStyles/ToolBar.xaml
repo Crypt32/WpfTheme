@@ -76,7 +76,7 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
     <Style TargetType="{x:Type ToolBar}">
-        <Setter Property="Background" Value="{StaticResource NormalBlueGradientBrush}"></Setter>
+        <Setter Property="Background" Value="{StaticResource ToolbarGradientBrush}"></Setter>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToolBar}">

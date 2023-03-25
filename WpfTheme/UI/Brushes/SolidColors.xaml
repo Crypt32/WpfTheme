@@ -27,8 +27,10 @@
     <SolidColorBrush x:Key="PanelBackgroundBrush"           Color="#FFD8E3F0"/>
     <SolidColorBrush x:Key="PanelHeaderBackground"          Color="#FFB3D6E6"/>
     <SolidColorBrush x:Key="BorderBrush"                    Color="CornflowerBlue"/>
-    <SolidColorBrush x:Key="PanelBorderBrush"               Color="#FF7C9EBC"/>
-    
+    <!--<SolidColorBrush x:Key="PanelBorderBrush"               Color="#FF7C9EBC"/>-->
+    <SolidColorBrush x:Key="PanelBorderBrush"               Color="#FF567DB0"/>
+
+    <SolidColorBrush x:Key="HeaderedControlForeground" Color="#FF15429F"/>
     <SolidColorBrush x:Key="LightBorderBrush"               Color="#f2f8ff"/>
     <SolidColorBrush x:Key="NormalBorderBrush"              Color="#add1ff"/>
     <SolidColorBrush x:Key="DisabledTextBlockOpacityMask"   Color="#A0FFFFFF"/>
