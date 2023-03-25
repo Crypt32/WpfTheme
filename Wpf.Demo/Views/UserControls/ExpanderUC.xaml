@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="Wpf.Demo.Views.UserControls.ExpanderUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Wpf.Demo.Views.UserControls"
+             mc:Ignorable="d"
+             Background="White"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Expander Grid.Column="0"
+                  Grid.Row="0"
+                  Header="Top"
+                  ExpandDirection="Down">
+            <TextBlock Text="Text"/>
+        </Expander>
+        <Expander Grid.Column="0"
+                  Grid.Row="1"
+                  Header="Bottom"
+                  ExpandDirection="Up">
+            <TextBox Text="Text"/>
+        </Expander>
+        <Expander Grid.Column="1"
+                  Grid.Row="0"
+                  Header="Left"
+                  ExpandDirection="Right">
+            <TextBox Text="Text"/>
+        </Expander>
+        <Expander Grid.Column="1"
+                  Grid.Row="1"
+                  Header="Right"
+                  ExpandDirection="Left">
+            <TextBox Text="Text"/>
+        </Expander>
+    </Grid>
+</UserControl>

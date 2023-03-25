@@ -48,6 +48,9 @@
             <TabItem Header="GridSplitter">
                 <uc:GridUC/>
             </TabItem>
+            <TabItem Header="Expander">
+                <uc:ExpanderUC/>
+            </TabItem>
         </TabControl>
     </DockPanel>
 </Window>

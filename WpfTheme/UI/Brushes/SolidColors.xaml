@@ -37,7 +37,7 @@
     <!--<SolidColorBrush x:Key="PanelBorderBrush"               Color="#FF7C9EBC"/>-->
     <SolidColorBrush x:Key="PanelBorderBrush"               Color="#FF567DB0"/>
 
-    <SolidColorBrush x:Key="HeaderedControlForeground" Color="#FF15429F"/>
+    <SolidColorBrush x:Key="HeaderedControlForeground"      Color="#FF15429F"/>
     <SolidColorBrush x:Key="LightBorderBrush"               Color="#f2f8ff"/>
     <SolidColorBrush x:Key="NormalBorderBrush"              Color="#add1ff"/>
     <SolidColorBrush x:Key="DisabledTextBlockOpacityMask"   Color="#A0FFFFFF"/>
