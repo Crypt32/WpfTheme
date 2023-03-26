@@ -26,89 +26,6 @@
         </Setter>
     </Style>
 
-
-    <ControlTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type FrameworkElement}, ResourceId=SubmenuContent}"
-                     TargetType="{x:Type ContentControl}">
-        <Border Background="#FAF9F9"
-                BorderBrush="#FF959595"
-                BorderThickness="1">
-            <Grid>
-                <Rectangle Fill="#F1F1F1"
-                           HorizontalAlignment="Left"
-                           Width="28"
-                           Margin="2"
-                           RadiusX="2"
-                           RadiusY="2"/>
-                <Rectangle HorizontalAlignment="Left"
-                           Width="1"
-                           Margin="30,2,0,2"
-                           Fill="#E2E3E3"/>
-                <Rectangle HorizontalAlignment="Left"
-                           Width="1"
-                           Margin="31,2,0,2"
-                           Fill="#FAF9F9"/>
-
-                <ContentPresenter Grid.ColumnSpan="2"
-                                  Margin="1,0"/>
-            </Grid>
-        </Border>
-    </ControlTemplate>
-
-    
-    <ControlTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type MenuItem}, ResourceId=TopLevelItemTemplateKey}"
-                     TargetType="{x:Type MenuItem}">
-        <Grid SnapsToDevicePixels="true">
-            <!--<Rectangle x:Name="OuterBorder" RadiusX="2" RadiusY="2" Fill="#FFF1F1F1"/>-->
-            <Rectangle Name="Bg"
-                       Margin="1"
-                       Fill="{TemplateBinding MenuItem.Background}"
-                       Stroke="{TemplateBinding MenuItem.BorderBrush}"
-                       StrokeThickness="1"
-                       RadiusX="1"
-                       RadiusY="1"/>
-            <!--<Rectangle x:Name="InnerBorder" Margin="2"/>-->
-            <DockPanel>
-                <ContentPresenter x:Name="Icon"
-                                  Margin="4,0,6,0"
-                                  VerticalAlignment="Center"
-                                  ContentSource="Icon"
-                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
-                <Path x:Name="GlyphPanel"
-                      Margin="7,0,0,0"
-                      Visibility="Collapsed"
-                      VerticalAlignment="Center"
-                      Fill="{TemplateBinding MenuItem.Foreground}"
-                      FlowDirection="LeftToRight"
-                      Data="{StaticResource Checkmark}"/>
-                <ContentPresenter ContentSource="Header"
-                                  VerticalAlignment="Center"
-                                  Margin="{TemplateBinding MenuItem.Padding}"
-                                  RecognizesAccessKey="True"
-                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
-            </DockPanel>
-        </Grid>
-        <ControlTemplate.Triggers>
-            <Trigger Property="Icon" Value="{x:Null}">
-                <Setter TargetName="Icon" Property="Visibility" Value="Collapsed"/>
-            </Trigger>
-            <Trigger Property="IsChecked" Value="true">
-                <Setter TargetName="GlyphPanel" Property="Visibility" Value="Visible"/>
-                <Setter TargetName="Icon" Property="Visibility" Value="Collapsed"/>
-            </Trigger>
-            <!--<Trigger Property="IsHighlighted" Value="true">
-                <Setter TargetName="Bg" Property="Stroke" Value="#FEBC69"/>
-                <Setter TargetName="Bg" Property="Fill" Value="{StaticResource MenuHoverFill}"/>
-            </Trigger>
-            <Trigger Property="IsPressed" Value="True">
-                <Setter TargetName="Bg" Property="Stroke" Value="#6592CE"/>
-                <Setter TargetName="Bg" Property="Fill" Value="{StaticResource MenuPressedFill}"/>
-            </Trigger>-->
-            <Trigger Property="IsEnabled" Value="false">
-                <Setter Property="Foreground" Value="#FF9A9A9A"/>
-                <Setter TargetName="GlyphPanel" Property="Fill" Value="#848589"/>
-            </Trigger>
-        </ControlTemplate.Triggers>
-    </ControlTemplate>
     <ControlTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type MenuItem}, ResourceId=TopLevelHeaderTemplateKey}"
                      TargetType="{x:Type MenuItem}">
         <Grid SnapsToDevicePixels="true">
@@ -198,62 +115,37 @@
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
-    <ControlTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type MenuItem}, ResourceId=SubmenuItemTemplateKey}"
+    <ControlTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type MenuItem}, ResourceId=TopLevelItemTemplateKey}"
                      TargetType="{x:Type MenuItem}">
         <Grid SnapsToDevicePixels="true">
+            <!--<Rectangle x:Name="OuterBorder" RadiusX="2" RadiusY="2" Fill="#FFF1F1F1"/>-->
             <Rectangle Name="Bg"
+                       Margin="1"
                        Fill="{TemplateBinding MenuItem.Background}"
                        Stroke="{TemplateBinding MenuItem.BorderBrush}"
                        StrokeThickness="1"
-                       RadiusX="2"
-                       RadiusY="2"/>
-            <Rectangle x:Name="InnerBorder"
-                       Margin="1"
-                       RadiusX="2"
-                       RadiusY="2"/>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition MinWidth="24"
-                                      Width="Auto"
-                                      SharedSizeGroup="MenuItemIconColumnGroup"/>
-                    <ColumnDefinition Width="4"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="37"/>
-                    <ColumnDefinition Width="Auto"
-                                      SharedSizeGroup="MenuItemIGTColumnGroup"/>
-                    <ColumnDefinition Width="17"/>
-                </Grid.ColumnDefinitions>
+                       RadiusX="1"
+                       RadiusY="1"/>
+            <!--<Rectangle x:Name="InnerBorder" Margin="2"/>-->
+            <DockPanel>
                 <ContentPresenter x:Name="Icon"
-                                  Margin="1"
+                                  Margin="4,0,6,0"
                                   VerticalAlignment="Center"
                                   ContentSource="Icon"
                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
-                <Border x:Name="GlyphPanel"
-                        Background="#FBF3C5"
-                        BorderBrush="{StaticResource MenuItem.Glyph.BorderBrush}"
-                        BorderThickness="1"
-                        CornerRadius="4"
-                        Margin="1"
-                        Visibility="Hidden"
-                        Width="22" 
-                        Height="22">
-                    <Path Name="Glyph"
-                          Width="9"
-                          Height="11"
-                          Fill="Navy"
-                          FlowDirection="LeftToRight"
-                          Data="{StaticResource Checkmark}"/>
-                </Border>
-                <ContentPresenter Grid.Column="2"
-                                  ContentSource="Header"
+                <Path x:Name="GlyphPanel"
+                      Margin="7,0,0,0"
+                      Visibility="Collapsed"
+                      VerticalAlignment="Center"
+                      Fill="{TemplateBinding MenuItem.Foreground}"
+                      FlowDirection="LeftToRight"
+                      Data="{StaticResource Checkmark}"/>
+                <ContentPresenter ContentSource="Header"
                                   VerticalAlignment="Center"
                                   Margin="{TemplateBinding MenuItem.Padding}"
                                   RecognizesAccessKey="True"
                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
-                <TextBlock Grid.Column="4"
-                           Text="{TemplateBinding MenuItem.InputGestureText}"
-                           Margin="{TemplateBinding MenuItem.Padding}"/>
-            </Grid>
+            </DockPanel>
         </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="Icon" Value="{x:Null}">
@@ -263,20 +155,17 @@
                 <Setter TargetName="GlyphPanel" Property="Visibility" Value="Visible"/>
                 <Setter TargetName="Icon" Property="Visibility" Value="Collapsed"/>
             </Trigger>
-            <Trigger Property="IsHighlighted" Value="true">
-                <Setter TargetName="Bg" Property="Fill" Value="{StaticResource SubmenuHover}"/>
+            <!--<Trigger Property="IsHighlighted" Value="true">
                 <Setter TargetName="Bg" Property="Stroke" Value="#FEBC69"/>
-                <Setter TargetName="InnerBorder" Property="Stroke" Value="#40FFFFFF"/>
+                <Setter TargetName="Bg" Property="Fill" Value="{StaticResource MenuHoverFill}"/>
             </Trigger>
-            <Trigger Property="IsPressed" Value="true">
-                <Setter TargetName="Bg" Property="Fill" Value="{StaticResource HorizontalYellowPressedGradientBrush}"/>
-                <Setter TargetName="Bg" Property="Stroke" Value="#FEBC69"/>
-            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="Bg" Property="Stroke" Value="#6592CE"/>
+                <Setter TargetName="Bg" Property="Fill" Value="{StaticResource MenuPressedFill}"/>
+            </Trigger>-->
             <Trigger Property="IsEnabled" Value="false">
                 <Setter Property="Foreground" Value="#FF9A9A9A"/>
-                <Setter TargetName="GlyphPanel" Property="Background" Value="#EEE9E9"/>
-                <Setter TargetName="GlyphPanel" Property="BorderBrush" Value="#DBD6D6"/>
-                <Setter TargetName="Glyph" Property="Fill" Value="#848589"/>
+                <Setter TargetName="GlyphPanel" Property="Fill" Value="#848589"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -400,6 +289,113 @@
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
+    <ControlTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type MenuItem}, ResourceId=SubmenuItemTemplateKey}"
+                     TargetType="{x:Type MenuItem}">
+        <Grid SnapsToDevicePixels="true">
+            <Rectangle Name="Bg"
+                       Fill="{TemplateBinding MenuItem.Background}"
+                       Stroke="{TemplateBinding MenuItem.BorderBrush}"
+                       StrokeThickness="1"
+                       RadiusX="2"
+                       RadiusY="2"/>
+            <Rectangle x:Name="InnerBorder"
+                       Margin="1"
+                       RadiusX="2"
+                       RadiusY="2"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MinWidth="24"
+                                      Width="Auto"
+                                      SharedSizeGroup="MenuItemIconColumnGroup"/>
+                    <ColumnDefinition Width="4"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="37"/>
+                    <ColumnDefinition Width="Auto"
+                                      SharedSizeGroup="MenuItemIGTColumnGroup"/>
+                    <ColumnDefinition Width="17"/>
+                </Grid.ColumnDefinitions>
+                <ContentPresenter x:Name="Icon"
+                                  Margin="1"
+                                  VerticalAlignment="Center"
+                                  ContentSource="Icon"
+                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                <Border x:Name="GlyphPanel"
+                        Background="#FBF3C5"
+                        BorderBrush="{StaticResource MenuItem.Glyph.BorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="4"
+                        Margin="1"
+                        Visibility="Hidden"
+                        Width="22" 
+                        Height="22">
+                    <Path Name="Glyph"
+                          Width="9"
+                          Height="11"
+                          Fill="Navy"
+                          FlowDirection="LeftToRight"
+                          Data="{StaticResource Checkmark}"/>
+                </Border>
+                <ContentPresenter Grid.Column="2"
+                                  ContentSource="Header"
+                                  VerticalAlignment="Center"
+                                  Margin="{TemplateBinding MenuItem.Padding}"
+                                  RecognizesAccessKey="True"
+                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                <TextBlock Grid.Column="4"
+                           Text="{TemplateBinding MenuItem.InputGestureText}"
+                           Margin="{TemplateBinding MenuItem.Padding}"/>
+            </Grid>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="Icon" Value="{x:Null}">
+                <Setter TargetName="Icon" Property="Visibility" Value="Collapsed"/>
+            </Trigger>
+            <Trigger Property="IsChecked" Value="true">
+                <Setter TargetName="GlyphPanel" Property="Visibility" Value="Visible"/>
+                <Setter TargetName="Icon" Property="Visibility" Value="Collapsed"/>
+            </Trigger>
+            <Trigger Property="IsHighlighted" Value="true">
+                <Setter TargetName="Bg" Property="Fill" Value="{StaticResource SubmenuHover}"/>
+                <Setter TargetName="Bg" Property="Stroke" Value="#FEBC69"/>
+                <Setter TargetName="InnerBorder" Property="Stroke" Value="#40FFFFFF"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter TargetName="Bg" Property="Fill" Value="{StaticResource HorizontalYellowPressedGradientBrush}"/>
+                <Setter TargetName="Bg" Property="Stroke" Value="#FEBC69"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Foreground" Value="#FF9A9A9A"/>
+                <Setter TargetName="GlyphPanel" Property="Background" Value="#EEE9E9"/>
+                <Setter TargetName="GlyphPanel" Property="BorderBrush" Value="#DBD6D6"/>
+                <Setter TargetName="Glyph" Property="Fill" Value="#848589"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type FrameworkElement}, ResourceId=SubmenuContent}"
+                     TargetType="{x:Type ContentControl}">
+        <Border Background="#FAF9F9"
+                BorderBrush="#FF959595"
+                BorderThickness="1">
+            <Grid>
+                <!--Icon and check column-->
+                <Rectangle Fill="#F1F1F1"
+                           HorizontalAlignment="Left"
+                           Width="30"
+                           Margin="0"
+                           RadiusX="2"
+                           RadiusY="2"/>
+                <!--Separator between icon and menu text zone-->
+                <Rectangle HorizontalAlignment="Left"
+                           Width="1"
+                           Margin="30,0,0,0"
+                           Fill="#E2E3E3"/>
+                <ContentPresenter Grid.ColumnSpan="2"
+                                  Margin="1,0"/>
+            </Grid>
+        </Border>
+    </ControlTemplate>
+    
+    
     <Style x:Key="{x:Type MenuItem}" TargetType="{x:Type MenuItem}">
         <Setter Property="Foreground" Value="Navy"/>
         <Setter Property="HorizontalContentAlignment"
