@@ -6,9 +6,7 @@
         <ResourceDictionary Source="../NamedStyles/CheckRadioFocusVisual.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     
-    <Style x:Key="{x:Type RadioButton}"
-           TargetType="{x:Type RadioButton}">
-        <!--<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>-->
+    <Style x:Key="{x:Type RadioButton}" TargetType="{x:Type RadioButton}">
         <Setter Property="Foreground" Value="Navy"/>
         <Setter Property="Background" Value="{StaticResource CheckBoxFillNormal}"/>
         <Setter Property="BorderBrush" Value="{StaticResource CheckBoxStroke}"/>
