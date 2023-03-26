@@ -51,6 +51,9 @@
             <TabItem Header="Expander">
                 <uc:ExpanderUC/>
             </TabItem>
+            <TabItem Header="Button">
+                <uc:ButtonUC/>
+            </TabItem>
         </TabControl>
     </DockPanel>
 </Window>

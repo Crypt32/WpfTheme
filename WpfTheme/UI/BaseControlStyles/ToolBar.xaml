@@ -4,77 +4,51 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../Brushes/DefaultColorTheme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-    <ControlTemplate x:Key="ToolbarButtonTemplate" TargetType="{x:Type ButtonBase}">
-        <Border x:Name="Bd"
-                CornerRadius="3"
-                BorderBrush="{TemplateBinding BorderBrush}"
-                BorderThickness="{TemplateBinding BorderThickness}"
-                Background="{TemplateBinding Background}"
-                Padding="{TemplateBinding Padding}"
-                SnapsToDevicePixels="True">
-            <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}"
-                              Content="{TemplateBinding Content}"
-                              ContentStringFormat="{TemplateBinding ContentStringFormat}"
-                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-        </Border>
-        <ControlTemplate.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ToolBar.Hover.BorderBrush}"/>
-                <Setter Property="Background" TargetName="Bd" Value="{StaticResource SubmenuHover}"/>
-            </Trigger>
-            <Trigger Property="IsKeyboardFocused" Value="True">
-                <Setter Property="BorderBrush" TargetName="Bd" Value="#80DADADA"/>
-                <Setter Property="Background" TargetName="Bd" Value="{StaticResource HorizontalYellowHoverGradient}"/>
-            </Trigger>
-            <Trigger Property="IsPressed" Value="True">
-                <Setter Property="BorderBrush" TargetName="Bd" Value="#90006CD9"/>
-                <Setter Property="Background" TargetName="Bd" Value="{StaticResource HorizontalYellowHoverGradient}"/>
-            </Trigger>
-            <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Foreground" Value="{StaticResource {x:Static SystemColors.GrayTextBrushKey}}"/>
-            </Trigger>
-        </ControlTemplate.Triggers>
-    </ControlTemplate>
-    <!--TODO merge-->
-    <ControlTemplate x:Key="ToolbarToggleButtonTemplate" TargetType="{x:Type ToggleButton}">
-        <Border x:Name="Bd"
-                CornerRadius="3"
-                BorderBrush="{TemplateBinding BorderBrush}"
-                BorderThickness="{TemplateBinding BorderThickness}"
-                Background="{TemplateBinding Background}"
-                Padding="{TemplateBinding Padding}"
-                SnapsToDevicePixels="True">
-            <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}"
-                              Content="{TemplateBinding Content}"
-                              ContentStringFormat="{TemplateBinding ContentStringFormat}"
-                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-        </Border>
-        <ControlTemplate.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ToolBar.Hover.BorderBrush}"/>
-                <Setter Property="Background" TargetName="Bd" Value="{StaticResource SubmenuHover}"/>
-            </Trigger>
-            <Trigger Property="IsKeyboardFocused" Value="True">
-                <Setter Property="BorderBrush" TargetName="Bd" Value="#80DADADA"/>
-                <Setter Property="Background" TargetName="Bd" Value="{StaticResource HorizontalYellowHoverGradient}"/>
-            </Trigger>
-            <Trigger Property="IsPressed" Value="True">
-                <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ToolBar.Pressed.BorderBrush}"/>
-                <Setter Property="Background" TargetName="Bd" Value="{StaticResource HorizontalYellowHoverGradient}"/>
-            </Trigger>
-            <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Foreground" Value="{StaticResource {x:Static SystemColors.GrayTextBrushKey}}"/>
-            </Trigger>
-            <Trigger Property="IsChecked" Value="True">
-                <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ToolBar.Checked.BorderBrush}"/>
-                <Setter Property="Background" TargetName="Bd" Value="{StaticResource HorizontalYellowHoverGradient}"/>
-            </Trigger>
-        </ControlTemplate.Triggers>
-    </ControlTemplate>
+    <Style x:Key="ToolBarButtonStyle" TargetType="{x:Type ButtonBase}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ButtonBase}">
+                    <Border x:Name="Bd"
+                            CornerRadius="3"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{TemplateBinding Background}"
+                            Padding="{TemplateBinding Padding}"
+                            SnapsToDevicePixels="True">
+                        <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}"
+                                          Content="{TemplateBinding Content}"
+                                          ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ToolBar.Hover.BorderBrush}"/>
+                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource SubmenuHover}"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="BorderBrush" TargetName="Bd" Value="#80DADADA"/>
+                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource HorizontalYellowHoverGradient}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ToolBar.Pressed.BorderBrush}"/>
+                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource HorizontalYellowHoverGradient}"/>
+                        </Trigger>
+                        <Trigger Property="ToggleButton.IsChecked" Value="True">
+                            <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ToolBar.Checked.BorderBrush}"/>
+                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource HorizontalYellowHoverGradient}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{StaticResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    
     <Style TargetType="{x:Type ToolBar}">
         <Setter Property="Background" Value="{StaticResource ToolbarGradientBrush}"></Setter>
         <Setter Property="Template">
@@ -336,13 +310,14 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style x:Key="{x:Static ToolBar.ButtonStyleKey}" TargetType="{x:Type Button}">
-        <Setter Property="Template" Value="{StaticResource ToolbarButtonTemplate}"/>
+
+    <Style x:Key="{x:Static ToolBar.ButtonStyleKey}" TargetType="Button" BasedOn="{StaticResource ToolBarButtonStyle}">
+        <!--<Setter Property="Template" Value="{StaticResource ToolbarButtonTemplate}"/>-->
     </Style>
-    <Style x:Key="{x:Static ToolBar.ToggleButtonStyleKey}" TargetType="{x:Type ToggleButton}">
-        <Setter Property="Template" Value="{StaticResource ToolbarToggleButtonTemplate}"/>
+    <Style x:Key="{x:Static ToolBar.ToggleButtonStyleKey}" TargetType="ToggleButton" BasedOn="{StaticResource ToolBarButtonStyle}">
+        <!--<Setter Property="Template" Value="{StaticResource ToolbarToggleButtonTemplate}"/>-->
     </Style>
-    <Style x:Key="{x:Static ToolBar.RadioButtonStyleKey}" TargetType="{x:Type RadioButton}">
-        <Setter Property="Template" Value="{StaticResource ToolbarToggleButtonTemplate}"/>
+    <Style x:Key="{x:Static ToolBar.RadioButtonStyleKey}" TargetType="RadioButton" BasedOn="{StaticResource ToolBarButtonStyle}">
+        <!--<Setter Property="Template" Value="{StaticResource ToolbarToggleButtonTemplate}"/>-->
     </Style>
 </ResourceDictionary>
