@@ -6,7 +6,7 @@
     </ResourceDictionary.MergedDictionaries>
     <Style x:Key="{x:Type TextBoxBase}" TargetType="{x:Type TextBoxBase}">
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="BorderBrush" Value="{StaticResource TextControlBorderBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource TextBox.BorderBrush}"/>
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
@@ -28,16 +28,16 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Background" Value="{StaticResource TextBox.Disabled.BackgroundBrush}"/>
                         </Trigger>
                         <Trigger SourceName="Border" Property="IsMouseOver" Value="True">
-                            <Setter Property="BorderBrush" Value="CornflowerBlue"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource TextBox.Hover.BorderBrush}"/>
                         </Trigger>
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter Property="BorderBrush" Value="Navy"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource TextBox.Focused.BorderBrush}"/>
                         </Trigger>
                         <Trigger Property="Validation.HasError" Value="True">
-                            <Setter Property="BorderBrush" Value="Red"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource TextBox.HasError.BorderBrush}"/>
                             <Setter Property="ToolTip" Value="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=(Validation.Errors)/ErrorContent}"/>
                             <Setter TargetName="Border" Property="BorderThickness" Value="3,1,1,1"/>
                         </Trigger>
@@ -47,7 +47,7 @@
                                 <Condition SourceName="Border" Property="IsMouseOver" Value="True"/>
                                 <Condition Property="IsFocused" Value="False"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="BorderBrush" Value="#ff7f7f"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource TextBox.HasError.BorderSoftBrush}"/>
                         </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

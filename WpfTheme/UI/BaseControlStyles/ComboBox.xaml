@@ -72,7 +72,7 @@
                             SnapsToDevicePixels="True"
                             Background="{StaticResource ComboBox.Static.Background}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            BorderBrush="{StaticResource TextControlBorderBrush}">
+                            BorderBrush="{StaticResource TextBox.BorderBrush}">
                         <Border x:Name="splitBorder"
                                 Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}"
                                 SnapsToDevicePixels="True"
@@ -339,14 +339,14 @@
                 <Setter TargetName="PART_EditableTextBox" Property="BorderBrush" Value="{StaticResource ComboBox.MouseOver.Editable.Border}"/>
             </Trigger>
             <Trigger Property="Validation.HasError" Value="True">
-                <Setter Property="BorderBrush" Value="Red"/>
+                <Setter Property="BorderBrush" Value="{StaticResource TextBox.HasError.BorderBrush}"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
     <Style TargetType="{x:Type ComboBox}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
         <Setter Property="Background" Value="{StaticResource ComboBox.Static.Background}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource TextControlBorderBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource TextBox.BorderBrush}"/>
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>

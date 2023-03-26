@@ -49,6 +49,10 @@
 
     <SolidColorBrush x:Key="ContextMenuBackground"          Color="#F4F4F4"/>
 
-    <SolidColorBrush x:Key="TextControlBorderBrush"             Color="#FFABC1DE"/>
-    <SolidColorBrush x:Key="DisabledTextControlBackgroundBrush" Color="#FFEAF2FB"/>
+    <SolidColorBrush x:Key="TextBox.BorderBrush"              Color="#FFABC1DE"/>
+    <SolidColorBrush x:Key="TextBox.Focused.BorderBrush"      Color="Navy"/>
+    <SolidColorBrush x:Key="TextBox.Hover.BorderBrush"        Color="CornflowerBlue"/>
+    <SolidColorBrush x:Key="TextBox.Disabled.BackgroundBrush" Color="Transparent"/>
+    <SolidColorBrush x:Key="TextBox.HasError.BorderBrush"     Color="Red"/>
+    <SolidColorBrush x:Key="TextBox.HasError.BorderSoftBrush" Color="#ff7f7f"/>
 </ResourceDictionary>
