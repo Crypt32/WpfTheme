@@ -4,6 +4,6 @@
         <ResourceDictionary Source="../Brushes/DefaultColorTheme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     <Style TargetType="{x:Type ToolBarTray}">
-        <Setter Property="Background" Value="{StaticResource MenuBackgroundNormal}"/>
+        <Setter Property="Background" Value="{StaticResource ToolBarTray.BgBrush}"/>
     </Style>
 </ResourceDictionary>

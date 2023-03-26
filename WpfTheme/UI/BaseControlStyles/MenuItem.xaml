@@ -58,7 +58,7 @@
                                 <ColumnDefinition MinWidth="22"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Rectangle Fill="Aqua" Grid.Column="0"></Rectangle>
+                            <Rectangle Fill="Aqua" Grid.Column="0"/>
                             <ScrollViewer Grid.Column="0"
                                           Grid.ColumnSpan="2"
                                           x:Name="SubMenuScrollViewer"
@@ -102,7 +102,6 @@
                 <Setter TargetName="Icon" Property="Visibility" Value="Collapsed"/>
             </Trigger>
             <Trigger Property="IsHighlighted" Value="True">
-                <!--<Setter Property="Background" TargetName="templateRoot" Value="#3D26A0DA"/>-->
                 <Setter TargetName="templateRoot" Property="Background" Value="{StaticResource MenuHoverFill}"/>
                 <Setter TargetName="templateRoot" Property="BorderBrush" Value="#FEBC69"/>
             </Trigger>
@@ -112,7 +111,6 @@
             </Trigger>
             <Trigger Property="IsEnabled" Value="True">
                 <Setter TargetName="templateRoot" Property="TextElement.Foreground" Value="Navy"/>
-                <!--<Setter Property="Fill" TargetName="GlyphPanel" Value="#FF707070"/>-->
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter TargetName="templateRoot" Property="TextElement.Foreground" Value="#FF707070"/>
@@ -139,7 +137,6 @@
                     <ColumnDefinition SharedSizeGroup="MenuItemIGTColumnGroup" Width="Auto"/>
                     <ColumnDefinition Width="20"/>
                 </Grid.ColumnDefinitions>
-                <!--<Rectangle Fill="#E8EDED" Grid.Column="0" Margin="-3"/>-->
                 <ContentPresenter Grid.Column="0" x:Name="Icon"
                                   Content="{TemplateBinding Icon}"
                                   ContentSource="Icon"
@@ -198,12 +195,12 @@
             </Trigger>
             <Trigger Property="IsHighlighted" Value="True">
                 <Setter TargetName="templateRoot" Property="Background" Value="{StaticResource SubmenuHover}"/>
-                <Setter TargetName="templateRoot" Property="BorderBrush" Value="#F4AD56"/>
+                <Setter TargetName="templateRoot" Property="BorderBrush" Value="{StaticResource MenuItem.Highlighted.BorderBrush}"/>
                 <Setter TargetName="templateRoot" Property="CornerRadius" Value="2"/>
             </Trigger>
             <Trigger Property="IsPressed" Value="True">
                 <Setter TargetName="templateRoot" Property="Background" Value="{StaticResource HorizontalYellowPressedGradientBrush}"/>
-                <Setter TargetName="templateRoot" Property="BorderBrush" Value="#F4AD56"/>
+                <Setter TargetName="templateRoot" Property="BorderBrush" Value="{StaticResource MenuItem.Pressed.BorderBrush}"/>
                 <Setter TargetName="templateRoot" Property="CornerRadius" Value="2"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
@@ -220,16 +217,4 @@
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
-    <!--<Style x:Key="{x:Type MenuItem}" TargetType="MenuItem">
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="BorderBrush" Value="Transparent"/>
-        <Style.Triggers>
-            <Trigger Property="Role" Value="TopLevelHeader">
-                <Setter Property="Template" Value="{StaticResource MenuItemControlTemplate}"/>
-            </Trigger>
-            <Trigger Property="Role" Value="SubmenuItem">
-                <Setter Property="Template" Value="{StaticResource MenuItemControlSubmenuTemplate}"/>
-            </Trigger>
-        </Style.Triggers>
-    </Style>-->
 </ResourceDictionary>

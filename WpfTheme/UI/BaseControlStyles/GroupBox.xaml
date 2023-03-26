@@ -6,7 +6,7 @@
     </ResourceDictionary.MergedDictionaries>
     
     <Style x:Key="{x:Type GroupBox}" TargetType="{x:Type GroupBox}">
-        <Setter Property="BorderBrush" Value="{StaticResource Brush-CornflowerBlue}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource GroupBox.BorderBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -42,7 +42,7 @@
                                               SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                                 <ContentPresenter.Resources>
                                     <Style TargetType="{x:Type TextBlock}">
-                                        <Setter Property="Foreground" Value="{StaticResource HeaderedControlForeground}"/>
+                                        <Setter Property="Foreground" Value="{StaticResource GroupBox.FgBrush}"/>
                                     </Style>
                                 </ContentPresenter.Resources>
                             </ContentPresenter>

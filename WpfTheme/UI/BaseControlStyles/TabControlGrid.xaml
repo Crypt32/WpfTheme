@@ -8,8 +8,8 @@
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
         <Setter Property="Padding" Value="4,4,4,4"/>
         <Setter Property="BorderThickness" Value="1,0,1,1"/>
-        <Setter Property="BorderBrush" Value="{StaticResource NormalBorderBrush}"/>
-        <Setter Property="Background" Value="{StaticResource MenuBackgroundNormal}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource TabControl.BorderBrush}"/>
+        <Setter Property="Background" Value="{StaticResource Menu.BgBrush}"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Template">
@@ -18,7 +18,7 @@
                     <Grid KeyboardNavigation.TabNavigation="Local"
                           SnapsToDevicePixels="True"
                           ClipToBounds="True"
-                          Background="{StaticResource MenuBackgroundNormal}">
+                          Background="{StaticResource Menu.BgBrush}">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition x:Name="ColumnDefinition0"/>
                             <ColumnDefinition x:Name="ColumnDefinition1" Width="0"/>
@@ -90,11 +90,10 @@
                                 KeyboardNavigation.TabIndex="2">
                             <Border x:Name="TabHeaderBorder"
                                     BorderThickness="0,1,0,0"
-                                    BorderBrush="{StaticResource Brush-CornflowerBlue}">
+                                    BorderBrush="{StaticResource TabItem.BorderBrush}">
                                 <ContentPresenter x:Name="PART_SelectedContentHost"
                                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                                   Margin="{TemplateBinding Padding}"
-                                                  TextElement.Foreground="{StaticResource HeaderedControlForeground}"
                                                   ContentSource="SelectedContent"/>
                             </Border>
                         </Border>

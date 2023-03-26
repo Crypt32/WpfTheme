@@ -283,7 +283,7 @@
                                           Content="{TemplateBinding Header}"
                                           ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}"
                                           FontStretch="{TemplateBinding FontStretch}"
-                                          Foreground="{StaticResource HeaderedControlForeground}"
+                                          Foreground="{StaticResource Expander.Header.FgBrush}"
                                           FocusVisualStyle="{StaticResource ExpanderHeaderFocusVisual}"
                                           FontStyle="{TemplateBinding FontStyle}"
                                           FontFamily="{TemplateBinding FontFamily}"

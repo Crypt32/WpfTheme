@@ -10,7 +10,7 @@
                     <Grid>
                         <Border Name="Border"
                                 Background="{StaticResource HorizontalBlueGradientBrush}"
-                                BorderBrush="{StaticResource Brush-CornflowerBlue}"
+                                BorderBrush="{StaticResource TabItem.BorderBrush}"
                                 BorderThickness="1,1,1,0"
                                 CornerRadius="2,2,0,0">
                             <ContentPresenter x:Name="ContentSite"
@@ -20,7 +20,7 @@
                                               Margin="12,2,12,2">
                                 <ContentPresenter.Resources>
                                     <Style TargetType="{x:Type TextBlock}">
-                                        <Setter Property="Foreground" Value="{StaticResource HeaderedControlForeground}"/>
+                                        <Setter Property="Foreground" Value="{StaticResource TabItem.FgBrush}"/>
                                         <Style.Triggers>
                                             <DataTrigger Binding="{Binding IsSelected, RelativeSource={RelativeSource AncestorType={x:Type TabItem}}}" Value="true">
                                                 <Setter Property="Foreground" Value="{StaticResource Brush-Navy}" />

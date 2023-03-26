@@ -4,9 +4,9 @@
     </ResourceDictionary.MergedDictionaries>
     <Style TargetType="StatusBar">
         <Setter Property="MinHeight" Value="25"/>
-        <Setter Property="Foreground" Value="{StaticResource HeaderedControlForeground}"/>
+        <Setter Property="Foreground" Value="{StaticResource StatusBar.FgBrush}"/>
         <Setter Property="BorderThickness" Value="0,1,0,0"/>
-        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
-        <Setter Property="Background" Value="{StaticResource StatusBarBackgroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource StatusBar.BorderBrush}"/>
+        <Setter Property="Background" Value="{StaticResource StatusBar.Background.Gradient}"/>
     </Style>
 </ResourceDictionary>

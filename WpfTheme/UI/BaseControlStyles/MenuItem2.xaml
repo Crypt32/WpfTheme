@@ -38,8 +38,7 @@
         </Border>
     </ControlTemplate>
 
-    <Style x:Key="{x:Static MenuItem.SeparatorStyleKey}"
-           TargetType="{x:Type Separator}">
+    <Style x:Key="{x:Static MenuItem.SeparatorStyleKey}" TargetType="{x:Type Separator}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Separator}">
@@ -226,7 +225,7 @@
                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                 <Border x:Name="GlyphPanel"
                         Background="#FBF3C5"
-                        BorderBrush="#F4AD56"
+                        BorderBrush="{StaticResource MenuItem.Glyph.BorderBrush}"
                         BorderThickness="1"
                         CornerRadius="4"
                         Margin="1"
@@ -307,7 +306,7 @@
                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                 <Border x:Name="GlyphPanel"
                         Background="#FBF3C5"
-                        BorderBrush="#F4AD56"
+                        BorderBrush="{StaticResource MenuItem.Glyph.BorderBrush}"
                         BorderThickness="1"
                         CornerRadius="4"
                         Margin="1"

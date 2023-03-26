@@ -3,12 +3,13 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../Brushes/DefaultColorTheme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
+    
     <Style TargetType="{x:Type TabControl}">
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
         <Setter Property="Padding" Value="4,4,4,4"/>
         <Setter Property="BorderThickness" Value="1,0,1,1"/>
-        <Setter Property="BorderBrush" Value="{StaticResource NormalBorderBrush}"/>
-        <Setter Property="Background" Value="{StaticResource MenuBackgroundNormal}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource TabControl.BorderBrush}"/>
+        <Setter Property="Background" Value="{StaticResource TabControl.BgBrush}"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Template">
@@ -16,14 +17,13 @@
                 <ControlTemplate TargetType="{x:Type TabControl}">
                     <DockPanel KeyboardNavigation.TabNavigation="Local"
                                SnapsToDevicePixels="True"
-                               ClipToBounds="True"
-                               Background="{StaticResource MenuBackgroundNormal}">
+                               ClipToBounds="True">
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualState x:Name="Disabled">
                                     <Storyboard>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
-                                                                      Storyboard.TargetProperty="(Border.BorderBrush).                                                                      (SolidColorBrush.Color)">
+                                                                      Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)">
                                             <EasingColorKeyFrame KeyTime="0" Value="#FFAAAAAA" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
@@ -45,7 +45,7 @@
                                 KeyboardNavigation.TabIndex="2">
                             <Border x:Name="TabHeaderBorder"
                                     BorderThickness="0,1,0,0"
-                                    BorderBrush="{StaticResource Brush-CornflowerBlue}">
+                                    BorderBrush="{StaticResource TabControl.Header.BorderBrush}">
                                 <ContentPresenter x:Name="PART_SelectedContentHost"
                                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                                   Margin="{TemplateBinding Padding}"

@@ -230,7 +230,7 @@
             <GradientStop Color="#00000000" Offset="1"/>
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="StatusBarBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+    <LinearGradientBrush x:Key="StatusBar.Background.Gradient" StartPoint="0,0" EndPoint="0,1">
         <LinearGradientBrush.GradientStops>
             <GradientStop Color="#FFD7E6F9" Offset="0" />
             <GradientStop Color="#FFC7DCF8" Offset="0.33" />

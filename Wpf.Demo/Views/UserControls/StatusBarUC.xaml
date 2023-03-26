@@ -9,5 +9,9 @@
         <StatusBarItem>
             <TextBlock Text="Version: 1.0.0.0"/>
         </StatusBarItem>
+        <Separator/>
+        <StatusBarItem>
+            <TextBlock Text="Text after separator"/>
+        </StatusBarItem>
     </StatusBar>
 </UserControl>

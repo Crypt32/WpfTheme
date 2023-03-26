@@ -21,6 +21,9 @@
                 </MenuItem.Icon>
             </MenuItem>
             <Separator/>
+            <MenuItem Header="Checked" IsChecked="True"/>
+            <MenuItem Header="Checked disabled" IsChecked="True" IsEnabled="False"/>
+            <Separator/>
             <MenuItem Header="_Next">
                 <MenuItem Header="Third level"/>
                 <MenuItem Header="Third level"/>

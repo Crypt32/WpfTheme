@@ -28,7 +28,7 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Background" Value="{StaticResource TextBox.Disabled.BackgroundBrush}"/>
+                            <Setter Property="Background" Value="{StaticResource TextBox.Disabled.BgBrush}"/>
                         </Trigger>
                         <Trigger SourceName="Border" Property="IsMouseOver" Value="True">
                             <Setter Property="BorderBrush" Value="{StaticResource TextBox.Hover.BorderBrush}"/>

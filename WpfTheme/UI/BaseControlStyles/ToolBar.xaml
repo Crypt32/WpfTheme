@@ -21,7 +21,7 @@
         </Border>
         <ControlTemplate.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="BorderBrush" TargetName="Bd" Value="#F4AD56"/>
+                <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ToolBar.Hover.BorderBrush}"/>
                 <Setter Property="Background" TargetName="Bd" Value="{StaticResource SubmenuHover}"/>
             </Trigger>
             <Trigger Property="IsKeyboardFocused" Value="True">
@@ -55,7 +55,7 @@
         </Border>
         <ControlTemplate.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="BorderBrush" TargetName="Bd" Value="#F4AD56"/>
+                <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ToolBar.Hover.BorderBrush}"/>
                 <Setter Property="Background" TargetName="Bd" Value="{StaticResource SubmenuHover}"/>
             </Trigger>
             <Trigger Property="IsKeyboardFocused" Value="True">
@@ -63,14 +63,14 @@
                 <Setter Property="Background" TargetName="Bd" Value="{StaticResource HorizontalYellowHoverGradient}"/>
             </Trigger>
             <Trigger Property="IsPressed" Value="True">
-                <Setter Property="BorderBrush" TargetName="Bd" Value="#F4AD56"/>
+                <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ToolBar.Pressed.BorderBrush}"/>
                 <Setter Property="Background" TargetName="Bd" Value="{StaticResource HorizontalYellowHoverGradient}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Foreground" Value="{StaticResource {x:Static SystemColors.GrayTextBrushKey}}"/>
             </Trigger>
             <Trigger Property="IsChecked" Value="True">
-                <Setter Property="BorderBrush" TargetName="Bd" Value="#F4AD56"/>
+                <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ToolBar.Checked.BorderBrush}"/>
                 <Setter Property="Background" TargetName="Bd" Value="{StaticResource HorizontalYellowHoverGradient}"/>
             </Trigger>
         </ControlTemplate.Triggers>
@@ -119,16 +119,16 @@
                                                     </Border>
                                                     <ControlTemplate.Triggers>
                                                         <Trigger Property="IsMouseOver" Value="True">
-                                                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource ToolBarOverflowHover}"/>
+                                                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource ToolBar.Overflow.Hover.BgBrush}"/>
                                                         </Trigger>
                                                         <Trigger Property="IsKeyboardFocused" Value="True">
-                                                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource ToolBarOverflowHover}"/>
+                                                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource ToolBar.Overflow.Hover.BgBrush}"/>
                                                         </Trigger>
                                                         <Trigger Property="IsEnabled" Value="False">
                                                             <Setter Property="Foreground" Value="#FF6D6D6D"/>
                                                         </Trigger>
                                                         <Trigger Property="IsPressed" Value="True">
-                                                            <Setter TargetName="Bd" Property="Background" Value="{StaticResource ToolBarOverflowPressed}"/>
+                                                            <Setter TargetName="Bd" Property="Background" Value="{StaticResource ToolBar.Overflow.Pressed.BgBrush}"/>
                                                         </Trigger>
                                                     </ControlTemplate.Triggers>
                                                 </ControlTemplate>
@@ -169,7 +169,7 @@
                         <Border x:Name="BottomBorder"
                                 CornerRadius="3"
                                 BorderThickness="0,0,0,1"
-                                BorderBrush="{StaticResource ToolbarBottomBorder}">
+                                BorderBrush="{StaticResource Toolbar.BottomBorderBrush}">
                             <Border x:Name="MainPanelBorder"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness="1,1,1,0"
