@@ -14,18 +14,10 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TabControl}">
-                    <Grid KeyboardNavigation.TabNavigation="Local"
-                          SnapsToDevicePixels="True"
-                          ClipToBounds="True"
-                          Background="{StaticResource MenuBackgroundNormal}">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition x:Name="ColumnDefinition0"/>
-                            <ColumnDefinition x:Name="ColumnDefinition1" Width="0"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition x:Name="RowDefinition0" Height="Auto"/>
-                            <RowDefinition x:Name="RowDefinition1" Height="*"/>
-                        </Grid.RowDefinitions>
+                    <DockPanel KeyboardNavigation.TabNavigation="Local"
+                               SnapsToDevicePixels="True"
+                               ClipToBounds="True"
+                               Background="{StaticResource MenuBackgroundNormal}">
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualState x:Name="Disabled">
@@ -39,46 +31,12 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <TabPanel x:Name="HeaderPanel"
-                                  Grid.Column="0"
-                                  Grid.Row="0"
+                                  DockPanel.Dock="Top"
                                   Panel.ZIndex ="1" 
                                   KeyboardNavigation.TabIndex="1"
                                   Margin="2,2,2,-1"
-                                  IsItemsHost="True">
-                            <!--<TabPanel.Triggers>
-                                <MultiDataTrigger>
-                                    <MultiDataTrigger.Conditions>
-                                        <Condition Property="IsSelected" Value="True"/>
-                                        <Condition Property="TabStripPlacement" Value="Top"/>
-                                    </MultiDataTrigger.Conditions>
-                                    <Setter Property="Margin" Value="0,0,0,-5"/>
-                                </MultiDataTrigger>
-                                <MultiDataTrigger>
-                                    <MultiDataTrigger.Conditions>
-                                        <Condition Property="IsSelected" Value="True"/>
-                                        <Condition Property="TabStripPlacement" Value="Bottom"/>
-                                    </MultiDataTrigger.Conditions>
-                                    <Setter Property="Margin" Value="0,-5,0,0"/>
-                                </MultiDataTrigger>
-                                <MultiDataTrigger>
-                                    <MultiDataTrigger.Conditions>
-                                        <Condition Property="IsSelected" Value="True"/>
-                                        <Condition Property="TabStripPlacement" Value="Left"/>
-                                    </MultiDataTrigger.Conditions>
-                                    <Setter Property="Margin" Value="0,0,-5,0"/>
-                                </MultiDataTrigger>
-                                <MultiDataTrigger>
-                                    <MultiDataTrigger.Conditions>
-                                        <Condition Property="IsSelected" Value="True"/>
-                                        <Condition Property="TabStripPlacement" Value="Right"/>
-                                    </MultiDataTrigger.Conditions>
-                                    <Setter Property="Margin" Value="-5,0,0,0"/>
-                                </MultiDataTrigger>
-                            </TabPanel.Triggers>-->
-                        </TabPanel>
+                                  IsItemsHost="True"/>
                         <Border x:Name="ContentPanel"
-                                Grid.Column="0"
-                                Grid.Row="1"
                                 Background="{TemplateBinding Background}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
@@ -94,42 +52,25 @@
                                                   ContentSource="SelectedContent"/>
                             </Border>
                         </Border>
-                    </Grid>
+                    </DockPanel>
                     <ControlTemplate.Triggers>
                         <Trigger Property="TabStripPlacement" Value="Bottom">
                             <Setter Property="BorderThickness" Value="1,1,1,0"/>
                             <Setter TargetName="TabHeaderBorder" Property="BorderThickness" Value="0,0,0,1"/>
-                            <Setter TargetName="HeaderPanel" Property="Grid.Row" Value="1"/>
                             <Setter TargetName="HeaderPanel" Property="Margin" Value="2,-1,2,2"/>
-                            <Setter TargetName="ContentPanel" Property="Grid.Row" Value="0"/>
-                            <Setter TargetName="RowDefinition0" Property="Height" Value="*"/>
-                            <Setter TargetName="RowDefinition1" Property="Height" Value="Auto"/>
+                            <Setter TargetName="HeaderPanel" Property="DockPanel.Dock" Value="Bottom"/>
                         </Trigger>
                         <Trigger Property="TabStripPlacement" Value="Left">
                             <Setter Property="BorderThickness" Value="0,1,1,1"/>
                             <Setter TargetName="TabHeaderBorder" Property="BorderThickness" Value="1,0,0,0"/>
-                            <Setter TargetName="HeaderPanel" Property="Grid.Row" Value="0"/>
                             <Setter TargetName="HeaderPanel" Property="Margin" Value="2,2,-1,2"/>
-                            <Setter TargetName="ContentPanel" Property="Grid.Row" Value="0"/>
-                            <Setter TargetName="HeaderPanel" Property="Grid.Column" Value="0"/>
-                            <Setter TargetName="ContentPanel" Property="Grid.Column" Value="1"/>
-                            <Setter TargetName="ColumnDefinition0" Property="Width" Value="Auto"/>
-                            <Setter TargetName="ColumnDefinition1" Property="Width" Value="*"/>
-                            <Setter TargetName="RowDefinition0" Property="Height" Value="*"/>
-                            <Setter TargetName="RowDefinition1" Property="Height" Value="0"/>
+                            <Setter TargetName="HeaderPanel" Property="DockPanel.Dock" Value="Left"/>
                         </Trigger>
                         <Trigger Property="TabStripPlacement" Value="Right">
                             <Setter Property="BorderThickness" Value="1,1,0,1"/>
                             <Setter TargetName="TabHeaderBorder" Property="BorderThickness" Value="0,0,1,0"/>
-                            <Setter TargetName="HeaderPanel" Property="Grid.Row" Value="0"/>
-                            <Setter TargetName="ContentPanel" Property="Grid.Row" Value="0"/>
                             <Setter TargetName="HeaderPanel" Property="Margin" Value="-1,2,2,2"/>
-                            <Setter TargetName="HeaderPanel" Property="Grid.Column" Value="1"/>
-                            <Setter TargetName="ContentPanel" Property="Grid.Column" Value="0"/>
-                            <Setter TargetName="ColumnDefinition0" Property="Width" Value="*"/>
-                            <Setter TargetName="ColumnDefinition1" Property="Width" Value="Auto"/>
-                            <Setter TargetName="RowDefinition0" Property="Height" Value="*"/>
-                            <Setter TargetName="RowDefinition1" Property="Height" Value="0"/>
+                            <Setter TargetName="HeaderPanel" Property="DockPanel.Dock" Value="Right"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
