@@ -179,11 +179,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="UI\BaseControlStyles\MenuItem.xaml">
+    <Page Include="UI\BaseControlStyles\MenuItemOld.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="UI\BaseControlStyles\MenuItem2.xaml">
+    <Page Include="UI\BaseControlStyles\MenuItem.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
