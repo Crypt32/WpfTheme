@@ -39,7 +39,13 @@
                                 Grid.Column="1">
                             <ContentPresenter ContentSource="Header" 
                                               RecognizesAccessKey="True" 
-                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                                <ContentPresenter.Resources>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Foreground" Value="{StaticResource HeaderedControlForeground}"/>
+                                    </Style>
+                                </ContentPresenter.Resources>
+                            </ContentPresenter>
                         </Border>
                         <ContentPresenter Grid.Row="2"
                                           Grid.Column="1"
