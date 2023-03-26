@@ -311,13 +311,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="{x:Static ToolBar.ButtonStyleKey}" TargetType="Button" BasedOn="{StaticResource ToolBarButtonStyle}">
-        <!--<Setter Property="Template" Value="{StaticResource ToolbarButtonTemplate}"/>-->
-    </Style>
-    <Style x:Key="{x:Static ToolBar.ToggleButtonStyleKey}" TargetType="ToggleButton" BasedOn="{StaticResource ToolBarButtonStyle}">
-        <!--<Setter Property="Template" Value="{StaticResource ToolbarToggleButtonTemplate}"/>-->
-    </Style>
-    <Style x:Key="{x:Static ToolBar.RadioButtonStyleKey}" TargetType="RadioButton" BasedOn="{StaticResource ToolBarButtonStyle}">
-        <!--<Setter Property="Template" Value="{StaticResource ToolbarToggleButtonTemplate}"/>-->
-    </Style>
+    <Style x:Key="{x:Static ToolBar.ButtonStyleKey}" TargetType="Button" BasedOn="{StaticResource ToolBarButtonStyle}"/>
+    <Style x:Key="{x:Static ToolBar.ToggleButtonStyleKey}" TargetType="ToggleButton" BasedOn="{StaticResource ToolBarButtonStyle}"/>
+    <Style x:Key="{x:Static ToolBar.RadioButtonStyleKey}" TargetType="RadioButton" BasedOn="{StaticResource ToolBarButtonStyle}"/>
 </ResourceDictionary>
