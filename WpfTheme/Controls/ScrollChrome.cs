@@ -399,8 +399,10 @@ namespace SysadminsLV.WPF.OfficeTheme.Controls {
 
         Brush Fill {
             get {
-                if (!IsEnabled)
+                if (!IsEnabled) {
                     return RenderDisabledFill;
+                }
+
                 ScrollGlyph scrollGlyph = ScrollGlyph;
                 if (scrollGlyph == ScrollGlyph.VerticalGripper) {
                     if (RenderPressed) { return RenderPressedVerticalFill; }
@@ -880,8 +882,10 @@ namespace SysadminsLV.WPF.OfficeTheme.Controls {
             Int32 num3 = 0;
             while (num3 < 8) {
                 dc.DrawRectangle(brush, null, new Rect(num2 + num3, y, 1.0, height));
-                if (glyphShadow != null)
+                if (glyphShadow != null) {
                     dc.DrawRectangle(glyphShadow, null, new Rect(num2 + num3 + 1.0, y + 1.0, 1.0, height));
+                }
+
                 num3 += 2;
             }
         }
