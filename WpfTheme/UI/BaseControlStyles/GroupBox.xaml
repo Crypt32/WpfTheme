@@ -2,9 +2,10 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../Brushes/DefaultColorTheme.xaml"/>
-        <ResourceDictionary Source="../NamedStyles/BorderGapMaskConverter.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-    
+
+    <BorderGapMaskConverter x:Key="BorderGapMaskConverter"/>
+
     <Style x:Key="{x:Type GroupBox}" TargetType="{x:Type GroupBox}">
         <Setter Property="BorderBrush" Value="{StaticResource GroupBox.BorderBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
