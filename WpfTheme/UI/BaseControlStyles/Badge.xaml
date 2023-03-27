@@ -12,16 +12,14 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Label">
-                    <DockPanel HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
-                        <Border x:Name="bBorder"
-                                SnapsToDevicePixels="True"
-                                BorderThickness="1"
-                                CornerRadius="4"
-                                Padding="3,0,3,1">
-                            <ContentPresenter RecognizesAccessKey="True" />
-                        </Border>
-                    </DockPanel>
+                    <Border x:Name="bBorder"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            BorderThickness="1"
+                            CornerRadius="4"
+                            Padding="3,0,3,1">
+                        <ContentPresenter RecognizesAccessKey="True" />
+                    </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Opacity" Value=".8"/>

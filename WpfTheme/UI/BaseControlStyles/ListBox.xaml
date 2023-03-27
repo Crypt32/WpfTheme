@@ -21,7 +21,6 @@
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            SnapsToDevicePixels="true"
                             Padding="1">
                         <ScrollViewer Padding="{TemplateBinding Padding}"
                                       Focusable="false">

@@ -1,13 +1,14 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Brushes/DefaultColorTheme.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/Border.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/Rectangle.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/Badge.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/Button.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/CheckBox.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/ClosableTabControl.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/ClosableTabItem.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/ComboBox.xaml"/>
-        
         <ResourceDictionary Source="BaseControlStyles/DataGrid.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/Expander.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/GridSplitter.xaml"/>

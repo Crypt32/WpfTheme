@@ -162,7 +162,6 @@
                                                                 SnapsToDevicePixels="True">
                                     <Border Name="SubmenuBorder"
                                             Margin="1"
-                                            SnapsToDevicePixels="True"
                                             BorderBrush="{StaticResource LineButtonBorderBrush}"
                                             Background="{StaticResource TabItemMenuBackcolor}"
                                             CornerRadius="1"
@@ -269,8 +268,7 @@
                                          SnapsToDevicePixels="True"
                                          Name="svTP"
                                          HorizontalAlignment="Stretch" 
-                                         VerticalAlignment="Stretch"
-                                         >
+                                         VerticalAlignment="Stretch">
                                     <!--
                                     This is the area in which TabItems (the strips) will be drawn.
 

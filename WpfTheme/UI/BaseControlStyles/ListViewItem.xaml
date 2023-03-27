@@ -31,8 +31,7 @@
                     <Border BorderThickness="{TemplateBinding BorderThickness}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             Background="{TemplateBinding Background}"
-                            CornerRadius="2"
-                            SnapsToDevicePixels="true">
+                            CornerRadius="2">
                         <Border Name="InnerBorder"
                                 CornerRadius="1"
                                 BorderThickness="1">

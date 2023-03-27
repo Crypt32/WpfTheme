@@ -12,7 +12,6 @@
                     <Rectangle StrokeDashArray="1 2"
                                StrokeThickness="1"
                                Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"
-                               SnapsToDevicePixels="True"
                                Margin="2"/>
                 </ControlTemplate>
             </Setter.Value>
@@ -69,13 +68,11 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
                     <Border x:Name="templateRoot"
-                            SnapsToDevicePixels="True"
                             Background="{StaticResource ComboBox.Static.Background}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             BorderBrush="{StaticResource TextBox.BorderBrush}">
                         <Border x:Name="splitBorder"
                                 Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}"
-                                SnapsToDevicePixels="True"
                                 Margin="0"
                                 HorizontalAlignment="Right"
                                 BorderThickness="1"

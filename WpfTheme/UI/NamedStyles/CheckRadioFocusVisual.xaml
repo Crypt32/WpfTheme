@@ -7,8 +7,7 @@
                     <Rectangle Margin="14,0,0,0"
                                StrokeThickness="1"
                                Stroke="Black"
-                               StrokeDashArray="1 2"
-                               SnapsToDevicePixels="true"/>
+                               StrokeDashArray="1 2"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

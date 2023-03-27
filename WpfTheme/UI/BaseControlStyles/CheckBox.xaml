@@ -4,9 +4,20 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../Brushes/DefaultColorTheme.xaml"/>
         <ResourceDictionary Source="../NamedStyles/CheckRadioFocusVisual.xaml"/>
-        <ResourceDictionary Source="../NamedStyles/EmptyCheckBoxFocusVisual.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-    
+
+    <Style x:Key="EmptyCheckBoxFocusVisual" TargetType="CheckBox">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle Margin="1"
+                               StrokeThickness="1"
+                               Stroke="Black"
+                               StrokeDashArray="1 2"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
     <Style TargetType="{x:Type CheckBox}">
         <Setter Property="Foreground" Value="Navy"/>
         <Setter Property="Background" Value="{StaticResource CheckBox.Fill}"/>
