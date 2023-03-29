@@ -5,7 +5,7 @@
         <ResourceDictionary Source="../Brushes/DefaultColorTheme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="{x:Type ProgressBar}" TargetType="{x:Type ProgressBar}">
+    <Style x:Key="PbStyle" TargetType="{x:Type ProgressBar}">
         <Setter Property="Foreground" Value="#01D328"/>
         <Setter Property="Background" Value="{StaticResource ProgressBarBackground}"/>
         <Setter Property="BorderBrush" Value="{StaticResource ProgressBarBorderBrush}"/>
@@ -14,38 +14,28 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ProgressBar}">
                     <Grid Name="Background" SnapsToDevicePixels="true">
-                        <Rectangle Fill="{TemplateBinding Background}"
-                                   RadiusX="2"
-                                   RadiusY="2"/>
+                        <!--sets base background to progressbar control-->
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="2"/>
+                        <!--adds glassy background to unfilled progressbar area-->
                         <Border Background="{StaticResource ProgressBarGlassyHighlight}"
                                 Margin="1"
                                 CornerRadius="2"/>
+                        <!--a tiny 1pt semi-white border inside outer border to make it more glassy-->
                         <Border BorderBrush="#80FFFFFF"
                                 Background="{StaticResource ProgressBarTopHighlight}"
                                 BorderThickness="1,0,1,1"
                                 Margin="1"/>
-                        <Rectangle Name="PART_Track" Margin="1"/>
+                        <!--actual progressbar fill track-->
+                        <Border Name="PART_Track" Margin="1"/>
 
                         <Decorator x:Name="PART_Indicator"
                                    HorizontalAlignment="Left"
                                    Margin="1">
                             <Grid Name="Foreground">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition MaxWidth="15"/>
-                                    <ColumnDefinition Width="0.1*"/>
-                                    <ColumnDefinition MaxWidth="15"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition />
-                                    <RowDefinition />
-                                </Grid.RowDefinitions>
-                                <Rectangle x:Name="Indicator"
-                                           Grid.RowSpan="2"
-                                           Grid.ColumnSpan="3"
-                                           Fill="{TemplateBinding Foreground}"/>
+                                <Border x:Name="Indicator"
+                                        Background="{TemplateBinding Foreground}"/>
                                 <Rectangle x:Name="Animation"
-                                           Grid.RowSpan="2"
-                                           Grid.ColumnSpan="3"
                                            Fill="{TemplateBinding Foreground}">
                                     <Rectangle.OpacityMask>
                                         <MultiBinding>
@@ -60,42 +50,15 @@
                                         </MultiBinding>
                                     </Rectangle.OpacityMask>
                                 </Rectangle>
-                                <Rectangle x:Name="LeftDark"
-                                           Grid.RowSpan="2"
-                                           Fill="{StaticResource ProgressBarIndicatorDarkEdgeLeft}"
-                                           RadiusX="1"
-                                           RadiusY="1"
-                                           Margin="1,1,0,1"/>
-                                <Rectangle x:Name="RightDark"
-                                           Grid.RowSpan="2"
-                                           Grid.Column="2"
-                                           RadiusX="1"
-                                           RadiusY="1"
-                                           Fill="{StaticResource ProgressBarIndicatorDarkEdgeRight}"
-                                           Margin="0,1,1,1"/>
-                                <Rectangle x:Name="LeftLight"
-                                           Grid.Column="0"
-                                           Grid.Row="2"
-                                           Fill="{StaticResource ProgressBarIndicatorLightingEffectLeft}"/>
-                                <Rectangle x:Name="CenterLight"
-                                           Grid.Column="1"
-                                           Grid.Row="2"
-                                           Fill="{StaticResource ProgressBarIndicatorLightingEffect}"/>
-                                <Rectangle x:Name="RightLight"
-                                           Grid.Column="2"
-                                           Grid.Row="2"
-                                           Fill="{StaticResource ProgressBarIndicatorLightingEffectRight}"/>
+                                <!--sets progressbar's top half glassy effect-->
                                 <Border x:Name="Highlight1"
-                                        Grid.RowSpan="2"
-                                        Grid.ColumnSpan="3"
                                         Background="{StaticResource ProgressBarIndicatorGlassyHighlight}"/>
+                                <!--sets progressbar's bottom half glassy effect-->
                                 <Border x:Name="Highlight2"
-                                        Grid.RowSpan="2" 
-                                        Grid.ColumnSpan="3"
                                         Background="{StaticResource ProgressBarTopHighlight}"/>
                             </Grid>
                         </Decorator>
-
+                        <!--renders actual border around progressbar-->
                         <Border BorderThickness="{TemplateBinding BorderThickness}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 CornerRadius="2"/>
@@ -125,15 +88,13 @@
                         </Trigger>
 
                         <Trigger Property="IsIndeterminate" Value="true">
-                            <Setter TargetName="LeftDark" Property="Visibility" Value="Collapsed"/>
-                            <Setter TargetName="RightDark" Property="Visibility" Value="Collapsed"/>
-                            <Setter TargetName="LeftLight" Property="Visibility" Value="Collapsed"/>
-                            <Setter TargetName="CenterLight" Property="Visibility" Value="Collapsed"/>
-                            <Setter TargetName="RightLight" Property="Visibility" Value="Collapsed"/>
                             <Setter TargetName="Indicator" Property="Visibility" Value="Collapsed"/>
                         </Trigger>
                         <Trigger Property="IsIndeterminate" Value="false">
                             <Setter TargetName="Animation" Property="Fill" Value="#80B5FFA9"/>
+                        </Trigger>
+                        <Trigger Property="Validation.HasError" Value="True">
+                            <Setter Property="Background" Value="Red"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
