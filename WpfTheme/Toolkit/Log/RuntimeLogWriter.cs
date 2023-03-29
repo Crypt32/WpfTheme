@@ -34,7 +34,7 @@ namespace SysadminsLV.WPF.OfficeTheme.Toolkit.Log {
             write(line);
             Exception ex = e;
             do {
-                line = $"\tError message: {ex.Message}\r\n\tStack trace:\r\n{ex.StackTrace.Replace("   ", "\t\t")}";
+                line = $"\tError message: {ex.Message}\r\n\tStack trace:\r\n{ex.StackTrace?.Replace("   ", "\t\t")}";
                 write(line);
                 ex = ex.InnerException;
             } while (ex != null);
