@@ -5,6 +5,8 @@
     <Color x:Key="UnfilledColor" A="0"   B="155" R="155" G="155"/>
 
     <Style TargetType="controls:LoadingSpinner">
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Visibility" Value="Collapsed"/>
         <Setter Property="Background">
             <Setter.Value>
                 <SolidColorBrush Color="White" Opacity="0.5"/>
@@ -125,5 +127,11 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsShown" Value="True">
+                <Setter Property="Visibility" Value="Visible"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 </ResourceDictionary>
