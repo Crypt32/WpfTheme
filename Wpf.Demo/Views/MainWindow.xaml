@@ -54,6 +54,9 @@
             <TabItem Header="Button">
                 <uc:ButtonUC/>
             </TabItem>
+            <TabItem Header="ProgressBar">
+                <uc:ProgressBarUC/>
+            </TabItem>
         </TabControl>
     </DockPanel>
 </Window>

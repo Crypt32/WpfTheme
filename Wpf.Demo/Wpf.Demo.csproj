@@ -97,6 +97,9 @@
     <Compile Include="Views\UserControls\MenuUC.xaml.cs">
       <DependentUpon>MenuUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\UserControls\ProgressBarUC.xaml.cs">
+      <DependentUpon>ProgressBarUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserControls\RadioUC.xaml.cs">
       <DependentUpon>RadioUC.xaml</DependentUpon>
     </Compile>
@@ -160,6 +163,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\UserControls\MenuUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\ProgressBarUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
