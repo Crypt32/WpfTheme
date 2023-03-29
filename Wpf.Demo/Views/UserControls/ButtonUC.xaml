@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:behaviors="clr-namespace:SysadminsLV.WPF.OfficeTheme.Toolkit.Behaviors;assembly=Wpf.OfficeTheme"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
@@ -11,7 +12,7 @@
             <Setter Property="Margin" Value="5,0,0,0"/>
         </Style>
     </UserControl.Resources>
-    <StackPanel>
+    <StackPanel behaviors:MarginSetter.Margin="3">
         <Button Content="Button"/>
         <Button Content="Disabled"
                 IsEnabled="False"/>
