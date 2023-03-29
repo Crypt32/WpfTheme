@@ -18,14 +18,13 @@
                     <Border BorderThickness="{TemplateBinding BorderThickness}"
                             BorderBrush="{TemplateBinding BorderBrush}">
                         <DockPanel>
-                            <Grid DockPanel.Dock="Top">
-                                <!--Border under header-->
-                                <Border BorderThickness="0,0,0,1"
-                                        BorderBrush="{StaticResource HeaderedControl.BorderBrush}"
-                                        Background="{StaticResource HorizontalBlueGradientBrush}">
-                                    <ContentPresenter ContentSource="Header" Margin="5,3"/>
-                                </Border>
-                            </Grid>
+                            <!--Border under header-->
+                            <Border DockPanel.Dock="Top"
+                                    BorderThickness="0,0,0,1"
+                                    BorderBrush="{StaticResource HeaderedControl.BorderBrush}"
+                                    Background="{StaticResource HorizontalBlueGradientBrush}">
+                                <ContentPresenter ContentSource="Header" Margin="5,3"/>
+                            </Border>
                             <Grid>
                                 <Border Background="{TemplateBinding Background}"/>
                                 <ContentPresenter ContentSource="Content"
