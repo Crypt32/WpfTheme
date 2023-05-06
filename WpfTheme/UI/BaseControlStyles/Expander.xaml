@@ -36,7 +36,7 @@
     <Style x:Key="ExpanderHeaderBorder" TargetType="Border" BasedOn="{StaticResource {x:Type Border}}">
         <Setter Property="Background" Value="#D5E7FE"/>
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="BorderBrush" Value="{StaticResource PanelBorderBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Expander.Header.BorderBrush}"/>
     </Style>
     <Style x:Key="ExpanderPath" TargetType="Path">
         <Setter Property="HorizontalAlignment" Value="Center"/>

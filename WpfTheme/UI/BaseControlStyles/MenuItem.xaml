@@ -100,11 +100,11 @@
             </Trigger>
             <Trigger Property="IsPressed" Value="True">
                 <Setter TargetName="Bg" Property="Fill" Value="{StaticResource MenuPressedFill}"/>
-                <Setter TargetName="Bg" Property="Stroke" Value="#6592CE"/>
+                <Setter TargetName="Bg" Property="Stroke" Value="{StaticResource PanelBorderBrush}"/>
             </Trigger>
             <Trigger Property="IsSubmenuOpen" Value="True">
                 <Setter TargetName="Bg" Property="Fill" Value="{StaticResource MenuPressedFill}"/>
-                <Setter TargetName="Bg" Property="Stroke" Value="#6592CE"/>
+                <Setter TargetName="Bg" Property="Stroke" Value="{StaticResource PanelBorderBrush}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Foreground" Value="#FF9A9A9A"/>

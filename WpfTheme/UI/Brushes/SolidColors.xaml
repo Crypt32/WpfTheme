@@ -2,10 +2,11 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <!--Colors-->
     <!--<Color x:Key="Panel.BgColor">   #FFD8E3F0</Color>-->
-    <Color x:Key="Panel.BgColor">   #FFE2EEFE</Color>
+    <Color x:Key="Panel.BgColor">          #FFE2EEFE</Color>
     <Color x:Key="Menu.BgColor">           #BFDBFF</Color>
     <Color x:Key="Menu.Active.BorderColor">#f4ad56</Color>
-    <Color x:Key="Border.Color">           CornflowerBlue</Color>
+    <!--<Color x:Key="Border.Color">           CornflowerBlue</Color>-->
+    <Color x:Key="Border.Color">           #FF6592CE</Color>
     <Color x:Key="Border.LightColor">      #add1ff</Color>
     <Color x:Key="Header.FgColor">         #FF15429F</Color>
     <!-- Solid Brushes -->
@@ -35,7 +36,8 @@
     <!--Panels-->
     <SolidColorBrush x:Key="PanelBackgroundBrush"  Color="{StaticResource Panel.BgColor}"/>
     <SolidColorBrush x:Key="PanelHeaderBackground" Color="#FFB3D6E6"/>
-    <SolidColorBrush x:Key="PanelBorderBrush"      Color="#FF567DB0"/>
+    <!--<SolidColorBrush x:Key="PanelBorderBrush"      Color="#FF567DB0"/>-->
+    <SolidColorBrush x:Key="PanelBorderBrush"      Color="#FF6592CE"/>
 
     <!--CheckBox, RadioButton-->
     <SolidColorBrush x:Key="CheckBox.Fill"   Color="#F4F4F4"/>
@@ -45,7 +47,8 @@
     <SolidColorBrush x:Key="ContextMenu.BgBrush" Color="#F4F4F4"/>
 
     <!--Expander-->
-    <SolidColorBrush x:Key="Expander.Header.FgBrush" Color="{StaticResource Header.FgColor}"/>
+    <SolidColorBrush x:Key="Expander.Header.FgBrush"     Color="{StaticResource Header.FgColor}"/>
+    <SolidColorBrush x:Key="Expander.Header.BorderBrush" Color="{StaticResource Border.Color}"/>
     
     <!--GroupBox-->
     <SolidColorBrush x:Key="GroupBox.FgBrush"     Color="{StaticResource Header.FgColor}"/>
