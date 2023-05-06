@@ -43,7 +43,8 @@
                                 <Rectangle Name="UpperHighlight"
                                            Visibility="Collapsed"
                                            Fill="#75FFFFFF"/>
-                                <GridViewRowPresenter Grid.RowSpan="2"
+                                <GridViewRowPresenter Grid.Row="0"
+                                                      Grid.RowSpan="2"
                                                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                                       SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                             </Grid>

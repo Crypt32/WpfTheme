@@ -1,39 +1,37 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../Brushes/DefaultColorTheme.xaml"/>
         <ResourceDictionary Source="GridView/GridViewColumnHeader.xaml"/>
+        <ResourceDictionary Source="GridView/GridViewScrollViewerTemplate.xaml"/>
         <ResourceDictionary Source="ListViewItem.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-
-    <Style x:Key="{x:Static GridView.GridViewStyleKey}" TargetType="{x:Type ListView}">
+    
+    <Style TargetType="{x:Type ListView}">
         <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource ListBorder}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource List.Border}"/>
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Foreground" Value="#FF042271"/>
+        <Setter Property="Foreground" Value="{StaticResource List.FgBrush}"/>
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
-        <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+        <Setter Property="ScrollViewer.CanContentScroll" Value="False"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ListView}">
-                    <themes:ListBoxChrome Name="Bd"
-                                          BorderThickness="{TemplateBinding BorderThickness}"
-                                          BorderBrush="{TemplateBinding BorderBrush}"
-                                          Background="{TemplateBinding Background}"
-                                          RenderMouseOver="{TemplateBinding IsMouseOver}"
-                                          RenderFocused="{TemplateBinding IsKeyboardFocusWithin}"
-                                          SnapsToDevicePixels="true">
-                        <ScrollViewer Style="{DynamicResource {x:Static GridView.GridViewScrollViewerStyleKey}}"
+                    <Border Name="Bd"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            Background="{TemplateBinding Background}">
+                        <ScrollViewer Template="{StaticResource GridViewScrollViewerTemplate}"
                                       Padding="{TemplateBinding Padding}">
                             <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                         </ScrollViewer>
-                    </themes:ListBoxChrome>
+                    </Border>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsGrouping" Value="true">
-                            <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+                        <Trigger Property="IsGrouping" Value="True">
+                            <Setter Property="ScrollViewer.CanContentScroll" Value="False"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter TargetName="Bd" Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>

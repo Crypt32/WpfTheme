@@ -57,6 +57,10 @@
     <!--HeaderedContentControl-->
     <SolidColorBrush x:Key="HeaderedControl.BorderBrush" Color="{StaticResource Border.Color}"/>
     <SolidColorBrush x:Key="HeaderedControl.FgBrush"     Color="{StaticResource Header.FgColor}"/>
+
+    <!--ListView, ListBox-->
+    <SolidColorBrush x:Key="List.Border"  Color="{StaticResource Border.Color}"/>
+    <SolidColorBrush x:Key="List.FgBrush" Color="{StaticResource Header.FgColor}"/>
     
     <!--Menu, MenuItem-->
     <SolidColorBrush x:Key="Menu.BgBrush"                     Color="{StaticResource Menu.BgColor}"/>
@@ -65,7 +69,6 @@
     <SolidColorBrush x:Key="MenuItem.Glyph.BorderBrush"       Color="{StaticResource Menu.Active.BorderColor}"/>
 
     <SolidColorBrush x:Key="ButtonNormalBorder"             Color="#FF707070"/>
-    <SolidColorBrush x:Key="ListBorder"                     Color="#828790"/>
     
     <!--StatusBar-->
     <SolidColorBrush x:Key="StatusBar.BorderBrush" Color="{StaticResource Border.LightColor}"/>

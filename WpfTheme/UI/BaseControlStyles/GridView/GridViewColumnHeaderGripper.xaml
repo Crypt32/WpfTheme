@@ -3,12 +3,13 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../../Brushes/DefaultColorTheme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
+    <!--ListView column resize separator-->
     <Style x:Key="GridViewColumnHeaderGripper" TargetType="{x:Type Thumb}">
         <Setter Property="Canvas.Right" Value="-9"/>
         <Setter Property="Width" Value="18"/>
         <Setter Property="Height" Value="{Binding Path=ActualHeight,RelativeSource={RelativeSource TemplatedParent}}"/>
         <Setter Property="Padding" Value="0"/>
-        <Setter Property="Background" Value="{StaticResource GridViewColumnHeaderBorderBackground}"/>
+        <Setter Property="Background" Value="#FF99C5FE"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Thumb}">
