@@ -1,7 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <!--Colors-->
-    <Color x:Key="PanelBackgroundColor">   #ffd8e3f0</Color>
+    <!--<Color x:Key="Panel.BgColor">   #FFD8E3F0</Color>-->
+    <Color x:Key="Panel.BgColor">   #FFE2EEFE</Color>
     <Color x:Key="Menu.BgColor">           #BFDBFF</Color>
     <Color x:Key="Menu.Active.BorderColor">#f4ad56</Color>
     <Color x:Key="Border.Color">           CornflowerBlue</Color>
@@ -32,7 +33,7 @@
     <SolidColorBrush x:Key="Brush-Navy"             Color="Navy"/>
 
     <!--Panels-->
-    <SolidColorBrush x:Key="PanelBackgroundBrush"  Color="#FFD8E3F0"/>
+    <SolidColorBrush x:Key="PanelBackgroundBrush"  Color="{StaticResource Panel.BgColor}"/>
     <SolidColorBrush x:Key="PanelHeaderBackground" Color="#FFB3D6E6"/>
     <SolidColorBrush x:Key="PanelBorderBrush"      Color="#FF567DB0"/>
 
@@ -68,7 +69,7 @@
     <SolidColorBrush x:Key="StatusBar.FgBrush"     Color="{StaticResource Header.FgColor}"/>
     
     <!--TabControl, TabItem-->
-    <SolidColorBrush x:Key="TabControl.BgBrush"            Color="{StaticResource Menu.BgColor}"/>
+    <SolidColorBrush x:Key="TabControl.BgBrush"            Color="{StaticResource Panel.BgColor}"/>
     <SolidColorBrush x:Key="TabControl.BorderBrush"        Color="{StaticResource Border.LightColor}"/>
     <SolidColorBrush x:Key="TabControl.Header.BorderBrush" Color="{StaticResource Border.Color}"/>
     <SolidColorBrush x:Key="TabItem.FgBrush"               Color="{StaticResource Header.FgColor}"/>
