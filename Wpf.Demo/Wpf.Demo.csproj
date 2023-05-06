@@ -82,6 +82,9 @@
     <Compile Include="Views\UserControls\ComboBoxUC.xaml.cs">
       <DependentUpon>ComboBoxUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\UserControls\DataGridUC.xaml.cs">
+      <DependentUpon>DataGridUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserControls\ExpanderUC.xaml.cs">
       <DependentUpon>ExpanderUC.xaml</DependentUpon>
     </Compile>
@@ -128,6 +131,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UserControls\ComboBoxUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\DataGridUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

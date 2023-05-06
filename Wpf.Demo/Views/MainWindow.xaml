@@ -57,6 +57,9 @@
             <TabItem Header="ProgressBar">
                 <uc:ProgressBarUC/>
             </TabItem>
+            <TabItem Header="DataGrid">
+                <uc:DataGridUC/>
+            </TabItem>
         </TabControl>
     </DockPanel>
 </Window>
