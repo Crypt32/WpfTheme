@@ -6,7 +6,7 @@
     <Style TargetType="{x:Type HeaderedContentControl}">
         <Setter Property="Foreground" Value="{StaticResource HeaderedControl.FgBrush}"/>
         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-        <Setter Property="VerticalContentAlignment" Value="Top"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="BorderBrush" Value="{StaticResource PanelBorderBrush}"/>
         <Setter Property="Background" Value="#FFD7E8F7"/>
