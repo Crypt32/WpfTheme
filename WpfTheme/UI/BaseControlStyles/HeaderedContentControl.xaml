@@ -9,7 +9,7 @@
         <Setter Property="VerticalContentAlignment" Value="Stretch"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="BorderBrush" Value="{StaticResource PanelBorderBrush}"/>
-        <Setter Property="Background" Value="#FFD7E8F7"/>
+        <Setter Property="Background" Value="{StaticResource PanelBackgroundBrush}"/>
         <Setter Property="IsTabStop" Value="False"/>
         <Setter Property="Template">
             <Setter.Value>
