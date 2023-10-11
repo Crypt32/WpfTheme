@@ -12,9 +12,9 @@
         <ProgressBar IsIndeterminate="True" Height="15"/>
         <ProgressBar IsIndeterminate="True" Height="15" IsEnabled="False"/>
 
-        <ProgressBar Style="{StaticResource PbStyle}" Value="73" Height="15"/>
+        <!--<ProgressBar Style="{StaticResource PbStyle}" Value="73" Height="15"/>
         <ProgressBar Style="{StaticResource PbStyle}" Value="73" Height="15" IsEnabled="False"/>
         <ProgressBar Style="{StaticResource PbStyle}" IsIndeterminate="True" Height="15"/>
-        <ProgressBar Style="{StaticResource PbStyle}" IsIndeterminate="True" Height="15" IsEnabled="False"/>
+        <ProgressBar Style="{StaticResource PbStyle}" IsIndeterminate="True" Height="15" IsEnabled="False"/>-->
     </StackPanel>
 </UserControl>
