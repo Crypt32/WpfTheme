@@ -37,8 +37,9 @@
     <SolidColorBrush x:Key="PanelBorderBrush"      Color="#FF6592CE"/>
 
     <!--CheckBox, RadioButton-->
-    <SolidColorBrush x:Key="CheckBox.Fill"   Color="#FFF4F4F4"/>
-    <SolidColorBrush x:Key="CheckBox.Stroke" Color="#FF8E8F8F"/>
+    <SolidColorBrush x:Key="CheckBox.Fill"    Color="#FFF4F4F4"/>
+    <SolidColorBrush x:Key="CheckBox.Stroke"  Color="#FF8E8F8F"/>
+    <SolidColorBrush x:Key="CheckBox.FgBrush" Color="{StaticResource Header.FgColor}"/>
 
     <!--ContextMenu-->
     <SolidColorBrush x:Key="ContextMenu.BgBrush" Color="#FFF4F4F4"/>

@@ -19,7 +19,7 @@
         </Setter>
     </Style>
     <Style TargetType="{x:Type CheckBox}">
-        <Setter Property="Foreground" Value="Navy"/>
+        <Setter Property="Foreground" Value="{StaticResource CheckBox.FgBrush}"/>
         <Setter Property="Background" Value="{StaticResource CheckBox.Fill}"/>
         <Setter Property="BorderBrush" Value="{StaticResource CheckBox.Stroke}"/>
         <Setter Property="BorderThickness" Value="1"/>
