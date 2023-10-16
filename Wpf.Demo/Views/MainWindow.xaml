@@ -17,6 +17,7 @@
         <vm:FormViewModel/>
     </Window.DataContext>
     <DockPanel>
+        <uc:RibbonUC DockPanel.Dock="Top"/>
         <uc:MenuUC DockPanel.Dock="Top"/>
         <uc:ToolBarUC DockPanel.Dock="Top"/>
         <uc:StatusBarUC DockPanel.Dock="Bottom"/>

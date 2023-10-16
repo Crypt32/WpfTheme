@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Wpf.Demo.Views.UserControls.RibbonUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Ribbon>
+        <Ribbon.ApplicationMenu>
+            <RibbonApplicationMenu KeyTip="F" >
+                <RibbonApplicationMenuItem Header="Top Level">
+                    <RibbonApplicationMenuItem Header="Nested One"/>
+                    <RibbonApplicationMenuItem Header="Nested Two"/>
+                    <RibbonApplicationMenuItem Header="Nested Three"/>
+                </RibbonApplicationMenuItem>
+            </RibbonApplicationMenu>
+        </Ribbon.ApplicationMenu>
+        <RibbonTab Header="One">
+            <RibbonGroup Header="Clipboard">
+                <RibbonMenuButton LargeImageSource="/Views/Images/paste_16x16.png" Label="Paste" KeyTip="V">
+                    <RibbonMenuItem ImageSource="/Views/Images/paste_16x16.png" Header="Keep Text Only" KeyTip="T"/>
+                    <RibbonMenuItem ImageSource="/Views/Images/paste_16x16.png" Header="Paste Special..." KeyTip="S"/>
+                </RibbonMenuButton>
+                <RibbonButton SmallImageSource="/Views/Images/paste_16x16.png" Label="Cut" KeyTip="X" />
+                <RibbonButton SmallImageSource="/Views/Images/paste_16x16.png" Label="Copy" KeyTip="C" />
+                <RibbonButton SmallImageSource="/Views/Images/paste_16x16.png" Label="Format Painter" KeyTip="FP" />
+
+</RibbonGroup>
+        </RibbonTab>
+        <RibbonTab Header="Two"></RibbonTab>
+    </Ribbon>
+</UserControl>
