@@ -36,6 +36,7 @@
     <SolidColorBrush x:Key="PanelHeaderBackground"   Color="#FFB3D6E6"/>
     <SolidColorBrush x:Key="PanelBorderBrush"        Color="#FF6592CE"/>
     <SolidColorBrush x:Key="Panel.Border.LightBrush" Color="{StaticResource Border.LightColor}"/>
+    <SolidColorBrush x:Key="Panel.FgBrush"           Color="{StaticResource Header.FgColor}"/>
 
     <!--CheckBox, RadioButton-->
     <SolidColorBrush x:Key="CheckBox.Fill"    Color="#FFF4F4F4"/>
