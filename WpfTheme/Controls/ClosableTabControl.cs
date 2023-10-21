@@ -56,11 +56,11 @@ namespace SysadminsLV.WPF.OfficeTheme.Controls {
             }
         }
         [ContentProperty("ItemsSource")]
-        public class TabItems : ObservableCollection<TabItem> {
-            public IList<TabItem> MyItems {
+        public class TabItems : ObservableCollection<ClosableTabItem> {
+            public IList<ClosableTabItem> MyItems {
                 get => Items;
                 set {
-                    foreach (TabItem item in value) {
+                    foreach (ClosableTabItem item in value) {
                         Items.Add(item);
                     }
                 }
@@ -77,5 +77,12 @@ namespace SysadminsLV.WPF.OfficeTheme.Controls {
         ICommand Command { get; set; }
         Object CommandParameter { get; set; }
         IInputElement CommandTarget { get; set; }
+
+        protected override DependencyObject GetContainerForItemOverride() {
+            return new ClosableTabItem { IsClosable = true };
+        }
+        protected override Boolean IsItemItsOwnContainerOverride(Object item) {
+            return item is ClosableTabItem;
+        }
     }
 }
