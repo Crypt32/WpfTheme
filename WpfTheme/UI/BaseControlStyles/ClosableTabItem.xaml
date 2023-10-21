@@ -80,7 +80,7 @@
             <GradientStop Offset="0.99" Color="{StaticResource BorderColorBase}"/>
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
-    <!--<Style x:Key="TabItemFocusVisual">
+    <Style x:Key="TabItemFocusVisual">
         <Setter Property="Control.Template">
             <Setter.Value>
                 <ControlTemplate>
@@ -90,7 +90,7 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-    </Style>-->
+    </Style>
     <Style TargetType="{x:Type c:ClosableTabItem}">
         <!--<Setter Property="FocusVisualStyle" Value="{StaticResource TabItemFocusVisual}"/>-->
         <Setter Property="Template">
@@ -111,14 +111,13 @@
                             <DockPanel Name="Contents">
                                 <!-- This is where the Content of the TabItem will be rendered. -->
                                 <ContentPresenter x:Name="ContentSite"
-                                                      VerticalAlignment="Center"
-                                                      HorizontalAlignment="Center"
-                                                      ContentSource="Header"
-                                                      Margin="7,2,12,2"
-                                                      RecognizesAccessKey="True">
-                                </ContentPresenter>
+                                                  VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"
+                                                  ContentSource="Header"
+                                                  Margin="7,2,12,2"
+                                                  RecognizesAccessKey="True"/>
                                 <Button x:Name="PART_Close"
-                                        Visibility="Hidden"
+                                        Visibility="Visible"
                                         Style="{StaticResource TabItemCloseButtonStyle}"
                                         Command="{Binding Path=CloseTabCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type c:ClosableTabControl}}}"
                                         CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type c:ClosableTabItem}}}"
