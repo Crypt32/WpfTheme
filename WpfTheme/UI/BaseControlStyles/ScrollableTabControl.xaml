@@ -5,7 +5,9 @@
                     xmlns:themes1="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
                     xmlns:c="clr-namespace:SysadminsLV.WPF.OfficeTheme.Controls">
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Brushes/Gradients.xaml"/>
         <ResourceDictionary Source="ClosableTabItem.xaml"/>
+        <ResourceDictionary Source="MenuItem.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     <Color x:Key="TabPanelBackgroundColorBase">#BEDAFE</Color>
     <Color x:Key="LineButtonBackgroundColorBright">LightGoldenrodYellow</Color>
@@ -16,23 +18,12 @@
     <SolidColorBrush x:Key="TabControl_BackgroundBrush_Base" Color="{StaticResource TabControlBackgroundColorBase}"/>
     <SolidColorBrush x:Key="TabPage_InnerBorderBrushDark" Color="#FF8DB2E3"/>
     <!-- The color to be used when drawing the arrows on the scrollbar's line-buttons -->
-    <SolidColorBrush x:Key="LineButtonBrush" Color="#FF14273D"/>
+    <SolidColorBrush x:Key="LineButtonBrush" Color="Navy"/>
     <!-- Brushes used for styling the TabControl -->
     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="LineButtonBackgroundBrush">
         <GradientStop Offset="0.3" Color="{StaticResource LineButtonBackgroundColorBright}"/>
         <GradientStop Offset="0.4" Color="{StaticResource LineButtonBackgroundColorDark}"/>
         <GradientStop Offset="1" Color="{StaticResource LineButtonBackgroundColorBright}"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="LineButtonHoverBrush" StartPoint="0.5,0" EndPoint="0.5,1">
-        <GradientStop Color="#FFFFD5A0" Offset="0.3"/>
-        <GradientStop Color="#FFFFA335" Offset="0.51"/>
-        <GradientStop Color="#FFFFC14A" Offset="0.986"/>
-    </LinearGradientBrush>
-    <!-- The color for the scrollbar's line-buttons when they're clicked/pressed -->
-    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="LineButtonPressedBrush">
-        <GradientStop Offset="0" Color="{StaticResource LineButtonBackgroundColorBright}"/>
-        <GradientStop Offset="0.6" Color="{StaticResource LineButtonBackgroundColorDark}"/>
-        <GradientStop Offset="0.7" Color="{StaticResource LineButtonBackgroundColorBright}"/>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="TabPanelBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
         <LinearGradientBrush.GradientStops>
@@ -87,7 +78,7 @@
             Stretch="Fill"
             VerticalAlignment="Center"
             HorizontalAlignment="Center"/>
-    <system:Double x:Key="ButtonWidthAndHeight">16</system:Double>
+    <system:Double x:Key="ButtonWidthAndHeight">20</system:Double>
     <Style x:Key="LineButtonStyle" TargetType="{x:Type RepeatButton}">
         <Setter Property="Focusable" Value="False"/>
         <Setter Property="Height" Value="{StaticResource ButtonWidthAndHeight}"/>
@@ -106,11 +97,11 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
                             <Setter TargetName="ButtonBorder" Property="Background" 
-                                Value="{StaticResource LineButtonHoverBrush}" />
+                                Value="{StaticResource HorizontalYellowHoverGradient}" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
                             <Setter TargetName="ButtonBorder" Property="Background" 
-                                Value="{StaticResource LineButtonPressedBrush}" />
+                                Value="{StaticResource HorizontalYellowPressedGradientBrush}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter TargetName="ButtonBorder" Property="Background" 
@@ -175,7 +166,7 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsHighlighted" Value="true">
-                            <Setter TargetName="ButtonBorder" Property="Background" Value="{StaticResource LineButtonHoverBrush}" />
+                            <Setter TargetName="ButtonBorder" Property="Background" Value="{StaticResource HorizontalYellowHoverGradient}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -220,7 +211,7 @@
             --><!--
         </Style.Triggers>-->
     </Style>
-    <Style TargetType="{x:Type c:ClosableTabControl}" x:Key="ScrollableTabControl">
+    <Style x:Key="ScrollableTabControl" TargetType="{x:Type c:ClosableTabControl}">
         <Setter Property="SnapsToDevicePixels" Value="true"/>
         <Setter Property="BorderThickness" Value="1,0,1,1"/>
         <Setter Property="Template">
@@ -261,14 +252,14 @@
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
                                 <ScrollViewer Grid.Row="0" Grid.RowSpan="2"
-                                         VerticalScrollBarVisibility="Disabled"
-                                         CanContentScroll="True" 
-                                         HorizontalScrollBarVisibility="Hidden"
-                                         IsDeferredScrollingEnabled="False"
-                                         SnapsToDevicePixels="True"
-                                         Name="svTP"
-                                         HorizontalAlignment="Stretch" 
-                                         VerticalAlignment="Stretch">
+                                              VerticalScrollBarVisibility="Disabled"
+                                              CanContentScroll="True" 
+                                              HorizontalScrollBarVisibility="Hidden"
+                                              IsDeferredScrollingEnabled="False"
+                                              SnapsToDevicePixels="True"
+                                              Name="svTP"
+                                              HorizontalAlignment="Stretch" 
+                                              VerticalAlignment="Stretch">
                                     <!--
                                     This is the area in which TabItems (the strips) will be drawn.
 
@@ -279,15 +270,16 @@
                                     as the Margin here.
                                  -->
                                     <c:ScrollableTabPanel IsItemsHost="True"
-                                                               x:Name="PART_ScrollContentPresenter"
-                                                               Margin="{StaticResource TabPanelPadding}"
-                                                               RightOverflowMargin="4"
-                                                               AnimationTimeSpan="0:0:0.25"
-                                                               LineScrollPixelCount="100"
-                                                               KeyboardNavigation.TabIndex="1"/>
+                                                          x:Name="PART_ScrollContentPresenter"
+                                                          Margin="{StaticResource TabPanelPadding}"
+                                                          RightOverflowMargin="4"
+                                                          AnimationTimeSpan="0:0:0.25"
+                                                          LineScrollPixelCount="100"
+                                                          KeyboardNavigation.TabIndex="1"/>
                                 </ScrollViewer>
                                 <StackPanel Grid.Row="1"
                                             Grid.Column="1"
+                                            MinHeight="20"
                                             Orientation="Horizontal"
                                             Margin="{StaticResource TabPanelScrollControlsPanelMargin}">
                                     <!-- 
@@ -314,12 +306,11 @@
                                  Clicking an item here will select the respective TabItem.
                               -->
                                     <Menu Background="Transparent">
-                                    <!--<Menu Background="Transparent">-->
+                                        <!--<Menu Background="Transparent">-->
                                         <MenuItem ItemContainerStyle="{StaticResource TabMenuItem}"
                                                   ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, 
                                                 AncestorType={x:Type c:ClosableTabControl}}, Path=Items}"
-                                                  Style="{StaticResource TabMenuButtonStyle}">
-                                        </MenuItem>
+                                                  Style="{StaticResource TabMenuButtonStyle}"/>
                                         <!--<MenuItem Style="{StaticResource TabMenuButtonStyle}"
                                            ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, 
                                                 AncestorType={x:Type TabControl}}, Path=Items}"
