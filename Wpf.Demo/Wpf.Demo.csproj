@@ -80,6 +80,9 @@
     <Compile Include="Views\UserControls\ButtonUC.xaml.cs">
       <DependentUpon>ButtonUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\UserControls\ClosableTabControlUC.xaml.cs">
+      <DependentUpon>ClosableTabControlUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserControls\ComboBoxUC.xaml.cs">
       <DependentUpon>ComboBoxUC.xaml</DependentUpon>
     </Compile>
@@ -131,6 +134,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UserControls\CheckBoxUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\ClosableTabControlUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

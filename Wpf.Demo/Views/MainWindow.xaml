@@ -11,8 +11,8 @@
         WindowStyle="SingleBorderWindow"
         WindowStartupLocation="CenterScreen"
         Title="MainWindow"
-        Height="480"
-        Width="640">
+        Height="600"
+        Width="800">
     <Window.DataContext>
         <vm:FormViewModel/>
     </Window.DataContext>
@@ -45,6 +45,9 @@
             </TabItem>
             <TabItem Header="TabControl">
                 <uc:TabControlUC/>
+            </TabItem>
+            <TabItem Header="ClosableTabControl">
+                <uc:ClosableTabControlUC/>
             </TabItem>
             <TabItem Header="GridSplitter">
                 <uc:GridUC/>
