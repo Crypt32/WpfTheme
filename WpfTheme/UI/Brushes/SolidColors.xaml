@@ -100,4 +100,8 @@
     <SolidColorBrush x:Key="Toolbar.BottomBorderBrush"        Color="#6F9DD9"/>
     <SolidColorBrush x:Key="ToolBar.Overflow.Hover.BgBrush"   Color="#FFEBA6"/>
     <SolidColorBrush x:Key="ToolBar.Overflow.Pressed.BgBrush" Color="#FDA461"/>
+
+    <!--TreeView-->
+    <SolidColorBrush x:Key="TreeViewItem.Connection.LineBrush" Color="#FFDCDCDC"/>
+    <SolidColorBrush x:Key="TreeViewItem.Expander.Border.Brush" Color="#FF919191"/>
 </ResourceDictionary>
