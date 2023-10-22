@@ -7,6 +7,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../Brushes/Gradients.xaml"/>
         <ResourceDictionary Source="ClosableTabItem.xaml"/>
+        <ResourceDictionary Source="ToolBar.xaml"/>
         <ResourceDictionary Source="MenuItem.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     <Color x:Key="TabPanelBackgroundColorBase">#BEDAFE</Color>
@@ -55,29 +56,29 @@
     <Thickness x:Key="TabPanelPadding">4,0,4,0</Thickness>
     <Thickness x:Key="TabPanelScrollControlsPanelMargin">5,0,0,2</Thickness>
     <Path x:Key="ArrowLeftPath"
-            Margin="4,3"
-            Data="{StaticResource ArrowLeft}"
-            Stroke="{StaticResource LineButtonBrush}" 
-            Fill="{StaticResource LineButtonBrush}"
-            Stretch="Fill"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"/>
+          Margin="4,3"
+          Data="{StaticResource ArrowLeft}"
+          Stroke="{StaticResource LineButtonBrush}" 
+          Fill="{StaticResource LineButtonBrush}"
+          Stretch="Fill"
+          VerticalAlignment="Center"
+          HorizontalAlignment="Center"/>
     <Path x:Key="ArrowRightPath"
-            Margin="4,3"
-            Data="{StaticResource ArrowRight}"
-            Stroke="{StaticResource LineButtonBrush}" 
-            Fill="{StaticResource LineButtonBrush}"
-            Stretch="Fill"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"/>
+          Margin="4,3"
+          Data="{StaticResource ArrowRight}"
+          Stroke="{StaticResource LineButtonBrush}" 
+          Fill="{StaticResource LineButtonBrush}"
+          Stretch="Fill"
+          VerticalAlignment="Center"
+          HorizontalAlignment="Center"/>
     <Path x:Key="TabMenuButtonPath"
-            Margin="2"
-            Data="{StaticResource TabMenuButton}"
-            Stroke="{StaticResource LineButtonBrush}" 
-            Fill="{StaticResource TabMenuButtonBrush}"
-            Stretch="Fill"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"/>
+          Margin="2"
+          Data="{StaticResource TabMenuButton}"
+          Stroke="{StaticResource LineButtonBrush}" 
+          Fill="{StaticResource TabMenuButtonBrush}"
+          Stretch="Fill"
+          VerticalAlignment="Center"
+          HorizontalAlignment="Center"/>
     <system:Double x:Key="ButtonWidthAndHeight">20</system:Double>
     <Style x:Key="LineButtonStyle" TargetType="{x:Type RepeatButton}">
         <Setter Property="Focusable" Value="False"/>
@@ -216,14 +217,14 @@
         <Setter Property="BorderThickness" Value="1,0,1,1"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="TabControl">
+                <ControlTemplate TargetType="c:ClosableTabControl">
                     <Grid KeyboardNavigation.TabNavigation="Local">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <!--
@@ -231,10 +232,28 @@
                         line of the TabPanel, we need to wrap the ScrollViewer in a Border 
                         control that will be responsible for drawing the background.
                      -->
-                        <Button Grid.Row="0"
+                        <Border x:Name="NewTabButton"
+                                Grid.Row="0"
                                 Grid.Column="0"
-                                Content="+"
-                                Command="{Binding Path=AddTabCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type c:ClosableTabControl}}}"/>
+                                MinWidth="25"
+                                Background="{StaticResource TabPanelBackgroundBrush}"
+                                Visibility="Collapsed">
+                            <Button Style="{StaticResource ToolBarButtonStyle}"
+                                    Background="{StaticResource HorizontalBlueGradientBrush}"
+                                    BorderThickness="1"
+                                    BorderBrush="{StaticResource PanelBorderBrush}"
+                                    Command="{Binding Path=AddTabCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type c:ClosableTabControl}}}">
+                                <Grid>
+                                    <Path Fill="{StaticResource Panel.FgBrush}"
+                                          Data="M 4,0 L 4,12 8,12 8,0Z"
+                                          SnapsToDevicePixels="True"/>
+                                    <Path Fill="{StaticResource Panel.FgBrush}"
+                                          Data="M 0,4 L 12,4 12,8 0,8Z"
+                                          SnapsToDevicePixels="True">
+                                    </Path>
+                                </Grid>
+                            </Button>
+                        </Border>
                         <Border Grid.Row="0"
                                 Grid.Column="1"
                                 Name="TabPanelBorder"
@@ -339,6 +358,11 @@
                                               Margin="0"/>
                         </Border>
                     </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="ShowNewTabButton" Value="True">
+                            <Setter TargetName="NewTabButton" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

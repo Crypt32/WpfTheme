@@ -10,25 +10,52 @@ using System.Windows.Markup;
 
 namespace SysadminsLV.WPF.OfficeTheme.Controls {
     public class ClosableTabControl : TabControl {
-        public static readonly DependencyProperty CloseTabCommandProperty = DependencyProperty.Register(
-            nameof(CloseTabCommand),
-            typeof(ICommand),
-            typeof(ClosableTabControl),
-            new PropertyMetadata(null, CloseCommandChanged));
+        #region AddTabCommand
+
         public static readonly DependencyProperty AddTabCommandProperty = DependencyProperty.Register(
             nameof(AddTabCommand),
             typeof(ICommand),
             typeof(ClosableTabControl),
             new PropertyMetadata(null, AddCommandChanged));
-
-        static void CloseCommandChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) {
-            var cs = (ClosableTabControl)d;
-            cs.HookUpCommand((ICommand)e.OldValue, (ICommand)e.NewValue);
-        }
         static void AddCommandChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) {
             var cs = (ClosableTabControl)d;
             cs.HookUpCommand((ICommand)e.OldValue, (ICommand)e.NewValue);
         }
+        public ICommand AddTabCommand {
+            get => (ICommand)GetValue(AddTabCommandProperty);
+            set => SetValue(AddTabCommandProperty, value);
+        }
+
+        #endregion
+
+        #region CloseTabCommand
+
+        public static readonly DependencyProperty CloseTabCommandProperty = DependencyProperty.Register(
+            nameof(CloseTabCommand),
+            typeof(ICommand),
+            typeof(ClosableTabControl),
+            new PropertyMetadata(null, CloseCommandChanged));
+        static void CloseCommandChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) {
+            var cs = (ClosableTabControl)d;
+            cs.HookUpCommand((ICommand)e.OldValue, (ICommand)e.NewValue);
+        }
+        public ICommand CloseTabCommand {
+            get => (ICommand)GetValue(CloseTabCommandProperty);
+            set => SetValue(CloseTabCommandProperty, value);
+        }
+
+        #endregion
+
+        public static readonly DependencyProperty ShowNewTabButtonProperty = DependencyProperty.Register(
+            nameof(ShowNewTabButton),
+            typeof(Boolean),
+            typeof(ClosableTabControl),
+            new PropertyMetadata(default));
+        public Boolean ShowNewTabButton {
+            get => (Boolean)GetValue(AddTabCommandProperty);
+            set => SetValue(AddTabCommandProperty, value);
+        }
+
         void HookUpCommand(ICommand oldCommand, ICommand newCommand) {
             // If oldCommand is not null, then we need to remove the handlers. 
             if (oldCommand != null) {
@@ -66,14 +93,7 @@ namespace SysadminsLV.WPF.OfficeTheme.Controls {
                 }
             }
         }
-        public ICommand AddTabCommand {
-            get => (ICommand)GetValue(AddTabCommandProperty);
-            set => SetValue(AddTabCommandProperty, value);
-        }
-        public ICommand CloseTabCommand {
-            get => (ICommand)GetValue(CloseTabCommandProperty);
-            set => SetValue(CloseTabCommandProperty, value);
-        }
+
         ICommand Command { get; set; }
         Object CommandParameter { get; set; }
         IInputElement CommandTarget { get; set; }

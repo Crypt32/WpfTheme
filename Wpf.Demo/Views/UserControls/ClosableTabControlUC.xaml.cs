@@ -9,6 +9,9 @@ public partial class ClosableTabControlUC {
     public ClosableTabControlUC() {
         InitializeComponent();
         Tabs.Add(new TabVM { Header = "Hello", Content = "Hello2" });
+        Tabs.Add(new TabVM { Header = "Hello", Content = "Hello2" });
+        Tabs.Add(new TabVM { Header = "Hello", Content = "Hello2" });
+        Tabs.Add(new TabVM { Header = "Hello", Content = "Hello2" });
     }
 
     public ObservableCollection<TabVM> Tabs { get; } = new();
