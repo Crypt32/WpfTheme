@@ -5,22 +5,23 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Markup;
+using SysadminsLV.WPF.OfficeTheme.Toolkit.Commands;
 
 // Credits: http://www.blogs.intuidev.com/post/2010/post/2010/01/25/TabControlStyling_PartOne.aspx
 
 namespace SysadminsLV.WPF.OfficeTheme.Controls {
     public class ClosableTabControl : TabControl {
+        public ClosableTabControl() {
+            MenuCommand = new RelayCommand(switchTab);
+        }
+
         #region AddTabCommand
 
         public static readonly DependencyProperty AddTabCommandProperty = DependencyProperty.Register(
             nameof(AddTabCommand),
             typeof(ICommand),
             typeof(ClosableTabControl),
-            new PropertyMetadata(null, AddCommandChanged));
-        static void AddCommandChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) {
-            var cs = (ClosableTabControl)d;
-            cs.HookUpCommand((ICommand)e.OldValue, (ICommand)e.NewValue);
-        }
+            new PropertyMetadata(null, commandChanged));
         public ICommand AddTabCommand {
             get => (ICommand)GetValue(AddTabCommandProperty);
             set => SetValue(AddTabCommandProperty, value);
@@ -34,17 +35,30 @@ namespace SysadminsLV.WPF.OfficeTheme.Controls {
             nameof(CloseTabCommand),
             typeof(ICommand),
             typeof(ClosableTabControl),
-            new PropertyMetadata(null, CloseCommandChanged));
-        static void CloseCommandChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) {
-            var cs = (ClosableTabControl)d;
-            cs.HookUpCommand((ICommand)e.OldValue, (ICommand)e.NewValue);
-        }
+            new PropertyMetadata(null, commandChanged));
         public ICommand CloseTabCommand {
             get => (ICommand)GetValue(CloseTabCommandProperty);
             set => SetValue(CloseTabCommandProperty, value);
         }
 
         #endregion
+
+        #region MenuCommand
+
+        public static readonly DependencyProperty MenuCommandProperty = DependencyProperty.Register(
+            nameof(MenuCommand),
+            typeof(ICommand),
+            typeof(ClosableTabControl),
+            new PropertyMetadata(null, commandChanged));
+        
+        public ICommand MenuCommand {
+            get => (ICommand)GetValue(MenuCommandProperty);
+            set => SetValue(MenuCommandProperty, value);
+        }
+
+        #endregion
+
+        #region ShowNewTabButton
 
         public static readonly DependencyProperty ShowNewTabButtonProperty = DependencyProperty.Register(
             nameof(ShowNewTabButton),
@@ -56,18 +70,24 @@ namespace SysadminsLV.WPF.OfficeTheme.Controls {
             set => SetValue(AddTabCommandProperty, value);
         }
 
-        void HookUpCommand(ICommand oldCommand, ICommand newCommand) {
+        #endregion
+
+        static void commandChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) {
+            var cs = (ClosableTabControl)d;
+            cs.hookUpCommand((ICommand)e.OldValue, (ICommand)e.NewValue);
+        }
+        void hookUpCommand(ICommand oldCommand, ICommand newCommand) {
             // If oldCommand is not null, then we need to remove the handlers. 
             if (oldCommand != null) {
-                RemoveCommand(oldCommand);
+                removeCommand(oldCommand);
             }
-            AddCommand(newCommand);
+            addCommand(newCommand);
         }
-        void RemoveCommand(ICommand oldCommand) {
-            EventHandler handler = CanExecuteChanged;
+        void removeCommand(ICommand oldCommand) {
+            EventHandler handler = canExecuteChanged;
             oldCommand.CanExecuteChanged -= handler;
         }
-        void CanExecuteChanged(Object sender, EventArgs e) {
+        void canExecuteChanged(Object sender, EventArgs e) {
             if (Command != null) {
                 var command = Command as RoutedCommand;
                 // If a RoutedCommand. 
@@ -76,8 +96,8 @@ namespace SysadminsLV.WPF.OfficeTheme.Controls {
         }
 
         // Add the command. 
-        void AddCommand(ICommand newCommand) {
-            EventHandler handler = CanExecuteChanged;
+        void addCommand(ICommand newCommand) {
+            EventHandler handler = canExecuteChanged;
             if (newCommand != null) {
                 newCommand.CanExecuteChanged += handler;
             }
@@ -97,6 +117,18 @@ namespace SysadminsLV.WPF.OfficeTheme.Controls {
         ICommand Command { get; set; }
         Object CommandParameter { get; set; }
         IInputElement CommandTarget { get; set; }
+
+        void switchTab(Object o) {
+            if (o == null) {
+                return;
+            }
+            foreach (Object item in Items) {
+                if (item == o) {
+                    SelectedItem = item;
+                    return;
+                }
+            }
+        }
 
         protected override DependencyObject GetContainerForItemOverride() {
             return new ClosableTabItem { IsClosable = true };

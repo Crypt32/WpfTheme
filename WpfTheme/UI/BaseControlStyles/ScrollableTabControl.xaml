@@ -80,7 +80,7 @@
           VerticalAlignment="Center"
           HorizontalAlignment="Center"/>
     <system:Double x:Key="ButtonWidthAndHeight">20</system:Double>
-    <Style x:Key="LineButtonStyle" TargetType="{x:Type RepeatButton}">
+    <Style x:Key="TabScrollButtonStyle" TargetType="{x:Type RepeatButton}">
         <Setter Property="Focusable" Value="False"/>
         <Setter Property="Height" Value="{StaticResource ButtonWidthAndHeight}"/>
         <Setter Property="Width" Value="{StaticResource ButtonWidthAndHeight}"/>
@@ -176,41 +176,11 @@
     </Style>
     <Style x:Key="TabMenuItem" TargetType="{x:Type MenuItem}" BasedOn="{StaticResource {x:Type MenuItem}}">
         <Setter Property="Header" Value="{Binding Path=Header}" />
-        <Setter Property="IsEnabled" Value="{Binding Path=IsEnabled}" />
-        <!-- 
-            By making the MenuItems checkable AND binding the IsChecked
-            property to the IsSelected property of the TabItems, we'll 
-            efficiently allow to pick the selected TabItem from the Menu
-            with a simple two-way binding.
-         -->
+        <Setter Property="Command" Value="{Binding Path=MenuCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type c:ClosableTabControl}}}"/>
+        <Setter Property="CommandParameter" Value="{Binding DataContext, RelativeSource={RelativeSource Self}}"/>
+        <!--<Setter Property="IsEnabled" Value="{Binding Path=IsEnabled}" />
         <Setter Property="IsCheckable" Value="{Binding Path=IsEnabled}" />
-        <Setter Property="IsChecked" Value="{Binding Path=IsSelected, Mode=TwoWay}" />
-        <!--<Setter Property="Foreground" Value="{StaticResource MenuItemForegroundBrush}"/>-->
-        <!--<Style.Triggers>
-            <Trigger Property="IsHighlighted" Value="True">
-                <Setter Property="Foreground"
-                       Value="{StaticResource TabItem_TextBrush_Selected}"/>
-            </Trigger>
-            <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Foreground" 
-                       Value="{StaticResource MenuItem_DisabledForegroundBrush}"/>
-                <Setter Property="Background"
-                                Value="{StaticResource MenuItem_DisabledBackgroundBrush}"/>
-            </Trigger>
-            --><!-- Provide a hover-appearance for disabled MenuItems -->
-            <!-- 
-               This won't work due to the fact that disabled items neither receive
-               IsHighlighted nor IsMouseOver ... I'll leave this for now. 
-            <MultiTrigger>
-               <MultiTrigger.Conditions>
-                  <Condition SourceName="Border" Property="IsMouseOver" Value="True"/>
-                  <Condition Property="IsEnabled" Value="False"/>
-               </MultiTrigger.Conditions>
-               <Setter Property="Background"
-                                Value="{StaticResource MenuItem_DisabledBackgroundBrush}"/>
-            </MultiTrigger>
-            --><!--
-        </Style.Triggers>-->
+        <Setter Property="IsChecked" Value="{Binding Path=IsSelected, Mode=TwoWay}" />-->
     </Style>
     <Style x:Key="ScrollableTabControl" TargetType="{x:Type c:ClosableTabControl}">
         <Setter Property="SnapsToDevicePixels" Value="true"/>
@@ -308,13 +278,13 @@
                                  are used.
                               -->
                                     <RepeatButton x:Name="cmdScrollLeft"
-                                                  Style="{StaticResource LineButtonStyle}"
+                                                  Style="{StaticResource TabScrollButtonStyle}"
                                                   CommandTarget="{Binding ElementName=svTP}"
                                                   Command="ScrollBar.LineLeftCommand"
                                                   Content="{StaticResource ArrowLeftPath}"
                                                   IsEnabled="{Binding ElementName=PART_ScrollContentPresenter, Path=CanScrollLeft}"/>
                                     <RepeatButton x:Name="cmdScrollRight"
-                                                  Style="{StaticResource LineButtonStyle}"
+                                                  Style="{StaticResource TabScrollButtonStyle}"
                                                   CommandTarget="{Binding ElementName=svTP}"
                                                   Command="ScrollBar.LineRightCommand"
                                                   Content="{StaticResource ArrowRightPath}"
@@ -325,16 +295,9 @@
                                  Clicking an item here will select the respective TabItem.
                               -->
                                     <Menu Background="Transparent">
-                                        <!--<Menu Background="Transparent">-->
                                         <MenuItem ItemContainerStyle="{StaticResource TabMenuItem}"
-                                                  ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, 
-                                                AncestorType={x:Type c:ClosableTabControl}}, Path=Items}"
+                                                  ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type c:ClosableTabControl}}, Path=Items}"
                                                   Style="{StaticResource TabMenuButtonStyle}"/>
-                                        <!--<MenuItem Style="{StaticResource TabMenuButtonStyle}"
-                                           ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, 
-                                                AncestorType={x:Type TabControl}}, Path=Items}"
-                                           ItemContainerStyle="{StaticResource TabMenuItem}">
-                                        </MenuItem>-->
                                     </Menu>
                                 </StackPanel>
                             </Grid>
