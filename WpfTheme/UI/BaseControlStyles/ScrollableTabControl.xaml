@@ -179,8 +179,13 @@
         <Setter Property="Command" Value="{Binding Path=MenuCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type c:ClosableTabControl}}}"/>
         <Setter Property="CommandParameter" Value="{Binding DataContext, RelativeSource={RelativeSource Self}}"/>
         <!--<Setter Property="IsEnabled" Value="{Binding Path=IsEnabled}" />
-        <Setter Property="IsCheckable" Value="{Binding Path=IsEnabled}" />
-        <Setter Property="IsChecked" Value="{Binding Path=IsSelected, Mode=TwoWay}" />-->
+        <Setter Property="IsCheckable" Value="{Binding Path=IsEnabled}" />-->
+        <Setter Property="IsChecked" Value="{Binding Path=IsSelected}" />
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="FontWeight" Value="Bold"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
     <Style x:Key="ScrollableTabControl" TargetType="{x:Type c:ClosableTabControl}">
         <Setter Property="SnapsToDevicePixels" Value="true"/>
