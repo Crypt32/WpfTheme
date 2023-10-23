@@ -22,7 +22,7 @@
                                      ShowNewTabButton="True">
             <controls:ClosableTabControl.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Header}"/>
+                    <TextBlock Text="{Binding Header}" FontSize="24"/>
                 </DataTemplate>
             </controls:ClosableTabControl.ItemTemplate>
             <controls:ClosableTabControl.ContentTemplate>
