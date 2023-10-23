@@ -349,7 +349,7 @@
                      -->
                         <Border Grid.ColumnSpan="2"
                                 Grid.Column="0"
-                                BorderThickness="1,0,1,1"
+                                BorderThickness="{TemplateBinding BorderThickness}"
                                 Grid.Row="1"
                                 BorderBrush="{StaticResource TabItemBorderBrushSelected}"
                                 Background="{StaticResource TabControl_BackgroundBrush_Base}">
