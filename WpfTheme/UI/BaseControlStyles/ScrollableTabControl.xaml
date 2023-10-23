@@ -227,11 +227,6 @@
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <!--
-                        In order to still draw the LinearGradient that makes up for the bottom
-                        line of the TabPanel, we need to wrap the ScrollViewer in a Border 
-                        control that will be responsible for drawing the background.
-                     -->
                         <Border x:Name="NewTabButton"
                                 Grid.Row="0"
                                 Grid.Column="0"
@@ -254,6 +249,11 @@
                                 </Grid>
                             </Button>
                         </Border>
+                        <!--
+                        In order to still draw the LinearGradient that makes up for the bottom
+                        line of the TabPanel, we need to wrap the ScrollViewer in a Border 
+                        control that will be responsible for drawing the background.
+                        -->
                         <Border Grid.Row="0"
                                 Grid.Column="1"
                                 Name="TabPanelBorder"
