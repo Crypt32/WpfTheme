@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Markup;
 using SysadminsLV.WPF.OfficeTheme.Toolkit.Commands;
 
 // Credits: http://www.blogs.intuidev.com/post/2010/post/2010/01/25/TabControlStyling_PartOne.aspx
@@ -83,6 +80,12 @@ namespace SysadminsLV.WPF.OfficeTheme.Controls {
             }
             addCommand(newCommand);
         }
+        void addCommand(ICommand newCommand) {
+            EventHandler handler = canExecuteChanged;
+            if (newCommand != null) {
+                newCommand.CanExecuteChanged += handler;
+            }
+        }
         void removeCommand(ICommand oldCommand) {
             EventHandler handler = canExecuteChanged;
             oldCommand.CanExecuteChanged -= handler;
@@ -95,24 +98,17 @@ namespace SysadminsLV.WPF.OfficeTheme.Controls {
             }
         }
 
-        // Add the command. 
-        void addCommand(ICommand newCommand) {
-            EventHandler handler = canExecuteChanged;
-            if (newCommand != null) {
-                newCommand.CanExecuteChanged += handler;
-            }
-        }
-        [ContentProperty("ItemsSource")]
-        public class TabItems : ObservableCollection<ClosableTabItem> {
-            public IList<ClosableTabItem> MyItems {
-                get => Items;
-                set {
-                    foreach (ClosableTabItem item in value) {
-                        Items.Add(item);
-                    }
-                }
-            }
-        }
+        //[ContentProperty("ItemsSource")]
+        //public class TabItems : ObservableCollection<ClosableTabItem> {
+        //    public IList<ClosableTabItem> MyItems {
+        //        get => Items;
+        //        set {
+        //            foreach (ClosableTabItem item in value) {
+        //                Items.Add(item);
+        //            }
+        //        }
+        //    }
+        //}
 
         ICommand Command { get; set; }
         Object CommandParameter { get; set; }
