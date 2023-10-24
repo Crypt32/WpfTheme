@@ -63,7 +63,10 @@
                    Focusable="False"
                    PopupAnimation="{DynamicResource {x:Static SystemParameters.MenuPopupAnimationKey}}">
                 <themes:SystemDropShadowChrome Name="Shdw"
-                                              Color="Transparent">
+                                               Color="#71000000"
+                                               CornerRadius="1"
+                                               Margin="0,0,8,8"
+                                               SnapsToDevicePixels="True">
                     <ContentControl Name="SubMenuBorder"
                                     Template="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type FrameworkElement}, ResourceId=SubmenuContent}}"
                                     IsTabStop="False">
