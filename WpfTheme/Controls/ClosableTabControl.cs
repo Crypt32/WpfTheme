@@ -98,18 +98,6 @@ namespace SysadminsLV.WPF.OfficeTheme.Controls {
             }
         }
 
-        //[ContentProperty("ItemsSource")]
-        //public class TabItems : ObservableCollection<ClosableTabItem> {
-        //    public IList<ClosableTabItem> MyItems {
-        //        get => Items;
-        //        set {
-        //            foreach (ClosableTabItem item in value) {
-        //                Items.Add(item);
-        //            }
-        //        }
-        //    }
-        //}
-
         ICommand Command { get; set; }
         Object CommandParameter { get; set; }
         IInputElement CommandTarget { get; set; }
