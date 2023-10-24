@@ -79,112 +79,43 @@
           Stretch="Fill"
           VerticalAlignment="Center"
           HorizontalAlignment="Center"/>
-    <system:Double x:Key="ButtonWidthAndHeight">20</system:Double>
-    <Style x:Key="TabScrollButtonStyle" TargetType="{x:Type RepeatButton}">
+    <system:Double x:Key="ButtonWidthAndHeight">22</system:Double>
+    <Style x:Key="TabScrollButtonStyle" TargetType="{x:Type RepeatButton}" BasedOn="{StaticResource ToolBarButtonStyle}">
         <Setter Property="Focusable" Value="False"/>
         <Setter Property="Height" Value="{StaticResource ButtonWidthAndHeight}"/>
         <Setter Property="Width" Value="{StaticResource ButtonWidthAndHeight}"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type RepeatButton}">
-                    <Border Name="ButtonBorder" Margin="1"
-                          BorderBrush="{StaticResource LineButtonBorderBrush}" 
-                          Background="{StaticResource LineButtonBackgroundBrush}" 
-                          CornerRadius="1" 
-                          BorderThickness="1">
-                        <ContentPresenter HorizontalAlignment="Stretch"
-                                       VerticalAlignment="Stretch"/>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="true">
-                            <Setter TargetName="ButtonBorder" Property="Background" 
-                                Value="{StaticResource HorizontalYellowHoverGradient}" />
-                        </Trigger>
-                        <Trigger Property="IsPressed" Value="true">
-                            <Setter TargetName="ButtonBorder" Property="Background" 
-                                Value="{StaticResource HorizontalYellowPressedGradientBrush}" />
-                        </Trigger>
-                        <Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="ButtonBorder" Property="Background" 
-                                Value="{StaticResource LineButtonDisabledBrush}" />
-                            <Setter TargetName="ButtonBorder" Property="Opacity" 
-                                Value="0.4"/>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource LineButtonBorderBrush}"/>
+        <Setter Property="Background" Value="{StaticResource HorizontalBlueGradientBrush}"/>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.4"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
-    <Style x:Key="TabMenuButtonStyle" TargetType="{x:Type MenuItem}">
-        <Setter Property="Focusable" Value="False"/>
+    <Style x:Key="TabTopMenuItemStyle" TargetType="MenuItem" BasedOn="{x:Null}">
         <Setter Property="Height" Value="{StaticResource ButtonWidthAndHeight}"/>
         <Setter Property="Width" Value="{StaticResource ButtonWidthAndHeight}"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type MenuItem}">
-                    <Border Name="ButtonBorder"
-                            Margin="1"
-                            BorderBrush="{StaticResource LineButtonBorderBrush}"
-                            Background="{StaticResource LineButtonBackgroundBrush}"
-                            CornerRadius="1"
-                            BorderThickness="1">
-                        <Grid>
-                            <ContentPresenter ContentSource="Header"
-                                              Content="{StaticResource TabMenuButtonPath}"
-                                              HorizontalAlignment="Stretch"
-                                              VerticalAlignment="Stretch"/>
-                            <Popup Name="Popup"
-                                   Placement="Bottom"
-                                   IsOpen="{TemplateBinding IsSubmenuOpen}"
-                                   AllowsTransparency="True"
-                                   Focusable="False"
-                                   PopupAnimation="Fade">
-                                <!-- 
-                              Since we override the ControlTemplate, we're also responsible
-                              for drawing stuff like the shadow around the popup-menu.
-                              
-                              Here, I'll use a Chrome that's provided in the Aero assembly. 
-                              Note that, in order to use this (that is, the namespace defined
-                              at the very top of this window), a reference to 
-                              PresentationFramework.Aero is required.
-                           -->
-                                <themes1:SystemDropShadowChrome Color="#71000000"
-                                                                CornerRadius="1"
-                                                                Margin="0,0,8,8"
-                                                                SnapsToDevicePixels="True">
-                                    <Border Name="SubmenuBorder"
-                                            Margin="1"
-                                            BorderBrush="{StaticResource LineButtonBorderBrush}"
-                                            Background="{StaticResource TabItemMenuBackcolor}"
-                                            CornerRadius="1"
-                                            BorderThickness="1">
-                                        <ScrollViewer VerticalScrollBarVisibility="Auto"
-                                                      HorizontalScrollBarVisibility="Disabled"
-                                                      MaxHeight="600">
-                                            <StackPanel IsItemsHost="True"
-                                                        KeyboardNavigation.DirectionalNavigation="Cycle" />
-                                        </ScrollViewer>
-                                    </Border>
-                                </themes1:SystemDropShadowChrome>
-                            </Popup>
-                        </Grid>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsHighlighted" Value="true">
-                            <Setter TargetName="ButtonBorder" Property="Background" Value="{StaticResource HorizontalYellowHoverGradient}" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource LineButtonBorderBrush}"/>
+        <Setter Property="Background" Value="{StaticResource HorizontalBlueGradientBrush}"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="BorderBrush" Value="{StaticResource ToolBar.Hover.BorderBrush}"/>
+                <Setter Property="Background" Value="{StaticResource HorizontalYellowHoverGradient}"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="BorderBrush" Value="{StaticResource ToolBar.Pressed.BorderBrush}"/>
+                <Setter Property="Background" Value="{StaticResource HorizontalYellowPressedGradientBrush}"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
-    <Style x:Key="TabMenuItem" TargetType="{x:Type MenuItem}" BasedOn="{StaticResource {x:Type MenuItem}}">
+    <Style x:Key="TabMenuItemStyle" TargetType="{x:Type MenuItem}" BasedOn="{StaticResource {x:Type MenuItem}}">
         <Setter Property="Header" Value="{Binding Path=Header}" />
+        <Setter Property="IsChecked" Value="{Binding Path=IsSelected}" />
         <Setter Property="Command" Value="{Binding Path=MenuCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type c:ClosableTabControl}}}"/>
         <Setter Property="CommandParameter" Value="{Binding DataContext, RelativeSource={RelativeSource Self}}"/>
-        <!--<Setter Property="IsEnabled" Value="{Binding Path=IsEnabled}" />
-        <Setter Property="IsCheckable" Value="{Binding Path=IsEnabled}" />-->
-        <Setter Property="IsChecked" Value="{Binding Path=IsSelected}" />
         <Style.Triggers>
             <Trigger Property="IsChecked" Value="True">
                 <Setter Property="FontWeight" Value="Bold"/>
@@ -304,9 +235,10 @@
                                  Clicking an item here will select the respective TabItem.
                               -->
                                     <Menu Background="Transparent">
-                                        <MenuItem ItemContainerStyle="{StaticResource TabMenuItem}"
+                                        <MenuItem ItemContainerStyle="{StaticResource TabMenuItemStyle}"
                                                   ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type c:ClosableTabControl}}, Path=Items}"
-                                                  Style="{StaticResource TabMenuButtonStyle}"/>
+                                                  Header="{StaticResource TabMenuButtonPath}"
+                                                  Style="{StaticResource TabTopMenuItemStyle}"/>
                                     </Menu>
                                 </StackPanel>
                             </Grid>
