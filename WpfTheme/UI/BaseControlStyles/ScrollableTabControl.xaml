@@ -96,7 +96,6 @@
         <Setter Property="Height" Value="22"/>
         <Setter Property="Width" Value="22"/>
         <Setter Property="Padding" Value="2"/>
-        <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="BorderBrush" Value="{StaticResource LineButtonBorderBrush}"/>
         <Setter Property="Background" Value="{StaticResource HorizontalBlueGradientBrush}"/>
         <Style.Triggers>
