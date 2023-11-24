@@ -4,19 +4,17 @@ using System.Windows.Controls;
 
 namespace SysadminsLV.WPF.OfficeTheme.Toolkit.Behaviors {
     public static class CaretBehavior {
-        static void OnObserveCaretPropertyChanged(DependencyObject dpo, DependencyPropertyChangedEventArgs e) {
-            TextBox textBox = dpo as TextBox;
-            if (textBox != null) {
+        static void onObserveCaretPropertyChanged(DependencyObject dpo, DependencyPropertyChangedEventArgs e) {
+            if (dpo is TextBox textBox) {
                 if ((Boolean)e.NewValue) {
-                    textBox.SelectionChanged += TextBoxSelectionChanged;
+                    textBox.SelectionChanged += onTextBoxSelectionChanged;
                 } else {
-                    textBox.SelectionChanged -= TextBoxSelectionChanged;
+                    textBox.SelectionChanged -= onTextBoxSelectionChanged;
                 }
             }
         }
-        static void TextBoxSelectionChanged(Object sender, RoutedEventArgs e) {
-            TextBox textBox = sender as TextBox;
-            if (textBox != null) {
+        static void onTextBoxSelectionChanged(Object sender, RoutedEventArgs e) {
+            if (sender is TextBox textBox) {
                 Int32 line = textBox.GetLineIndexFromCharacterIndex(textBox.SelectionStart);
                 SetCaretIndex(textBox, textBox.SelectionStart - textBox.GetCharacterIndexFromLineIndex(line) + 1);
                 SetLineIndex(textBox, line + 1);
@@ -35,7 +33,7 @@ namespace SysadminsLV.WPF.OfficeTheme.Toolkit.Behaviors {
             "ObserveCaret",
             typeof(Boolean),
             typeof(CaretBehavior),
-            new UIPropertyMetadata(false, OnObserveCaretPropertyChanged));
+            new UIPropertyMetadata(false, onObserveCaretPropertyChanged));
 
         public static Boolean GetObserveCaret(DependencyObject obj) {
             return (Boolean)obj.GetValue(ObserveCaretProperty);
