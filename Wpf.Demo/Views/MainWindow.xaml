@@ -64,6 +64,9 @@
             <TabItem Header="DataGrid">
                 <uc:DataGridUC/>
             </TabItem>
+            <TabItem Header="TreeView">
+                <uc:TreeViewUC/>
+            </TabItem>
         </TabControl>
     </DockPanel>
 </Window>

@@ -104,4 +104,6 @@
     <!--TreeView-->
     <SolidColorBrush x:Key="TreeViewItem.Connection.LineBrush" Color="#FFDCDCDC"/>
     <SolidColorBrush x:Key="TreeViewItem.Expander.Border.Brush" Color="#FF919191"/>
+    <SolidColorBrush x:Key="TreeViewItem.Selected.Active.Brush" Color="{StaticResource Menu.BgColor}"/>
+    <SolidColorBrush x:Key="TreeViewItem.Selected.Inactive.Brush" Color="#d6d8d9"/>
 </ResourceDictionary>

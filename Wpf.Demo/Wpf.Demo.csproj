@@ -125,6 +125,9 @@
     <Compile Include="Views\UserControls\ToolBarUC.xaml.cs">
       <DependentUpon>ToolBarUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\UserControls\TreeViewUC.xaml.cs">
+      <DependentUpon>TreeViewUC.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\UserControls\BadgesUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -209,6 +212,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UserControls\ToolBarUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\TreeViewUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
