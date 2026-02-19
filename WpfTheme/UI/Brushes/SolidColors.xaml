@@ -1,5 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
     <!--Colors-->
     <Color x:Key="Panel.BgColor">          #FFE2EEFE</Color>
     <Color x:Key="Menu.BgColor">           #BFDBFF</Color>
@@ -8,102 +9,102 @@
     <Color x:Key="Border.LightColor">      #FFADD1FF</Color>
     <Color x:Key="Header.FgColor">         #FF15429F</Color>
     <!-- Solid Brushes -->
-    <SolidColorBrush x:Key="Brush-Transparent"      Color="Transparent"/>
+    <SolidColorBrush x:Key="Brush-Transparent" Color="Transparent" po:Freeze="True"/>
 
-    <SolidColorBrush x:Key="Brush-DefaultSolidBg"   Color="#343a40"/>
-    <SolidColorBrush x:Key="Brush-DefaultSoftBg"    Color="#d6d8d9"/>
-    <SolidColorBrush x:Key="Brush-DefaultSoftFg"    Color="#1b1e21"/>
-    <SolidColorBrush x:Key="Brush-PrimarySolidBg"   Color="#004fa3"/>
-    <SolidColorBrush x:Key="Brush-PrimarySoftBg"    Color="#cce5ff"/>
-    <SolidColorBrush x:Key="Brush-PrimarySoftFg"    Color="#004fa3"/>
-    <SolidColorBrush x:Key="Brush-SecondarySolidBg" Color="#748194"/>
-    <SolidColorBrush x:Key="Brush-SecondarySoftBg"  Color="#e3e6ea"/>
-    <SolidColorBrush x:Key="Brush-SecondarySoftFg"  Color="#748194"/>
-    <SolidColorBrush x:Key="Brush-SuccessSolidBg"   Color="#28a745"/>
-    <SolidColorBrush x:Key="Brush-SuccessSoftBg"    Color="#d4edda"/>
-    <SolidColorBrush x:Key="Brush-SuccessSoftFg"    Color="#28a745"/>
-    <SolidColorBrush x:Key="Brush-WarningSolidBg"   Color="#fd7e14"/>
-    <SolidColorBrush x:Key="Brush-WarningSoftBg"    Color="#ffe3cb"/>
-    <SolidColorBrush x:Key="Brush-WarningSoftFg"    Color="#fd7e14"/>
-    <SolidColorBrush x:Key="Brush-DangerSolidBg"    Color="#dc3545"/>
-    <SolidColorBrush x:Key="Brush-DangerSoftBg"     Color="#f8d7da"/>
-    <SolidColorBrush x:Key="Brush-DangerSoftFg"     Color="#dc3545"/>
-    <SolidColorBrush x:Key="Brush-CornflowerBlue"   Color="CornflowerBlue"/>
-    <SolidColorBrush x:Key="Brush-Navy"             Color="Navy"/>
+    <SolidColorBrush x:Key="Brush-DefaultSolidBg"   Color="#343a40" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Brush-DefaultSoftBg"    Color="#d6d8d9" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Brush-DefaultSoftFg"    Color="#1b1e21" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Brush-PrimarySolidBg"   Color="#004fa3" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Brush-PrimarySoftBg"    Color="#cce5ff" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Brush-PrimarySoftFg"    Color="#004fa3" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Brush-SecondarySolidBg" Color="#748194" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Brush-SecondarySoftBg"  Color="#e3e6ea" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Brush-SecondarySoftFg"  Color="#748194" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Brush-SuccessSolidBg"   Color="#28a745" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Brush-SuccessSoftBg"    Color="#d4edda" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Brush-SuccessSoftFg"    Color="#28a745" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Brush-WarningSolidBg"   Color="#fd7e14" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Brush-WarningSoftBg"    Color="#ffe3cb" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Brush-WarningSoftFg"    Color="#fd7e14" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Brush-DangerSolidBg"    Color="#dc3545" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Brush-DangerSoftBg"     Color="#f8d7da" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Brush-DangerSoftFg"     Color="#dc3545" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Brush-CornflowerBlue"   Color="CornflowerBlue" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Brush-Navy"             Color="Navy" po:Freeze="True"/>
 
     <!--Panels-->
-    <SolidColorBrush x:Key="PanelBackgroundBrush"    Color="{StaticResource Panel.BgColor}"/>
-    <SolidColorBrush x:Key="PanelHeaderBackground"   Color="#FFB3D6E6"/>
-    <SolidColorBrush x:Key="PanelBorderBrush"        Color="#FF6592CE"/>
-    <SolidColorBrush x:Key="Panel.Border.LightBrush" Color="{StaticResource Border.LightColor}"/>
-    <SolidColorBrush x:Key="Panel.FgBrush"           Color="{StaticResource Header.FgColor}"/>
+    <SolidColorBrush x:Key="PanelBackgroundBrush"    Color="{StaticResource Panel.BgColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="PanelHeaderBackground"   Color="#FFB3D6E6" po:Freeze="True"/>
+    <SolidColorBrush x:Key="PanelBorderBrush"        Color="#FF6592CE" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Panel.Border.LightBrush" Color="{StaticResource Border.LightColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Panel.FgBrush"           Color="{StaticResource Header.FgColor}" po:Freeze="True"/>
 
     <!--CheckBox, RadioButton-->
-    <SolidColorBrush x:Key="CheckBox.Fill"    Color="#FFF4F4F4"/>
-    <SolidColorBrush x:Key="CheckBox.Stroke"  Color="#FF8E8F8F"/>
-    <SolidColorBrush x:Key="CheckBox.FgBrush" Color="{StaticResource Header.FgColor}"/>
+    <SolidColorBrush x:Key="CheckBox.Fill"    Color="#FFF4F4F4" po:Freeze="True"/>
+    <SolidColorBrush x:Key="CheckBox.Stroke"  Color="#FF8E8F8F" po:Freeze="True"/>
+    <SolidColorBrush x:Key="CheckBox.FgBrush" Color="{StaticResource Header.FgColor}" po:Freeze="True"/>
 
     <!--ContextMenu-->
-    <SolidColorBrush x:Key="ContextMenu.BgBrush" Color="#FFF4F4F4"/>
+    <SolidColorBrush x:Key="ContextMenu.BgBrush" Color="#FFF4F4F4" po:Freeze="True"/>
 
     <!--Expander-->
-    <SolidColorBrush x:Key="Expander.Header.FgBrush"     Color="{StaticResource Header.FgColor}"/>
-    <SolidColorBrush x:Key="Expander.Header.BorderBrush" Color="{StaticResource Border.Color}"/>
+    <SolidColorBrush x:Key="Expander.Header.FgBrush"     Color="{StaticResource Header.FgColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Expander.Header.BorderBrush" Color="{StaticResource Border.Color}" po:Freeze="True"/>
     
     <!--GroupBox-->
-    <SolidColorBrush x:Key="GroupBox.FgBrush"     Color="{StaticResource Header.FgColor}"/>
-    <SolidColorBrush x:Key="GroupBox.BorderBrush" Color="{StaticResource Border.Color}"/>
+    <SolidColorBrush x:Key="GroupBox.FgBrush"     Color="{StaticResource Header.FgColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="GroupBox.BorderBrush" Color="{StaticResource Border.Color}" po:Freeze="True"/>
     
     <!--HeaderedContentControl-->
-    <SolidColorBrush x:Key="HeaderedControl.BorderBrush" Color="{StaticResource Border.Color}"/>
-    <SolidColorBrush x:Key="HeaderedControl.FgBrush"     Color="{StaticResource Header.FgColor}"/>
+    <SolidColorBrush x:Key="HeaderedControl.BorderBrush" Color="{StaticResource Border.Color}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="HeaderedControl.FgBrush"     Color="{StaticResource Header.FgColor}" po:Freeze="True"/>
 
     <!--ListView, ListBox-->
-    <SolidColorBrush x:Key="List.Border"  Color="{StaticResource Border.Color}"/>
-    <SolidColorBrush x:Key="List.FgBrush" Color="{StaticResource Header.FgColor}"/>
+    <SolidColorBrush x:Key="List.Border"  Color="{StaticResource Border.Color}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="List.FgBrush" Color="{StaticResource Header.FgColor}" po:Freeze="True"/>
     
     <!--Menu, MenuItem-->
-    <SolidColorBrush x:Key="Menu.BgBrush"                     Color="{StaticResource Menu.BgColor}"/>
-    <SolidColorBrush x:Key="MenuItem.Highlighted.BorderBrush" Color="{StaticResource Menu.Active.BorderColor}"/>
-    <SolidColorBrush x:Key="MenuItem.Pressed.BorderBrush"     Color="{StaticResource Menu.Active.BorderColor}"/>
-    <SolidColorBrush x:Key="MenuItem.Glyph.BorderBrush"       Color="{StaticResource Menu.Active.BorderColor}"/>
+    <SolidColorBrush x:Key="Menu.BgBrush"                     Color="{StaticResource Menu.BgColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="MenuItem.Highlighted.BorderBrush" Color="{StaticResource Menu.Active.BorderColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="MenuItem.Pressed.BorderBrush"     Color="{StaticResource Menu.Active.BorderColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="MenuItem.Glyph.BorderBrush"       Color="{StaticResource Menu.Active.BorderColor}" po:Freeze="True"/>
 
-    <SolidColorBrush x:Key="ButtonNormalBorder"             Color="#FF707070"/>
+    <SolidColorBrush x:Key="ButtonNormalBorder" Color="#FF707070" po:Freeze="True"/>
     
     <!--StatusBar-->
-    <SolidColorBrush x:Key="StatusBar.BorderBrush" Color="{StaticResource Border.LightColor}"/>
-    <SolidColorBrush x:Key="StatusBar.FgBrush"     Color="{StaticResource Header.FgColor}"/>
+    <SolidColorBrush x:Key="StatusBar.BorderBrush" Color="{StaticResource Border.LightColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="StatusBar.FgBrush"     Color="{StaticResource Header.FgColor}" po:Freeze="True"/>
     
     <!--TabControl, TabItem-->
-    <SolidColorBrush x:Key="TabControl.BgBrush"            Color="{StaticResource Panel.BgColor}"/>
-    <SolidColorBrush x:Key="TabControl.BorderBrush"        Color="{StaticResource Border.LightColor}"/>
-    <SolidColorBrush x:Key="TabControl.Header.BorderBrush" Color="{StaticResource Border.Color}"/>
-    <SolidColorBrush x:Key="TabItem.FgBrush"               Color="{StaticResource Header.FgColor}"/>
-    <SolidColorBrush x:Key="TabItem.BorderBrush"           Color="{StaticResource Border.Color}"/>
+    <SolidColorBrush x:Key="TabControl.BgBrush"            Color="{StaticResource Panel.BgColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="TabControl.BorderBrush"        Color="{StaticResource Border.LightColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="TabControl.Header.BorderBrush" Color="{StaticResource Border.Color}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="TabItem.FgBrush"               Color="{StaticResource Header.FgColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="TabItem.BorderBrush"           Color="{StaticResource Border.Color}" po:Freeze="True"/>
     
     <!--TextBlock-->
-    <SolidColorBrush x:Key="TextBlock.Disabled.OpacityMask" Color="#A0FFFFFF"></SolidColorBrush>
+    <SolidColorBrush x:Key="TextBlock.Disabled.OpacityMask" Color="#A0FFFFFF" po:Freeze="True"/>
     
     <!--TextBox, PasswordBox, Editable ComboBox-->
-    <SolidColorBrush x:Key="TextBox.BorderBrush"              Color="#FFABC1DE"/>
-    <SolidColorBrush x:Key="TextBox.Focused.BorderBrush"      Color="Navy"/>
-    <SolidColorBrush x:Key="TextBox.Hover.BorderBrush"        Color="{StaticResource Border.Color}"/>
-    <SolidColorBrush x:Key="TextBox.Disabled.BgBrush"         Color="Transparent"/>
-    <SolidColorBrush x:Key="TextBox.HasError.BorderBrush"     Color="Red"/>
-    <SolidColorBrush x:Key="TextBox.HasError.BorderSoftBrush" Color="#ff7f7f"/>
+    <SolidColorBrush x:Key="TextBox.BorderBrush"              Color="#FFABC1DE" po:Freeze="True"/>
+    <SolidColorBrush x:Key="TextBox.Focused.BorderBrush"      Color="Navy" po:Freeze="True"/>
+    <SolidColorBrush x:Key="TextBox.Hover.BorderBrush"        Color="{StaticResource Border.Color}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="TextBox.Disabled.BgBrush"         Color="Transparent" po:Freeze="True"/>
+    <SolidColorBrush x:Key="TextBox.HasError.BorderBrush"     Color="Red" po:Freeze="True"/>
+    <SolidColorBrush x:Key="TextBox.HasError.BorderSoftBrush" Color="#ff7f7f" po:Freeze="True"/>
 
     <!--ToolBar-->
-    <SolidColorBrush x:Key="ToolBarTray.BgBrush"              Color="{StaticResource Menu.BgColor}"/>
-    <SolidColorBrush x:Key="ToolBar.Hover.BorderBrush"        Color="{StaticResource Menu.Active.BorderColor}"/>
-    <SolidColorBrush x:Key="ToolBar.Pressed.BorderBrush"      Color="{StaticResource Menu.Active.BorderColor}"/>
-    <SolidColorBrush x:Key="ToolBar.Checked.BorderBrush"      Color="{StaticResource Menu.Active.BorderColor}"/>
-    <SolidColorBrush x:Key="Toolbar.BottomBorderBrush"        Color="#6F9DD9"/>
-    <SolidColorBrush x:Key="ToolBar.Overflow.Hover.BgBrush"   Color="#FFEBA6"/>
-    <SolidColorBrush x:Key="ToolBar.Overflow.Pressed.BgBrush" Color="#FDA461"/>
+    <SolidColorBrush x:Key="ToolBarTray.BgBrush"              Color="{StaticResource Menu.BgColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ToolBar.Hover.BorderBrush"        Color="{StaticResource Menu.Active.BorderColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ToolBar.Pressed.BorderBrush"      Color="{StaticResource Menu.Active.BorderColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ToolBar.Checked.BorderBrush"      Color="{StaticResource Menu.Active.BorderColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Toolbar.BottomBorderBrush"        Color="#6F9DD9" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ToolBar.Overflow.Hover.BgBrush"   Color="#FFEBA6" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ToolBar.Overflow.Pressed.BgBrush" Color="#FDA461" po:Freeze="True"/>
 
     <!--TreeView-->
-    <SolidColorBrush x:Key="TreeViewItem.Connection.LineBrush" Color="#FFDCDCDC"/>
-    <SolidColorBrush x:Key="TreeViewItem.Expander.Border.Brush" Color="#FF919191"/>
-    <SolidColorBrush x:Key="TreeViewItem.Selected.Active.Brush" Color="{StaticResource Menu.BgColor}"/>
-    <SolidColorBrush x:Key="TreeViewItem.Selected.Inactive.Brush" Color="#d6d8d9"/>
+    <SolidColorBrush x:Key="TreeViewItem.Connection.LineBrush"    Color="#FFDCDCDC" po:Freeze="True"/>
+    <SolidColorBrush x:Key="TreeViewItem.Expander.Border.Brush"   Color="#FF919191" po:Freeze="True"/>
+    <SolidColorBrush x:Key="TreeViewItem.Selected.Active.Brush"   Color="{StaticResource Menu.BgColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="TreeViewItem.Selected.Inactive.Brush" Color="#d6d8d9" po:Freeze="True"/>
 </ResourceDictionary>
