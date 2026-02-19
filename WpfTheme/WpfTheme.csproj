@@ -23,6 +23,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,6 +33,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
@@ -75,7 +77,6 @@
     <Compile Include="Toolkit\ViewModels\ViewModelBase.cs" />
     <Compile Include="Controls\ScrollChrome.cs" />
     <Compile Include="Toolkit\Behaviors\BrowserBehavior.cs" />
-    <Compile Include="Toolkit\Commands\CommandManagerHelper.cs" />
     <Compile Include="Toolkit\Commands\RelayCommand.cs" />
     <Compile Include="Toolkit\Converters\TreeViewLineConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

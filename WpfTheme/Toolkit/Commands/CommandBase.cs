@@ -1,47 +1,59 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Windows;
 using System.Windows.Input;
-using System.Windows.Threading;
 
-namespace SysadminsLV.WPF.OfficeTheme.Toolkit.Commands {
-    public abstract class CommandBase<T> : ICommand where T : class {
-        readonly Predicate<T> _canExecute;
-        List<WeakReference> canExecuteChangedHandlers;
+namespace SysadminsLV.WPF.OfficeTheme.Toolkit.Commands;
 
-        protected CommandBase(Predicate<T> canExecute = null) {
-            _canExecute = canExecute;
-            CommandManagerHelper.RemoveHandlersFromRequerySuggested(canExecuteChangedHandlers);
-        }
+/// <summary>
+/// Represents an abstract base class for implementing commands in WPF applications.
+/// </summary>
+/// <typeparam name="T">
+/// The type of the parameter passed to the command. Must be a reference type.
+/// </typeparam>
+/// <param name="canExecute">
+/// A predicate that determines whether the command can execute. If <see langword="null"/>, the command can always execute.
+/// </param>
+/// <param name="UseCommandManager">
+/// A value indicating whether the command should use the <see cref="CommandManager"/> for managing
+/// the <see cref="CanExecuteChanged"/> event.
+/// </param>
+public abstract class CommandBase<T>(Predicate<T>? canExecute = null, Boolean UseCommandManager = false) : ICommand
+    where T : class {
+    EventHandler? canExecuteChanged;
 
-        void OnCanExecuteChanged() {
-            // we may not be on the UI thread, and things are unhappy when they aren't on the UI thread, so make sure we are on the UI thread
-            Debug.Assert(Application.Current != null);
-            if (!Application.Current.Dispatcher.CheckAccess()) {
-                Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal, (Action)OnCanExecuteChanged);
-            } else {
-                CommandManagerHelper.CallWeakReferenceHandlers(canExecuteChangedHandlers);
-            }
-            CommandManager.InvalidateRequerySuggested();
-        }
-        protected void RaiseCanExecuteChanged() {
-            OnCanExecuteChanged();
-        }
-        public Boolean CanExecute(Object parameter) {
-            return _canExecute == null || _canExecute(parameter as T);
-        }
-        public abstract void Execute(Object parameter);
+    /// <summary>
+    /// Raises the <see cref="CanExecuteChanged"/> event to indicate that the result of the <see cref="CanExecute"/> method
+    /// may have changed.
+    /// </summary>
+    /// <remarks>
+    /// This method is typically called to notify the command manager or any subscribers that the command's ability
+    /// to execute has changed. If <see cref="UseCommandManager"/> is <see langword="true"/>, the 
+    /// <see cref="CommandManager"/> will automatically handle this event.
+    /// </remarks>
+    protected void RaiseCanExecuteChanged() {
+        canExecuteChanged?.Invoke(this, EventArgs.Empty);
+    }
 
-        public event EventHandler CanExecuteChanged {
-            add {
+    /// <inheritdoc />
+    public abstract void Execute(Object parameter);
+    /// <inheritdoc />
+    public virtual Boolean CanExecute(Object parameter) {
+        return canExecute is null || canExecute(parameter as T);
+    }
+
+    /// <inheritdoc />
+    public event EventHandler CanExecuteChanged {
+        add {
+            // Only use CommandManager if explicitly requested
+            if (UseCommandManager && canExecute is not null) {
                 CommandManager.RequerySuggested += value;
-                CommandManagerHelper.AddWeakReferenceHandler(ref canExecuteChangedHandlers, value, 2);
             }
-            remove {
+            canExecuteChanged += value;
+        }
+        remove {
+            if (UseCommandManager && canExecute is not null) {
                 CommandManager.RequerySuggested -= value;
-                CommandManagerHelper.RemoveWeakReferenceHandler(canExecuteChangedHandlers, value);
             }
+            canExecuteChanged -= value;
         }
     }
 }
