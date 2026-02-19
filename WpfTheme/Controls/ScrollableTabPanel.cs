@@ -23,20 +23,31 @@ namespace SysadminsLV.WPF.OfficeTheme.Controls {
 
         //The following GradientStopCollections are being used for assigning an OpacityMask
         //to child-controls that are only partially visible.
-        static readonly GradientStopCollection _gscOpacityMaskStopsTransparentOnLeftAndRight = new GradientStopCollection{
-            new GradientStop(Colors.Transparent,0.0),
-            new GradientStop(Colors.Black, 0.2),
-            new GradientStop(Colors.Black, 0.8),
-            new GradientStop(Colors.Transparent,1.0)
-        };
-        static readonly GradientStopCollection _gscOpacityMaskStopsTransparentOnLeft = new GradientStopCollection{
-            new GradientStop(Colors.Transparent,0),
-            new GradientStop(Colors.Black, 0.5)
-        };
-        static readonly GradientStopCollection _gscOpacityMaskStopsTransparentOnRight = new GradientStopCollection{
-            new GradientStop(Colors.Black, 0.5),
-            new GradientStop(Colors.Transparent, 1)
-        };
+        static readonly GradientStopCollection _gscOpacityMaskStopsTransparentOnLeftAndRight;
+        static readonly GradientStopCollection _gscOpacityMaskStopsTransparentOnLeft;
+        static readonly GradientStopCollection _gscOpacityMaskStopsTransparentOnRight;
+
+        static ScrollableTabPanel() {
+            _gscOpacityMaskStopsTransparentOnLeftAndRight = new GradientStopCollection{
+                new GradientStop(Colors.Transparent,0.0),
+                new GradientStop(Colors.Black, 0.2),
+                new GradientStop(Colors.Black, 0.8),
+                new GradientStop(Colors.Transparent,1.0)
+            };
+            _gscOpacityMaskStopsTransparentOnLeftAndRight.Freeze();
+
+            _gscOpacityMaskStopsTransparentOnLeft = new GradientStopCollection{
+                new GradientStop(Colors.Transparent,0),
+                new GradientStop(Colors.Black, 0.5)
+            };
+            _gscOpacityMaskStopsTransparentOnLeft.Freeze();
+
+            _gscOpacityMaskStopsTransparentOnRight = new GradientStopCollection{
+                new GradientStop(Colors.Black, 0.5),
+                new GradientStop(Colors.Transparent, 1)
+            };
+            _gscOpacityMaskStopsTransparentOnRight.Freeze();
+        }
 
         /// <summary>
         /// This will apply the present scroll-position resp. -offset.
@@ -51,6 +62,7 @@ namespace SysadminsLV.WPF.OfficeTheme.Controls {
             CanHorizontallyScroll = true;
             RenderTransform = _ttScrollTransform;
             SizeChanged += ScrollableTabPanelSizeChanged;
+            Unloaded += ScrollableTabPanelUnloaded;
         }
 
         #endregion
@@ -709,6 +721,16 @@ namespace SysadminsLV.WPF.OfficeTheme.Controls {
             UpdateOpacityMasks();
         }
 
+        void ScrollableTabPanelUnloaded(Object sender, RoutedEventArgs e) {
+            // Clean up event handlers to prevent memory leaks
+            SizeChanged -= ScrollableTabPanelSizeChanged;
+            Unloaded -= ScrollableTabPanelUnloaded;
+            
+            // Clean up ScrollOwner event subscription
+            if (svOwningScrollViewer != null) {
+                svOwningScrollViewer.Loaded -= ScrollOwnerLoaded;
+            }
+        }
 
         #endregion
 

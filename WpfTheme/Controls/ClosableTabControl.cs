@@ -10,6 +10,7 @@ namespace SysadminsLV.WPF.OfficeTheme.Controls {
     public class ClosableTabControl : TabControl {
         public ClosableTabControl() {
             MenuCommand = new RelayCommand(switchTab);
+            Unloaded += OnUnloaded;
         }
 
         #region AddTabCommand
@@ -63,8 +64,8 @@ namespace SysadminsLV.WPF.OfficeTheme.Controls {
             typeof(ClosableTabControl),
             new PropertyMetadata(default));
         public Boolean ShowNewTabButton {
-            get => (Boolean)GetValue(AddTabCommandProperty);
-            set => SetValue(AddTabCommandProperty, value);
+            get => (Boolean)GetValue(ShowNewTabButtonProperty);
+            set => SetValue(ShowNewTabButtonProperty, value);
         }
 
         #endregion
@@ -119,6 +120,21 @@ namespace SysadminsLV.WPF.OfficeTheme.Controls {
         }
         protected override Boolean IsItemItsOwnContainerOverride(Object item) {
             return item is ClosableTabItem;
+        }
+
+        void OnUnloaded(Object sender, RoutedEventArgs e) {
+            // Clean up event handlers to prevent memory leaks
+            Unloaded -= OnUnloaded;
+            
+            if (AddTabCommand != null) {
+                removeCommand(AddTabCommand);
+            }
+            if (CloseTabCommand != null) {
+                removeCommand(CloseTabCommand);
+            }
+            if (MenuCommand != null) {
+                removeCommand(MenuCommand);
+            }
         }
     }
 }
