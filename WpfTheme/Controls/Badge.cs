@@ -28,8 +28,8 @@ namespace SysadminsLV.WPF.OfficeTheme.Controls {
         /// Gets or sets the badge look.
         /// </summary>
         public BadgeStyle BadgeStyle {
-            get => (BadgeStyle)GetValue(ThemeColorProperty);
-            set => SetValue(ThemeColorProperty, value);
+            get => (BadgeStyle)GetValue(BadgeStyleProperty);
+            set => SetValue(BadgeStyleProperty, value);
         }
     }
 }
