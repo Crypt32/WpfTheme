@@ -120,7 +120,7 @@
                                         Visibility="Visible"
                                         Style="{StaticResource TabItemCloseButtonStyle}"
                                         Command="{Binding Path=CloseTabCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type c:ClosableTabControl}}}"
-                                        CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type c:ClosableTabItem}}}"
+                                        CommandParameter="{Binding Path=DataContext, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type c:ClosableTabItem}}}"
                                         Margin="-5,3,5,3"/>
                             </DockPanel>
                         </Border>
