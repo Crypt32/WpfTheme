@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 
-namespace SysadminsLV.WPF.OfficeTheme.Toolkit {
+namespace SysadminsLV.WPF.Dialogs {
     public class MsgBox {
         public static MessageBoxResult Show(
             String header,
