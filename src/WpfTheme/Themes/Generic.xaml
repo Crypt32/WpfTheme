@@ -15,6 +15,8 @@
         <ResourceDictionary Source="pack://application:,,,/Wpf.OfficeTheme;component/Themes/BaseControlStyles/Badge.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/Wpf.OfficeTheme;component/Themes/BaseControlStyles/ClosableTabItem.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/Wpf.OfficeTheme;component/Themes/BaseControlStyles/LoadingSpinner.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Wpf.OfficeTheme;component/Themes/BaseControlStyles/NotificationItem.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Wpf.OfficeTheme;component/Themes/BaseControlStyles/NotificationPanel.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/Wpf.OfficeTheme;component/Themes/BaseControlStyles/RichTextBox.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     <Style TargetType="controls:ClosableTabControl" BasedOn="{StaticResource {x:Type TabControl}}"/>

@@ -73,6 +73,9 @@
             <TabItem Header="Loading Spinner">
                 <uc:LoadingSpinnerUC/>
             </TabItem>
+            <TabItem Header="Notifications">
+                <uc:NotificationPanelUC/>
+            </TabItem>
         </TabControl>
     </DockPanel>
 </Window>
