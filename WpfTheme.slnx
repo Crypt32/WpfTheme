@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Wpf.Demo/Wpf.Demo.csproj" />
+  <Project Path="WpfTheme/WpfTheme.csproj" />
+</Solution>
