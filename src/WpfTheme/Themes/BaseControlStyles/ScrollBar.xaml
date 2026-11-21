@@ -82,6 +82,69 @@
                        ViewportSize="{TemplateBinding ViewportWidth}"/>
         </Grid>
     </ControlTemplate>
+    <Style x:Key="ScrollBarLineButtonStyle" TargetType="{x:Type RepeatButton}">
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <c:ScrollChrome x:Name="Chrome"
+                                    RenderMouseOver="{TemplateBinding IsMouseOver}"
+                                    RenderPressed="{TemplateBinding IsPressed}"
+                                    SnapsToDevicePixels="True"
+                                    ScrollGlyph="{TemplateBinding c:ScrollChrome.ScrollGlyph}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ScrollBarVerticalPageButtonStyle" TargetType="{x:Type RepeatButton}">
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Rectangle x:Name="Bg" Fill="{TemplateBinding Background}"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Fill" TargetName="Bg" Value="{StaticResource ScrollBarVerticalTrackPressedBackground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ScrollBarHorizontalPageButtonStyle" TargetType="{x:Type RepeatButton}" BasedOn="{StaticResource ScrollBarVerticalPageButtonStyle}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Rectangle x:Name="Bg" Fill="{TemplateBinding Background}"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Fill" TargetName="Bg" Value="{StaticResource ScrollBarHorizontalTrackPressedBackground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ScrollBarThumbStyle" TargetType="{x:Type Thumb}">
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Thumb}">
+                    <c:ScrollChrome x:Name="Chrome"
+                                    RenderMouseOver="{TemplateBinding IsMouseOver}"
+                                    RenderPressed="{TemplateBinding IsDragging}"
+                                    SnapsToDevicePixels="True"
+                                    ScrollGlyph="{TemplateBinding c:ScrollChrome.ScrollGlyph}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
     <Style TargetType="{x:Type ScrollBar}">
         <Setter Property="Stylus.IsPressAndHoldEnabled" Value="False"/>
         <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
@@ -98,109 +161,19 @@
                             <RowDefinition Height="1E-05*"/>
                             <RowDefinition MaxHeight="{DynamicResource {x:Static SystemParameters.VerticalScrollBarButtonHeightKey}}"/>
                         </Grid.RowDefinitions>
-                        <RepeatButton Command="ScrollBar.LineUpCommand" c:ScrollChrome.ScrollGlyph="UpArrow" Height="17" VerticalAlignment="Bottom">
-                            <RepeatButton.Style>
-                                <Style TargetType="{x:Type RepeatButton}">
-                                    <Setter Property="OverridesDefaultStyle" Value="True"/>
-                                    <Setter Property="Focusable" Value="False"/>
-                                    <Setter Property="IsTabStop" Value="False"/>
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="{x:Type RepeatButton}">
-                                                <c:ScrollChrome x:Name="Chrome"
-                                                                RenderMouseOver="{TemplateBinding IsMouseOver}"
-                                                                RenderPressed="{TemplateBinding IsPressed}"
-                                                                SnapsToDevicePixels="True"
-                                                                ScrollGlyph="{TemplateBinding c:ScrollChrome.ScrollGlyph}"/>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Style>
-                            </RepeatButton.Style>
-                        </RepeatButton>
+                        <RepeatButton Command="ScrollBar.LineUpCommand" c:ScrollChrome.ScrollGlyph="UpArrow" Height="17" VerticalAlignment="Bottom" Style="{StaticResource ScrollBarLineButtonStyle}"/>
                         <Track x:Name="PART_Track" IsDirectionReversed="True" Grid.Row="1">
                             <Track.DecreaseRepeatButton>
-                                <RepeatButton Command="ScrollBar.PageUpCommand">
-                                    <RepeatButton.Style>
-                                        <Style TargetType="{x:Type RepeatButton}">
-                                            <Setter Property="OverridesDefaultStyle" Value="True"/>
-                                            <Setter Property="Background" Value="Transparent"/>
-                                            <Setter Property="Focusable" Value="False"/>
-                                            <Setter Property="IsTabStop" Value="False"/>
-                                            <Setter Property="Template">
-                                                <Setter.Value>
-                                                    <ControlTemplate TargetType="{x:Type RepeatButton}">
-                                                        <Rectangle x:Name="Bg" Fill="{TemplateBinding Background}"/>
-                                                        <ControlTemplate.Triggers>
-                                                            <Trigger Property="IsPressed" Value="True">
-                                                                <Setter Property="Fill" TargetName="Bg" Value="{StaticResource ScrollBarVerticalTrackPressedBackground}"/>
-                                                            </Trigger>
-                                                        </ControlTemplate.Triggers>
-                                                    </ControlTemplate>
-                                                </Setter.Value>
-                                            </Setter>
-                                        </Style>
-                                    </RepeatButton.Style>
-                                </RepeatButton>
+                                <RepeatButton Command="ScrollBar.PageUpCommand" Style="{StaticResource ScrollBarVerticalPageButtonStyle}"/>
                             </Track.DecreaseRepeatButton>
                             <Track.IncreaseRepeatButton>
-                                <RepeatButton Command="ScrollBar.PageDownCommand">
-                                    <RepeatButton.Style>
-                                        <Style TargetType="{x:Type RepeatButton}">
-                                            <Setter Property="OverridesDefaultStyle" Value="True"/>
-                                            <Setter Property="Background" Value="Transparent"/>
-                                            <Setter Property="Focusable" Value="False"/>
-                                            <Setter Property="IsTabStop" Value="False"/>
-                                            <Setter Property="Template">
-                                                <Setter.Value>
-                                                    <ControlTemplate TargetType="{x:Type RepeatButton}">
-                                                        <Rectangle x:Name="Bg" Fill="{TemplateBinding Background}"/>
-                                                        <ControlTemplate.Triggers>
-                                                            <Trigger Property="IsPressed" Value="True">
-                                                                <Setter Property="Fill" TargetName="Bg" Value="{StaticResource ScrollBarVerticalTrackPressedBackground}"/>
-                                                            </Trigger>
-                                                        </ControlTemplate.Triggers>
-                                                    </ControlTemplate>
-                                                </Setter.Value>
-                                            </Setter>
-                                        </Style>
-                                    </RepeatButton.Style>
-                                </RepeatButton>
+                                <RepeatButton Command="ScrollBar.PageDownCommand" Style="{StaticResource ScrollBarVerticalPageButtonStyle}"/>
                             </Track.IncreaseRepeatButton>
                             <Track.Thumb>
-                                <Thumb c:ScrollChrome.ScrollGlyph="VerticalGripper">
-                                    <Thumb.Style>
-                                        <Style TargetType="{x:Type Thumb}">
-                                            <Setter Property="OverridesDefaultStyle" Value="True"/>
-                                            <Setter Property="IsTabStop" Value="False"/>
-                                            <Setter Property="Template">
-                                                <Setter.Value>
-                                                    <ControlTemplate TargetType="{x:Type Thumb}">
-                                                        <c:ScrollChrome x:Name="Chrome" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderPressed="{TemplateBinding IsDragging}" SnapsToDevicePixels="True" ScrollGlyph="{TemplateBinding c:ScrollChrome.ScrollGlyph}"/>
-                                                    </ControlTemplate>
-                                                </Setter.Value>
-                                            </Setter>
-                                        </Style>
-                                    </Thumb.Style>
-                                </Thumb>
+                                <Thumb c:ScrollChrome.ScrollGlyph="VerticalGripper" Style="{StaticResource ScrollBarThumbStyle}"/>
                             </Track.Thumb>
                         </Track>
-                        <RepeatButton Command="ScrollBar.LineDownCommand" Grid.Row="2" c:ScrollChrome.ScrollGlyph="DownArrow">
-                            <RepeatButton.Style>
-                                <Style TargetType="{x:Type RepeatButton}">
-                                    <Setter Property="OverridesDefaultStyle" Value="True"/>
-                                    <Setter Property="Focusable" Value="False"/>
-                                    <Setter Property="IsTabStop" Value="False"/>
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="{x:Type RepeatButton}">
-                                                <c:ScrollChrome x:Name="Chrome" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderPressed="{TemplateBinding IsPressed}" SnapsToDevicePixels="True" ScrollGlyph="{TemplateBinding c:ScrollChrome.ScrollGlyph}"/>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Style>
-                            </RepeatButton.Style>
-                        </RepeatButton>
+                        <RepeatButton Command="ScrollBar.LineDownCommand" Grid.Row="2" c:ScrollChrome.ScrollGlyph="DownArrow" Style="{StaticResource ScrollBarLineButtonStyle}"/>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -221,105 +194,19 @@
                                     <ColumnDefinition Width="1E-05*"/>
                                     <ColumnDefinition MaxWidth="{DynamicResource {x:Static SystemParameters.HorizontalScrollBarButtonWidthKey}}"/>
                                 </Grid.ColumnDefinitions>
-                                <RepeatButton Command="ScrollBar.LineLeftCommand" c:ScrollChrome.ScrollGlyph="LeftArrow">
-                                    <RepeatButton.Style>
-                                        <Style TargetType="{x:Type RepeatButton}">
-                                            <Setter Property="OverridesDefaultStyle" Value="True"/>
-                                            <Setter Property="Focusable" Value="False"/>
-                                            <Setter Property="IsTabStop" Value="False"/>
-                                            <Setter Property="Template">
-                                                <Setter.Value>
-                                                    <ControlTemplate TargetType="{x:Type RepeatButton}">
-                                                        <c:ScrollChrome x:Name="Chrome" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderPressed="{TemplateBinding IsPressed}" SnapsToDevicePixels="True" ScrollGlyph="{TemplateBinding c:ScrollChrome.ScrollGlyph}"/>
-                                                    </ControlTemplate>
-                                                </Setter.Value>
-                                            </Setter>
-                                        </Style>
-                                    </RepeatButton.Style>
-                                </RepeatButton>
+                                <RepeatButton Command="ScrollBar.LineLeftCommand" c:ScrollChrome.ScrollGlyph="LeftArrow" Style="{StaticResource ScrollBarLineButtonStyle}"/>
                                 <Track x:Name="PART_Track" Grid.Column="1">
                                     <Track.DecreaseRepeatButton>
-                                        <RepeatButton Command="ScrollBar.PageLeftCommand">
-                                            <RepeatButton.Style>
-                                                <Style TargetType="{x:Type RepeatButton}">
-                                                    <Setter Property="OverridesDefaultStyle" Value="True"/>
-                                                    <Setter Property="Background" Value="Transparent"/>
-                                                    <Setter Property="Focusable" Value="False"/>
-                                                    <Setter Property="IsTabStop" Value="False"/>
-                                                    <Setter Property="Template">
-                                                        <Setter.Value>
-                                                            <ControlTemplate TargetType="{x:Type RepeatButton}">
-                                                                <Rectangle x:Name="Bg" Fill="{TemplateBinding Background}"/>
-                                                                <ControlTemplate.Triggers>
-                                                                    <Trigger Property="IsPressed" Value="True">
-                                                                        <Setter Property="Fill" TargetName="Bg" Value="{StaticResource ScrollBarHorizontalTrackPressedBackground}"/>
-                                                                    </Trigger>
-                                                                </ControlTemplate.Triggers>
-                                                            </ControlTemplate>
-                                                        </Setter.Value>
-                                                    </Setter>
-                                                </Style>
-                                            </RepeatButton.Style>
-                                        </RepeatButton>
+                                        <RepeatButton Command="ScrollBar.PageLeftCommand" Style="{StaticResource ScrollBarHorizontalPageButtonStyle}"/>
                                     </Track.DecreaseRepeatButton>
                                     <Track.IncreaseRepeatButton>
-                                        <RepeatButton Command="ScrollBar.PageRightCommand">
-                                            <RepeatButton.Style>
-                                                <Style TargetType="{x:Type RepeatButton}">
-                                                    <Setter Property="OverridesDefaultStyle" Value="True"/>
-                                                    <Setter Property="Background" Value="Transparent"/>
-                                                    <Setter Property="Focusable" Value="False"/>
-                                                    <Setter Property="IsTabStop" Value="False"/>
-                                                    <Setter Property="Template">
-                                                        <Setter.Value>
-                                                            <ControlTemplate TargetType="{x:Type RepeatButton}">
-                                                                <Rectangle x:Name="Bg" Fill="{TemplateBinding Background}"/>
-                                                                <ControlTemplate.Triggers>
-                                                                    <Trigger Property="IsPressed" Value="True">
-                                                                        <Setter Property="Fill" TargetName="Bg" Value="{StaticResource ScrollBarHorizontalTrackPressedBackground}"/>
-                                                                    </Trigger>
-                                                                </ControlTemplate.Triggers>
-                                                            </ControlTemplate>
-                                                        </Setter.Value>
-                                                    </Setter>
-                                                </Style>
-                                            </RepeatButton.Style>
-                                        </RepeatButton>
+                                        <RepeatButton Command="ScrollBar.PageRightCommand" Style="{StaticResource ScrollBarHorizontalPageButtonStyle}"/>
                                     </Track.IncreaseRepeatButton>
                                     <Track.Thumb>
-                                        <Thumb c:ScrollChrome.ScrollGlyph="HorizontalGripper">
-                                            <Thumb.Style>
-                                                <Style TargetType="{x:Type Thumb}">
-                                                    <Setter Property="OverridesDefaultStyle" Value="True"/>
-                                                    <Setter Property="IsTabStop" Value="False"/>
-                                                    <Setter Property="Template">
-                                                        <Setter.Value>
-                                                            <ControlTemplate TargetType="{x:Type Thumb}">
-                                                                <c:ScrollChrome x:Name="Chrome" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderPressed="{TemplateBinding IsDragging}" SnapsToDevicePixels="True" ScrollGlyph="{TemplateBinding c:ScrollChrome.ScrollGlyph}"/>
-                                                            </ControlTemplate>
-                                                        </Setter.Value>
-                                                    </Setter>
-                                                </Style>
-                                            </Thumb.Style>
-                                        </Thumb>
+                                        <Thumb c:ScrollChrome.ScrollGlyph="HorizontalGripper" Style="{StaticResource ScrollBarThumbStyle}"/>
                                     </Track.Thumb>
                                 </Track>
-                                <RepeatButton Grid.Column="2" Command="ScrollBar.LineRightCommand" c:ScrollChrome.ScrollGlyph="RightArrow">
-                                    <RepeatButton.Style>
-                                        <Style TargetType="{x:Type RepeatButton}">
-                                            <Setter Property="OverridesDefaultStyle" Value="True"/>
-                                            <Setter Property="Focusable" Value="False"/>
-                                            <Setter Property="IsTabStop" Value="False"/>
-                                            <Setter Property="Template">
-                                                <Setter.Value>
-                                                    <ControlTemplate TargetType="{x:Type RepeatButton}">
-                                                        <c:ScrollChrome x:Name="Chrome" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderPressed="{TemplateBinding IsPressed}" SnapsToDevicePixels="True" ScrollGlyph="{TemplateBinding c:ScrollChrome.ScrollGlyph}"/>
-                                                    </ControlTemplate>
-                                                </Setter.Value>
-                                            </Setter>
-                                        </Style>
-                                    </RepeatButton.Style>
-                                </RepeatButton>
+                                <RepeatButton Grid.Column="2" Command="ScrollBar.LineRightCommand" c:ScrollChrome.ScrollGlyph="RightArrow" Style="{StaticResource ScrollBarLineButtonStyle}"/>
                             </Grid>
                         </ControlTemplate>
                     </Setter.Value>
