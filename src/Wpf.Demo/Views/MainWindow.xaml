@@ -70,6 +70,9 @@
             <TabItem Header="ScrollBar">
                 <uc:ScrollBarUC/>
             </TabItem>
+            <TabItem Header="Loading Spinner">
+                <uc:LoadingSpinnerUC/>
+            </TabItem>
         </TabControl>
     </DockPanel>
 </Window>
