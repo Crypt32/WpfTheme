@@ -20,11 +20,12 @@
         </wpf:ClosableTabControl>
         <wpf:ClosableTabControl ItemsSource="{Binding Tabs, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
                                 Style="{StaticResource ScrollableTabControl}"
+                                MenuDisplayMemberPath="Title"
                                 ShowNewTabButton="True"
                                 Margin="0,10,0,0">
             <wpf:ClosableTabControl.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Header}" FontSize="24"/>
+                    <TextBlock Text="{Binding Title}" FontSize="24"/>
                 </DataTemplate>
             </wpf:ClosableTabControl.ItemTemplate>
             <wpf:ClosableTabControl.ContentTemplate>

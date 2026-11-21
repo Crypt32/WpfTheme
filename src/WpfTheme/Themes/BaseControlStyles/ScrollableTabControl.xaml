@@ -106,7 +106,6 @@
         </Style.Triggers>
     </Style>
     <Style x:Key="TabMenuItemStyle" TargetType="{x:Type MenuItem}" BasedOn="{StaticResource {x:Type MenuItem}}">
-        <Setter Property="Header" Value="{Binding Path=Header}" />
         <Setter Property="IsChecked" Value="{Binding Path=IsSelected}" />
         <Setter Property="Command" Value="{Binding Path=MenuCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type c:ClosableTabControl}}}"/>
         <Setter Property="CommandParameter" Value="{Binding DataContext, RelativeSource={RelativeSource Self}}"/>
@@ -235,6 +234,7 @@
                                     <Menu Background="Transparent">
                                         <MenuItem ItemContainerStyle="{StaticResource TabMenuItemStyle}"
                                                   ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type c:ClosableTabControl}}, Path=Items}"
+                                                  DisplayMemberPath="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type c:ClosableTabControl}}, Path=MenuDisplayMemberPath}"
                                                   Header="{StaticResource TabMenuButton}"
                                                   HeaderTemplate="{StaticResource TabMenuButtonGlyphTemplate}"
                                                   Style="{StaticResource TabTopMenuItemStyle}"/>

@@ -59,6 +59,24 @@ public class ClosableTabControl : TabControl {
 
     #endregion
 
+    #region MenuDisplayMemberPath
+
+    public static readonly DependencyProperty MenuDisplayMemberPathProperty = DependencyProperty.Register(
+        nameof(MenuDisplayMemberPath),
+        typeof(String),
+        typeof(ClosableTabControl),
+        new PropertyMetadata("Header"));
+    /// <summary>
+    /// Gets or sets the path to the property of a tab item (or bound view model item) that is displayed in the
+    /// tab list menu. Default is <c>Header</c>.
+    /// </summary>
+    public String MenuDisplayMemberPath {
+        get => (String)GetValue(MenuDisplayMemberPathProperty);
+        set => SetValue(MenuDisplayMemberPathProperty, value);
+    }
+
+    #endregion
+
     #region ShowNewTabButton
 
     public static readonly DependencyProperty ShowNewTabButtonProperty = DependencyProperty.Register(
