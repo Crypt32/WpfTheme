@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:behaviors="clr-namespace:SysadminsLV.WPF.OfficeTheme.Toolkit.Behaviors;assembly=Wpf.OfficeTheme"
+             xmlns:wpf="http://schemas.sysadmins.lv/wpf"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel behaviors:MarginSetter.Margin="3">
+    <StackPanel wpf:MarginSetter.Margin="3">
         <ProgressBar Value="73" Height="15"/>
         <ProgressBar Value="73" Height="15" IsEnabled="False"/>
         <ProgressBar IsIndeterminate="True" Height="15"/>
