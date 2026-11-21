@@ -27,6 +27,8 @@ public class ScrollableTabPanel : Panel, IScrollInfo, INotifyPropertyChanged {
     static readonly GradientStopCollection _gscOpacityMaskStopsTransparentOnLeftAndRight;
     static readonly GradientStopCollection _gscOpacityMaskStopsTransparentOnLeft;
     static readonly GradientStopCollection _gscOpacityMaskStopsTransparentOnRight;
+    // the mask for this case has no computed values, so a single frozen brush is shared by all children.
+    static readonly LinearGradientBrush _lgbOpacityMaskTransparentOnLeftAndRight;
 
     static ScrollableTabPanel() {
         _gscOpacityMaskStopsTransparentOnLeftAndRight = new GradientStopCollection{
@@ -48,6 +50,12 @@ public class ScrollableTabPanel : Panel, IScrollInfo, INotifyPropertyChanged {
                                                                                new GradientStop(Colors.Transparent, 1)
                                                                            };
         _gscOpacityMaskStopsTransparentOnRight.Freeze();
+
+        _lgbOpacityMaskTransparentOnLeftAndRight = new LinearGradientBrush(
+            _gscOpacityMaskStopsTransparentOnLeftAndRight,
+            new Point(0, 0),
+            new Point(1, 0));
+        _lgbOpacityMaskTransparentOnLeftAndRight.Freeze();
     }
 
     /// <summary>
@@ -313,24 +321,25 @@ public class ScrollableTabPanel : Panel, IScrollInfo, INotifyPropertyChanged {
             Double dblPartlyVisiblePortionOverflowToRight = PartlyVisiblePortionOverflowToRight(uieChild);
 
             if (dblPartlyVisiblePortionOverflowToLeft < 1 && dblPartlyVisiblePortionOverflowToRight < 1) {
-                uieChild.OpacityMask = new LinearGradientBrush(
-                    _gscOpacityMaskStopsTransparentOnLeftAndRight,
-                    new Point(0, 0),
-                    new Point(1, 0));
+                uieChild.OpacityMask = _lgbOpacityMaskTransparentOnLeftAndRight;
             } else if (dblPartlyVisiblePortionOverflowToLeft < 1) {
                 //A part of the child (to the left) remains invisible, so fade out to the left.
-                uieChild.OpacityMask = new LinearGradientBrush(
+                var lgbFadeLeft = new LinearGradientBrush(
                     _gscOpacityMaskStopsTransparentOnLeft,
                     new Point(1 - dblPartlyVisiblePortionOverflowToLeft, 0),
                     new Point(1, 0)
                 );
+                lgbFadeLeft.Freeze();
+                uieChild.OpacityMask = lgbFadeLeft;
             } else if (dblPartlyVisiblePortionOverflowToRight < 1) {
                 //A part of the child (to the right) remains invisible, so fade out to the right.
-                uieChild.OpacityMask = new LinearGradientBrush(
+                var lgbFadeRight = new LinearGradientBrush(
                     _gscOpacityMaskStopsTransparentOnRight,
                     new Point(0, 0),
                     new Point(dblPartlyVisiblePortionOverflowToRight, 0)
                 );
+                lgbFadeRight.Freeze();
+                uieChild.OpacityMask = lgbFadeRight;
             } else {
                 //This child is completely visible, so dump the OpacityMask.
                 //Actually, this part should never be reached as, in this case, the very first
