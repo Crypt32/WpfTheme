@@ -1,7 +1,8 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
                     xmlns:c="clr-namespace:SysadminsLV.WPF.Controls">
-    <Geometry x:Key="NotificationItem.DismissGlyph">F1M0,0L2,0 5,3 8,0 10,0 6,4 10,8 8,8 5,5 2,8 0,8 4,4 0,0z</Geometry>
+    <Geometry x:Key="NotificationItem.DismissGlyph" po:Freeze="True">F1M0,0L2,0 5,3 8,0 10,0 6,4 10,8 8,8 5,5 2,8 0,8 4,4 0,0z</Geometry>
 
     <Style x:Key="NotificationItemDismissButtonStyle" TargetType="{x:Type Button}">
         <Setter Property="Focusable" Value="False"/>

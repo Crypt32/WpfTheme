@@ -4,7 +4,7 @@
                     xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
     <system:Double x:Key="CloseButtonWidthAndHeight">14</system:Double>
-    <Geometry x:Key="XCloseButton">M0,0 L10,10 M0,10 L10,0</Geometry>
+    <Geometry x:Key="XCloseButton" po:Freeze="True">M0,0 L10,10 M0,10 L10,0</Geometry>
     <Color x:Key="TabItemForegroundColorBase">#4971A3</Color>
     <SolidColorBrush x:Key="TabItemCloseButtonNormalForegroundBrush" Color="{StaticResource TabItemForegroundColorBase}" po:Freeze="True"/>
     <SolidColorBrush x:Key="TabItemCloseButtonHoverForegroundBrush" Color="White" po:Freeze="True"/>
