@@ -1,6 +1,7 @@
 <!--Credits: http://www.blogs.intuidev.com/post/2010/post/2010/01/25/TabControlStyling_PartOne.aspx-->
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
                     xmlns:converters="clr-namespace:SysadminsLV.WPF.Converters"
                     xmlns:c="clr-namespace:SysadminsLV.WPF.Controls">
     <ResourceDictionary.MergedDictionaries>
@@ -11,28 +12,28 @@
     <Thickness x:Key="TabItemPanelPadding">0,0,0,0</Thickness>
     <Color x:Key="BorderColorBase">#888</Color>
     <Color x:Key="TabControlBackgroundColorBase">#EEF7FF</Color>
-    <SolidColorBrush x:Key="TabItemTextBrushUnselected" Color="#4971A3" />
-    <SolidColorBrush x:Key="TabItemTextBrushDisabled" Color="#888" />
-    <SolidColorBrush x:Key="TabItemTextBrushHover" Color="Indigo" />
-    <SolidColorBrush x:Key="TabItemTextBrushSelected" Color="DarkBlue" />
-    <SolidColorBrush x:Key="TabItemBorderBrushSelected" Color="{StaticResource BorderColorBase}" />
-    <SolidColorBrush x:Key="TabControlBackgroundBrushBase" Color="{StaticResource TabControlBackgroundColorBase}"/>
-    <SolidColorBrush x:Key="TabPageInnerBorderBrushDark" Color="#FF8DB2E3"/>
-    <LinearGradientBrush x:Key="TabItemPanelBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+    <SolidColorBrush x:Key="TabItemTextBrushUnselected" Color="#4971A3" po:Freeze="True" />
+    <SolidColorBrush x:Key="TabItemTextBrushDisabled" Color="#888" po:Freeze="True" />
+    <SolidColorBrush x:Key="TabItemTextBrushHover" Color="Indigo" po:Freeze="True" />
+    <SolidColorBrush x:Key="TabItemTextBrushSelected" Color="DarkBlue" po:Freeze="True" />
+    <SolidColorBrush x:Key="TabItemBorderBrushSelected" Color="{StaticResource BorderColorBase}" po:Freeze="True" />
+    <SolidColorBrush x:Key="TabControlBackgroundBrushBase" Color="{StaticResource TabControlBackgroundColorBase}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="TabPageInnerBorderBrushDark" Color="#FF8DB2E3" po:Freeze="True"/>
+    <LinearGradientBrush x:Key="TabItemPanelBackgroundBrush" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
         <LinearGradientBrush.GradientStops>
             <GradientStop Offset="0.98" Color="Transparent"/>
             <GradientStop Offset="0.99" 
                Color="{StaticResource BorderColorBase}"/>
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="TabPageInnerBorderBrushBright" StartPoint="0,0" EndPoint="1,1">
+    <LinearGradientBrush x:Key="TabPageInnerBorderBrushBright" StartPoint="0,0" EndPoint="1,1" po:Freeze="True">
         <LinearGradientBrush.GradientStops>
             <GradientStop Offset="0" Color="Transparent"/>
             <GradientStop Offset="1" Color="#FFC0F9FF"/>
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="TabItemBackgroundBrushSelected" 
-                           StartPoint="0,0" EndPoint="0,1">
+                           StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
         <LinearGradientBrush.GradientStops>
             <GradientStop Color="#FFFFC14A" Offset="0.1" />
             <GradientStop Color="{StaticResource TabControlBackgroundColorBase}" Offset="0.15"/>
@@ -40,7 +41,7 @@
             <GradientStop Color="{StaticResource TabControlBackgroundColorBase}" Offset="1.0"/>
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="TabItemBackgroundBrushUnselected" StartPoint="0,0" EndPoint="0,1">
+    <LinearGradientBrush x:Key="TabItemBackgroundBrushUnselected" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
         <LinearGradientBrush.GradientStops>
             <GradientStop Color="#E8F2FF" Offset="0.0"/>
             <GradientStop Color="#DFE9F6" Offset="0.3"/>
@@ -50,20 +51,20 @@
             <GradientStop Color="{StaticResource BorderColorBase}" Offset="0.99"/>
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="TabItemHoverBackgroundBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+    <LinearGradientBrush x:Key="TabItemHoverBackgroundBrush" EndPoint="0.5,1" StartPoint="0.5,0" po:Freeze="True">
         <GradientStop Color="#FFFFD5A0" Offset="0.3" />
         <GradientStop Color="#FFFFA335" Offset="0.51" />
         <GradientStop Color="#FFFFC14A" Offset="0.98" />
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="TabItemBorderUnselected" StartPoint="0,0" EndPoint="0,1">
+    <LinearGradientBrush x:Key="TabItemBorderUnselected" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
         <GradientStop Color="#AAA" Offset="0"/>
         <GradientStop Color="{StaticResource BorderColorBase}" Offset="0.8"/>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="TabItemDisabledBorderBrush" StartPoint="0,0" EndPoint="0,1">
+    <LinearGradientBrush x:Key="TabItemDisabledBorderBrush" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
         <GradientStop Color="#CCC" Offset="0"/>
         <GradientStop Color="{StaticResource BorderColorBase}" Offset="0.8"/>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="TabItemBackgroundBrushDisabled" StartPoint="0,0" EndPoint="0,1">
+    <LinearGradientBrush x:Key="TabItemBackgroundBrushDisabled" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
         <LinearGradientBrush.GradientStops>
             <GradientStop Color="#EEE" Offset="0"/>
             <GradientStop Color="#BBB" Offset="0.98"/>
@@ -73,7 +74,7 @@
             <GradientStop Color="{StaticResource BorderColorBase}" Offset="0.99"/>
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="TabItemHoverBorderBrush" StartPoint="0,0" EndPoint="0,1">
+    <LinearGradientBrush x:Key="TabItemHoverBorderBrush" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
         <LinearGradientBrush.GradientStops>
             <GradientStop Offset="0.98" Color="DarkOrange"/>
             <!-- See the TabItemPanel_BackgroundBrush comment. -->
