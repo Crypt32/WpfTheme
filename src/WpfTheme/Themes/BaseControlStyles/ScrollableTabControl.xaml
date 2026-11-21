@@ -141,7 +141,11 @@
                                 MinWidth="25"
                                 Background="{StaticResource TabPanelBackgroundBrush}"
                                 Visibility="Collapsed">
+                            <!-- Same size and bottom margin as the scroll buttons, so the header can grow upwards. -->
                             <Button Style="{StaticResource ToolBarButtonStyle}"
+                                    Height="{StaticResource ButtonWidthAndHeight}"
+                                    VerticalAlignment="Bottom"
+                                    Margin="0,0,0,2"
                                     Background="{StaticResource HorizontalBlueGradientBrush}"
                                     BorderThickness="1"
                                     BorderBrush="{StaticResource PanelBorderBrush}"
@@ -165,7 +169,7 @@
                         <Border Grid.Row="0"
                                 Grid.Column="1"
                                 Name="TabPanelBorder"
-                                Height="25"
+                                MinHeight="25"
                                 Background="{StaticResource TabPanelBackgroundBrush}">
                             <Grid>
                                 <Grid.ColumnDefinitions>

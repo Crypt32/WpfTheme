@@ -350,8 +350,8 @@ public class ScrollableTabPanel : Panel, IScrollInfo, INotifyPropertyChanged {
     /// <param name="availableSize">The Viewport's rectangle, as obtained after the 1st pass (MeasureOverride).</param>
     /// <returns>The Viewport's final size.</returns>
     protected override Size MeasureOverride(Size availableSize) {
-        //The default size will not reflect any width (i.e., no children) and always the default height.
-        Size resultSize = new Size(0, availableSize.Height);
+        //The height is that of the tallest child, so the header grows with its content (e.g. a bigger font).
+        Size resultSize = new Size(0, 0);
 
         //Loop through all child controls ...
         foreach (UIElement uieChild in InternalChildren) {
@@ -359,6 +359,7 @@ public class ScrollableTabPanel : Panel, IScrollInfo, INotifyPropertyChanged {
             uieChild.Measure(availableSize);
             //... and pass this on to the size we need for the Extent
             resultSize.Width += uieChild.DesiredSize.Width;
+            resultSize.Height = Math.Max(resultSize.Height, uieChild.DesiredSize.Height);
         }
 
         UpdateMembers(resultSize, availableSize);
@@ -384,7 +385,7 @@ public class ScrollableTabPanel : Panel, IScrollInfo, INotifyPropertyChanged {
         Double dblWidthTotal = 0;
         foreach (UIElement uieChild in InternalChildren) {
             Double dblWidth = uieChild.DesiredSize.Width;
-            uieChild.Arrange(new Rect(dblWidthTotal, 0, dblWidth, uieChild.DesiredSize.Height));
+            uieChild.Arrange(new Rect(dblWidthTotal, 0, dblWidth, finalSize.Height));
             dblWidthTotal += dblWidth;
         }
 
