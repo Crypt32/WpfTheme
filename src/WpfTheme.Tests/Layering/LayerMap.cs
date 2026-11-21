@@ -45,7 +45,7 @@ public static class LayerMap {
     /// Maps directories of the library project that contain XAML to the level of the layer they belong to.
     /// </summary>
     public static readonly IReadOnlyDictionary<String, Int32> XamlDirectories = new Dictionary<String, Int32>(StringComparer.OrdinalIgnoreCase) {
-        ["UI"] = ThemeLevel
+        ["Themes"] = ThemeLevel
     };
 
     /// <summary>
