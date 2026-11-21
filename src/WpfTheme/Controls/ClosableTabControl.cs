@@ -14,7 +14,6 @@ public class ClosableTabControl : TabControl {
     }
     public ClosableTabControl() {
         MenuCommand = new RelayCommand(switchTab);
-        Unloaded += OnUnloaded;
     }
 
     #region AddTabCommand
@@ -23,7 +22,7 @@ public class ClosableTabControl : TabControl {
         nameof(AddTabCommand),
         typeof(ICommand),
         typeof(ClosableTabControl),
-        new PropertyMetadata(null, commandChanged));
+        new PropertyMetadata(null));
     public ICommand AddTabCommand {
         get => (ICommand)GetValue(AddTabCommandProperty);
         set => SetValue(AddTabCommandProperty, value);
@@ -37,7 +36,7 @@ public class ClosableTabControl : TabControl {
         nameof(CloseTabCommand),
         typeof(ICommand),
         typeof(ClosableTabControl),
-        new PropertyMetadata(null, commandChanged));
+        new PropertyMetadata(null));
     public ICommand CloseTabCommand {
         get => (ICommand)GetValue(CloseTabCommandProperty);
         set => SetValue(CloseTabCommandProperty, value);
@@ -51,7 +50,7 @@ public class ClosableTabControl : TabControl {
         nameof(MenuCommand),
         typeof(ICommand),
         typeof(ClosableTabControl),
-        new PropertyMetadata(null, commandChanged));
+        new PropertyMetadata(null));
         
     public ICommand MenuCommand {
         get => (ICommand)GetValue(MenuCommandProperty);
@@ -74,48 +73,9 @@ public class ClosableTabControl : TabControl {
 
     #endregion
 
-    static void commandChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) {
-        var cs = (ClosableTabControl)d;
-        cs.hookUpCommand((ICommand)e.OldValue, (ICommand)e.NewValue);
-    }
-    void hookUpCommand(ICommand oldCommand, ICommand newCommand) {
-        // If oldCommand is not null, then we need to remove the handlers. 
-        if (oldCommand != null) {
-            removeCommand(oldCommand);
-        }
-        addCommand(newCommand);
-    }
-    void addCommand(ICommand newCommand) {
-        EventHandler handler = canExecuteChanged;
-        if (newCommand != null) {
-            newCommand.CanExecuteChanged += handler;
-        }
-    }
-    void removeCommand(ICommand oldCommand) {
-        EventHandler handler = canExecuteChanged;
-        oldCommand.CanExecuteChanged -= handler;
-    }
-    void canExecuteChanged(Object sender, EventArgs e) {
-        if (Command != null) {
-            var command = Command as RoutedCommand;
-            // If a RoutedCommand. 
-            IsEnabled = command?.CanExecute(CommandParameter, CommandTarget) ?? Command.CanExecute(CommandParameter);
-        }
-    }
-
-    ICommand Command { get; set; }
-    Object CommandParameter { get; set; }
-    IInputElement CommandTarget { get; set; }
-
-    void switchTab(Object o) {
-        if (o == null) {
-            return;
-        }
-        foreach (Object item in Items) {
-            if (item == o) {
-                SelectedItem = item;
-                return;
-            }
+    void switchTab(Object? o) {
+        if (o != null && Items.Contains(o)) {
+            SelectedItem = o;
         }
     }
 
@@ -124,20 +84,5 @@ public class ClosableTabControl : TabControl {
     }
     protected override Boolean IsItemItsOwnContainerOverride(Object item) {
         return item is ClosableTabItem;
-    }
-
-    void OnUnloaded(Object sender, RoutedEventArgs e) {
-        // Clean up event handlers to prevent memory leaks
-        Unloaded -= OnUnloaded;
-            
-        if (AddTabCommand != null) {
-            removeCommand(AddTabCommand);
-        }
-        if (CloseTabCommand != null) {
-            removeCommand(CloseTabCommand);
-        }
-        if (MenuCommand != null) {
-            removeCommand(MenuCommand);
-        }
     }
 }
