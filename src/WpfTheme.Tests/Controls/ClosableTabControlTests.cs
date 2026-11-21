@@ -57,6 +57,11 @@ public sealed class ClosableTabControlTests {
         Assert.AreSame(first, tabs.SelectedItem);
     }
 
+    [STATestMethod]
+    public void MenuDisplayMemberPathDefaultsToHeader() {
+        Assert.AreEqual("Header", new ClosableTabControl().MenuDisplayMemberPath);
+    }
+
     sealed class CountingCommand : ICommand {
         EventHandler? _canExecuteChanged;
 
