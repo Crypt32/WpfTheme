@@ -74,6 +74,36 @@
                         </Storyboard>
                     </ControlTemplate.Resources>
 
+                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Canvas Height="60" Width="60">
+                                <Canvas.Resources>
+                                    <Style TargetType="Ellipse">
+                                        <Setter Property="Width" Value="15"/>
+                                        <Setter Property="Height" Value="15" />
+                                        <Setter Property="Fill" Value="#009B9B9B" />
+                                    </Style>
+                                </Canvas.Resources>
+
+                                <Ellipse x:Name="ellipse0" Canvas.Left="1.75" Canvas.Top="21"/>
+                                <Ellipse x:Name="ellipse1" Canvas.Top="7" Canvas.Left="6.5"/>
+                                <Ellipse x:Name="ellipse2" Canvas.Left="20.5" Canvas.Top="0.75"/>
+                                <Ellipse x:Name="ellipse3" Canvas.Left="34.75" Canvas.Top="6.75"/>
+                                <Ellipse x:Name="ellipse4" Canvas.Left="40.5" Canvas.Top="20.75" />
+                                <Ellipse x:Name="ellipse5" Canvas.Left="34.75" Canvas.Top="34.5"/>
+                                <Ellipse x:Name="ellipse6" Canvas.Left="20.75" Canvas.Top="39.75"/>
+                                <Ellipse x:Name="ellipse7" Canvas.Top="34.25" Canvas.Left="7" />
+                                <Ellipse Width="39.5" Height="39.5" Canvas.Left="8.75" Canvas.Top="8" Visibility="Hidden"/>
+                            </Canvas>
+                            <TextBlock x:Name="PART_Text"
+                                       Text="{TemplateBinding Text}"
+                                       Style="{TemplateBinding TextStyle}"
+                                       Margin="0,8,0,0"
+                                       TextAlignment="Center"
+                                       HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsVisible" Value="True">
                             <Trigger.EnterActions>
@@ -98,37 +128,14 @@
                                 <StopStoryboard BeginStoryboardName="Storyboard7"/>
                             </Trigger.ExitActions>
                         </Trigger>
+                        <!-- no text: do not reserve the gap under the spinner -->
+                        <Trigger Property="Text" Value="{x:Null}">
+                            <Setter TargetName="PART_Text" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="Text" Value="">
+                            <Setter TargetName="PART_Text" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
                     </ControlTemplate.Triggers>
-
-                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
-                        <Grid>
-                            <Canvas Height="60" Width="60">
-                                <Canvas.Resources>
-                                    <Style TargetType="Ellipse">
-                                        <Setter Property="Width" Value="15"/>
-                                        <Setter Property="Height" Value="15" />
-                                        <Setter Property="Fill" Value="#009B9B9B" />
-                                    </Style>
-                                </Canvas.Resources>
-
-                                <Ellipse x:Name="ellipse0" Canvas.Left="1.75" Canvas.Top="21"/>
-                                <Ellipse x:Name="ellipse1" Canvas.Top="7" Canvas.Left="6.5"/>
-                                <Ellipse x:Name="ellipse2" Canvas.Left="20.5" Canvas.Top="0.75"/>
-                                <Ellipse x:Name="ellipse3" Canvas.Left="34.75" Canvas.Top="6.75"/>
-                                <Ellipse x:Name="ellipse4" Canvas.Left="40.5" Canvas.Top="20.75" />
-                                <Ellipse x:Name="ellipse5" Canvas.Left="34.75" Canvas.Top="34.5"/>
-                                <Ellipse x:Name="ellipse6" Canvas.Left="20.75" Canvas.Top="39.75"/>
-                                <Ellipse x:Name="ellipse7" Canvas.Top="34.25" Canvas.Left="7" />
-                                <Ellipse Width="39.5" Height="39.5" Canvas.Left="8.75" Canvas.Top="8" Visibility="Hidden"/>
-                            </Canvas>
-                            <TextBlock Text="{TemplateBinding Text}"
-                                       FontSize="{TemplateBinding FontSize}"
-                                       FontWeight="{TemplateBinding FontWeight}"
-                                       Foreground="{TemplateBinding Foreground}"
-                                       HorizontalAlignment="Center"
-                                       VerticalAlignment="Center"/>
-                        </Grid>
-                    </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
