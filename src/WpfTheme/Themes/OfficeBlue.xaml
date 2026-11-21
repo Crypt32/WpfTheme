@@ -22,6 +22,8 @@
         <ResourceDictionary Source="BaseControlStyles/LoadingSpinner.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/Menu.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/MenuItem.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/NotificationItem.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/NotificationPanel.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/PasswordBox.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/ProgressBar.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/RadioButton.xaml"/>
