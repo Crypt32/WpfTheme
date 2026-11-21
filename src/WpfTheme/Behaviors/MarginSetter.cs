@@ -3,7 +3,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace SysadminsLV.WPF.OfficeTheme.Toolkit.Behaviors; 
+namespace SysadminsLV.WPF.Behaviors; 
 public class MarginSetter {
     public static Thickness GetMargin(DependencyObject obj) {
         return (Thickness)obj.GetValue(MarginProperty);

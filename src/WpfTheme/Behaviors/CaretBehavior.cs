@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace SysadminsLV.WPF.OfficeTheme.Toolkit.Behaviors {
+namespace SysadminsLV.WPF.Behaviors {
     public static class CaretBehavior {
         static void onObserveCaretPropertyChanged(DependencyObject dpo, DependencyPropertyChangedEventArgs e) {
             if (dpo is TextBox textBox) {
