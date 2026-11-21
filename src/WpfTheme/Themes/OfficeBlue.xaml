@@ -38,6 +38,7 @@
         <ResourceDictionary Source="BaseControlStyles/TextBox.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/ToolBar.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/ToolBarTray.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/ToolTip.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/TreeView.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/Window.xaml"/>
     </ResourceDictionary.MergedDictionaries>
