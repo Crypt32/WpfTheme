@@ -5,7 +5,7 @@ using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
 
-namespace SysadminsLV.WPF.OfficeTheme.Toolkit.CLR {
+namespace SysadminsLV.WPF.Collections {
     /// <summary>
     /// Represents a dynamic data collection that provides notifications when items get added, removed, or when
     /// the whole list is refreshed.
