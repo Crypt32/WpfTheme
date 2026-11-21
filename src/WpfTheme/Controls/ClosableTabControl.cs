@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -6,135 +6,135 @@ using SysadminsLV.WPF.Mvvm.Commands;
 
 // Credits: http://www.blogs.intuidev.com/post/2010/post/2010/01/25/TabControlStyling_PartOne.aspx
 
-namespace SysadminsLV.WPF.OfficeTheme.Controls {
-    public class ClosableTabControl : TabControl {
-        public ClosableTabControl() {
-            MenuCommand = new RelayCommand(switchTab);
-            Unloaded += OnUnloaded;
-        }
+namespace SysadminsLV.WPF.Controls;
 
-        #region AddTabCommand
+public class ClosableTabControl : TabControl {
+    public ClosableTabControl() {
+        MenuCommand = new RelayCommand(switchTab);
+        Unloaded += OnUnloaded;
+    }
 
-        public static readonly DependencyProperty AddTabCommandProperty = DependencyProperty.Register(
-            nameof(AddTabCommand),
-            typeof(ICommand),
-            typeof(ClosableTabControl),
-            new PropertyMetadata(null, commandChanged));
-        public ICommand AddTabCommand {
-            get => (ICommand)GetValue(AddTabCommandProperty);
-            set => SetValue(AddTabCommandProperty, value);
-        }
+    #region AddTabCommand
 
-        #endregion
+    public static readonly DependencyProperty AddTabCommandProperty = DependencyProperty.Register(
+        nameof(AddTabCommand),
+        typeof(ICommand),
+        typeof(ClosableTabControl),
+        new PropertyMetadata(null, commandChanged));
+    public ICommand AddTabCommand {
+        get => (ICommand)GetValue(AddTabCommandProperty);
+        set => SetValue(AddTabCommandProperty, value);
+    }
 
-        #region CloseTabCommand
+    #endregion
 
-        public static readonly DependencyProperty CloseTabCommandProperty = DependencyProperty.Register(
-            nameof(CloseTabCommand),
-            typeof(ICommand),
-            typeof(ClosableTabControl),
-            new PropertyMetadata(null, commandChanged));
-        public ICommand CloseTabCommand {
-            get => (ICommand)GetValue(CloseTabCommandProperty);
-            set => SetValue(CloseTabCommandProperty, value);
-        }
+    #region CloseTabCommand
 
-        #endregion
+    public static readonly DependencyProperty CloseTabCommandProperty = DependencyProperty.Register(
+        nameof(CloseTabCommand),
+        typeof(ICommand),
+        typeof(ClosableTabControl),
+        new PropertyMetadata(null, commandChanged));
+    public ICommand CloseTabCommand {
+        get => (ICommand)GetValue(CloseTabCommandProperty);
+        set => SetValue(CloseTabCommandProperty, value);
+    }
 
-        #region MenuCommand
+    #endregion
 
-        public static readonly DependencyProperty MenuCommandProperty = DependencyProperty.Register(
-            nameof(MenuCommand),
-            typeof(ICommand),
-            typeof(ClosableTabControl),
-            new PropertyMetadata(null, commandChanged));
+    #region MenuCommand
+
+    public static readonly DependencyProperty MenuCommandProperty = DependencyProperty.Register(
+        nameof(MenuCommand),
+        typeof(ICommand),
+        typeof(ClosableTabControl),
+        new PropertyMetadata(null, commandChanged));
         
-        public ICommand MenuCommand {
-            get => (ICommand)GetValue(MenuCommandProperty);
-            set => SetValue(MenuCommandProperty, value);
-        }
+    public ICommand MenuCommand {
+        get => (ICommand)GetValue(MenuCommandProperty);
+        set => SetValue(MenuCommandProperty, value);
+    }
 
-        #endregion
+    #endregion
 
-        #region ShowNewTabButton
+    #region ShowNewTabButton
 
-        public static readonly DependencyProperty ShowNewTabButtonProperty = DependencyProperty.Register(
-            nameof(ShowNewTabButton),
-            typeof(Boolean),
-            typeof(ClosableTabControl),
-            new PropertyMetadata(default));
-        public Boolean ShowNewTabButton {
-            get => (Boolean)GetValue(ShowNewTabButtonProperty);
-            set => SetValue(ShowNewTabButtonProperty, value);
-        }
+    public static readonly DependencyProperty ShowNewTabButtonProperty = DependencyProperty.Register(
+        nameof(ShowNewTabButton),
+        typeof(Boolean),
+        typeof(ClosableTabControl),
+        new PropertyMetadata(default));
+    public Boolean ShowNewTabButton {
+        get => (Boolean)GetValue(ShowNewTabButtonProperty);
+        set => SetValue(ShowNewTabButtonProperty, value);
+    }
 
-        #endregion
+    #endregion
 
-        static void commandChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) {
-            var cs = (ClosableTabControl)d;
-            cs.hookUpCommand((ICommand)e.OldValue, (ICommand)e.NewValue);
+    static void commandChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) {
+        var cs = (ClosableTabControl)d;
+        cs.hookUpCommand((ICommand)e.OldValue, (ICommand)e.NewValue);
+    }
+    void hookUpCommand(ICommand oldCommand, ICommand newCommand) {
+        // If oldCommand is not null, then we need to remove the handlers. 
+        if (oldCommand != null) {
+            removeCommand(oldCommand);
         }
-        void hookUpCommand(ICommand oldCommand, ICommand newCommand) {
-            // If oldCommand is not null, then we need to remove the handlers. 
-            if (oldCommand != null) {
-                removeCommand(oldCommand);
-            }
-            addCommand(newCommand);
+        addCommand(newCommand);
+    }
+    void addCommand(ICommand newCommand) {
+        EventHandler handler = canExecuteChanged;
+        if (newCommand != null) {
+            newCommand.CanExecuteChanged += handler;
         }
-        void addCommand(ICommand newCommand) {
-            EventHandler handler = canExecuteChanged;
-            if (newCommand != null) {
-                newCommand.CanExecuteChanged += handler;
-            }
+    }
+    void removeCommand(ICommand oldCommand) {
+        EventHandler handler = canExecuteChanged;
+        oldCommand.CanExecuteChanged -= handler;
+    }
+    void canExecuteChanged(Object sender, EventArgs e) {
+        if (Command != null) {
+            var command = Command as RoutedCommand;
+            // If a RoutedCommand. 
+            IsEnabled = command?.CanExecute(CommandParameter, CommandTarget) ?? Command.CanExecute(CommandParameter);
         }
-        void removeCommand(ICommand oldCommand) {
-            EventHandler handler = canExecuteChanged;
-            oldCommand.CanExecuteChanged -= handler;
-        }
-        void canExecuteChanged(Object sender, EventArgs e) {
-            if (Command != null) {
-                var command = Command as RoutedCommand;
-                // If a RoutedCommand. 
-                IsEnabled = command?.CanExecute(CommandParameter, CommandTarget) ?? Command.CanExecute(CommandParameter);
-            }
-        }
+    }
 
-        ICommand Command { get; set; }
-        Object CommandParameter { get; set; }
-        IInputElement CommandTarget { get; set; }
+    ICommand Command { get; set; }
+    Object CommandParameter { get; set; }
+    IInputElement CommandTarget { get; set; }
 
-        void switchTab(Object o) {
-            if (o == null) {
+    void switchTab(Object o) {
+        if (o == null) {
+            return;
+        }
+        foreach (Object item in Items) {
+            if (item == o) {
+                SelectedItem = item;
                 return;
             }
-            foreach (Object item in Items) {
-                if (item == o) {
-                    SelectedItem = item;
-                    return;
-                }
-            }
         }
+    }
 
-        protected override DependencyObject GetContainerForItemOverride() {
-            return new ClosableTabItem { IsClosable = true };
-        }
-        protected override Boolean IsItemItsOwnContainerOverride(Object item) {
-            return item is ClosableTabItem;
-        }
+    protected override DependencyObject GetContainerForItemOverride() {
+        return new ClosableTabItem { IsClosable = true };
+    }
+    protected override Boolean IsItemItsOwnContainerOverride(Object item) {
+        return item is ClosableTabItem;
+    }
 
-        void OnUnloaded(Object sender, RoutedEventArgs e) {
-            // Clean up event handlers to prevent memory leaks
-            Unloaded -= OnUnloaded;
+    void OnUnloaded(Object sender, RoutedEventArgs e) {
+        // Clean up event handlers to prevent memory leaks
+        Unloaded -= OnUnloaded;
             
-            if (AddTabCommand != null) {
-                removeCommand(AddTabCommand);
-            }
-            if (CloseTabCommand != null) {
-                removeCommand(CloseTabCommand);
-            }
-            if (MenuCommand != null) {
-                removeCommand(MenuCommand);
-            }
+        if (AddTabCommand != null) {
+            removeCommand(AddTabCommand);
+        }
+        if (CloseTabCommand != null) {
+            removeCommand(CloseTabCommand);
+        }
+        if (MenuCommand != null) {
+            removeCommand(MenuCommand);
         }
     }
 }
