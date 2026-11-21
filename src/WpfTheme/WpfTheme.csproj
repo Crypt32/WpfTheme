@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <LangVersion>latest</LangVersion>
-    <RootNamespace>SysadminsLV.WPF.OfficeTheme</RootNamespace>
+    <RootNamespace>SysadminsLV.WPF</RootNamespace>
     <Title>SysadminsLV.Wpf</Title>
     <Version>1.2.66</Version>
     <Authors>Vadims Podāns</Authors>
