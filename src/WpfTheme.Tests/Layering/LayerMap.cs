@@ -9,8 +9,6 @@ namespace SysadminsLV.WPF.Tests.Layering;
 /// </summary>
 public static class LayerMap {
     const String Root = "SysadminsLV.WPF";
-    // namespaces that have not been moved to the new structure yet
-    const String LegacyRoot = Root + ".OfficeTheme";
 
     /// <summary>
     /// Level of the layer that contains XAML theme resources. XAML has no CLR namespace, so it is assigned by directory.
@@ -35,7 +33,7 @@ public static class LayerMap {
             $"{Root}.Converters"
         ]),
         new Layer(4, "Controls", [
-            $"{LegacyRoot}.Controls"
+            $"{Root}.Controls"
         ]),
         new Layer(ThemeLevel, "Theme (XAML)", [])
     ];
