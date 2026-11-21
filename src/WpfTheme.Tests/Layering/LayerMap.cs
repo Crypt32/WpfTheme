@@ -8,7 +8,9 @@ namespace SysadminsLV.WPF.Tests.Layering;
 /// The single place that assigns library namespaces and XAML directories to architecture layers.
 /// </summary>
 public static class LayerMap {
-    const String Root = "SysadminsLV.WPF.OfficeTheme";
+    const String Root = "SysadminsLV.WPF";
+    // namespaces that have not been moved to the new structure yet
+    const String LegacyRoot = Root + ".OfficeTheme";
 
     /// <summary>
     /// Level of the layer that contains XAML theme resources. XAML has no CLR namespace, so it is assigned by directory.
@@ -19,23 +21,24 @@ public static class LayerMap {
     /// All layers, ordered from the lowest to the highest.
     /// </summary>
     public static readonly IReadOnlyList<Layer> Layers = [
-        // The root Toolkit namespace currently holds both IUIWindowDialogService (Mvvm) and MsgBox (dialogs).
-        // They are separated later; until then the root namespace is treated as the lowest layer.
+        // Legacy entries in this layer are temporary: the root Toolkit namespace still holds MsgBox (moves to dialogs),
+        // Toolkit.Commands still holds DialogCloser (moves to behaviors) and Toolkit.CLR holds ObservableList.
         new Layer(1, "Mvvm and collections", [
-            $"{Root}.Toolkit",
-            $"{Root}.Toolkit.ViewModels",
-            $"{Root}.Toolkit.Commands",
-            $"{Root}.Toolkit.CLR"
+            $"{Root}.Mvvm",
+            $"{Root}.Mvvm.Commands",
+            $"{LegacyRoot}.Toolkit",
+            $"{LegacyRoot}.Toolkit.Commands",
+            $"{LegacyRoot}.Toolkit.CLR"
         ]),
         new Layer(2, "Dialogs and logging", [
-            $"{Root}.Toolkit.Log"
+            $"{LegacyRoot}.Toolkit.Log"
         ]),
         new Layer(3, "Behaviors and converters", [
-            $"{Root}.Toolkit.Behaviors",
-            $"{Root}.Toolkit.Converters"
+            $"{LegacyRoot}.Toolkit.Behaviors",
+            $"{LegacyRoot}.Toolkit.Converters"
         ]),
         new Layer(4, "Controls", [
-            $"{Root}.Controls"
+            $"{LegacyRoot}.Controls"
         ]),
         new Layer(ThemeLevel, "Theme (XAML)", [])
     ];

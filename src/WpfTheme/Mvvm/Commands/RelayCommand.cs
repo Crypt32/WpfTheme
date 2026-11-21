@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SysadminsLV.WPF.OfficeTheme.Toolkit.Commands {
+namespace SysadminsLV.WPF.Mvvm.Commands {
     public class RelayCommand<T> : CommandBase<T> where T : class {
         readonly Action<T> _execute;
 

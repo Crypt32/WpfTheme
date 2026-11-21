@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using SysadminsLV.WPF.OfficeTheme.Toolkit.Commands;
+using SysadminsLV.WPF.Mvvm.Commands;
 
 // Credits: http://www.blogs.intuidev.com/post/2010/post/2010/01/25/TabControlStyling_PartOne.aspx
 
