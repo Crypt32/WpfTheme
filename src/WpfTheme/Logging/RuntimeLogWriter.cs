@@ -4,7 +4,7 @@ using System.IO;
 using System.Text;
 using SysadminsLV.WPF.Mvvm;
 
-namespace SysadminsLV.WPF.OfficeTheme.Toolkit.Log {
+namespace SysadminsLV.WPF.Logging {
     public class RuntimeLogWriter : ViewModelBase, IRuntimeLogWriter {
         readonly StreamWriter sessionStream;
         readonly StringBuilder _builder = new StringBuilder();
