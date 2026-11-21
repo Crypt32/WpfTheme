@@ -7,6 +7,9 @@ using System.Windows.Controls;
 namespace SysadminsLV.WPF.Controls;
 
 public class ClosableTabItem : TabItem {
+    static ClosableTabItem() {
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(ClosableTabItem), new FrameworkPropertyMetadata(typeof(ClosableTabItem)));
+    }
     public static readonly DependencyProperty IsClosableProperty = DependencyProperty.Register(nameof(IsClosable), typeof(Boolean), typeof(ClosableTabItem), new FrameworkPropertyMetadata(false));
     public Boolean IsClosable {
         get => (Boolean)GetValue(IsClosableProperty);

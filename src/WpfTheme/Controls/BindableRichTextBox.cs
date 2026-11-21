@@ -6,6 +6,9 @@ using System.Windows.Documents;
 namespace SysadminsLV.WPF.Controls;
 
 public class BindableRichTextBox : RichTextBox {
+    static BindableRichTextBox() {
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(BindableRichTextBox), new FrameworkPropertyMetadata(typeof(BindableRichTextBox)));
+    }
     public static readonly DependencyProperty DocumentProperty = DependencyProperty.Register(
         nameof(Document),
         typeof(FlowDocument),

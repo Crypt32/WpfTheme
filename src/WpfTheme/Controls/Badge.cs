@@ -7,6 +7,9 @@ namespace SysadminsLV.WPF.Controls;
 /// Represents badge control. This class inherits from <see cref="Label"/> WPF control.
 /// </summary>
 public class Badge : Label {
+    static Badge() {
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(Badge), new FrameworkPropertyMetadata(typeof(Badge)));
+    }
     public static readonly DependencyProperty ThemeColorProperty = DependencyProperty.Register(
         nameof(ThemeColor),
         typeof(ThemedColor),
