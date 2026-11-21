@@ -1,5 +1,10 @@
 using System;
+using System.Windows;
 using System.Windows.Markup;
+
+// Tells WPF where the default styles of this assembly's own controls live: no theme-specific dictionaries, and the
+// generic dictionary Themes/Generic.xaml inside this assembly. This does not restyle controls of other assemblies.
+[assembly: ThemeInfo(ResourceDictionaryLocation.None, ResourceDictionaryLocation.SourceAssembly)]
 
 // Maps the XML namespace below to the CLR namespaces whose types are used from XAML, so that consumers declare a
 // single xmlns instead of one clr-namespace per CLR namespace. The URI is a contract: do not change it.
