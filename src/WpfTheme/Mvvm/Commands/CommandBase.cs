@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
 
-namespace SysadminsLV.WPF.OfficeTheme.Toolkit.Commands {
+namespace SysadminsLV.WPF.Mvvm.Commands {
     public abstract class CommandBase<T> : ICommand where T : class {
         readonly Predicate<T> _canExecute;
         List<WeakReference> canExecuteChangedHandlers;

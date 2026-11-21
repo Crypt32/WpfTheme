@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Text;
-using SysadminsLV.WPF.OfficeTheme.Toolkit.ViewModels;
+using SysadminsLV.WPF.Mvvm;
 
 namespace SysadminsLV.WPF.OfficeTheme.Toolkit.Log {
     public class RuntimeLogWriter : ViewModelBase, IRuntimeLogWriter {

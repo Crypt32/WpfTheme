@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
 
-namespace SysadminsLV.WPF.OfficeTheme.Toolkit.Commands {
+namespace SysadminsLV.WPF.Mvvm.Commands {
     sealed class CancelAsyncCommand : ICommand {
         CancellationTokenSource cts = new CancellationTokenSource();
         Boolean commandExecuting;

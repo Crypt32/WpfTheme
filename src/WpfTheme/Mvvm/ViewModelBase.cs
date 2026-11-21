@@ -3,7 +3,7 @@ using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace SysadminsLV.WPF.OfficeTheme.Toolkit.ViewModels;
+namespace SysadminsLV.WPF.Mvvm;
 /// <summary>
 /// Represents the base view model that implements <see cref="INotifyPropertyChanged"/> interface.
 /// </summary>
