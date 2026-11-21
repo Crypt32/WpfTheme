@@ -1,5 +1,5 @@
 ﻿using System;
-using SysadminsLV.WPF.OfficeTheme.Toolkit.ViewModels;
+using SysadminsLV.WPF.Mvvm;
 
 namespace Wpf.Demo.ViewModels;
 class FormViewModel : ViewModelBase {

@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Threading.Tasks;
 
-namespace SysadminsLV.WPF.OfficeTheme.Toolkit.Commands {
+namespace SysadminsLV.WPF.Mvvm.Commands {
     /// <summary>
     /// Watches a task and raises property-changed notifications when the task completes.
     /// </summary>

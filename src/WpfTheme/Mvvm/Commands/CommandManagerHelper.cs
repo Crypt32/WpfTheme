@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
 
-namespace SysadminsLV.WPF.OfficeTheme.Toolkit.Commands {
+namespace SysadminsLV.WPF.Mvvm.Commands {
 	static class CommandManagerHelper {
 		internal static void CallWeakReferenceHandlers(List<WeakReference> handlers) {
 			if (handlers != null) {

@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SysadminsLV.WPF.OfficeTheme.Toolkit.Commands {
+namespace SysadminsLV.WPF.Mvvm.Commands {
     public class AsyncCommand : CommandBase<Object>, IAsyncCommand {
         readonly Func<Object, CancellationToken, Task> _command;
         readonly CancelAsyncCommand _cancelCommand;
