@@ -9,6 +9,9 @@ using SysadminsLV.WPF.Mvvm.Commands;
 namespace SysadminsLV.WPF.Controls;
 
 public class ClosableTabControl : TabControl {
+    static ClosableTabControl() {
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(ClosableTabControl), new FrameworkPropertyMetadata(typeof(ClosableTabControl)));
+    }
     public ClosableTabControl() {
         MenuCommand = new RelayCommand(switchTab);
         Unloaded += OnUnloaded;

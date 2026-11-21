@@ -5,6 +5,9 @@ using System.Windows.Controls;
 namespace SysadminsLV.WPF.Controls;
 
 public class LoadingSpinner : Control {
+    static LoadingSpinner() {
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(LoadingSpinner), new FrameworkPropertyMetadata(typeof(LoadingSpinner)));
+    }
     public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
         nameof(Text),
         typeof(String),
