@@ -22,20 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Themes\Images\asterisk_32x32.png" />
-    <Resource Include="Themes\Images\copy_16x16.png" />
-    <Resource Include="Themes\Images\cut_16x16.png" />
-    <Resource Include="Themes\Images\delete_16x16.png" />
-    <Resource Include="Themes\Images\eraser_16x16.png" />
-    <Resource Include="Themes\Images\error_32x32.png" />
-    <Resource Include="Themes\Images\exclamation_32x32.png" />
-    <Resource Include="Themes\Images\hand_32x32.png" />
-    <Resource Include="Themes\Images\information_32x32.png" />
-    <Resource Include="Themes\Images\paste_16x16.png" />
-    <Resource Include="Themes\Images\question_32x32.png" />
-    <Resource Include="Themes\Images\redo_16x16.png" />
-    <Resource Include="Themes\Images\undo_16x16.png" />
-    <Resource Include="Themes\Images\warning_32x32.png" />
+    <Resource Include="Themes\Images\**" />
   </ItemGroup>
 
   <ItemGroup>
