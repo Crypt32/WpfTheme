@@ -21,20 +21,18 @@ public static class LayerMap {
     /// All layers, ordered from the lowest to the highest.
     /// </summary>
     public static readonly IReadOnlyList<Layer> Layers = [
-        // The legacy entry in this layer is temporary: Toolkit.Commands still holds DialogCloser (moves to behaviors).
         new Layer(1, "Mvvm and collections", [
             $"{Root}.Mvvm",
             $"{Root}.Mvvm.Commands",
-            $"{Root}.Collections",
-            $"{LegacyRoot}.Toolkit.Commands"
+            $"{Root}.Collections"
         ]),
         new Layer(2, "Dialogs and logging", [
             $"{Root}.Dialogs",
             $"{Root}.Logging"
         ]),
         new Layer(3, "Behaviors and converters", [
-            $"{LegacyRoot}.Toolkit.Behaviors",
-            $"{LegacyRoot}.Toolkit.Converters"
+            $"{Root}.Behaviors",
+            $"{Root}.Converters"
         ]),
         new Layer(4, "Controls", [
             $"{LegacyRoot}.Controls"

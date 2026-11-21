@@ -1,7 +1,7 @@
 ﻿<!--Credits: https://stackoverflow.com/a/19560467/3997611-->
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:converters="clr-namespace:SysadminsLV.WPF.OfficeTheme.Toolkit.Converters">
+                    xmlns:converters="clr-namespace:SysadminsLV.WPF.Converters">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../Brushes/SolidColors.xaml"/>
         <ResourceDictionary Source="../Brushes/Gradients.xaml"/>

@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace SysadminsLV.WPF.OfficeTheme.Toolkit.Behaviors {
+namespace SysadminsLV.WPF.Behaviors {
     public class BrowserBehavior {
         public static readonly DependencyProperty HtmlProperty = DependencyProperty.RegisterAttached(
             "Html",

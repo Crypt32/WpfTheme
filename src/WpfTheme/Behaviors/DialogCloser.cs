@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 
-namespace SysadminsLV.WPF.OfficeTheme.Toolkit.Commands {
+namespace SysadminsLV.WPF.Behaviors {
     public static class DialogCloser {
         public static readonly DependencyProperty DialogResultProperty =
             DependencyProperty.RegisterAttached(

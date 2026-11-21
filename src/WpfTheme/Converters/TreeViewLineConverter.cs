@@ -4,7 +4,7 @@ using System.Windows.Data;
 
 // Credits: https://stackoverflow.com/a/19560467/3997611
 
-namespace SysadminsLV.WPF.OfficeTheme.Toolkit.Converters {
+namespace SysadminsLV.WPF.Converters {
     class TreeViewLineConverter : IValueConverter {
         public Object Convert(Object value, Type targetType, Object parameter, System.Globalization.CultureInfo culture) {
             var item = (TreeViewItem)value;
