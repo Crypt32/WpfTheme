@@ -1,7 +1,7 @@
-﻿ <!--Credits: Microsoft WPF Luna theme https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-3.0/aa972127(v=vs.85)-->
+ <!--Credits: Microsoft WPF Luna theme https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-3.0/aa972127(v=vs.85)-->
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:c="clr-namespace:SysadminsLV.WPF.OfficeTheme.Controls">
+                    xmlns:c="clr-namespace:SysadminsLV.WPF.Controls">
     <ControlTemplate x:Key="ScrollViewerControlTemplate1" TargetType="{x:Type ScrollViewer}">
         <Grid x:Name="Grid" Background="{TemplateBinding Background}">
             <Grid.ColumnDefinitions>
