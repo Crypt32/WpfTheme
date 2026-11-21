@@ -54,33 +54,29 @@
     
     <Thickness x:Key="TabPanelPadding">4,0,4,0</Thickness>
     <Thickness x:Key="TabPanelScrollControlsPanelMargin">5,0,0,2</Thickness>
-    <Path x:Key="ArrowLeftPath"
-          Margin="4,3"
-          Data="{StaticResource ArrowLeft}"
-          Stroke="{StaticResource LineButtonBrush}" 
-          Fill="{StaticResource LineButtonBrush}"
-          Stretch="Fill"
-          VerticalAlignment="Center"
-          HorizontalAlignment="Center"/>
-    <Path x:Key="ArrowRightPath"
-          Margin="4,3"
-          Data="{StaticResource ArrowRight}"
-          Stroke="{StaticResource LineButtonBrush}" 
-          Fill="{StaticResource LineButtonBrush}"
-          Stretch="Fill"
-          VerticalAlignment="Center"
-          HorizontalAlignment="Center"/>
-    <Path x:Key="TabMenuButtonPath"
-          Margin="2"
-          Data="{StaticResource TabMenuButton}"
-          Stroke="{StaticResource LineButtonBrush}" 
-          Fill="{StaticResource TabMenuButtonBrush}"
-          Stretch="Fill"
-          VerticalAlignment="Center"
-          HorizontalAlignment="Center"/>
+    <!-- Glyphs are templates, not Path elements: an element resource can have only one parent, so it cannot be shared by several controls. -->
+    <DataTemplate x:Key="TabScrollButtonGlyphTemplate">
+        <Path Margin="4,3"
+              Data="{Binding}"
+              Stroke="{StaticResource LineButtonBrush}"
+              Fill="{StaticResource LineButtonBrush}"
+              Stretch="Fill"
+              VerticalAlignment="Center"
+              HorizontalAlignment="Center"/>
+    </DataTemplate>
+    <DataTemplate x:Key="TabMenuButtonGlyphTemplate">
+        <Path Margin="2"
+              Data="{Binding}"
+              Stroke="{StaticResource LineButtonBrush}"
+              Fill="{StaticResource TabMenuButtonBrush}"
+              Stretch="Fill"
+              VerticalAlignment="Center"
+              HorizontalAlignment="Center"/>
+    </DataTemplate>
     <system:Double x:Key="ButtonWidthAndHeight">20</system:Double>
     <Style x:Key="TabScrollButtonStyle" TargetType="{x:Type RepeatButton}" BasedOn="{StaticResource ToolBarButtonStyle}">
         <Setter Property="Focusable" Value="False"/>
+        <Setter Property="ContentTemplate" Value="{StaticResource TabScrollButtonGlyphTemplate}"/>
         <Setter Property="Height" Value="{StaticResource ButtonWidthAndHeight}"/>
         <Setter Property="Width" Value="{StaticResource ButtonWidthAndHeight}"/>
         <Setter Property="BorderThickness" Value="1"/>
@@ -223,13 +219,13 @@
                                                   Style="{StaticResource TabScrollButtonStyle}"
                                                   CommandTarget="{Binding ElementName=svTP}"
                                                   Command="ScrollBar.LineLeftCommand"
-                                                  Content="{StaticResource ArrowLeftPath}"
+                                                  Content="{StaticResource ArrowLeft}"
                                                   IsEnabled="{Binding ElementName=PART_ScrollContentPresenter, Path=CanScrollLeft}"/>
                                     <RepeatButton x:Name="cmdScrollRight"
                                                   Style="{StaticResource TabScrollButtonStyle}"
                                                   CommandTarget="{Binding ElementName=svTP}"
                                                   Command="ScrollBar.LineRightCommand"
-                                                  Content="{StaticResource ArrowRightPath}"
+                                                  Content="{StaticResource ArrowRight}"
                                                   IsEnabled="{Binding ElementName=PART_ScrollContentPresenter, Path=CanScrollRight}"/>
                                     <!-- 
                                  This will present another "button" which will open up the Menu
@@ -239,7 +235,8 @@
                                     <Menu Background="Transparent">
                                         <MenuItem ItemContainerStyle="{StaticResource TabMenuItemStyle}"
                                                   ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type c:ClosableTabControl}}, Path=Items}"
-                                                  Header="{StaticResource TabMenuButtonPath}"
+                                                  Header="{StaticResource TabMenuButton}"
+                                                  HeaderTemplate="{StaticResource TabMenuButtonGlyphTemplate}"
                                                   Style="{StaticResource TabTopMenuItemStyle}"/>
                                     </Menu>
                                 </StackPanel>
