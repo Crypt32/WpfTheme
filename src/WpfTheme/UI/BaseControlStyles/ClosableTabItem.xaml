@@ -1,8 +1,8 @@
-﻿<!--Credits: http://www.blogs.intuidev.com/post/2010/post/2010/01/25/TabControlStyling_PartOne.aspx-->
+<!--Credits: http://www.blogs.intuidev.com/post/2010/post/2010/01/25/TabControlStyling_PartOne.aspx-->
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:converters="clr-namespace:SysadminsLV.WPF.Converters"
-                    xmlns:c="clr-namespace:SysadminsLV.WPF.OfficeTheme.Controls">
+                    xmlns:c="clr-namespace:SysadminsLV.WPF.Controls">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="CloseTabButton.xaml"/>
     </ResourceDictionary.MergedDictionaries>
