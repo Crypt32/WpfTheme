@@ -55,6 +55,30 @@ public sealed class TypeLayeringTests {
     }
 
     [TestMethod]
+    public void NoTypeLivesInTheLegacyNamespace() {
+        // "OfficeTheme" was dropped from the namespace structure; nothing may come back under that name
+        String[] legacy = GetAuthoredTypes()
+            .Select(x => x.FullName ?? String.Empty)
+            .Where(x => x.StartsWith("SysadminsLV.WPF.OfficeTheme", StringComparison.Ordinal))
+            .ToArray();
+
+        Assert.IsEmpty(legacy, "Types in the legacy namespace: " + String.Join(", ", legacy));
+    }
+
+    [TestMethod]
+    public void EveryNamespaceIsUnderTheLibraryRoot() {
+        String[] outside = GetAuthoredTypes()
+            .Select(x => x.Namespace)
+            .Where(x => !String.IsNullOrEmpty(x))
+            .Where(x => !LayerMap.GeneratedNamespaces.Contains(x!))
+            .Where(x => x != LayerMap.Root && !x!.StartsWith(LayerMap.Root + ".", StringComparison.Ordinal))
+            .Distinct()
+            .ToArray();
+
+        Assert.IsEmpty(outside, "Namespaces outside the library root: " + String.Join(", ", outside));
+    }
+
+    [TestMethod]
     public void DependencyDetectionSeesKnownDependencies() {
         // Controls (layer 4) are known to use the command infrastructure (layer 1). If the detector finds nothing
         // here, the rules above would pass for the wrong reason.
