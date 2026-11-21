@@ -8,7 +8,10 @@ namespace SysadminsLV.WPF.Tests.Layering;
 /// The single place that assigns library namespaces and XAML directories to architecture layers.
 /// </summary>
 public static class LayerMap {
-    const String Root = "SysadminsLV.WPF";
+    /// <summary>
+    /// Root namespace of the library. Every library namespace starts with it.
+    /// </summary>
+    public const String Root = "SysadminsLV.WPF";
 
     /// <summary>
     /// Level of the layer that contains XAML theme resources. XAML has no CLR namespace, so it is assigned by directory.
