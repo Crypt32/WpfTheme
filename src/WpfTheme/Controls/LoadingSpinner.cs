@@ -21,6 +21,19 @@ public class LoadingSpinner : Control {
         set => SetValue(TextProperty, value);
     }
 
+    public static readonly DependencyProperty TextStyleProperty = DependencyProperty.Register(
+        nameof(TextStyle),
+        typeof(Style),
+        typeof(LoadingSpinner),
+        new FrameworkPropertyMetadata(null));
+    /// <summary>
+    /// Gets or sets the style applied to the <see cref="TextBlock"/> that displays <see cref="Text"/>.
+    /// </summary>
+    public Style? TextStyle {
+        get => (Style?)GetValue(TextStyleProperty);
+        set => SetValue(TextStyleProperty, value);
+    }
+
     public static readonly DependencyProperty IsShownProperty = DependencyProperty.Register(
         nameof(IsShown),
         typeof(Boolean),
