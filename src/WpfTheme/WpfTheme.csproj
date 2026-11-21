@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
@@ -22,20 +22,20 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="UI\Images\asterisk_32x32.png" />
-    <Resource Include="UI\Images\copy_16x16.png" />
-    <Resource Include="UI\Images\cut_16x16.png" />
-    <Resource Include="UI\Images\delete_16x16.png" />
-    <Resource Include="UI\Images\eraser_16x16.png" />
-    <Resource Include="UI\Images\error_32x32.png" />
-    <Resource Include="UI\Images\exclamation_32x32.png" />
-    <Resource Include="UI\Images\hand_32x32.png" />
-    <Resource Include="UI\Images\information_32x32.png" />
-    <Resource Include="UI\Images\paste_16x16.png" />
-    <Resource Include="UI\Images\question_32x32.png" />
-    <Resource Include="UI\Images\redo_16x16.png" />
-    <Resource Include="UI\Images\undo_16x16.png" />
-    <Resource Include="UI\Images\warning_32x32.png" />
+    <Resource Include="Themes\Images\asterisk_32x32.png" />
+    <Resource Include="Themes\Images\copy_16x16.png" />
+    <Resource Include="Themes\Images\cut_16x16.png" />
+    <Resource Include="Themes\Images\delete_16x16.png" />
+    <Resource Include="Themes\Images\eraser_16x16.png" />
+    <Resource Include="Themes\Images\error_32x32.png" />
+    <Resource Include="Themes\Images\exclamation_32x32.png" />
+    <Resource Include="Themes\Images\hand_32x32.png" />
+    <Resource Include="Themes\Images\information_32x32.png" />
+    <Resource Include="Themes\Images\paste_16x16.png" />
+    <Resource Include="Themes\Images\question_32x32.png" />
+    <Resource Include="Themes\Images\redo_16x16.png" />
+    <Resource Include="Themes\Images\undo_16x16.png" />
+    <Resource Include="Themes\Images\warning_32x32.png" />
   </ItemGroup>
 
   <ItemGroup>
