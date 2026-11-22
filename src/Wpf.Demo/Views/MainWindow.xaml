@@ -76,6 +76,9 @@
             <TabItem Header="Notifications">
                 <uc:NotificationPanelUC/>
             </TabItem>
+            <TabItem Header="Headered">
+                <uc:HeaderedContentControlUC/>
+            </TabItem>
         </TabControl>
     </DockPanel>
 </Window>
