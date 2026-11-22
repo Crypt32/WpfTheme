@@ -74,7 +74,7 @@
         <Setter Property="Width" Value="{StaticResource ButtonWidthAndHeight}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="BorderBrush" Value="{StaticResource TabScrollButton.BorderBrush}"/>
-        <Setter Property="Background" Value="{StaticResource HorizontalBlueGradientBrush}"/>
+        <Setter Property="Background" Value="{StaticResource Gradient.Blue.Down}"/>
         <Style.Triggers>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Opacity" Value="0.4"/>
@@ -86,15 +86,15 @@
         <Setter Property="Width" Value="22"/>
         <Setter Property="Padding" Value="2"/>
         <Setter Property="BorderBrush" Value="{StaticResource TabScrollButton.BorderBrush}"/>
-        <Setter Property="Background" Value="{StaticResource HorizontalBlueGradientBrush}"/>
+        <Setter Property="Background" Value="{StaticResource Gradient.Blue.Down}"/>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="BorderBrush" Value="{StaticResource ToolBar.Hover.BorderBrush}"/>
-                <Setter Property="Background" Value="{StaticResource HorizontalYellowHoverGradient}"/>
+                <Setter Property="Background" Value="{StaticResource Gradient.Yellow.Hover.Down}"/>
             </Trigger>
             <Trigger Property="IsPressed" Value="True">
                 <Setter Property="BorderBrush" Value="{StaticResource ToolBar.Pressed.BorderBrush}"/>
-                <Setter Property="Background" Value="{StaticResource HorizontalYellowPressedGradientBrush}"/>
+                <Setter Property="Background" Value="{StaticResource Gradient.Yellow.Pressed.Down}"/>
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -134,7 +134,7 @@
                                     Height="{StaticResource ButtonWidthAndHeight}"
                                     VerticalAlignment="Bottom"
                                     Margin="0,0,0,2"
-                                    Background="{StaticResource HorizontalBlueGradientBrush}"
+                                    Background="{StaticResource Gradient.Blue.Down}"
                                     BorderThickness="1"
                                     BorderBrush="{StaticResource Panel.BorderBrush}"
                                     Command="{Binding Path=AddTabCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type c:ClosableTabControl}}}">
