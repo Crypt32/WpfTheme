@@ -19,8 +19,8 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Separator}">
                     <Grid SnapsToDevicePixels="True" Margin="0,4,0,4">
-                        <Rectangle Height="1" Margin="30,0,1,1" Fill="#E0E0E0"/>
-                        <Rectangle Height="1" Margin="30,1,1,0" Fill="White"/>
+                        <Rectangle Height="1" Margin="30,0,1,1" Fill="{StaticResource MenuItem.Separator.BorderBrush}"/>
+                        <Rectangle Height="1" Margin="30,1,1,0" Fill="{StaticResource MenuItem.Separator.LightBrush}"/>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -64,7 +64,7 @@
                    Focusable="False"
                    PopupAnimation="{DynamicResource {x:Static SystemParameters.MenuPopupAnimationKey}}">
                 <themes:SystemDropShadowChrome Name="Shdw"
-                                               Color="#71000000"
+                                               Color="{StaticResource Shadow.Color}"
                                                CornerRadius="1"
                                                Margin="0,0,8,8"
                                                SnapsToDevicePixels="True">
@@ -96,7 +96,7 @@
             </Trigger>
             <Trigger SourceName="PART_Popup" Property="Popup.HasDropShadow" Value="True">
                 <Setter TargetName="Shdw" Property="Margin" Value="0,0,5,5"/>
-                <Setter TargetName="Shdw" Property="Color" Value="#71000000"/>
+                <Setter TargetName="Shdw" Property="Color" Value="{StaticResource Shadow.Color}"/>
             </Trigger>
             <Trigger Property="IsHighlighted" Value="True">
                 <Setter TargetName="Bg" Property="Fill" Value="{StaticResource MenuHoverFill}"/>
@@ -111,8 +111,8 @@
                 <Setter TargetName="Bg" Property="Stroke" Value="{StaticResource Panel.BorderBrush}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Foreground" Value="#FF9A9A9A"/>
-                <Setter TargetName="GlyphPanel" Property="Fill" Value="#848589"/>
+                <Setter Property="Foreground" Value="{StaticResource MenuItem.Disabled.FgBrush}"/>
+                <Setter TargetName="GlyphPanel" Property="Fill" Value="{StaticResource MenuItem.Glyph.Disabled.FgBrush}"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -142,7 +142,7 @@
                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                 <!-- this is check mark template-->
                 <Border x:Name="GlyphPanel"
-                        Background="#FBF3C5"
+                        Background="{StaticResource MenuItem.Glyph.BgBrush}"
                         BorderBrush="{StaticResource MenuItem.Glyph.BorderBrush}"
                         BorderThickness="1"
                         CornerRadius="4"
@@ -153,7 +153,7 @@
                     <Path Name="Glyph"
                           Width="9"
                           Height="11"
-                          Fill="Navy"
+                          Fill="{StaticResource MenuItem.Glyph.FgBrush}"
                           FlowDirection="LeftToRight"
                           Data="{StaticResource CheckMark}"/>
                 </Border>
@@ -219,7 +219,7 @@
             </Trigger>
             <Trigger SourceName="PART_Popup" Property="Popup.HasDropShadow" Value="True">
                 <Setter TargetName="Shdw" Property="Margin" Value="0,0,5,5"/>
-                <Setter TargetName="Shdw" Property="Color" Value="#71000000"/>
+                <Setter TargetName="Shdw" Property="Color" Value="{StaticResource Shadow.Color}"/>
             </Trigger>
             <Trigger Property="IsHighlighted" Value="True">
                 <Setter TargetName="Bg" Property="Fill" Value="{StaticResource SubmenuHover}"/>
@@ -230,21 +230,21 @@
                 <Setter TargetName="Bg" Property="Stroke" Value="{StaticResource MenuItem.Pressed.BorderBrush}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Foreground" Value="#FF9A9A9A"/>
-                <Setter TargetName="GlyphPanel" Property="Background" Value="#EEE9E9"/>
-                <Setter TargetName="GlyphPanel" Property="BorderBrush" Value="#DBD6D6"/>
-                <Setter TargetName="Glyph" Property="Fill" Value="#848589"/>
+                <Setter Property="Foreground" Value="{StaticResource MenuItem.Disabled.FgBrush}"/>
+                <Setter TargetName="GlyphPanel" Property="Background" Value="{StaticResource MenuItem.Glyph.Disabled.BgBrush}"/>
+                <Setter TargetName="GlyphPanel" Property="BorderBrush" Value="{StaticResource MenuItem.Glyph.Disabled.BorderBrush}"/>
+                <Setter TargetName="Glyph" Property="Fill" Value="{StaticResource MenuItem.Glyph.Disabled.FgBrush}"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
     <ControlTemplate x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type FrameworkElement}, ResourceId=SubmenuContent}"
                      TargetType="{x:Type ContentControl}">
-        <Border Background="#FAF9F9"
-                BorderBrush="#FF959595"
+        <Border Background="{StaticResource MenuItem.Submenu.BgBrush}"
+                BorderBrush="{StaticResource MenuItem.Submenu.BorderBrush}"
                 BorderThickness="1">
             <Grid>
                 <!--Icon and check column-->
-                <Rectangle Fill="#F1F1F1"
+                <Rectangle Fill="{StaticResource MenuItem.Submenu.Icon.BgBrush}"
                            HorizontalAlignment="Left"
                            Width="30"
                            Margin="0"
@@ -254,7 +254,7 @@
                 <Rectangle HorizontalAlignment="Left"
                            Width="1"
                            Margin="30,0,0,0"
-                           Fill="#E2E3E3"/>
+                           Fill="{StaticResource MenuItem.Submenu.Icon.BorderBrush}"/>
                 <ContentPresenter Grid.ColumnSpan="2"
                                   Margin="1,0"/>
             </Grid>
@@ -262,7 +262,7 @@
     </ControlTemplate>
     
     <Style x:Key="{x:Type MenuItem}" TargetType="{x:Type MenuItem}">
-        <Setter Property="Foreground" Value="Navy"/>
+        <Setter Property="Foreground" Value="{StaticResource MenuItem.FgBrush}"/>
         <Setter Property="HorizontalContentAlignment"
                 Value="{Binding Path=HorizontalContentAlignment,RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
         <Setter Property="VerticalContentAlignment"
