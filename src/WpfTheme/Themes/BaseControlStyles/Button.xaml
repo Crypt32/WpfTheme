@@ -11,7 +11,7 @@
                 <ControlTemplate>
                     <Rectangle Margin="2"
                                StrokeThickness="1"
-                               Stroke="Black"
+                               Stroke="{StaticResource Button.Focus.BorderBrush}"
                                StrokeDashArray="1 2"/>
                 </ControlTemplate>
             </Setter.Value>
@@ -52,7 +52,7 @@
                             <Setter TargetName="Chrome" Property="RenderPressed" Value="true"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Foreground" Value="#ADADAD"/>
+                            <Setter Property="Foreground" Value="{StaticResource Button.Disabled.FgBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
