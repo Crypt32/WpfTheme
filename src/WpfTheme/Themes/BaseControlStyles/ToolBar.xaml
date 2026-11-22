@@ -30,7 +30,7 @@
                             <Setter Property="BorderThickness" TargetName="Bd" Value="1"/>
                         </Trigger>
                         <Trigger Property="IsKeyboardFocused" Value="True">
-                            <Setter Property="BorderBrush" TargetName="Bd" Value="#80DADADA"/>
+                            <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ToolBar.Focus.BorderBrush}"/>
                             <Setter Property="Background" TargetName="Bd" Value="{StaticResource HorizontalYellowHoverGradient}"/>
                             <Setter Property="BorderThickness" TargetName="Bd" Value="1"/>
                         </Trigger>
@@ -86,11 +86,11 @@
                                                                 VerticalAlignment="Bottom"
                                                                 Width="6">
                                                             <Path Data="M1,1.5L6,1.5"
-                                                                  Stroke="White"/>
+                                                                  Stroke="{StaticResource ToolBar.Overflow.Glyph.LightBrush}"/>
                                                             <Path Data="M0,0.5L5,0.5"
                                                                   Stroke="{TemplateBinding Foreground}"/>
                                                             <Path Data="M0.5,4L6.5,4 3.5,7z"
-                                                                  Fill="White"/>
+                                                                  Fill="{StaticResource ToolBar.Overflow.Glyph.LightBrush}"/>
                                                             <Path Data="M-0.5,3L5.5,3 2.5,6z"
                                                                   Fill="{TemplateBinding Foreground}"/>
                                                         </Canvas>
@@ -103,7 +103,7 @@
                                                             <Setter Property="Background" TargetName="Bd" Value="{StaticResource ToolBar.Overflow.Hover.BgBrush}"/>
                                                         </Trigger>
                                                         <Trigger Property="IsEnabled" Value="False">
-                                                            <Setter Property="Foreground" Value="#FF6D6D6D"/>
+                                                            <Setter Property="Foreground" Value="{StaticResource ToolBar.Overflow.Disabled.FgBrush}"/>
                                                         </Trigger>
                                                         <Trigger Property="IsPressed" Value="True">
                                                             <Setter TargetName="Bd" Property="Background" Value="{StaticResource ToolBar.Overflow.Pressed.BgBrush}"/>
@@ -128,9 +128,9 @@
                                    Placement="Bottom" StaysOpen="False">
                                 <themes:SystemDropShadowChrome x:Name="Shdw" Color="Transparent">
                                     <Border x:Name="ToolBarSubMenuBorder"
-                                            BorderBrush="#FFB6BDC5"
+                                            BorderBrush="{StaticResource ToolBar.Overflow.Popup.BorderBrush}"
                                             BorderThickness="1"
-                                            Background="#FFEEF5FD"
+                                            Background="{StaticResource ToolBar.Overflow.Popup.BgBrush}"
                                             RenderOptions.ClearTypeHint="Enabled">
                                         <ToolBarOverflowPanel x:Name="PART_ToolBarOverflowPanel"
                                                               KeyboardNavigation.DirectionalNavigation="Cycle"
@@ -186,8 +186,8 @@
                                                                                   ViewboxUnits="Absolute">
                                                                             <DrawingBrush.Drawing>
                                                                                 <DrawingGroup>
-                                                                                    <GeometryDrawing Brush="White" Geometry="M1,1L1,3 3,3 3,1z"/>
-                                                                                    <GeometryDrawing Brush="#FF6D6D6D" Geometry="M0,0L0,2 2,2 2,0z"/>
+                                                                                    <GeometryDrawing Brush="{StaticResource ToolBar.Grip.LightBrush}" Geometry="M1,1L1,3 3,3 3,1z"/>
+                                                                                    <GeometryDrawing Brush="{StaticResource ToolBar.Grip.DarkBrush}" Geometry="M0,0L0,2 2,2 2,0z"/>
                                                                                 </DrawingGroup>
                                                                             </DrawingBrush.Drawing>
                                                                         </DrawingBrush>
@@ -236,14 +236,14 @@
                         <Trigger Property="HasDropShadow" SourceName="OverflowPopup" Value="True">
                             <Setter Property="Margin" TargetName="Shdw" Value="0,0,5,5"/>
                             <Setter Property="SnapsToDevicePixels" TargetName="Shdw" Value="True"/>
-                            <Setter Property="Color" TargetName="Shdw" Value="#71000000"/>
+                            <Setter Property="Color" TargetName="Shdw" Value="{StaticResource Shadow.Color}"/>
                         </Trigger>
                         <Trigger Property="Orientation" Value="Vertical">
                             <Setter Property="Margin" TargetName="Grid" Value="1,3,1,1"/>
                             <Setter Property="Style" TargetName="OverflowButton">
                                 <Setter.Value>
                                     <Style TargetType="{x:Type ToggleButton}">
-                                        <Setter Property="Background" Value="#FFEEF5FD"/>
+                                        <Setter Property="Background" Value="{StaticResource ToolBar.Overflow.BgBrush}"/>
                                         <Setter Property="MinHeight" Value="0"/>
                                         <Setter Property="MinWidth" Value="0"/>
                                         <Setter Property="Template">
@@ -259,24 +259,24 @@
                                                                 VerticalAlignment="Bottom"
                                                                 Width="7">
                                                             <Path Data="M1.5,1L1.5,6"
-                                                                  Stroke="White"/>
+                                                                  Stroke="{StaticResource ToolBar.Overflow.Glyph.LightBrush}"/>
                                                             <Path Data="M0.5,0L0.5,5"
                                                                   Stroke="{TemplateBinding Foreground}"/>
                                                             <Path Data="M3.5,0.5L7,3.5 4,6.5z"
-                                                                  Fill="White"/>
+                                                                  Fill="{StaticResource ToolBar.Overflow.Glyph.LightBrush}"/>
                                                             <Path Data="M3,-0.5L6,2.5 3,5.5z" 
                                                                   Fill="{TemplateBinding Foreground}"/>
                                                         </Canvas>
                                                     </Border>
                                                     <ControlTemplate.Triggers>
                                                         <Trigger Property="IsMouseOver" Value="True">
-                                                            <Setter Property="Background" TargetName="Bd" Value="#210080FF"/>
+                                                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource ToolBar.Overflow.Vertical.Hover.BgBrush}"/>
                                                         </Trigger>
                                                         <Trigger Property="IsKeyboardFocused" Value="True">
-                                                            <Setter Property="Background" TargetName="Bd" Value="#210080FF"/>
+                                                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource ToolBar.Overflow.Vertical.Hover.BgBrush}"/>
                                                         </Trigger>
                                                         <Trigger Property="IsEnabled" Value="False">
-                                                            <Setter Property="Foreground" Value="#FF6D6D6D"/>
+                                                            <Setter Property="Foreground" Value="{StaticResource ToolBar.Overflow.Disabled.FgBrush}"/>
                                                         </Trigger>
                                                     </ControlTemplate.Triggers>
                                                 </ControlTemplate>
@@ -302,7 +302,7 @@
                             <Setter Property="VerticalAlignment" TargetName="OverflowGrid" Value="Bottom"/>
                             <Setter Property="Placement" TargetName="OverflowPopup" Value="Right"/>
                             <Setter Property="Margin" TargetName="MainPanelBorder" Value="0,0,0,11"/>
-                            <Setter Property="Background" Value="#FFEEF5FD"/>
+                            <Setter Property="Background" Value="{StaticResource ToolBar.Vertical.BgBrush}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Foreground" Value="{StaticResource {x:Static SystemColors.GrayTextBrushKey}}"/>
