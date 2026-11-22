@@ -5,31 +5,23 @@
                     xmlns:system="clr-namespace:System;assembly=mscorlib"
                     xmlns:c="clr-namespace:SysadminsLV.WPF.Controls">
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Brushes/SolidColors.xaml"/>
         <ResourceDictionary Source="../Brushes/Gradients.xaml"/>
         <ResourceDictionary Source="ClosableTabItem.xaml"/>
         <ResourceDictionary Source="ToolBar.xaml"/>
         <ResourceDictionary Source="MenuItem.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-    <Color x:Key="TabPanelBackgroundColorBase">#BEDAFE</Color>
-    <Color x:Key="LineButtonBackgroundColorBright">LightGoldenrodYellow</Color>
-    <Color x:Key="LineButtonBackgroundColorDark">#FAEEB1</Color>
-    <Color x:Key="LineButtonBackgroundColorDisabledBright">#EEE</Color>
-    <Color x:Key="LineButtonBackgroundColorDisabledDark">#999</Color>
-    <SolidColorBrush x:Key="LineButtonBorderBrush" Color="#FF8693BD" po:Freeze="True"/>
-    <SolidColorBrush x:Key="TabControl_BackgroundBrush_Base" Color="{StaticResource TabControlBackgroundColorBase}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="TabPage_InnerBorderBrushDark" Color="#FF8DB2E3" po:Freeze="True"/>
     <!-- The color to be used when drawing the arrows on the scrollbar's line-buttons -->
-    <SolidColorBrush x:Key="LineButtonBrush" Color="Navy" po:Freeze="True"/>
     <!-- Brushes used for styling the TabControl -->
     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="LineButtonBackgroundBrush" po:Freeze="True">
-        <GradientStop Offset="0.3" Color="{StaticResource LineButtonBackgroundColorBright}"/>
-        <GradientStop Offset="0.4" Color="{StaticResource LineButtonBackgroundColorDark}"/>
-        <GradientStop Offset="1" Color="{StaticResource LineButtonBackgroundColorBright}"/>
+        <GradientStop Offset="0.3" Color="{StaticResource TabScrollButton.BgLightColor}"/>
+        <GradientStop Offset="0.4" Color="{StaticResource TabScrollButton.BgDarkColor}"/>
+        <GradientStop Offset="1" Color="{StaticResource TabScrollButton.BgLightColor}"/>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="TabPanelBackgroundBrush" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
         <LinearGradientBrush.GradientStops>
-            <GradientStop Offset="0.98" Color="{StaticResource TabPanelBackgroundColorBase}"/>
-            <GradientStop Offset="0.99" Color="{StaticResource BorderColorBase}"/>
+            <GradientStop Offset="0.98" Color="{StaticResource ClosableTabControl.PanelBgColor}"/>
+            <GradientStop Offset="0.99" Color="{StaticResource Neutral.GrayColor}"/>
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
     <!-- The color to be used for painting the interior of the TabItem-menu's path -->
@@ -39,8 +31,8 @@
     </LinearGradientBrush>
     <!-- The color for the scrollbar's line-buttons when they're disabled -->
     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="LineButtonDisabledBrush" po:Freeze="True">
-        <GradientStop Offset="0" Color="{StaticResource LineButtonBackgroundColorDisabledBright}"/>
-        <GradientStop Offset="1" Color="{StaticResource LineButtonBackgroundColorDisabledDark}"/>
+        <GradientStop Offset="0" Color="{StaticResource TabScrollButton.Disabled.BgLightColor}"/>
+        <GradientStop Offset="1" Color="{StaticResource TabScrollButton.Disabled.BgDarkColor}"/>
     </LinearGradientBrush>
 
     <!-- The background color of the TabItems popup-menu -->
@@ -59,8 +51,8 @@
     <DataTemplate x:Key="TabScrollButtonGlyphTemplate">
         <Path Margin="4,3"
               Data="{Binding}"
-              Stroke="{StaticResource LineButtonBrush}"
-              Fill="{StaticResource LineButtonBrush}"
+              Stroke="{StaticResource TabScrollButton.FgBrush}"
+              Fill="{StaticResource TabScrollButton.FgBrush}"
               Stretch="Fill"
               VerticalAlignment="Center"
               HorizontalAlignment="Center"/>
@@ -68,7 +60,7 @@
     <DataTemplate x:Key="TabMenuButtonGlyphTemplate">
         <Path Margin="2"
               Data="{Binding}"
-              Stroke="{StaticResource LineButtonBrush}"
+              Stroke="{StaticResource TabScrollButton.FgBrush}"
               Fill="{StaticResource TabMenuButtonBrush}"
               Stretch="Fill"
               VerticalAlignment="Center"
@@ -81,7 +73,7 @@
         <Setter Property="Height" Value="{StaticResource ButtonWidthAndHeight}"/>
         <Setter Property="Width" Value="{StaticResource ButtonWidthAndHeight}"/>
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="BorderBrush" Value="{StaticResource LineButtonBorderBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource TabScrollButton.BorderBrush}"/>
         <Setter Property="Background" Value="{StaticResource HorizontalBlueGradientBrush}"/>
         <Style.Triggers>
             <Trigger Property="IsEnabled" Value="False">
@@ -93,7 +85,7 @@
         <Setter Property="Height" Value="22"/>
         <Setter Property="Width" Value="22"/>
         <Setter Property="Padding" Value="2"/>
-        <Setter Property="BorderBrush" Value="{StaticResource LineButtonBorderBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource TabScrollButton.BorderBrush}"/>
         <Setter Property="Background" Value="{StaticResource HorizontalBlueGradientBrush}"/>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
@@ -255,8 +247,8 @@
                                 Grid.Column="0"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Grid.Row="1"
-                                BorderBrush="{StaticResource TabItemBorderBrushSelected}"
-                                Background="{StaticResource TabControl_BackgroundBrush_Base}">
+                                BorderBrush="{StaticResource ClosableTabItem.Selected.BorderBrush}"
+                                Background="{StaticResource ClosableTabControl.BgBrush}">
                             <ContentPresenter x:Name="PART_SelectedContentHost"
                                               ContentSource="SelectedContent"
                                               Margin="0"/>
