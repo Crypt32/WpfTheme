@@ -5,18 +5,6 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../Brushes/DefaultColorTheme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-    <LinearGradientBrush x:Key="HeaderBackgroundBrush" StartPoint="0.5,0.0" EndPoint="0.5,1.0" po:Freeze="True">
-        <GradientStop Color="#FF98BFEB" Offset="1"/>
-        <GradientStop Color="#FFB8D4F2" Offset="0"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="HeaderHighlightedBackgroundBrush" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
-        <GradientStop Color="#FFA3CBF7" Offset="1"/>
-        <GradientStop Color="#FFD9E6F9" Offset="0"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="HeaderPressedBackgroundBrush" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
-        <GradientStop Color="#FFA3CBF7" Offset="0"/>
-        <GradientStop Color="#FFD9E6F9" Offset="1"/>
-    </LinearGradientBrush>
     <!-- DataGridColumnHeader Right Gripper Style -->
     <Style x:Key="ColumnHeaderRightGripperStyle" TargetType="{x:Type Thumb}">
         <Setter Property="Width" Value="8"/>
@@ -53,7 +41,7 @@
     </Style>
     <Style TargetType="{x:Type DataGridColumnHeader}">
         <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="Background" Value="{StaticResource HeaderBackgroundBrush}"/>
+        <Setter Property="Background" Value="{StaticResource DataGrid.Header.BgGradient}"/>
         <Setter Property="BorderBrush" Value="{StaticResource DataGrid.Header.BorderBrush}" />
         <Setter Property="BorderThickness" Value="0,1,0,1" />
         <Setter Property="Template">
@@ -131,10 +119,10 @@
                         </Trigger>
 
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="headerBorder" Property="Background" Value="{StaticResource HeaderHighlightedBackgroundBrush}" />
+                            <Setter TargetName="headerBorder" Property="Background" Value="{StaticResource DataGrid.Header.Hover.BgGradient}" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="headerBorder" Property="Background" Value="{StaticResource HeaderPressedBackgroundBrush}" />
+                            <Setter TargetName="headerBorder" Property="Background" Value="{StaticResource DataGrid.Header.Pressed.BgGradient}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

@@ -5,22 +5,10 @@
         <ResourceDictionary Source="GridViewColumnHeaderGripper.xaml"/>
         <ResourceDictionary Source="../../Brushes/DefaultColorTheme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-    <LinearGradientBrush x:Key="GridViewColumnHeaderBackground" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Color="#FEFEFE" Offset="0"/>
-            <GradientStop Color="#C3DCFE" Offset="1"/>
-        </LinearGradientBrush.GradientStops>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="GridViewColumnHeaderBackground.Pressed" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Color="#C3DCFE" Offset="0"/>
-            <GradientStop Color="#FEFEFE" Offset="1"/>
-        </LinearGradientBrush.GradientStops>
-    </LinearGradientBrush>
     <Style TargetType="{x:Type GridViewColumnHeader}">
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="Background" Value="{StaticResource GridViewColumnHeaderBackground}"/>
+        <Setter Property="Background" Value="{StaticResource GridViewColumnHeader.BgGradient}"/>
         <Setter Property="BorderBrush" Value="{StaticResource Panel.BorderBrush}"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
@@ -56,7 +44,7 @@
                             <Setter TargetName="PART_HeaderGripper" Property="Background" Value="Transparent"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
-                            <Setter TargetName="HeaderBorder" Property="Background" Value="{StaticResource GridViewColumnHeaderBackground.Pressed}"/>
+                            <Setter TargetName="HeaderBorder" Property="Background" Value="{StaticResource GridViewColumnHeader.Pressed.BgGradient}"/>
                             <Setter TargetName="HeaderHoverBorder" Property="BorderBrush" Value="#FF95DAF9"/>
                             <Setter TargetName="PART_HeaderGripper" Property="Visibility" Value="Hidden"/>
                         </Trigger>

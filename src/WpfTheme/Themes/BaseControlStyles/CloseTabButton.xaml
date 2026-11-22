@@ -5,49 +5,10 @@
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../Brushes/SolidColors.xaml"/>
+        <ResourceDictionary Source="../Brushes/Gradients.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     <system:Double x:Key="CloseButtonWidthAndHeight">14</system:Double>
     <Geometry x:Key="XCloseButton" po:Freeze="True">M0,0 L10,10 M0,10 L10,0</Geometry>
-    <LinearGradientBrush x:Key="TabItemCloseButtonNormalBackgroundBrush" StartPoint="0,0" EndPoint="1,0" po:Freeze="True">
-        <GradientBrush.GradientStops>
-            <GradientStopCollection>
-                <GradientStop Color="#5FFF" Offset="0.0"/>
-                <GradientStop Color="#5CCC" Offset="1.0"/>
-            </GradientStopCollection>
-        </GradientBrush.GradientStops>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="TabItemCloseButtonNormalBorderBrush" StartPoint="0,0" EndPoint="1,1" po:Freeze="True">
-        <GradientBrush.GradientStops>
-            <GradientStopCollection>
-                <GradientStop Color="#5CCC" Offset="0.0"/>
-                <GradientStop Color="#5444" Offset="1.0"/>
-            </GradientStopCollection>
-        </GradientBrush.GradientStops>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="TabItemCloseButtonHoverBackgroundBrush" StartPoint="0,1" EndPoint="1,0" po:Freeze="True">
-        <GradientBrush.GradientStops>
-            <GradientStopCollection>
-                <GradientStop Color="#FFDF2B1E" Offset="0.0"/>
-                <GradientStop Color="#FFA41F00" Offset="1.0"/>
-            </GradientStopCollection>
-        </GradientBrush.GradientStops>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="TabItemCloseButtonPressedBackgroundBrush" StartPoint="0,0" EndPoint="1,1" po:Freeze="True">
-        <GradientBrush.GradientStops>
-            <GradientStopCollection>
-                <GradientStop Color="#FFA41F00" Offset="0.0"/>
-                <GradientStop Color="#FFDF2B1E" Offset="1.0"/>
-            </GradientStopCollection>
-        </GradientBrush.GradientStops>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="TabItemCloseButtonPressedBorderBrush" StartPoint="0,0" EndPoint="1,1" po:Freeze="True">
-        <GradientBrush.GradientStops>
-            <GradientStopCollection>
-                <GradientStop Color="#5444" Offset="0.0"/>
-                <GradientStop Color="#5CCC" Offset="1.0"/>
-            </GradientStopCollection>
-        </GradientBrush.GradientStops>
-    </LinearGradientBrush>
     <Style x:Key="TabItemCloseButtonStyle" TargetType="{x:Type Button}">
         <Setter Property="SnapsToDevicePixels" Value="false"/>
         <Setter Property="Height" Value="{StaticResource CloseButtonWidthAndHeight}"/>
@@ -61,8 +22,8 @@
                     <Border x:Name="ButtonBorder"
                             CornerRadius="2"
                             BorderThickness="1"
-                            Background="{StaticResource TabItemCloseButtonNormalBackgroundBrush}"
-                            BorderBrush="{StaticResource TabItemCloseButtonNormalBorderBrush}">
+                            Background="{StaticResource CloseTabButton.BgGradient}"
+                            BorderBrush="{StaticResource CloseTabButton.BorderGradient}">
                         <Grid>
                             <!-- The Path below will render the button's X. -->
                             <Path x:Name="ButtonPath"
@@ -81,15 +42,15 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="ButtonBorder" Property="Background" Value="{StaticResource TabItemCloseButtonHoverBackgroundBrush}" />
+                            <Setter TargetName="ButtonBorder" Property="Background" Value="{StaticResource CloseTabButton.Hover.BgGradient}" />
                             <Setter TargetName="ButtonPath" Property="Stroke" Value="{StaticResource ClosableTabItem.CloseButton.Hover.FgBrush}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Visibility" Value="Collapsed"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
-                            <Setter TargetName="ButtonBorder" Property="Background" Value="{StaticResource TabItemCloseButtonPressedBackgroundBrush}" />
-                            <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="{StaticResource TabItemCloseButtonPressedBorderBrush}" />
+                            <Setter TargetName="ButtonBorder" Property="Background" Value="{StaticResource CloseTabButton.Pressed.BgGradient}" />
+                            <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="{StaticResource CloseTabButton.Pressed.BorderGradient}" />
                             <Setter TargetName="ButtonPath" Property="Stroke" Value="{StaticResource ClosableTabItem.CloseButton.Pressed.FgBrush}"/>
                             <Setter TargetName="ButtonPath" Property="Margin" Value="2.5,2.5,1.5,1.5" />
                         </Trigger>
