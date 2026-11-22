@@ -1,4 +1,7 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Brushes/SolidColors.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
     <Style TargetType="ResizeGrip">
         <Setter Property="Template">
             <Setter.Value>
@@ -14,13 +17,13 @@
                                     <DrawingBrush.Drawing>
                                         <DrawingGroup>
                                             <DrawingGroup.Children>
-                                                <GeometryDrawing Brush="#00FFFFFF">
+                                                <GeometryDrawing Brush="{StaticResource ResizeGrip.BgBrush}">
                                                     <GeometryDrawing.Geometry>
                                                         <RectangleGeometry Rect="0,0,1,1" />
                                                     </GeometryDrawing.Geometry>
                                                 </GeometryDrawing>
-                                                <GeometryDrawing Brush="#FFB1C9E8" Geometry="M1,1L3,1 3,3 1,3z" />
-                                                <GeometryDrawing Brush="#FF455D80" Geometry="M0,0L2,0 2,2 0,2z" />
+                                                <GeometryDrawing Brush="{StaticResource ResizeGrip.Dot.LightBrush}" Geometry="M1,1L3,1 3,3 1,3z" />
+                                                <GeometryDrawing Brush="{StaticResource ResizeGrip.Dot.DarkBrush}" Geometry="M0,0L2,0 2,2 0,2z" />
                                             </DrawingGroup.Children>
                                         </DrawingGroup>
                                     </DrawingBrush.Drawing>

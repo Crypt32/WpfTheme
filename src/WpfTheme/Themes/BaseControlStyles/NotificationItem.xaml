@@ -22,10 +22,10 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="bd" Property="Background" Value="#26000000"/>
+                            <Setter TargetName="bd" Property="Background" Value="{StaticResource NotificationItem.Dismiss.Hover.BgBrush}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="bd" Property="Background" Value="#40000000"/>
+                            <Setter TargetName="bd" Property="Background" Value="{StaticResource NotificationItem.Dismiss.Pressed.BgBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -66,7 +66,7 @@
                                     Command="{x:Static c:NotificationItem.DismissCommand}">
                                 <Path x:Name="DismissGlyph"
                                       Data="{StaticResource NotificationItem.DismissGlyph}"
-                                      Fill="#FF5F6FA4"
+                                      Fill="{StaticResource NotificationItem.Dismiss.GlyphBrush}"
                                       Stretch="None"
                                       HorizontalAlignment="Center"
                                       VerticalAlignment="Center"/>
