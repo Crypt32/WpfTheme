@@ -18,7 +18,7 @@
                           SnapsToDevicePixels="True">
                         <Rectangle Width="11"
                                    Height="11"
-                                   Stroke="{StaticResource TreeViewItem.Expander.Border.Brush}"
+                                   Stroke="{StaticResource TreeViewItem.Expander.BorderBrush}"
                                    Fill="{StaticResource TreeViewItem.Toggle.BgGradient}">
                         </Rectangle>
                         <Rectangle x:Name="ExpandPath"
@@ -123,14 +123,14 @@
                         <Trigger Property="IsSelected" Value="true">
                             <Setter TargetName="Bd"
                                     Property="Background"
-                                    Value="{StaticResource TreeViewItem.Selected.Active.Brush}"/>
+                                    Value="{StaticResource TreeViewItem.Selected.Active.BgBrush}"/>
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsSelected" Value="true"/>
                                 <Condition Property="IsSelectionActive" Value="false"/>
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="Bd" Property="Background" Value="{StaticResource TreeViewItem.Selected.Inactive.Brush}"/>
+                            <Setter TargetName="Bd" Property="Background" Value="{StaticResource TreeViewItem.Selected.Inactive.BgBrush}"/>
                         </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

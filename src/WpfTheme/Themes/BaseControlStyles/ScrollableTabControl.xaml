@@ -144,7 +144,7 @@
                                     Margin="0,0,0,2"
                                     Background="{StaticResource HorizontalBlueGradientBrush}"
                                     BorderThickness="1"
-                                    BorderBrush="{StaticResource PanelBorderBrush}"
+                                    BorderBrush="{StaticResource Panel.BorderBrush}"
                                     Command="{Binding Path=AddTabCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type c:ClosableTabControl}}}">
                                 <Grid>
                                     <Path Fill="{StaticResource Panel.FgBrush}"
