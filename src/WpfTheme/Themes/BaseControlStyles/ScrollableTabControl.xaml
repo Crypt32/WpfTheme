@@ -31,8 +31,8 @@
     </LinearGradientBrush>
     <!-- The color for the scrollbar's line-buttons when they're disabled -->
     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="LineButtonDisabledBrush" po:Freeze="True">
-        <GradientStop Offset="0" Color="{StaticResource TabScrollButton.Disabled.BgLightColor}"/>
-        <GradientStop Offset="1" Color="{StaticResource TabScrollButton.Disabled.BgDarkColor}"/>
+        <GradientStop Offset="0" Color="{StaticResource Neutral.PaleColor}"/>
+        <GradientStop Offset="1" Color="{StaticResource Neutral.DisabledGrayColor}"/>
     </LinearGradientBrush>
 
     <!-- The background color of the TabItems popup-menu -->
