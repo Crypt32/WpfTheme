@@ -86,6 +86,33 @@
     <!--ContextMenu-->
     <SolidColorBrush x:Key="ContextMenu.BgBrush" Color="{StaticResource Control.BgColor}" po:Freeze="True"/>
 
+    <!--ComboBox-->
+    <SolidColorBrush x:Key="ComboBox.Editable.BgBrush"                     Color="#FFE9F1FA" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ComboBox.Editable.BorderBrush"                 Color="#FFABC1DE" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ComboBox.Glyph.FgBrush"                        Color="#FF606060" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ComboBox.Glyph.Hover.FgBrush"                  Color="{StaticResource Neutral.BlackColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ComboBox.Hover.BorderBrush"                    Color="#FF7EB4EA" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ComboBox.Editable.Hover.BgBrush"               Color="{StaticResource Neutral.WhiteColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ComboBox.Editable.Hover.BorderBrush"           Color="#FF7EB4EA" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ComboBox.Editable.Button.Hover.BorderBrush"    Color="#FF7EB4EA" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ComboBox.Glyph.Pressed.FgBrush"                Color="{StaticResource Neutral.BlackColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ComboBox.Pressed.BorderBrush"                  Color="#FF569DE5" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ComboBox.Editable.Pressed.BgBrush"             Color="{StaticResource Neutral.WhiteColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ComboBox.Editable.Pressed.BorderBrush"         Color="#FF569DE5" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ComboBox.Editable.Button.Pressed.BorderBrush"  Color="#FF569DE5" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ComboBox.Glyph.Disabled.FgBrush"               Color="#FFBFBFBF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ComboBox.Disabled.BgBrush"                     Color="#FFF0F0F0" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ComboBox.Disabled.BorderBrush"                 Color="#FFD9D9D9" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ComboBox.Editable.Disabled.BgBrush"            Color="{StaticResource Neutral.WhiteColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ComboBox.Editable.Disabled.BorderBrush"        Color="#FFBFBFBF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ComboBox.Editable.Button.Disabled.BgBrush"     Color="Transparent" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ComboBox.Editable.Button.Disabled.BorderBrush" Color="Transparent" po:Freeze="True"/>
+
+    <!--DataGrid-->
+    <SolidColorBrush x:Key="DataGrid.BgBrush"                 Color="#FF9BC2E6" po:Freeze="True"/>
+    <SolidColorBrush x:Key="DataGrid.Header.BorderBrush"      Color="#FF88B0E4" po:Freeze="True"/>
+    <SolidColorBrush x:Key="DataGrid.Header.InnerBorderBrush" Color="{StaticResource Neutral.WhiteColor}" po:Freeze="True"/>
+
     <!--Expander-->
     <SolidColorBrush x:Key="Expander.Header.FgBrush"              Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="Expander.Header.BorderBrush"          Color="{StaticResource Border.Color}" po:Freeze="True"/>
@@ -171,6 +198,9 @@
     <SolidColorBrush x:Key="NotificationItem.Danger.GlyphBrush"              Color="{StaticResource Status.Danger.DarkColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="NotificationItem.Danger.BorderTopLeftBrush"      Color="#B0FFCDD2" po:Freeze="True"/>
     <SolidColorBrush x:Key="NotificationItem.Danger.BorderBottomRightBrush"  Color="#FFF2C0C5" po:Freeze="True"/>
+    <SolidColorBrush x:Key="NotificationItem.Dismiss.Hover.BgBrush"          Color="#26000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="NotificationItem.Dismiss.Pressed.BgBrush"        Color="#40000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="NotificationItem.Dismiss.GlyphBrush"             Color="#FF5F6FA4" po:Freeze="True"/>
 
     <!--ClosableTabControl, ClosableTabItem-->
     <SolidColorBrush x:Key="ClosableTabControl.BgBrush"                  Color="{StaticResource ClosableTabControl.BgColor}" po:Freeze="True"/>
@@ -187,6 +217,36 @@
     <!--Scrollable tab strip buttons-->
     <SolidColorBrush x:Key="TabScrollButton.BorderBrush" Color="#FF8693BD" po:Freeze="True"/>
     <SolidColorBrush x:Key="TabScrollButton.FgBrush"     Color="{StaticResource Accent.Color}" po:Freeze="True"/>
+
+    <!--LoadingSpinner-->
+    <Color x:Key="LoadingSpinner.FilledColor">   #FF9B9B9B</Color>
+    <Color x:Key="LoadingSpinner.UnfilledColor"> #009B9B9B</Color>
+
+    <!--ProgressBar-->
+    <SolidColorBrush x:Key="ProgressBar.FgBrush"           Color="#FF01D328" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ProgressBar.BorderBrush"       Color="#80FFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ProgressBar.Animation.BgBrush" Color="#80B5FFA9" po:Freeze="True"/>
+
+    <!--ResizeGrip-->
+    <SolidColorBrush x:Key="ResizeGrip.BgBrush"        Color="#00FFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ResizeGrip.Dot.LightBrush" Color="#FFB1C9E8" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ResizeGrip.Dot.DarkBrush"  Color="#FF455D80" po:Freeze="True"/>
+
+    <!--ScrollBar-->
+    <SolidColorBrush x:Key="ScrollBar.Button.BorderBrush"           Color="#FFB4C8F6" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ScrollBar.Button.Hover.BorderBrush"     Color="#FF98B1E4" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ScrollBar.Button.Pressed.BorderBrush"   Color="#FF838FDA" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ScrollBar.Button.Disabled.BorderBrush"  Color="#FFE8E8DF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ScrollBar.Glyph.FgBrush"                Color="#FF4D6185" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ScrollBar.Glyph.Disabled.FgBrush"       Color="#FFC9C9C2" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ScrollBar.Thumb.Hover.BorderBrush"      Color="#FFACCEFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ScrollBar.Gripper.BgBrush"              Color="#FFEEF4FE" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ScrollBar.Gripper.Hover.BgBrush"        Color="#FFFCFDFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ScrollBar.Gripper.Pressed.BgBrush"      Color="#FFCFDDFD" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ScrollBar.Gripper.ShadowBrush"          Color="#FF8CB0F8" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ScrollBar.Gripper.Hover.ShadowBrush"    Color="#FF9CC5FF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ScrollBar.Gripper.Pressed.ShadowBrush"  Color="#FF839ED8" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ScrollBar.Gripper.Disabled.ShadowBrush" Color="#FFB9B9B2" po:Freeze="True"/>
 
     <!--TabControl, TabItem-->
     <SolidColorBrush x:Key="TabControl.BgBrush"            Color="{StaticResource Panel.BgColor}" po:Freeze="True"/>
