@@ -15,7 +15,7 @@
     <!-- Brushes used for styling the TabControl -->
     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="LineButtonBackgroundBrush" po:Freeze="True">
         <GradientStop Offset="0.3" Color="{StaticResource TabScrollButton.BgLightColor}"/>
-        <GradientStop Offset="0.4" Color="{StaticResource TabScrollButton.BgDarkColor}"/>
+        <GradientStop Offset="0.4" Color="{StaticResource Status.Warning.SoftColor}"/>
         <GradientStop Offset="1" Color="{StaticResource TabScrollButton.BgLightColor}"/>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="TabPanelBackgroundBrush" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
