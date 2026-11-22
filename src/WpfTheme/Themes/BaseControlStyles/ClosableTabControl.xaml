@@ -37,10 +37,10 @@
                      -->
                         <Border BorderThickness="1,0,1,1"
                                 Grid.Row="1"
-                                BorderBrush="{StaticResource TabItemBorderBrushSelected}"
-                                Background="{StaticResource TabControlBackgroundBrushBase}">
+                                BorderBrush="{StaticResource ClosableTabItem.Selected.BorderBrush}"
+                                Background="{StaticResource ClosableTabControl.BgBrush}">
                             <!-- This is the first/outer Border drawn on the TabPage -->
-                            <Border BorderThickness="1" BorderBrush="{StaticResource TabPageInnerBorderBrushDark}" CornerRadius="3" Margin="5">
+                            <Border BorderThickness="1" BorderBrush="{StaticResource ClosableTabControl.InnerBorderBrush}" CornerRadius="3" Margin="5">
                                 <!-- 
                               This is the second/inner Border drawn on the TabPage. 
                               This Border is drawn with a horizontal Gradient that is transparent

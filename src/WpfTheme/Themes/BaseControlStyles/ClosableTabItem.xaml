@@ -5,25 +5,17 @@
                     xmlns:converters="clr-namespace:SysadminsLV.WPF.Converters"
                     xmlns:c="clr-namespace:SysadminsLV.WPF.Controls">
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Brushes/SolidColors.xaml"/>
         <ResourceDictionary Source="CloseTabButton.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     <converters:BooleanToVisibilityReverse x:Key="BooleanToVisibilityConverter" />
     <Thickness x:Key="TabItemMarginBase">0,4,0,0</Thickness>
     <Thickness x:Key="TabItemPanelPadding">0,0,0,0</Thickness>
-    <Color x:Key="BorderColorBase">#888</Color>
-    <Color x:Key="TabControlBackgroundColorBase">#EEF7FF</Color>
-    <SolidColorBrush x:Key="TabItemTextBrushUnselected" Color="#4971A3" po:Freeze="True" />
-    <SolidColorBrush x:Key="TabItemTextBrushDisabled" Color="#888" po:Freeze="True" />
-    <SolidColorBrush x:Key="TabItemTextBrushHover" Color="Indigo" po:Freeze="True" />
-    <SolidColorBrush x:Key="TabItemTextBrushSelected" Color="DarkBlue" po:Freeze="True" />
-    <SolidColorBrush x:Key="TabItemBorderBrushSelected" Color="{StaticResource BorderColorBase}" po:Freeze="True" />
-    <SolidColorBrush x:Key="TabControlBackgroundBrushBase" Color="{StaticResource TabControlBackgroundColorBase}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="TabPageInnerBorderBrushDark" Color="#FF8DB2E3" po:Freeze="True"/>
     <LinearGradientBrush x:Key="TabItemPanelBackgroundBrush" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
         <LinearGradientBrush.GradientStops>
             <GradientStop Offset="0.98" Color="Transparent"/>
             <GradientStop Offset="0.99" 
-               Color="{StaticResource BorderColorBase}"/>
+               Color="{StaticResource Neutral.GrayColor}"/>
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="TabPageInnerBorderBrushBright" StartPoint="0,0" EndPoint="1,1" po:Freeze="True">
@@ -36,9 +28,9 @@
                            StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
         <LinearGradientBrush.GradientStops>
             <GradientStop Color="#FFFFC14A" Offset="0.1" />
-            <GradientStop Color="{StaticResource TabControlBackgroundColorBase}" Offset="0.15"/>
+            <GradientStop Color="{StaticResource ClosableTabControl.BgColor}" Offset="0.15"/>
             <GradientStop Color="#C5DBF6" Offset="0.8"/>
-            <GradientStop Color="{StaticResource TabControlBackgroundColorBase}" Offset="1.0"/>
+            <GradientStop Color="{StaticResource ClosableTabControl.BgColor}" Offset="1.0"/>
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="TabItemBackgroundBrushUnselected" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
@@ -48,7 +40,7 @@
             <GradientStop Color="#C7D8EE" Offset="0.7"/>
             <GradientStop Color="#B9CADE" Offset="0.98"/>
             <!-- See the TabItemPanel_BackgroundBrush comment. -->
-            <GradientStop Color="{StaticResource BorderColorBase}" Offset="0.99"/>
+            <GradientStop Color="{StaticResource Neutral.GrayColor}" Offset="0.99"/>
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="TabItemHoverBackgroundBrush" EndPoint="0.5,1" StartPoint="0.5,0" po:Freeze="True">
@@ -58,11 +50,11 @@
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="TabItemBorderUnselected" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
         <GradientStop Color="#AAA" Offset="0"/>
-        <GradientStop Color="{StaticResource BorderColorBase}" Offset="0.8"/>
+        <GradientStop Color="{StaticResource Neutral.GrayColor}" Offset="0.8"/>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="TabItemDisabledBorderBrush" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
         <GradientStop Color="#CCC" Offset="0"/>
-        <GradientStop Color="{StaticResource BorderColorBase}" Offset="0.8"/>
+        <GradientStop Color="{StaticResource Neutral.GrayColor}" Offset="0.8"/>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="TabItemBackgroundBrushDisabled" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
         <LinearGradientBrush.GradientStops>
@@ -71,14 +63,14 @@
             <!-- 
                This is the same trick as with the TabItemPanel_BackgroundBrush (see there).
             -->
-            <GradientStop Color="{StaticResource BorderColorBase}" Offset="0.99"/>
+            <GradientStop Color="{StaticResource Neutral.GrayColor}" Offset="0.99"/>
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="TabItemHoverBorderBrush" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
         <LinearGradientBrush.GradientStops>
             <GradientStop Offset="0.98" Color="DarkOrange"/>
             <!-- See the TabItemPanel_BackgroundBrush comment. -->
-            <GradientStop Offset="0.99" Color="{StaticResource BorderColorBase}"/>
+            <GradientStop Offset="0.99" Color="{StaticResource Neutral.GrayColor}"/>
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
     <Style x:Key="TabItemFocusVisual">
@@ -105,7 +97,7 @@
                      -->
                         <Border Name="Border"
                                     Background="{StaticResource TabItemBackgroundBrushUnselected}"
-                                    BorderBrush="{StaticResource TabItemBorderBrushSelected}"
+                                    BorderBrush="{StaticResource ClosableTabItem.Selected.BorderBrush}"
                                     BorderThickness="2,1,1,0"
                                     CornerRadius="3,3,0,0"
                              >
@@ -134,7 +126,7 @@
                         <Trigger Property="IsSelected" Value="False">
                             <Setter Property="Panel.ZIndex" Value="90" />
                             <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource TabItemBorderUnselected}" />
-                            <Setter Property="Foreground" Value="{StaticResource TabItemTextBrushUnselected}" />
+                            <Setter Property="Foreground" Value="{StaticResource ClosableTabItem.FgBrush}" />
                             <!-- Except for the selected TabItem, tabs are to appear smaller in height. -->
                             <Setter TargetName="Border" Property="Margin" Value="{StaticResource TabItemMarginBase}"/>
                         </Trigger>
@@ -143,10 +135,10 @@
                             <!-- We want the selected TabItem to always be on top. -->
                             <Setter Property="Panel.ZIndex" Value="100" />
                             <Setter TargetName="ContentSite" Property="TextBlock.FontWeight" Value="Bold"/>
-                            <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource TabItemBorderBrushSelected}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource ClosableTabItem.Selected.BorderBrush}" />
                             <Setter TargetName="Border" Property="Background" Value="{StaticResource TabItemBackgroundBrushSelected}" />
                             <Setter TargetName="Border" Property="BorderThickness" Value="1,1,1,0" />
-                            <Setter Property="Foreground" Value="{StaticResource TabItemTextBrushSelected}"/>
+                            <Setter Property="Foreground" Value="{StaticResource ClosableTabItem.Selected.FgBrush}"/>
                             <Setter TargetName="Contents" Property="Margin" Value="{StaticResource TabItemMarginBase}"/>
                         </Trigger>
                         <!-- The appearance of a TabItem when it's disabled (in addition to Selected=False) -->
@@ -157,7 +149,7 @@
                             <Setter TargetName="Border" Property="Background" 
                                 Value="{StaticResource TabItemBackgroundBrushDisabled}" />
                             <Setter Property="Foreground" 
-                                Value="{StaticResource TabItemTextBrushDisabled}" />
+                                Value="{StaticResource ClosableTabItem.Disabled.FgBrush}" />
                         </Trigger>
                         <!-- The appearance of a TabItem when the mouse hovers over it -->
                         <MultiTrigger>
@@ -181,7 +173,7 @@
                                 <Condition Property="IsSelected" Value="False"/>
                             </MultiTrigger.Conditions>
                             <Setter Property="Panel.ZIndex" Value="99" />
-                            <Setter Property="Foreground" Value="{StaticResource TabItemTextBrushHover}" />
+                            <Setter Property="Foreground" Value="{StaticResource ClosableTabItem.Hover.FgBrush}" />
                             <Setter Property="BorderBrush" TargetName="Border" Value="{StaticResource TabItemHoverBorderBrush}" />
                             <Setter TargetName="Border" Property="BorderThickness" Value="2,1,1,0" />
                             <Setter Property="Background" TargetName="Border" Value="{StaticResource TabItemHoverBackgroundBrush}"/>
