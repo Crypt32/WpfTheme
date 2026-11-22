@@ -23,7 +23,7 @@
                             Thus, we'll avoid drawing the bottom line for the selected
                             TabItem. Also, since the TabItem, when selected, applies a left
                             Margin of 4px, we need to add these here as Padding. -->
-                        <Border Background="{StaticResource TabItemPanelBackgroundBrush}" Padding="{StaticResource TabItemPanelPadding}">
+                        <Border Background="{StaticResource ClosableTabControl.Panel.BgGradient}" Padding="{StaticResource TabItemPanelPadding}">
                             <!-- This is the area in which TabItems (the strips) will be drawn. -->
                             <TabPanel IsItemsHost="True"/>
                         </Border>
@@ -47,7 +47,7 @@
                               on the left which produces the fading effect.
                            -->
                                 <Border BorderThickness="1"
-                                        BorderBrush="{StaticResource TabPageInnerBorderBrushBright}" 
+                                        BorderBrush="{StaticResource ClosableTabControl.InnerBorder.Bright.BorderGradient}" 
                                         CornerRadius="2" 
                                         Margin="0" 
                                         Padding="2,2,3,3">

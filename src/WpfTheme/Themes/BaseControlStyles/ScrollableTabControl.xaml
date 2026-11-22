@@ -11,36 +11,6 @@
         <ResourceDictionary Source="ToolBar.xaml"/>
         <ResourceDictionary Source="MenuItem.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-    <!-- The color to be used when drawing the arrows on the scrollbar's line-buttons -->
-    <!-- Brushes used for styling the TabControl -->
-    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="LineButtonBackgroundBrush" po:Freeze="True">
-        <GradientStop Offset="0.3" Color="{StaticResource TabScrollButton.BgLightColor}"/>
-        <GradientStop Offset="0.4" Color="{StaticResource Status.Warning.SoftColor}"/>
-        <GradientStop Offset="1" Color="{StaticResource TabScrollButton.BgLightColor}"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="TabPanelBackgroundBrush" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Offset="0.98" Color="{StaticResource ClosableTabControl.PanelBgColor}"/>
-            <GradientStop Offset="0.99" Color="{StaticResource Neutral.GrayColor}"/>
-        </LinearGradientBrush.GradientStops>
-    </LinearGradientBrush>
-    <!-- The color to be used for painting the interior of the TabItem-menu's path -->
-    <LinearGradientBrush x:Key="TabMenuButtonBrush" StartPoint="0,0" EndPoint="1,1" po:Freeze="True">
-        <GradientStop Offset="0" Color="White"/>
-        <GradientStop Offset="1" Color="#F3F3E3"/>
-    </LinearGradientBrush>
-    <!-- The color for the scrollbar's line-buttons when they're disabled -->
-    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="LineButtonDisabledBrush" po:Freeze="True">
-        <GradientStop Offset="0" Color="{StaticResource Neutral.PaleColor}"/>
-        <GradientStop Offset="1" Color="{StaticResource Neutral.DisabledGrayColor}"/>
-    </LinearGradientBrush>
-
-    <!-- The background color of the TabItems popup-menu -->
-    <LinearGradientBrush x:Key="TabItemMenuBackcolor" StartPoint="0,0" EndPoint="1,1" po:Freeze="True">
-        <GradientStop Offset="0" Color="White"/>
-        <GradientStop Offset="1" Color="#EEE"/>
-    </LinearGradientBrush>
-
     <Geometry x:Key="ArrowLeft" po:Freeze="True">M0,5 L10,10 10,0Z</Geometry>
     <Geometry x:Key="ArrowRight" po:Freeze="True">M0,0 L10,5 L0,10Z</Geometry>
     <Geometry x:Key="TabMenuButton" po:Freeze="True">M0,1 H0,5 M7,8 L0,8 0,2 10,2 L10,5 M10,8 L10,10 8,10Z</Geometry>
@@ -61,7 +31,7 @@
         <Path Margin="2"
               Data="{Binding}"
               Stroke="{StaticResource TabScrollButton.FgBrush}"
-              Fill="{StaticResource TabMenuButtonBrush}"
+              Fill="{StaticResource ScrollableTabControl.MenuButton.BgGradient}"
               Stretch="Fill"
               VerticalAlignment="Center"
               HorizontalAlignment="Center"/>
@@ -127,7 +97,7 @@
                                 Grid.Row="0"
                                 Grid.Column="0"
                                 MinWidth="25"
-                                Background="{StaticResource TabPanelBackgroundBrush}"
+                                Background="{StaticResource ScrollableTabControl.Panel.BgGradient}"
                                 Visibility="Collapsed">
                             <!-- Same size and bottom margin as the scroll buttons, so the header can grow upwards. -->
                             <Button Style="{StaticResource ToolBarButtonStyle}"
@@ -158,7 +128,7 @@
                                 Grid.Column="1"
                                 Name="TabPanelBorder"
                                 MinHeight="25"
-                                Background="{StaticResource TabPanelBackgroundBrush}">
+                                Background="{StaticResource ScrollableTabControl.Panel.BgGradient}">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <!-- The TabItems (resp. the TabPanel) will appear here -->
