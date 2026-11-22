@@ -6,7 +6,7 @@
         xmlns:uc="clr-namespace:Wpf.Demo.Views.UserControls"
         xmlns:vm="clr-namespace:Wpf.Demo.ViewModels"
         mc:Ignorable="d"
-        Background="{StaticResource PanelBackgroundBrush}"
+        Background="{StaticResource Panel.BgBrush}"
         ResizeMode="CanResizeWithGrip"
         WindowStyle="SingleBorderWindow"
         WindowStartupLocation="CenterScreen"
