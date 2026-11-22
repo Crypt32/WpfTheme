@@ -4,40 +4,8 @@
                     xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../Brushes/SolidColors.xaml"/>
+        <ResourceDictionary Source="../Brushes/Gradients.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-    <!-- Scroll bar track. Vertical brushes are for the vertical scroll bar and run left to right. -->
-    <LinearGradientBrush x:Key="ScrollBarVerticalTrackBackground" StartPoint="0,0" EndPoint="1,0" po:Freeze="True">
-        <GradientStop Color="#FFEEEDE5" Offset="0"/>
-        <GradientStop Color="#FFEEEDE5" Offset="0.05"/>
-        <GradientStop Color="#FFF3F1EC" Offset="0.06"/>
-        <GradientStop Color="#FFFEFEFE" Offset="0.94"/>
-        <GradientStop Color="#FFEEEDE5" Offset="0.95"/>
-        <GradientStop Color="#FFEEEDE5" Offset="1"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="ScrollBarHorizontalTrackBackground" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
-        <GradientStop Color="#FFEEEDE5" Offset="0"/>
-        <GradientStop Color="#FFEEEDE5" Offset="0.05"/>
-        <GradientStop Color="#FFF3F1EC" Offset="0.06"/>
-        <GradientStop Color="#FFFEFEFE" Offset="0.94"/>
-        <GradientStop Color="#FFEEEDE5" Offset="0.95"/>
-        <GradientStop Color="#FFEEEDE5" Offset="1"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="ScrollBarVerticalTrackPressedBackground" StartPoint="0,0" EndPoint="1,0" po:Freeze="True">
-        <GradientStop Color="#FFD7D5C2" Offset="0"/>
-        <GradientStop Color="#FFD7D5C2" Offset="0.05"/>
-        <GradientStop Color="#FFE3DED3" Offset="0.06"/>
-        <GradientStop Color="#FFFDFDF6" Offset="0.94"/>
-        <GradientStop Color="#FFD7D5C2" Offset="0.95"/>
-        <GradientStop Color="#FFD7D5C2" Offset="1"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="ScrollBarHorizontalTrackPressedBackground" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
-        <GradientStop Color="#FFD7D5C2" Offset="0"/>
-        <GradientStop Color="#FFD7D5C2" Offset="0.05"/>
-        <GradientStop Color="#FFE3DED3" Offset="0.06"/>
-        <GradientStop Color="#FFFDFDF6" Offset="0.94"/>
-        <GradientStop Color="#FFD7D5C2" Offset="0.95"/>
-        <GradientStop Color="#FFD7D5C2" Offset="1"/>
-    </LinearGradientBrush>
     <ControlTemplate x:Key="ScrollViewerControlTemplate1" TargetType="{x:Type ScrollViewer}">
         <Grid x:Name="Grid" Background="{TemplateBinding Background}">
             <Grid.ColumnDefinitions>
@@ -85,39 +53,6 @@
         </Grid>
     </ControlTemplate>
     <!-- Scroll bar line (arrow) button. -->
-    <LinearGradientBrush x:Key="ScrollBarButtonFill" StartPoint="0,0" EndPoint="1,1" po:Freeze="True">
-        <GradientStop Color="#FFE1EAFE" Offset="0"/>
-        <GradientStop Color="#FFC3D3FD" Offset="0.3"/>
-        <GradientStop Color="#FFC3D3FD" Offset="0.6"/>
-        <GradientStop Color="#FFBBCDF9" Offset="1"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="ScrollBarButtonHoverFill" StartPoint="0,0" EndPoint="1,1" po:Freeze="True">
-        <GradientStop Color="#FFFDFFFF" Offset="0"/>
-        <GradientStop Color="#FFE2F3FD" Offset="0.25"/>
-        <GradientStop Color="#FFB9DAFB" Offset="1"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="ScrollBarButtonPressedFill" StartPoint="0,0" EndPoint="1,1" po:Freeze="True">
-        <GradientStop Color="#FF6E8EF1" Offset="0"/>
-        <GradientStop Color="#FF009DF1" Offset="0.3"/>
-        <GradientStop Color="#FFAFBFED" Offset="0.7"/>
-        <GradientStop Color="#FFD2DEEB" Offset="1"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="ScrollBarButtonDisabledFill" StartPoint="0,0" EndPoint="1,1" po:Freeze="True">
-        <GradientStop Color="#FFF7F7F7" Offset="0"/>
-        <GradientStop Color="#FFF0F0F0" Offset="0.3"/>
-        <GradientStop Color="#FFECECEC" Offset="0.6"/>
-        <GradientStop Color="#FFE3E3E3" Offset="1"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="ScrollBarShadowBrush" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
-        <GradientStop Color="#00A0B5D3" Offset="0"/>
-        <GradientStop Color="#FFA0B5D3" Offset="0.5"/>
-        <GradientStop Color="#FF7C9FD3" Offset="1"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="ScrollBarDisabledShadowBrush" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
-        <GradientStop Color="#00CCCCBA" Offset="0"/>
-        <GradientStop Color="#FFCCCCBA" Offset="0.5"/>
-        <GradientStop Color="#FFC4C4AF" Offset="1"/>
-    </LinearGradientBrush>
     <StreamGeometry x:Key="ScrollBarUpArrowGeometry" po:Freeze="True">M0,4.5 L4.5,0 L9,4.5 L7.5,6 L4.5,3 L1.5,6 Z</StreamGeometry>
     <StreamGeometry x:Key="ScrollBarDownArrowGeometry" po:Freeze="True">M0,3.5 L4.5,8 L9,3.5 L7.5,2 L4.5,5 L1.5,2 Z</StreamGeometry>
     <StreamGeometry x:Key="ScrollBarLeftArrowGeometry" po:Freeze="True">M4.5,0 L0,4.5 L4.5,9 L6,7.5 L3,4.5 L6,1.5 Z</StreamGeometry>
@@ -134,10 +69,10 @@
                                    Margin="1,2,0,0"
                                    RadiusX="3"
                                    RadiusY="3"
-                                   Stroke="{StaticResource ScrollBarShadowBrush}"/>
+                                   Stroke="{StaticResource ScrollBar.Shadow.BgGradient}"/>
                         <Border x:Name="Outer"
                                 Margin="1,0,1,1"
-                                Background="{StaticResource ScrollBarButtonFill}"
+                                Background="{StaticResource ScrollBar.Button.BgGradient}"
                                 BorderBrush="White"
                                 BorderThickness="1"
                                 CornerRadius="2.5">
@@ -158,16 +93,16 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBarButtonHoverFill}"/>
+                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBar.Button.Hover.BgGradient}"/>
                             <Setter TargetName="Inner" Property="BorderBrush" Value="{StaticResource ScrollBar.Button.Hover.BorderBrush}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBarButtonPressedFill}"/>
+                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBar.Button.Pressed.BgGradient}"/>
                             <Setter TargetName="Inner" Property="BorderBrush" Value="{StaticResource ScrollBar.Button.Pressed.BorderBrush}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="Shadow" Property="Stroke" Value="{StaticResource ScrollBarDisabledShadowBrush}"/>
-                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBarButtonDisabledFill}"/>
+                            <Setter TargetName="Shadow" Property="Stroke" Value="{StaticResource ScrollBar.Shadow.Disabled.BgGradient}"/>
+                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBar.Button.Disabled.BgGradient}"/>
                             <Setter TargetName="Inner" Property="BorderBrush" Value="{StaticResource ScrollBar.Button.Disabled.BorderBrush}"/>
                             <Setter TargetName="Glyph" Property="Fill" Value="{StaticResource ScrollBar.Glyph.Disabled.FgBrush}"/>
                         </Trigger>
@@ -188,10 +123,10 @@
                                    Margin="0,3,0,0"
                                    RadiusX="3"
                                    RadiusY="3"
-                                   Stroke="{StaticResource ScrollBarShadowBrush}"/>
+                                   Stroke="{StaticResource ScrollBar.Shadow.BgGradient}"/>
                         <Border x:Name="Outer"
                                 Margin="0,1,1,1"
-                                Background="{StaticResource ScrollBarButtonFill}"
+                                Background="{StaticResource ScrollBar.Button.BgGradient}"
                                 BorderBrush="White"
                                 BorderThickness="1"
                                 CornerRadius="2.5">
@@ -212,16 +147,16 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBarButtonHoverFill}"/>
+                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBar.Button.Hover.BgGradient}"/>
                             <Setter TargetName="Inner" Property="BorderBrush" Value="{StaticResource ScrollBar.Button.Hover.BorderBrush}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBarButtonPressedFill}"/>
+                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBar.Button.Pressed.BgGradient}"/>
                             <Setter TargetName="Inner" Property="BorderBrush" Value="{StaticResource ScrollBar.Button.Pressed.BorderBrush}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="Shadow" Property="Stroke" Value="{StaticResource ScrollBarDisabledShadowBrush}"/>
-                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBarButtonDisabledFill}"/>
+                            <Setter TargetName="Shadow" Property="Stroke" Value="{StaticResource ScrollBar.Shadow.Disabled.BgGradient}"/>
+                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBar.Button.Disabled.BgGradient}"/>
                             <Setter TargetName="Inner" Property="BorderBrush" Value="{StaticResource ScrollBar.Button.Disabled.BorderBrush}"/>
                             <Setter TargetName="Glyph" Property="Fill" Value="{StaticResource ScrollBar.Glyph.Disabled.FgBrush}"/>
                         </Trigger>
@@ -241,7 +176,7 @@
                     <Rectangle x:Name="Bg" Fill="{TemplateBinding Background}"/>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Fill" TargetName="Bg" Value="{StaticResource ScrollBarVerticalTrackPressedBackground}"/>
+                            <Setter Property="Fill" TargetName="Bg" Value="{StaticResource ScrollBar.Track.Pressed.Vertical.BgGradient}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -255,44 +190,13 @@
                     <Rectangle x:Name="Bg" Fill="{TemplateBinding Background}"/>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Fill" TargetName="Bg" Value="{StaticResource ScrollBarHorizontalTrackPressedBackground}"/>
+                            <Setter Property="Fill" TargetName="Bg" Value="{StaticResource ScrollBar.Track.Pressed.Horizontal.BgGradient}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-    <!-- Scroll bar thumb. Vertical brushes are for the vertical scroll bar and run left to right. -->
-    <LinearGradientBrush x:Key="ScrollBarVerticalThumbFill" StartPoint="0,0" EndPoint="1,0" po:Freeze="True">
-        <GradientStop Color="#FFC9D8FC" Offset="0"/>
-        <GradientStop Color="#FFC2D3FC" Offset="0.65"/>
-        <GradientStop Color="#FFB6CDFB" Offset="1"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="ScrollBarHorizontalThumbFill" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
-        <GradientStop Color="#FFC9D8FC" Offset="0"/>
-        <GradientStop Color="#FFC2D3FC" Offset="0.65"/>
-        <GradientStop Color="#FFB6CDFB" Offset="1"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="ScrollBarVerticalThumbHoverFill" StartPoint="0,0" EndPoint="1,0" po:Freeze="True">
-        <GradientStop Color="#FFDAE9FF" Offset="0"/>
-        <GradientStop Color="#FFD4E6FF" Offset="0.65"/>
-        <GradientStop Color="#FFCAE0FF" Offset="1"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="ScrollBarHorizontalThumbHoverFill" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
-        <GradientStop Color="#FFDAE9FF" Offset="0"/>
-        <GradientStop Color="#FFD4E6FF" Offset="0.65"/>
-        <GradientStop Color="#FFCAE0FF" Offset="1"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="ScrollBarVerticalThumbPressedFill" StartPoint="0,0" EndPoint="1,0" po:Freeze="True">
-        <GradientStop Color="#FFA8BEF5" Offset="0"/>
-        <GradientStop Color="#FFA1BDFA" Offset="0.65"/>
-        <GradientStop Color="#FF98B0EE" Offset="1"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="ScrollBarHorizontalThumbPressedFill" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
-        <GradientStop Color="#FFA8BEF5" Offset="0"/>
-        <GradientStop Color="#FFA1BDFA" Offset="0.65"/>
-        <GradientStop Color="#FF98B0EE" Offset="1"/>
-    </LinearGradientBrush>
     <!-- Four 1px grip lines, 2px apart. The shadow is the same shape drawn 1px right and down. -->
     <StreamGeometry x:Key="ScrollBarVerticalGripperGeometry" po:Freeze="True">M0,0 H5 V1 H0 Z M0,2 H5 V3 H0 Z M0,4 H5 V5 H0 Z M0,6 H5 V7 H0 Z</StreamGeometry>
     <StreamGeometry x:Key="ScrollBarHorizontalGripperGeometry" po:Freeze="True">M0,0 H1 V5 H0 Z M2,0 H3 V5 H2 Z M4,0 H5 V5 H4 Z M6,0 H7 V5 H6 Z</StreamGeometry>
@@ -307,10 +211,10 @@
                                    Margin="1,2,0,0"
                                    RadiusX="3"
                                    RadiusY="3"
-                                   Stroke="{StaticResource ScrollBarShadowBrush}"/>
+                                   Stroke="{StaticResource ScrollBar.Shadow.BgGradient}"/>
                         <Border x:Name="Outer"
                                 Margin="1,0,1,1"
-                                Background="{StaticResource ScrollBarVerticalThumbFill}"
+                                Background="{StaticResource ScrollBar.Thumb.Vertical.BgGradient}"
                                 BorderBrush="White"
                                 BorderThickness="1"
                                 CornerRadius="2.5">
@@ -337,20 +241,20 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBarVerticalThumbHoverFill}"/>
+                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBar.Thumb.Hover.Vertical.BgGradient}"/>
                             <Setter TargetName="Inner" Property="BorderBrush" Value="{StaticResource ScrollBar.Thumb.Hover.BorderBrush}"/>
                             <Setter TargetName="Gripper" Property="Fill" Value="{StaticResource ScrollBar.Gripper.Hover.BgBrush}"/>
                             <Setter TargetName="GripperShadow" Property="Fill" Value="{StaticResource ScrollBar.Gripper.Hover.ShadowBrush}"/>
                         </Trigger>
                         <Trigger Property="IsDragging" Value="True">
-                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBarVerticalThumbPressedFill}"/>
+                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBar.Thumb.Pressed.Vertical.BgGradient}"/>
                             <Setter TargetName="Inner" Property="BorderBrush" Value="{StaticResource ScrollBar.Button.Pressed.BorderBrush}"/>
                             <Setter TargetName="Gripper" Property="Fill" Value="{StaticResource ScrollBar.Gripper.Pressed.BgBrush}"/>
                             <Setter TargetName="GripperShadow" Property="Fill" Value="{StaticResource ScrollBar.Gripper.Pressed.ShadowBrush}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="Shadow" Property="Stroke" Value="{StaticResource ScrollBarDisabledShadowBrush}"/>
-                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBarButtonDisabledFill}"/>
+                            <Setter TargetName="Shadow" Property="Stroke" Value="{StaticResource ScrollBar.Shadow.Disabled.BgGradient}"/>
+                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBar.Button.Disabled.BgGradient}"/>
                             <Setter TargetName="Inner" Property="BorderBrush" Value="{StaticResource ScrollBar.Button.Disabled.BorderBrush}"/>
                             <Setter TargetName="Gripper" Property="Fill" Value="{StaticResource ScrollBar.Glyph.Disabled.FgBrush}"/>
                             <Setter TargetName="GripperShadow" Property="Fill" Value="{StaticResource ScrollBar.Gripper.Disabled.ShadowBrush}"/>
@@ -371,10 +275,10 @@
                                    Margin="0,3,0,0"
                                    RadiusX="3"
                                    RadiusY="3"
-                                   Stroke="{StaticResource ScrollBarShadowBrush}"/>
+                                   Stroke="{StaticResource ScrollBar.Shadow.BgGradient}"/>
                         <Border x:Name="Outer"
                                 Margin="0,1,1,1"
-                                Background="{StaticResource ScrollBarHorizontalThumbFill}"
+                                Background="{StaticResource ScrollBar.Thumb.Horizontal.BgGradient}"
                                 BorderBrush="White"
                                 BorderThickness="1"
                                 CornerRadius="2.5">
@@ -401,20 +305,20 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBarHorizontalThumbHoverFill}"/>
+                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBar.Thumb.Hover.Horizontal.BgGradient}"/>
                             <Setter TargetName="Inner" Property="BorderBrush" Value="{StaticResource ScrollBar.Thumb.Hover.BorderBrush}"/>
                             <Setter TargetName="Gripper" Property="Fill" Value="{StaticResource ScrollBar.Gripper.Hover.BgBrush}"/>
                             <Setter TargetName="GripperShadow" Property="Fill" Value="{StaticResource ScrollBar.Gripper.Hover.ShadowBrush}"/>
                         </Trigger>
                         <Trigger Property="IsDragging" Value="True">
-                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBarHorizontalThumbPressedFill}"/>
+                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBar.Thumb.Pressed.Horizontal.BgGradient}"/>
                             <Setter TargetName="Inner" Property="BorderBrush" Value="{StaticResource ScrollBar.Button.Pressed.BorderBrush}"/>
                             <Setter TargetName="Gripper" Property="Fill" Value="{StaticResource ScrollBar.Gripper.Pressed.BgBrush}"/>
                             <Setter TargetName="GripperShadow" Property="Fill" Value="{StaticResource ScrollBar.Gripper.Pressed.ShadowBrush}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="Shadow" Property="Stroke" Value="{StaticResource ScrollBarDisabledShadowBrush}"/>
-                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBarButtonDisabledFill}"/>
+                            <Setter TargetName="Shadow" Property="Stroke" Value="{StaticResource ScrollBar.Shadow.Disabled.BgGradient}"/>
+                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBar.Button.Disabled.BgGradient}"/>
                             <Setter TargetName="Inner" Property="BorderBrush" Value="{StaticResource ScrollBar.Button.Disabled.BorderBrush}"/>
                             <Setter TargetName="Gripper" Property="Fill" Value="{StaticResource ScrollBar.Glyph.Disabled.FgBrush}"/>
                             <Setter TargetName="GripperShadow" Property="Fill" Value="{StaticResource ScrollBar.Gripper.Disabled.ShadowBrush}"/>
@@ -427,7 +331,7 @@
     <Style TargetType="{x:Type ScrollBar}">
         <Setter Property="Stylus.IsPressAndHoldEnabled" Value="False"/>
         <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
-        <Setter Property="Background" Value="{StaticResource ScrollBarVerticalTrackBackground}"/>
+        <Setter Property="Background" Value="{StaticResource ScrollBar.Track.Vertical.BgGradient}"/>
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
         <Setter Property="Width" Value="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}"/>
         <Setter Property="MinWidth" Value="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}"/>
@@ -461,7 +365,7 @@
             <Trigger Property="Orientation" Value="Horizontal">
                 <Setter Property="Width" Value="Auto"/>
                 <Setter Property="MinWidth" Value="0"/>
-                <Setter Property="Background" Value="{StaticResource ScrollBarHorizontalTrackBackground}"/>
+                <Setter Property="Background" Value="{StaticResource ScrollBar.Track.Horizontal.BgGradient}"/>
                 <Setter Property="Height" Value="{DynamicResource {x:Static SystemParameters.HorizontalScrollBarHeightKey}}"/>
                 <Setter Property="MinHeight" Value="{DynamicResource {x:Static SystemParameters.HorizontalScrollBarHeightKey}}"/>
                 <Setter Property="Template">
