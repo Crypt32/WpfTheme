@@ -28,9 +28,9 @@
                            StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
         <LinearGradientBrush.GradientStops>
             <GradientStop Color="#FFFFC14A" Offset="0.1" />
-            <GradientStop Color="{StaticResource ClosableTabControl.BgColor}" Offset="0.15"/>
+            <GradientStop Color="{StaticResource Panel.PaleBlueColor}" Offset="0.15"/>
             <GradientStop Color="#C5DBF6" Offset="0.8"/>
-            <GradientStop Color="{StaticResource ClosableTabControl.BgColor}" Offset="1.0"/>
+            <GradientStop Color="{StaticResource Panel.PaleBlueColor}" Offset="1.0"/>
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="TabItemBackgroundBrushUnselected" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
