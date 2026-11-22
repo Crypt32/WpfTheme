@@ -10,6 +10,7 @@ public partial class NotificationPanelUC {
     public NotificationPanelUC() {
         Notifications.Add(new NotificationVM { Kind = NotificationItemKind.Info, Text = "Dismiss me and I am removed from the collection." });
         Notifications.Add(new NotificationVM { Kind = NotificationItemKind.Success, Text = "Saved." });
+        Notifications.Add(new NotificationVM { Kind = NotificationItemKind.Warning, Text = "A warning call is raised." });
         Notifications.Add(new NotificationVM { Kind = NotificationItemKind.Danger, Text = "Cannot be dismissed.", CanDismiss = false });
         InitializeComponent();
     }
