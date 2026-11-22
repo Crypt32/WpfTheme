@@ -77,7 +77,7 @@
                             </MultiDataTrigger.Conditions>
                             <Setter Property="Background" TargetName="templateRoot" Value="{StaticResource ComboBox.Editable.Hover.BgBrush}"/>
                             <Setter Property="BorderBrush" TargetName="templateRoot" Value="{StaticResource ComboBox.Editable.Hover.BorderBrush}"/>
-                            <Setter Property="Background" TargetName="splitBorder" Value="{StaticResource ComboBox.Editable.Button.Hover.BgGradient}"/>
+                            <Setter Property="Background" TargetName="splitBorder" Value="{StaticResource ComboBox.Hover.BgGradient}"/>
                             <Setter Property="BorderBrush" TargetName="splitBorder" Value="{StaticResource ComboBox.Editable.Button.Hover.BorderBrush}"/>
                         </MultiDataTrigger>
                         <Trigger Property="IsPressed" Value="True">
@@ -98,7 +98,7 @@
                             </MultiDataTrigger.Conditions>
                             <Setter Property="Background" TargetName="templateRoot" Value="{StaticResource ComboBox.Editable.Pressed.BgBrush}"/>
                             <Setter Property="BorderBrush" TargetName="templateRoot" Value="{StaticResource ComboBox.Editable.Pressed.BorderBrush}"/>
-                            <Setter Property="Background" TargetName="splitBorder" Value="{StaticResource ComboBox.Editable.Button.Pressed.BgGradient}"/>
+                            <Setter Property="Background" TargetName="splitBorder" Value="{StaticResource ComboBox.Pressed.BgGradient}"/>
                             <Setter Property="BorderBrush" TargetName="splitBorder" Value="{StaticResource ComboBox.Editable.Button.Pressed.BorderBrush}"/>
                         </MultiDataTrigger>
                         <Trigger Property="IsEnabled" Value="False">

@@ -165,14 +165,6 @@
         <GradientStop Color="#FFF0F0F0" Offset="0.0"/>
         <GradientStop Color="#FFE5E5E5" Offset="1.0"/>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="ComboBox.Editable.Button.Hover.BgGradient" EndPoint="0,1" StartPoint="0,0" po:Freeze="True">
-        <GradientStop Color="#FFEBF4FC" Offset="0.0"/>
-        <GradientStop Color="#FFDCECFC" Offset="1.0"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="ComboBox.Editable.Button.Pressed.BgGradient" EndPoint="0,1" StartPoint="0,0" po:Freeze="True">
-        <GradientStop Color="#FFDAEBFC" Offset="0.0"/>
-        <GradientStop Color="#FFC4E0FC" Offset="1.0"/>
-    </LinearGradientBrush>
     <LinearGradientBrush x:Key="ComboBox.Hover.BgGradient" EndPoint="0,1" StartPoint="0,0" po:Freeze="True">
         <GradientStop Color="#FFECF4FC" Offset="0.0"/>
         <GradientStop Color="#FFDCECFC" Offset="1.0"/>
