@@ -2,6 +2,10 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
                     xmlns:c="clr-namespace:SysadminsLV.WPF.Controls">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Brushes/SolidColors.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
     <Geometry x:Key="NotificationItem.DismissGlyph" po:Freeze="True">F1M0,0L2,0 5,3 8,0 10,0 6,4 10,8 8,8 5,5 2,8 0,8 4,4 0,0z</Geometry>
 
     <Style x:Key="NotificationItemDismissButtonStyle" TargetType="{x:Type Button}">
@@ -34,7 +38,7 @@
         <Setter Property="Padding" Value="4"/>
         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
         <Setter Property="VerticalContentAlignment" Value="Top"/>
-        <Setter Property="Background" Value="#FFCCE5FF"/>
+        <Setter Property="Background" Value="{StaticResource NotificationItem.Info.BgBrush}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type c:NotificationItem}">
@@ -77,24 +81,24 @@
                             <Setter TargetName="Icon" Property="Visibility" Value="Collapsed"/>
                         </Trigger>
                         <Trigger Property="Kind" Value="Info">
-                            <Setter TargetName="BdTopLeft" Property="BorderBrush" Value="#B0CCE5FF"/>
-                            <Setter TargetName="BdBottomRight" Property="BorderBrush" Value="#C1DBF7"/>
-                            <Setter TargetName="DismissGlyph" Property="Fill" Value="#004085"/>
+                            <Setter TargetName="BdTopLeft" Property="BorderBrush" Value="{StaticResource NotificationItem.Info.BorderTopLeftBrush}"/>
+                            <Setter TargetName="BdBottomRight" Property="BorderBrush" Value="{StaticResource NotificationItem.Info.BorderBottomRightBrush}"/>
+                            <Setter TargetName="DismissGlyph" Property="Fill" Value="{StaticResource NotificationItem.Info.GlyphBrush}"/>
                         </Trigger>
                         <Trigger Property="Kind" Value="Success">
-                            <Setter TargetName="BdTopLeft" Property="BorderBrush" Value="#80D4EDDA"/>
-                            <Setter TargetName="BdBottomRight" Property="BorderBrush" Value="#FFC6E5CD"/>
-                            <Setter TargetName="DismissGlyph" Property="Fill" Value="#155724"/>
+                            <Setter TargetName="BdTopLeft" Property="BorderBrush" Value="{StaticResource NotificationItem.Success.BorderTopLeftBrush}"/>
+                            <Setter TargetName="BdBottomRight" Property="BorderBrush" Value="{StaticResource NotificationItem.Success.BorderBottomRightBrush}"/>
+                            <Setter TargetName="DismissGlyph" Property="Fill" Value="{StaticResource NotificationItem.Success.GlyphBrush}"/>
                         </Trigger>
                         <Trigger Property="Kind" Value="Warning">
-                            <Setter TargetName="BdTopLeft" Property="BorderBrush" Value="#80FEFEDF"/>
-                            <Setter TargetName="BdBottomRight" Property="BorderBrush" Value="#FFF3F0AA"/>
-                            <Setter TargetName="DismissGlyph" Property="Fill" Value="#856404"/>
+                            <Setter TargetName="BdTopLeft" Property="BorderBrush" Value="{StaticResource NotificationItem.Warning.BorderTopLeftBrush}"/>
+                            <Setter TargetName="BdBottomRight" Property="BorderBrush" Value="{StaticResource NotificationItem.Warning.BorderBottomRightBrush}"/>
+                            <Setter TargetName="DismissGlyph" Property="Fill" Value="{StaticResource NotificationItem.Warning.GlyphBrush}"/>
                         </Trigger>
                         <Trigger Property="Kind" Value="Danger">
-                            <Setter TargetName="BdTopLeft" Property="BorderBrush" Value="#B0FFCDD2"/>
-                            <Setter TargetName="BdBottomRight" Property="BorderBrush" Value="#FFF2C0C5"/>
-                            <Setter TargetName="DismissGlyph" Property="Fill" Value="#721c24"/>
+                            <Setter TargetName="BdTopLeft" Property="BorderBrush" Value="{StaticResource NotificationItem.Danger.BorderTopLeftBrush}"/>
+                            <Setter TargetName="BdBottomRight" Property="BorderBrush" Value="{StaticResource NotificationItem.Danger.BorderBottomRightBrush}"/>
+                            <Setter TargetName="DismissGlyph" Property="Fill" Value="{StaticResource NotificationItem.Danger.GlyphBrush}"/>
                         </Trigger>
                         <Trigger Property="IsDismissable" Value="False">
                             <Setter TargetName="DismissButton" Property="Visibility" Value="Collapsed"/>
@@ -105,13 +109,13 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="Kind" Value="Success">
-                <Setter Property="Background" Value="#FFD4EDDA"/>
+                <Setter Property="Background" Value="{StaticResource NotificationItem.Success.BgBrush}"/>
             </Trigger>
             <Trigger Property="Kind" Value="Warning">
-                <Setter Property="Background" Value="#FFFDFAB1"/>
+                <Setter Property="Background" Value="{StaticResource NotificationItem.Warning.BgBrush}"/>
             </Trigger>
             <Trigger Property="Kind" Value="Danger">
-                <Setter Property="Background" Value="#FFFFCDD2"/>
+                <Setter Property="Background" Value="{StaticResource NotificationItem.Danger.BgBrush}"/>
             </Trigger>
             <Trigger Property="IsDismissed" Value="True">
                 <Setter Property="Visibility" Value="Collapsed"/>

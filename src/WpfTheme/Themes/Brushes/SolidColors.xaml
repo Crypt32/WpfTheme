@@ -2,38 +2,52 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
     <!--Palette Colors-->
-    <Color x:Key="Panel.BgColor">           #FFE2EEFE</Color>
-    <Color x:Key="Menu.BgColor">            #FFBFDBFF</Color>
-    <Color x:Key="Menu.Active.BorderColor"> #FFF4AD56</Color>
-    <Color x:Key="Border.Color">            #FF6592CE</Color>
-    <Color x:Key="Border.LightColor">       #FFADD1FF</Color>
-    <Color x:Key="Text.FgColor">            #FF15429F</Color>
-    <Color x:Key="Control.BgColor">         #FFF4F4F4</Color>
-    <Color x:Key="Neutral.SoftColor">       #FFD6D8D9</Color>
-    <Color x:Key="Accent.Color">            #FF000080</Color>
-    <!-- Solid Brushes -->
-    <SolidColorBrush x:Key="Brush-Transparent" Color="Transparent" po:Freeze="True"/>
+    <Color x:Key="Panel.BgColor">               #FFE2EEFE</Color>
+    <Color x:Key="Menu.BgColor">                #FFBFDBFF</Color>
+    <Color x:Key="Menu.Active.BorderColor">     #FFF4AD56</Color>
+    <Color x:Key="Border.Color">                #FF6592CE</Color>
+    <Color x:Key="Border.LightColor">           #FFADD1FF</Color>
+    <Color x:Key="Text.FgColor">                #FF15429F</Color>
+    <Color x:Key="Control.BgColor">             #FFF4F4F4</Color>
+    <Color x:Key="Neutral.SoftColor">           #FFD6D8D9</Color>
+    <Color x:Key="Accent.Color">                #FF000080</Color>
+    <Color x:Key="Status.Default.SolidColor">   #FF343A40</Color>
+    <Color x:Key="Status.Default.DarkColor">    #FF1B1E21</Color>
+    <Color x:Key="Status.Primary.SolidColor">   #FF004FA3</Color>
+    <Color x:Key="Status.Primary.SoftColor">    #FFCCE5FF</Color>
+    <Color x:Key="Status.Primary.DarkColor">    #FF004085</Color>
+    <Color x:Key="Status.Secondary.SolidColor"> #FF748194</Color>
+    <Color x:Key="Status.Secondary.SoftColor">  #FFE3E6EA</Color>
+    <Color x:Key="Status.Success.SolidColor">   #FF28A745</Color>
+    <Color x:Key="Status.Success.SoftColor">    #FFD4EDDA</Color>
+    <Color x:Key="Status.Success.DarkColor">    #FF155724</Color>
+    <Color x:Key="Status.Warning.SolidColor">   #FFFFC107</Color>
+    <Color x:Key="Status.Warning.SoftColor">    #FFFDFAB1</Color>
+    <Color x:Key="Status.Warning.DarkColor">    #FF856404</Color>
+    <Color x:Key="Status.Danger.SolidColor">    #FFDC3545</Color>
+    <Color x:Key="Status.Danger.SoftColor">     #FFFFCDD2</Color>
+    <Color x:Key="Status.Danger.DarkColor">     #FF721C24</Color>
 
-    <SolidColorBrush x:Key="Brush-DefaultSolidBg"   Color="#343a40" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Brush-DefaultSoftBg"    Color="#d6d8d9" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Brush-DefaultSoftFg"    Color="#1b1e21" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Brush-PrimarySolidBg"   Color="#004fa3" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Brush-PrimarySoftBg"    Color="#cce5ff" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Brush-PrimarySoftFg"    Color="#004fa3" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Brush-SecondarySolidBg" Color="#748194" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Brush-SecondarySoftBg"  Color="#e3e6ea" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Brush-SecondarySoftFg"  Color="#748194" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Brush-SuccessSolidBg"   Color="#28a745" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Brush-SuccessSoftBg"    Color="#d4edda" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Brush-SuccessSoftFg"    Color="#28a745" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Brush-WarningSolidBg"   Color="#fd7e14" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Brush-WarningSoftBg"    Color="#ffe3cb" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Brush-WarningSoftFg"    Color="#fd7e14" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Brush-DangerSolidBg"    Color="#dc3545" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Brush-DangerSoftBg"     Color="#f8d7da" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Brush-DangerSoftFg"     Color="#dc3545" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Brush-CornflowerBlue"   Color="CornflowerBlue" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Brush-Navy"             Color="Navy" po:Freeze="True"/>
+    <!--Badge-->
+    <SolidColorBrush x:Key="Badge.Default.SolidBgBrush"   Color="{StaticResource Status.Default.SolidColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Badge.Default.SoftBgBrush"    Color="{StaticResource Neutral.SoftColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Badge.Default.FgBrush"        Color="{StaticResource Status.Default.DarkColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Badge.Primary.SolidBgBrush"   Color="{StaticResource Status.Primary.SolidColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Badge.Primary.SoftBgBrush"    Color="{StaticResource Status.Primary.SoftColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Badge.Primary.FgBrush"        Color="{StaticResource Status.Primary.SolidColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Badge.Secondary.SolidBgBrush" Color="{StaticResource Status.Secondary.SolidColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Badge.Secondary.SoftBgBrush"  Color="{StaticResource Status.Secondary.SoftColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Badge.Secondary.FgBrush"      Color="{StaticResource Status.Secondary.SolidColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Badge.Success.SolidBgBrush"   Color="{StaticResource Status.Success.SolidColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Badge.Success.SoftBgBrush"    Color="{StaticResource Status.Success.SoftColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Badge.Success.FgBrush"        Color="{StaticResource Status.Success.SolidColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Badge.Warning.SolidBgBrush"   Color="{StaticResource Status.Warning.SolidColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Badge.Warning.SolidFgBrush"   Color="{StaticResource Status.Default.DarkColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Badge.Warning.SoftBgBrush"    Color="{StaticResource Status.Warning.SoftColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Badge.Warning.FgBrush"        Color="{StaticResource Status.Warning.DarkColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Badge.Danger.SolidBgBrush"    Color="{StaticResource Status.Danger.SolidColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Badge.Danger.SoftBgBrush"     Color="{StaticResource Status.Danger.SoftColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Badge.Danger.FgBrush"         Color="{StaticResource Status.Danger.SolidColor}" po:Freeze="True"/>
 
     <!--Panels-->
     <SolidColorBrush x:Key="Panel.BgBrush"          Color="{StaticResource Panel.BgColor}" po:Freeze="True"/>
@@ -78,11 +92,30 @@
     <SolidColorBrush x:Key="StatusBar.BorderBrush" Color="{StaticResource Border.LightColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="StatusBar.FgBrush"     Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
 
+    <!--NotificationItem-->
+    <SolidColorBrush x:Key="NotificationItem.Info.BgBrush"                   Color="{StaticResource Status.Primary.SoftColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="NotificationItem.Info.GlyphBrush"                Color="{StaticResource Status.Primary.DarkColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="NotificationItem.Info.BorderTopLeftBrush"        Color="#B0CCE5FF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="NotificationItem.Info.BorderBottomRightBrush"    Color="#FFC1DBF7" po:Freeze="True"/>
+    <SolidColorBrush x:Key="NotificationItem.Success.BgBrush"                Color="{StaticResource Status.Success.SoftColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="NotificationItem.Success.GlyphBrush"             Color="{StaticResource Status.Success.DarkColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="NotificationItem.Success.BorderTopLeftBrush"     Color="#80D4EDDA" po:Freeze="True"/>
+    <SolidColorBrush x:Key="NotificationItem.Success.BorderBottomRightBrush" Color="#FFC6E5CD" po:Freeze="True"/>
+    <SolidColorBrush x:Key="NotificationItem.Warning.BgBrush"                Color="{StaticResource Status.Warning.SoftColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="NotificationItem.Warning.GlyphBrush"             Color="{StaticResource Status.Warning.DarkColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="NotificationItem.Warning.BorderTopLeftBrush"     Color="#80FEFEDF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="NotificationItem.Warning.BorderBottomRightBrush" Color="#FFF3F0AA" po:Freeze="True"/>
+    <SolidColorBrush x:Key="NotificationItem.Danger.BgBrush"                 Color="{StaticResource Status.Danger.SoftColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="NotificationItem.Danger.GlyphBrush"              Color="{StaticResource Status.Danger.DarkColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="NotificationItem.Danger.BorderTopLeftBrush"      Color="#B0FFCDD2" po:Freeze="True"/>
+    <SolidColorBrush x:Key="NotificationItem.Danger.BorderBottomRightBrush"  Color="#FFF2C0C5" po:Freeze="True"/>
+
     <!--TabControl, TabItem-->
     <SolidColorBrush x:Key="TabControl.BgBrush"            Color="{StaticResource Panel.BgColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="TabControl.BorderBrush"        Color="{StaticResource Border.LightColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="TabControl.Header.BorderBrush" Color="{StaticResource Border.Color}" po:Freeze="True"/>
     <SolidColorBrush x:Key="TabItem.FgBrush"               Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="TabItem.Selected.FgBrush"      Color="{StaticResource Accent.Color}" po:Freeze="True"/>
     <SolidColorBrush x:Key="TabItem.BorderBrush"           Color="{StaticResource Border.Color}" po:Freeze="True"/>
 
     <!--TextBlock-->
