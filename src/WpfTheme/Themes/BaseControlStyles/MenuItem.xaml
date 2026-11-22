@@ -99,15 +99,15 @@
                 <Setter TargetName="Shdw" Property="Color" Value="{StaticResource Shadow.Color}"/>
             </Trigger>
             <Trigger Property="IsHighlighted" Value="True">
-                <Setter TargetName="Bg" Property="Fill" Value="{StaticResource MenuHoverFill}"/>
+                <Setter TargetName="Bg" Property="Fill" Value="{StaticResource Menu.Hover.BgGradient}"/>
                 <Setter TargetName="Bg" Property="Stroke" Value="{StaticResource MenuItem.Highlighted.BorderBrush}"/>
             </Trigger>
             <Trigger Property="IsPressed" Value="True">
-                <Setter TargetName="Bg" Property="Fill" Value="{StaticResource MenuPressedFill}"/>
+                <Setter TargetName="Bg" Property="Fill" Value="{StaticResource Menu.Pressed.BgGradient}"/>
                 <Setter TargetName="Bg" Property="Stroke" Value="{StaticResource Panel.BorderBrush}"/>
             </Trigger>
             <Trigger Property="IsSubmenuOpen" Value="True">
-                <Setter TargetName="Bg" Property="Fill" Value="{StaticResource MenuPressedFill}"/>
+                <Setter TargetName="Bg" Property="Fill" Value="{StaticResource Menu.Pressed.BgGradient}"/>
                 <Setter TargetName="Bg" Property="Stroke" Value="{StaticResource Panel.BorderBrush}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
@@ -222,11 +222,11 @@
                 <Setter TargetName="Shdw" Property="Color" Value="{StaticResource Shadow.Color}"/>
             </Trigger>
             <Trigger Property="IsHighlighted" Value="True">
-                <Setter TargetName="Bg" Property="Fill" Value="{StaticResource SubmenuHover}"/>
+                <Setter TargetName="Bg" Property="Fill" Value="{StaticResource MenuItem.Submenu.Hover.BgGradient}"/>
                 <Setter TargetName="Bg" Property="Stroke" Value="{StaticResource MenuItem.Highlighted.BorderBrush}"/>
             </Trigger>
             <Trigger Property="IsPressed" Value="True">
-                <Setter TargetName="Bg" Property="Fill" Value="{StaticResource HorizontalYellowPressedGradientBrush}"/>
+                <Setter TargetName="Bg" Property="Fill" Value="{StaticResource Gradient.Yellow.Pressed.Down}"/>
                 <Setter TargetName="Bg" Property="Stroke" Value="{StaticResource MenuItem.Pressed.BorderBrush}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
