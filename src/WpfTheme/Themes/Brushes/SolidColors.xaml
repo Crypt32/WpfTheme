@@ -2,7 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
     <!--Palette Colors-->
-    <Color x:Key="Accent.Color">                    #FF000080</Color>
     <Color x:Key="Border.AccentColor">              #FF88B0E4</Color>
     <Color x:Key="Border.Color">                    #FF6592CE</Color>
     <Color x:Key="Border.DisabledColor">            #FFAAAAAA</Color>
@@ -42,7 +41,7 @@
     <Color x:Key="Status.Warning.SoftColor">        #FFFDFAB1</Color>
     <Color x:Key="Status.Warning.SolidColor">       #FFFFC107</Color>
     <Color x:Key="TabScrollButton.BgLightColor">    #FFFAFAD2</Color>
-    <Color x:Key="Text.FgColor">                    #FF15429F</Color>
+    <Color x:Key="Text.FgColor">                    #FF00156C</Color>
     <Color x:Key="Text.MutedFgColor">               #FF4971A3</Color>
 
     <!--Badge-->
@@ -83,7 +82,7 @@
     <SolidColorBrush x:Key="ClosableTabItem.FgBrush"                     Color="{StaticResource Text.MutedFgColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ClosableTabItem.Disabled.FgBrush"            Color="{StaticResource Neutral.GrayColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ClosableTabItem.Hover.FgBrush"               Color="Indigo" po:Freeze="True"/>
-    <SolidColorBrush x:Key="ClosableTabItem.Selected.FgBrush"            Color="DarkBlue" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ClosableTabItem.Selected.FgBrush"            Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ClosableTabItem.Selected.BorderBrush"        Color="{StaticResource Neutral.GrayColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ClosableTabItem.CloseButton.FgBrush"         Color="{StaticResource Text.MutedFgColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ClosableTabItem.CloseButton.Hover.FgBrush"   Color="{StaticResource Neutral.WhiteColor}" po:Freeze="True"/>
@@ -172,10 +171,10 @@
     <SolidColorBrush x:Key="MenuItem.Highlighted.BorderBrush"    Color="{StaticResource Menu.Active.BorderColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="MenuItem.Pressed.BorderBrush"        Color="{StaticResource Menu.Active.BorderColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="MenuItem.Glyph.BorderBrush"          Color="{StaticResource Menu.Active.BorderColor}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="MenuItem.FgBrush"                    Color="{StaticResource Accent.Color}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="MenuItem.FgBrush"                    Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="MenuItem.Disabled.FgBrush"           Color="{StaticResource Neutral.DisabledGrayColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="MenuItem.Glyph.BgBrush"              Color="#FFFBF0C1" po:Freeze="True"/>
-    <SolidColorBrush x:Key="MenuItem.Glyph.FgBrush"              Color="{StaticResource Accent.Color}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="MenuItem.Glyph.FgBrush"              Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="MenuItem.Glyph.Disabled.BgBrush"     Color="#FFEEE9E9" po:Freeze="True"/>
     <SolidColorBrush x:Key="MenuItem.Glyph.Disabled.BorderBrush" Color="#FFDBD6D6" po:Freeze="True"/>
     <SolidColorBrush x:Key="MenuItem.Glyph.Disabled.FgBrush"     Color="#FF848589" po:Freeze="True"/>
@@ -226,7 +225,7 @@
 
     <!--Scrollable tab strip buttons-->
     <SolidColorBrush x:Key="TabScrollButton.BorderBrush" Color="#FF8693BD" po:Freeze="True"/>
-    <SolidColorBrush x:Key="TabScrollButton.FgBrush"     Color="{StaticResource Accent.Color}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="TabScrollButton.FgBrush"     Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
 
     <!--ScrollBar-->
     <SolidColorBrush x:Key="ScrollBar.Button.BorderBrush"           Color="#FFB4C8F6" po:Freeze="True"/>
@@ -253,7 +252,7 @@
     <SolidColorBrush x:Key="TabControl.BorderBrush"        Color="{StaticResource Border.LightColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="TabControl.Header.BorderBrush" Color="{StaticResource Border.Color}" po:Freeze="True"/>
     <SolidColorBrush x:Key="TabItem.FgBrush"               Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="TabItem.Selected.FgBrush"      Color="{StaticResource Accent.Color}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="TabItem.Selected.FgBrush"      Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="TabItem.BorderBrush"           Color="{StaticResource Border.Color}" po:Freeze="True"/>
 
     <!--TextBlock-->
@@ -262,7 +261,7 @@
     <!--TextBox, PasswordBox, Editable ComboBox-->
     <SolidColorBrush x:Key="PasswordBox.BgBrush"              Color="{StaticResource Neutral.WhiteColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="TextBox.BorderBrush"              Color="{StaticResource Border.InputColor}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="TextBox.Focused.BorderBrush"      Color="{StaticResource Accent.Color}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="TextBox.Focused.BorderBrush"      Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="TextBox.Hover.BorderBrush"        Color="{StaticResource Border.Color}" po:Freeze="True"/>
     <SolidColorBrush x:Key="TextBox.Disabled.BgBrush"         Color="Transparent" po:Freeze="True"/>
     <SolidColorBrush x:Key="TextBox.HasError.BorderBrush"     Color="Red" po:Freeze="True"/>

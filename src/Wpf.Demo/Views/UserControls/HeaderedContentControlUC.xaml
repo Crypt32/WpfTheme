@@ -1,0 +1,27 @@
+<UserControl x:Class="Wpf.Demo.Views.UserControls.HeaderedContentControlUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel>
+        <HeaderedContentControl Header="Headered Content Control" Height="100">
+            <TextBox AcceptsReturn="True"/>
+        </HeaderedContentControl>
+        <HeaderedContentControl Height="100" Margin="0,10,0,0">
+            <HeaderedContentControl.Header>
+                <TextBlock Text="Headered Content Control bold"
+                           FontWeight="Bold"></TextBlock>
+            </HeaderedContentControl.Header>
+            <TextBox AcceptsReturn="True"/>
+        </HeaderedContentControl>
+        <HeaderedContentControl Height="100" Margin="0,10,0,0" IsEnabled="False">
+            <HeaderedContentControl.Header>
+                <TextBlock Text="Headered Content Control disabled"
+                           FontWeight="Bold"></TextBlock>
+            </HeaderedContentControl.Header>
+            <TextBox AcceptsReturn="True"/>
+        </HeaderedContentControl>
+    </StackPanel>
+</UserControl>
