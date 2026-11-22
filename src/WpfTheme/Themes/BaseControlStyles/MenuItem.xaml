@@ -18,7 +18,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Separator}">
-                    <Grid SnapsToDevicePixels="True" Margin="0,4,0,4">
+                    <Grid SnapsToDevicePixels="True" Margin="0,2,0,2">
                         <Rectangle Height="1" Margin="30,0,1,1" Fill="{StaticResource MenuItem.Separator.BorderBrush}"/>
                         <Rectangle Height="1" Margin="30,1,1,0" Fill="{StaticResource MenuItem.Separator.LightBrush}"/>
                     </Grid>
@@ -255,12 +255,43 @@
                            Width="1"
                            Margin="30,0,0,0"
                            Fill="{StaticResource MenuItem.Submenu.Icon.BorderBrush}"/>
+                <!--Light edge next to the separator gives the icon strip a sunken look-->
+                <Rectangle HorizontalAlignment="Left"
+                           Width="1"
+                           Margin="31,0,0,0"
+                           Fill="{StaticResource MenuItem.Submenu.Icon.LightBrush}"/>
                 <ContentPresenter Grid.ColumnSpan="2"
                                   Margin="1,0"/>
             </Grid>
         </Border>
     </ControlTemplate>
     
+    <!--Context menu uses the same popup content as a submenu, so both look the same-->
+    <Style x:Key="{x:Type ContextMenu}" TargetType="{x:Type ContextMenu}">
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Grid.IsSharedSizeScope" Value="True"/>
+        <Setter Property="HasDropShadow" Value="{DynamicResource {x:Static SystemParameters.DropShadowKey}}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ContextMenu}">
+                    <themes:SystemDropShadowChrome Name="Shdw"
+                                                   Color="Transparent">
+                        <ContentControl Template="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type FrameworkElement}, ResourceId=SubmenuContent}}"
+                                        IsTabStop="False">
+                            <ScrollViewer CanContentScroll="True"
+                                          Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type FrameworkElement}, ResourceId=MenuScrollViewer}}">
+                                <ItemsPresenter Margin="2"
+                                                KeyboardNavigation.TabNavigation="Cycle"
+                                                KeyboardNavigation.DirectionalNavigation="Cycle"
+                                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                            </ScrollViewer>
+                        </ContentControl>
+                    </themes:SystemDropShadowChrome>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
     <Style x:Key="{x:Type MenuItem}" TargetType="{x:Type MenuItem}">
         <Setter Property="Foreground" Value="{StaticResource MenuItem.FgBrush}"/>
         <Setter Property="HorizontalContentAlignment"
