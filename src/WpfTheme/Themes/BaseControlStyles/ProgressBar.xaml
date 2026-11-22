@@ -7,8 +7,8 @@
 
     <Style TargetType="{x:Type ProgressBar}">
         <Setter Property="Foreground" Value="{StaticResource ProgressBar.FgBrush}"/>
-        <Setter Property="Background" Value="{StaticResource ProgressBarBackground}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource ProgressBarBorderBrush}"/>
+        <Setter Property="Background" Value="{StaticResource ProgressBar.BgGradient}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ProgressBar.BorderGradient}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -18,12 +18,12 @@
                         <Border Background="{TemplateBinding Background}"
                                 CornerRadius="2"/>
                         <!--adds glassy background to unfilled progressbar area-->
-                        <Border Background="{StaticResource ProgressBarGlassyHighlight}"
+                        <Border Background="{StaticResource ProgressBar.Glass.BgGradient}"
                                 Margin="1"
                                 CornerRadius="2"/>
                         <!--a tiny 1pt semi-white border inside outer border to make it more glassy-->
                         <Border BorderBrush="{StaticResource ProgressBar.BorderBrush}"
-                                Background="{StaticResource ProgressBarTopHighlight}"
+                                Background="{StaticResource ProgressBar.TopHighlight.BgGradient}"
                                 BorderThickness="1,0,1,1"
                                 Margin="1"/>
                         <!--actual progressbar fill track-->
@@ -42,7 +42,7 @@
                                             <MultiBinding.Converter>
                                                 <themes:ProgressBarHighlightConverter/>
                                             </MultiBinding.Converter>
-                                            <Binding Source="{StaticResource ProgressBarIndicatorAnimatedFill}"/>
+                                            <Binding Source="{StaticResource ProgressBar.Indicator.Animated.BgGradient}"/>
                                             <Binding Path="ActualWidth"
                                                      ElementName="Background"/>
                                             <Binding Path="ActualHeight"
@@ -52,10 +52,10 @@
                                 </Rectangle>
                                 <!--sets progressbar's top half glassy effect-->
                                 <Border x:Name="Highlight1"
-                                        Background="{StaticResource ProgressBarIndicatorGlassyHighlight}"/>
+                                        Background="{StaticResource ProgressBar.Indicator.Glass.BgGradient}"/>
                                 <!--sets progressbar's bottom half glassy effect-->
                                 <Border x:Name="Highlight2"
-                                        Background="{StaticResource ProgressBarTopHighlight}"/>
+                                        Background="{StaticResource ProgressBar.TopHighlight.BgGradient}"/>
                             </Grid>
                         </Decorator>
                         <!--renders actual border around progressbar-->

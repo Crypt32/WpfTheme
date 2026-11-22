@@ -144,11 +144,11 @@
     <Style TargetType="DataGridRow">
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Background" Value="{StaticResource ListItemHoverFill}"/>
+                <Setter Property="Background" Value="{StaticResource ListViewItem.Hover.BgGradient}"/>
                 <Setter Property="BorderBrush" Value="{StaticResource ListItem.Hover.BorderBrush}"/>
             </Trigger>
             <Trigger Property="IsSelected" Value="true">
-                <Setter Property="Background" Value="{StaticResource ListItemSelectedFill}"/>
+                <Setter Property="Background" Value="{StaticResource ListViewItem.Selected.BgGradient}"/>
                 <Setter Property="BorderBrush" Value="{StaticResource ListItem.Selected.BorderBrush}"/>
             </Trigger>
         </Style.Triggers>

@@ -21,7 +21,7 @@
     
     <Style x:Key="BaseButtonStyle" TargetType="{x:Type ButtonBase}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
-        <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+        <Setter Property="Background" Value="{StaticResource Button.BgGradient}"/>
         <Setter Property="BorderBrush" Value="{StaticResource Button.BorderBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
