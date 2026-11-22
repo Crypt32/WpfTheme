@@ -101,7 +101,7 @@
     <SolidColorBrush x:Key="ToolBar.Hover.BorderBrush"        Color="{StaticResource Menu.Active.BorderColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ToolBar.Pressed.BorderBrush"      Color="{StaticResource Menu.Active.BorderColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ToolBar.Checked.BorderBrush"      Color="{StaticResource Menu.Active.BorderColor}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="ToolBar.Bottom.BorderBrush"       Color="#FF6F9DD9" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ToolBar.Bottom.BorderBrush"       Color="{StaticResource Border.Color}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ToolBar.Overflow.Hover.BgBrush"   Color="#FFFFEBA6" po:Freeze="True"/>
     <SolidColorBrush x:Key="ToolBar.Overflow.Pressed.BgBrush" Color="#FFFDA461" po:Freeze="True"/>
 
