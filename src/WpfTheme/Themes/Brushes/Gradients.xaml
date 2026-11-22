@@ -46,8 +46,8 @@
         </GradientBrush.GradientStops>
     </LinearGradientBrush>
     <GradientStopCollection x:Key="Gradient.Blue.Stops" po:Freeze="True">
-        <GradientStop Color="#FFE3EFFF" Offset="0"/>
-        <GradientStop Color="#FFAFD2FF" Offset="1"/>
+        <GradientStop Color="{StaticResource Panel.BgColor}" Offset="0"/>
+        <GradientStop Color="{StaticResource Border.LightColor}" Offset="1"/>
     </GradientStopCollection>
     <GradientStopCollection x:Key="Gradient.Yellow.Hover.Stops" po:Freeze="True">
         <GradientStop Color="#FEFBEC" Offset="0"/>
@@ -81,16 +81,16 @@
         <GradientStop Color="#FFEEEDE5" Offset="0"/>
         <GradientStop Color="#FFEEEDE5" Offset="0.05"/>
         <GradientStop Color="#FFF3F1EC" Offset="0.06"/>
-        <GradientStop Color="#FFFEFEFE" Offset="0.94"/>
+        <GradientStop Color="{StaticResource Neutral.WhiteColor}" Offset="0.94"/>
         <GradientStop Color="#FFEEEDE5" Offset="0.95"/>
         <GradientStop Color="#FFEEEDE5" Offset="1"/>
     </GradientStopCollection>
 
     <!-- Button -->
     <LinearGradientBrush x:Key="Button.BgGradient" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
-        <GradientStop Color="#F3F3F3" Offset="0"/>
+        <GradientStop Color="{StaticResource Control.BgColor}" Offset="0"/>
         <GradientStop Color="#EBEBEB" Offset="0.5"/>
-        <GradientStop Color="#DDDDDD" Offset="0.5"/>
+        <GradientStop Color="{StaticResource Neutral.LineColor}" Offset="0.5"/>
         <GradientStop Color="#CDCDCD" Offset="1"/>
     </LinearGradientBrush>
 
@@ -121,12 +121,12 @@
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="ClosableTabItem.BorderGradient" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
-        <GradientStop Color="#AAA" Offset="0"/>
+        <GradientStop Color="{StaticResource Border.DisabledColor}" Offset="0"/>
         <GradientStop Color="{StaticResource Neutral.GrayColor}" Offset="0.8"/>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="ClosableTabItem.Disabled.BgGradient" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
         <LinearGradientBrush.GradientStops>
-            <GradientStop Color="#EEE" Offset="0"/>
+            <GradientStop Color="{StaticResource Neutral.PaleColor}" Offset="0"/>
             <GradientStop Color="#BBB" Offset="0.98"/>
             <!-- 
                This is the same trick as with the ClosableTabControl.Panel.BgGradient (see there).
@@ -162,11 +162,11 @@
 
     <!-- ComboBox -->
     <LinearGradientBrush x:Key="ComboBox.BgGradient" EndPoint="0,1" StartPoint="0,0" po:Freeze="True">
-        <GradientStop Color="#FFF0F0F0" Offset="0.0"/>
+        <GradientStop Color="{StaticResource Neutral.PaleColor}" Offset="0.0"/>
         <GradientStop Color="#FFE5E5E5" Offset="1.0"/>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="ComboBox.Hover.BgGradient" EndPoint="0,1" StartPoint="0,0" po:Freeze="True">
-        <GradientStop Color="#FFECF4FC" Offset="0.0"/>
+        <GradientStop Color="{StaticResource Panel.PaleBlueColor}" Offset="0.0"/>
         <GradientStop Color="#FFDCECFC" Offset="1.0"/>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="ComboBox.Pressed.BgGradient" EndPoint="0,1" StartPoint="0,0" po:Freeze="True">
@@ -202,7 +202,7 @@
     <!-- GridViewColumnHeader -->
     <LinearGradientBrush x:Key="GridViewColumnHeader.BgGradient" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
         <LinearGradientBrush.GradientStops>
-            <GradientStop Color="#FEFEFE" Offset="0"/>
+            <GradientStop Color="{StaticResource Neutral.WhiteColor}" Offset="0"/>
             <GradientStop Color="#C3DCFE" Offset="1"/>
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
@@ -213,7 +213,7 @@
     <LinearGradientBrush x:Key="GridViewColumnHeader.Pressed.BgGradient" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
         <LinearGradientBrush.GradientStops>
             <GradientStop Color="#C3DCFE" Offset="0"/>
-            <GradientStop Color="#FEFEFE" Offset="1"/>
+            <GradientStop Color="{StaticResource Neutral.WhiteColor}" Offset="1"/>
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
 
@@ -231,8 +231,8 @@
         <GradientStop Color="#FFC9EDFD" Offset="1"/>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="ListViewItem.Selected.Inactive.BgGradient" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
-        <GradientStop Color="#FFEEEDED" Offset="0"/>
-        <GradientStop Color="#FFDDDDDD" Offset="1"/>
+        <GradientStop Color="{StaticResource Neutral.PaleColor}" Offset="0"/>
+        <GradientStop Color="{StaticResource Neutral.LineColor}" Offset="1"/>
     </LinearGradientBrush>
 
     <!-- Menu / MenuItem -->
@@ -242,7 +242,7 @@
         <GradientStop Color="#FEDB7A" Offset="1"/>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="Menu.Pressed.BgGradient" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
-        <GradientStop Color="#E2EEFD" Offset="0"/>
+        <GradientStop Color="{StaticResource Panel.BgColor}" Offset="0"/>
         <GradientStop Color="#B8D3F5" Offset="0.5"/>
         <GradientStop Color="#8FB8ED" Offset="1"/>
     </LinearGradientBrush>
@@ -273,8 +273,8 @@
                          EndPoint="0,0"
                          po:Freeze="True">
         <GradientStop Color="#00000000" Offset="0"/>
-        <GradientStop Color="#FF000000" Offset="0.4"/>
-        <GradientStop Color="#FF000000" Offset="0.6"/>
+        <GradientStop Color="{StaticResource Neutral.BlackColor}" Offset="0.4"/>
+        <GradientStop Color="{StaticResource Neutral.BlackColor}" Offset="0.6"/>
         <GradientStop Color="#00000000" Offset="1"/>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="ProgressBar.Indicator.Glass.BgGradient" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
@@ -309,13 +309,13 @@
         <GradientStop Color="#FFBBCDF9" Offset="1"/>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="ScrollBar.Button.Disabled.BgGradient" StartPoint="0,0" EndPoint="1,1" po:Freeze="True">
-        <GradientStop Color="#FFF7F7F7" Offset="0"/>
-        <GradientStop Color="#FFF0F0F0" Offset="0.3"/>
+        <GradientStop Color="{StaticResource Control.BgColor}" Offset="0"/>
+        <GradientStop Color="{StaticResource Neutral.PaleColor}" Offset="0.3"/>
         <GradientStop Color="#FFECECEC" Offset="0.6"/>
         <GradientStop Color="#FFE3E3E3" Offset="1"/>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="ScrollBar.Button.Hover.BgGradient" StartPoint="0,0" EndPoint="1,1" po:Freeze="True">
-        <GradientStop Color="#FFFDFFFF" Offset="0"/>
+        <GradientStop Color="{StaticResource Neutral.WhiteColor}" Offset="0"/>
         <GradientStop Color="#FFE2F3FD" Offset="0.25"/>
         <GradientStop Color="#FFB9DAFB" Offset="1"/>
     </LinearGradientBrush>
@@ -365,14 +365,14 @@
 
     <!-- ToolBar -->
     <LinearGradientBrush x:Key="ToolBar.BgGradient" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
-        <GradientStop Color="#E2EEFE" Offset="0"/>
-        <GradientStop Color="#E2EEFE" Offset="0.5"/>
-        <GradientStop Color="#B0D2FE" Offset="1"/>
+        <GradientStop Color="{StaticResource Panel.BgColor}" Offset="0"/>
+        <GradientStop Color="{StaticResource Panel.BgColor}" Offset="0.5"/>
+        <GradientStop Color="{StaticResource Border.LightColor}" Offset="1"/>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="ToolBar.Overflow.BgGradient" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
         <GradientStop Color="#A7CCFB" Offset="0"/>
         <GradientStop Color="#A7CCFB" Offset="0.5"/>
-        <GradientStop Color="#6593CF" Offset="1"/>
+        <GradientStop Color="{StaticResource Border.Color}" Offset="1"/>
     </LinearGradientBrush>
 
     <!-- TreeViewItem -->
