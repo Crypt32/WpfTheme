@@ -110,9 +110,6 @@
     <SolidColorBrush x:Key="ComboBox.Editable.Button.Disabled.BgBrush"     Color="Transparent" po:Freeze="True"/>
     <SolidColorBrush x:Key="ComboBox.Editable.Button.Disabled.BorderBrush" Color="Transparent" po:Freeze="True"/>
 
-    <!--ContextMenu-->
-    <SolidColorBrush x:Key="ContextMenu.BgBrush" Color="{StaticResource Control.BgColor}" po:Freeze="True"/>
-
     <!--DataGrid-->
     <SolidColorBrush x:Key="DataGrid.BgBrush"                 Color="#FF9BC2E6" po:Freeze="True"/>
     <SolidColorBrush x:Key="DataGrid.Header.BorderBrush"      Color="{StaticResource Border.AccentColor}" po:Freeze="True"/>
@@ -184,6 +181,7 @@
     <SolidColorBrush x:Key="MenuItem.Submenu.BorderBrush"        Color="{StaticResource Neutral.GrayColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="MenuItem.Submenu.Icon.BgBrush"       Color="{StaticResource Neutral.PaleColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="MenuItem.Submenu.Icon.BorderBrush"   Color="#FFE2E3E3" po:Freeze="True"/>
+    <SolidColorBrush x:Key="MenuItem.Submenu.Icon.LightBrush"    Color="{StaticResource Neutral.WhiteColor}" po:Freeze="True"/>
 
     <!--NotificationItem-->
     <SolidColorBrush x:Key="NotificationItem.Info.BgBrush"                   Color="{StaticResource Status.Primary.SoftColor}" po:Freeze="True"/>
