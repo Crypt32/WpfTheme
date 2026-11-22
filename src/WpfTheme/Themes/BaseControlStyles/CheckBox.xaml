@@ -12,7 +12,7 @@
                 <ControlTemplate>
                     <Rectangle Margin="1"
                                StrokeThickness="1"
-                               Stroke="Black"
+                               Stroke="{StaticResource CheckBox.Focus.BorderBrush}"
                                StrokeDashArray="1 2"/>
                 </ControlTemplate>
             </Setter.Value>
