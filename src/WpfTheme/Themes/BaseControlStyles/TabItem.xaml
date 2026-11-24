@@ -26,6 +26,9 @@
                                                 <Setter Property="Foreground" Value="{StaticResource TabItem.Selected.FgBrush}" />
                                                 <Setter Property="FontWeight" Value="Bold" />
                                             </DataTrigger>
+                                            <DataTrigger Binding="{Binding IsEnabled, RelativeSource={RelativeSource AncestorType={x:Type TabItem}}}" Value="false">
+                                                <Setter Property="Foreground" Value="{StaticResource TabItem.Disabled.FgBrush}" />
+                                            </DataTrigger>
                                         </Style.Triggers>
                                     </Style>
                                 </ContentPresenter.Resources>
@@ -53,9 +56,14 @@
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsMouseOver" Value="True"/>
                                 <Condition Property="IsSelected" Value="False"/>
+                                <Condition Property="IsEnabled" Value="True"/>
                             </MultiTrigger.Conditions>
                             <Setter Property="Background" TargetName="Border" Value="{StaticResource Gradient.Yellow.Hover.Down}"/>
                         </MultiTrigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource TabItem.Disabled.BgBrush}"/>
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource TabItem.Disabled.BorderBrush}"/>
+                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
