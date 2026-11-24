@@ -87,7 +87,6 @@
 
     <!--ClosableTabControl, ClosableTabItem-->
     <SolidColorBrush x:Key="ClosableTabItem.FgBrush"                     Color="{StaticResource Text.MutedFgColor}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="ClosableTabItem.Disabled.FgBrush"            Color="{StaticResource Neutral.GrayColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ClosableTabItem.Selected.FgBrush"            Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ClosableTabItem.BorderBrush"                 Color="{StaticResource Neutral.GrayColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ClosableTabItem.Selected.BorderBrush"        Color="{StaticResource Border.Color}" po:Freeze="True"/>
@@ -269,6 +268,9 @@
     <SolidColorBrush x:Key="TabItem.FgBrush"               Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="TabItem.Selected.FgBrush"      Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="TabItem.BorderBrush"           Color="{StaticResource Border.Color}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="TabItem.Disabled.BgBrush"      Color="{StaticResource Neutral.PaleColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="TabItem.Disabled.BorderBrush"  Color="{StaticResource Neutral.DisabledLightColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="TabItem.Disabled.FgBrush"      Color="{StaticResource Neutral.DimGrayColor}" po:Freeze="True"/>
 
     <!--TextBlock-->
     <SolidColorBrush x:Key="TextBlock.Disabled.OpacityMask" Color="#A0FFFFFF" po:Freeze="True"/>

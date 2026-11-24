@@ -138,17 +138,14 @@
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="ClosableTabItem.Disabled.BgGradient" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
         <LinearGradientBrush.GradientStops>
+            <!-- Flat like the other disabled controls; the last stop only keeps the strip baseline unbroken. -->
             <GradientStop Color="{StaticResource Neutral.PaleColor}" Offset="0"/>
-            <GradientStop Color="#BBB" Offset="0.98"/>
-            <!-- 
+            <GradientStop Color="{StaticResource Neutral.PaleColor}" Offset="0.98"/>
+            <!--
                This is the same trick as with the ScrollableTabControl.Panel.BgGradient (see there).
             -->
             <GradientStop Color="{StaticResource Neutral.GrayColor}" Offset="0.99"/>
         </LinearGradientBrush.GradientStops>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="ClosableTabItem.Disabled.BorderGradient" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
-        <GradientStop Color="#CCC" Offset="0"/>
-        <GradientStop Color="{StaticResource Neutral.GrayColor}" Offset="0.8"/>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="ClosableTabItem.Selected.BgGradient" 
                            StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
