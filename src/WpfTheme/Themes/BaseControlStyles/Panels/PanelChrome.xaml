@@ -2,19 +2,17 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../Border.xaml"/>
-        <ResourceDictionary Source="../Rectangle.xaml"/>
         <ResourceDictionary Source="../../Brushes/DefaultColorTheme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <!--
        Chrome shared by the panel controls: a frame around two stacked areas, a header band and a content area.
-       The band carries the light top and left edges and the content area carries the dark edge that faces the band,
+       The band carries a light top and left edge and the content area carries the dark edge that faces the band,
        so the three together read as a relief, the way a SharePoint 2007 panel header does.
-       Each edge of the band has a color of its own, which one Border cannot paint, so the edges are rectangles docked
-       into the band instead of borders nested around it: a flat list of siblings that a further edge can join without
-       re-indenting anything. The dock order decides the corner exactly as a nesting order would, the element docked
-       first winning it, so the top edge is docked before the side edge and runs the full width of the band.
-       The brushes keep their BorderBrush names because an edge is what they are for, whatever draws them.
+       The band paints both of those light edges itself: its BorderThickness lights the top and the left and leaves
+       the remaining two sides to the control's frame. One Border can do that only because the two edges share a
+       brush; if they ever have to differ again they go back to being separate elements, because a Border has a
+       single BorderBrush and cannot paint one side in a colour of its own.
        Keeping the dark edge on the content area rather than under the band also keeps a collapsed Expander, which has
        no content area, from showing the frame's line and a separator line directly on top of each other.
        Layout rounding keeps the hairlines on whole device pixels; without it they blur to gray above 100% DPI.
@@ -23,21 +21,8 @@
 
     <Style x:Key="Panel.HeaderBandBorder" TargetType="Border" BasedOn="{StaticResource {x:Type Border}}">
         <Setter Property="Background" Value="{StaticResource Panel.Header.BgBrush}"/>
-        <Setter Property="UseLayoutRounding" Value="True"/>
-    </Style>
-
-    <Style x:Key="Panel.HeaderTopEdge" TargetType="Rectangle" BasedOn="{StaticResource {x:Type Rectangle}}">
-        <Setter Property="DockPanel.Dock" Value="Top"/>
-        <Setter Property="Height" Value="1"/>
-        <Setter Property="Fill" Value="{StaticResource Panel.Header.TopHighlight.BorderBrush}"/>
-        <Setter Property="UseLayoutRounding" Value="True"/>
-    </Style>
-
-    <!-- The softer of the two highlights: it runs directly beside the control's own frame, where white reads as noise. -->
-    <Style x:Key="Panel.HeaderSideEdge" TargetType="Rectangle" BasedOn="{StaticResource {x:Type Rectangle}}">
-        <Setter Property="DockPanel.Dock" Value="Left"/>
-        <Setter Property="Width" Value="1"/>
-        <Setter Property="Fill" Value="{StaticResource Panel.Header.SideHighlight.BorderBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Panel.Header.Highlight.BorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1,1,0,0"/>
         <Setter Property="UseLayoutRounding" Value="True"/>
     </Style>
 
