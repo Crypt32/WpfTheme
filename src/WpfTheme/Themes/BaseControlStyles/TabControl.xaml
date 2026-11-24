@@ -67,9 +67,9 @@
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
-                            <Setter TargetName="ContentPanel" Property="Background" Value="{StaticResource TabItem.Disabled.BgBrush}"/>
-                            <Setter TargetName="ContentPanel" Property="BorderBrush" Value="{StaticResource TabItem.Disabled.BorderBrush}"/>
-                            <Setter TargetName="TabHeaderBorder" Property="BorderBrush" Value="{StaticResource TabItem.Disabled.BorderBrush}"/>
+                            <Setter TargetName="ContentPanel" Property="Background" Value="{StaticResource Disabled.BgBrush}"/>
+                            <Setter TargetName="ContentPanel" Property="BorderBrush" Value="{StaticResource Disabled.BorderBrush}"/>
+                            <Setter TargetName="TabHeaderBorder" Property="BorderBrush" Value="{StaticResource Disabled.BorderBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

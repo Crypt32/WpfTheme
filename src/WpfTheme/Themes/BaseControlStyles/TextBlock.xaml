@@ -8,7 +8,7 @@
         <Style.Triggers>
             <Trigger Property="IsEnabled" Value="False">
                 <!-- Gray like every other disabled label, rather than the old translucent mask that only faded the text. -->
-                <Setter Property="Foreground" Value="{StaticResource TabItem.Disabled.FgBrush}"/>
+                <Setter Property="Foreground" Value="{StaticResource Disabled.FgBrush}"/>
             </Trigger>
         </Style.Triggers>
     </Style>

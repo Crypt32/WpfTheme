@@ -268,9 +268,15 @@
     <SolidColorBrush x:Key="TabItem.FgBrush"               Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="TabItem.Selected.FgBrush"      Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="TabItem.BorderBrush"           Color="{StaticResource Border.Color}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="TabItem.Disabled.BgBrush"      Color="{StaticResource Neutral.PaleColor}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="TabItem.Disabled.BorderBrush"  Color="{StaticResource Neutral.DisabledLightColor}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="TabItem.Disabled.FgBrush"      Color="{StaticResource Neutral.DimGrayColor}" po:Freeze="True"/>
+
+    <!--
+       The shared flat disabled look: pale fill, light gray edge, dim gray text. Used by tabs, TabControl, GroupBox,
+       HeaderedContentControl, Expander, ProgressBar and TextBlock, so a new panel-like control takes these rather than
+       inventing its own gray.
+    -->
+    <SolidColorBrush x:Key="Disabled.BgBrush"      Color="{StaticResource Neutral.PaleColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Disabled.BorderBrush"  Color="{StaticResource Neutral.DisabledLightColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Disabled.FgBrush"      Color="{StaticResource Neutral.DimGrayColor}" po:Freeze="True"/>
 
     <!--TextBox, PasswordBox, Editable ComboBox-->
     <SolidColorBrush x:Key="PasswordBox.BgBrush"              Color="{StaticResource Neutral.WhiteColor}" po:Freeze="True"/>
