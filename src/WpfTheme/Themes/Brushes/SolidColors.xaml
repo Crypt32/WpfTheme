@@ -121,7 +121,10 @@
     <SolidColorBrush x:Key="DataGrid.RowHeader.BgBrush"          Color="#FFE4ECF7" po:Freeze="True"/>
     <SolidColorBrush x:Key="DataGrid.Selected.BgBrush"             Color="#FFD5E7FE" po:Freeze="True"/>
     <SolidColorBrush x:Key="DataGrid.Selected.BorderBrush"         Color="{StaticResource Border.Color}" po:Freeze="True"/>
+<<<<<<< HEAD
     <SolidColorBrush x:Key="DataGrid.Selected.Focus.BgBrush"       Color="{StaticResource Border.LightColor}" po:Freeze="True"/>
+=======
+>>>>>>> 4520c86 (Significantly reworked DataGrid, ListView and unified them)
     <SolidColorBrush x:Key="DataGrid.SelectedInactive.BgBrush"     Color="{StaticResource Neutral.SoftColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="DataGrid.SelectedInactive.BorderBrush" Color="{StaticResource Neutral.DisabledLightColor}" po:Freeze="True"/>
 
