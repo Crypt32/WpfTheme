@@ -111,9 +111,16 @@
     <SolidColorBrush x:Key="ComboBox.Editable.Button.Disabled.BorderBrush" Color="Transparent" po:Freeze="True"/>
 
     <!--DataGrid-->
-    <SolidColorBrush x:Key="DataGrid.BgBrush"                 Color="#FF9BC2E6" po:Freeze="True"/>
-    <SolidColorBrush x:Key="DataGrid.Header.BorderBrush"      Color="{StaticResource Border.AccentColor}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="DataGrid.Header.InnerBorderBrush" Color="{StaticResource Neutral.WhiteColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="DataGrid.Header.FgBrush"          Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="DataGrid.Header.BorderBrush"         Color="#FF9EB6CE" po:Freeze="True"/>
+    <SolidColorBrush x:Key="DataGrid.Header.Hover.BorderBrush"   Color="#FF87A6C3" po:Freeze="True"/>
+    <SolidColorBrush x:Key="DataGrid.Header.Pressed.BgBrush"     Color="#FF9FC0E2" po:Freeze="True"/>
+    <SolidColorBrush x:Key="DataGrid.Header.Pressed.BorderBrush" Color="#FF6A8BAD" po:Freeze="True"/>
+    <SolidColorBrush x:Key="DataGrid.RowHeader.BgBrush"          Color="#FFE4ECF7" po:Freeze="True"/>
+    <SolidColorBrush x:Key="DataGrid.Selected.BgBrush"             Color="#FFD5E7FE" po:Freeze="True"/>
+    <SolidColorBrush x:Key="DataGrid.Selected.BorderBrush"         Color="{StaticResource Border.Color}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="DataGrid.SelectedInactive.BgBrush"     Color="{StaticResource Neutral.SoftColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="DataGrid.SelectedInactive.BorderBrush" Color="{StaticResource Neutral.DisabledLightColor}" po:Freeze="True"/>
 
     <!--Expander-->
     <SolidColorBrush x:Key="Expander.Header.FgBrush"              Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
@@ -155,7 +162,6 @@
     <SolidColorBrush x:Key="ListItem.Focus.BorderBrush"            Color="#8E6EA6F5" po:Freeze="True"/>
     <SolidColorBrush x:Key="ListItem.Hover.BorderBrush"            Color="#FFCCF0FF" po:Freeze="True"/>
     <SolidColorBrush x:Key="ListItem.Selected.BorderBrush"         Color="#FF98DDFB" po:Freeze="True"/>
-    <SolidColorBrush x:Key="ListItem.Selected.InnerBorderBrush"    Color="#80FFFFFF" po:Freeze="True"/>
     <SolidColorBrush x:Key="ListItem.SelectedInactive.BorderBrush" Color="#FFCFCFCF" po:Freeze="True"/>
     <SolidColorBrush x:Key="ListItem.HighlightBrush"               Color="#75FFFFFF" po:Freeze="True"/>
     <SolidColorBrush x:Key="ListItem.Selected.HighlightBrush"      Color="#40FFFFFF" po:Freeze="True"/>
