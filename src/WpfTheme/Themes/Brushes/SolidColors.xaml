@@ -23,6 +23,8 @@
     <Color x:Key="Neutral.SoftColor">               #FFD6D8D9</Color>
     <Color x:Key="Neutral.WhiteColor">              #FFFFFFFF</Color>
     <Color x:Key="Panel.BgColor">                   #FFE2EEFE</Color>
+    <Color x:Key="Panel.HeaderColor">               #FFBEDAFE</Color>
+    <Color x:Key="Panel.HeaderHoverColor">          #FFD3E6FE</Color>
     <Color x:Key="Panel.PaleBlueColor">             #FFEEF5FD</Color>
     <Color x:Key="Shadow.Color">                    #71000000</Color>
     <Color x:Key="Status.Danger.DarkColor">         #FF721C24</Color>
@@ -128,10 +130,7 @@
     <SolidColorBrush x:Key="DataGrid.SelectedInactive.BorderBrush" Color="{StaticResource Neutral.DisabledLightColor}" po:Freeze="True"/>
 
     <!--Expander-->
-    <SolidColorBrush x:Key="Expander.Header.FgBrush"              Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Expander.Header.BorderBrush"          Color="{StaticResource Border.Color}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Expander.Header.BgBrush"              Color="#FFD5E7FE" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Expander.Header.Hover.BgBrush"        Color="#FFDEECFE" po:Freeze="True"/>
+    <!-- The header band of an Expander comes from the shared Panel.Header.* brushes; only the toggle is its own. -->
     <SolidColorBrush x:Key="Expander.Focus.BorderBrush"           Color="{StaticResource Neutral.BlackColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="Expander.Circle.BorderBrush"          Color="{StaticResource Neutral.DarkColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="Expander.Circle.BgBrush"              Color="{StaticResource Neutral.WhiteColor}" po:Freeze="True"/>
@@ -154,10 +153,6 @@
     <SolidColorBrush x:Key="GroupBox.FgBrush"               Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="GroupBox.Highlight.BorderBrush" Color="{StaticResource Neutral.WhiteColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="GroupBox.BorderBrush"           Color="{StaticResource Border.Color}" po:Freeze="True"/>
-
-    <!--HeaderedContentControl-->
-    <SolidColorBrush x:Key="HeaderedControl.BorderBrush" Color="{StaticResource Border.Color}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="HeaderedControl.FgBrush"     Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
 
     <!--ListView, ListBox-->
     <SolidColorBrush x:Key="List.BorderBrush" Color="{StaticResource Border.Color}" po:Freeze="True"/>
@@ -215,12 +210,26 @@
     <SolidColorBrush x:Key="NotificationItem.Dismiss.Pressed.BgBrush"        Color="#40000000" po:Freeze="True"/>
     <SolidColorBrush x:Key="NotificationItem.Dismiss.GlyphBrush"             Color="{StaticResource Text.MutedFgColor}" po:Freeze="True"/>
 
-    <!--Panels-->
-    <SolidColorBrush x:Key="Panel.BgBrush"          Color="{StaticResource Panel.BgColor}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Panel.Header.BgBrush"   Color="#FFB3D6E6" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Panel.BorderBrush"      Color="{StaticResource Border.Color}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Panel.BorderLightBrush" Color="{StaticResource Border.LightColor}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Panel.FgBrush"          Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
+    <!--
+       Panels: the chrome shared by Expander and HeaderedContentControl. Three surfaces form a ramp.
+       Panel.BgBrush is the window the panels sit on, Panel.Surface.BgBrush is the panel body (lighter, so a panel
+       reads as a card on that window), and Panel.Header.BgBrush is the header band (the most saturated of the three,
+       so the panel's top edge stays legible against the window). Panel.Header.TopHighlight.BorderBrush and its Side
+       counterpart are the light top and left edges that, against the darker Panel.Header.BorderBrush below the band,
+       make the header look relieved; the side edge is the softer of the two because it runs beside the frame.
+       Panel.BorderBrush frames the whole control; the header's own separator is a separate key so the two can diverge.
+    -->
+    <SolidColorBrush x:Key="Panel.BgBrush"                          Color="{StaticResource Panel.BgColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Panel.Surface.BgBrush"                  Color="{StaticResource Panel.PaleBlueColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Panel.BorderBrush"                      Color="{StaticResource Border.Color}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Panel.BorderLightBrush"                 Color="{StaticResource Border.LightColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Panel.FgBrush"                          Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Panel.Header.BgBrush"                   Color="{StaticResource Panel.HeaderColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Panel.Header.Hover.BgBrush"             Color="{StaticResource Panel.HeaderHoverColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Panel.Header.FgBrush"                   Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Panel.Header.BorderBrush"               Color="{StaticResource Border.Color}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Panel.Header.TopHighlight.BorderBrush"  Color="{StaticResource Neutral.WhiteColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Panel.Header.SideHighlight.BorderBrush" Color="{StaticResource Panel.BgColor}" po:Freeze="True"/>
 
     <!--ProgressBar-->
     <SolidColorBrush x:Key="ProgressBar.FgBrush"           Color="#FF01D328" po:Freeze="True"/>
