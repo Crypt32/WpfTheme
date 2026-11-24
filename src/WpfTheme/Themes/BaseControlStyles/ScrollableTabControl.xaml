@@ -218,7 +218,7 @@
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Grid.Row="1"
                                 BorderBrush="{StaticResource ClosableTabItem.Selected.BorderBrush}"
-                                Background="{StaticResource ClosableTabControl.BgBrush}">
+                                Background="{StaticResource Panel.Surface.BgBrush}">
                             <ContentPresenter x:Name="PART_SelectedContentHost"
                                               ContentSource="SelectedContent"
                                               Margin="0"/>
