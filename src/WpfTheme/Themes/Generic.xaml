@@ -11,13 +11,13 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:controls="clr-namespace:SysadminsLV.WPF.Controls">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/Wpf.OfficeTheme;component/Themes/BaseControlStyles/TabControl.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/Wpf.OfficeTheme;component/Themes/BaseControlStyles/Badge.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/Wpf.OfficeTheme;component/Themes/BaseControlStyles/ClosableTabItem.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/Wpf.OfficeTheme;component/Themes/BaseControlStyles/LoadingSpinner.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/Wpf.OfficeTheme;component/Themes/BaseControlStyles/NotificationItem.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/Wpf.OfficeTheme;component/Themes/BaseControlStyles/NotificationPanel.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/Wpf.OfficeTheme;component/Themes/BaseControlStyles/RichTextBox.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/SysadminsLV.WPF;component/Themes/BaseControlStyles/TabControl.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/SysadminsLV.WPF;component/Themes/BaseControlStyles/Badge.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/SysadminsLV.WPF;component/Themes/BaseControlStyles/ClosableTabItem.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/SysadminsLV.WPF;component/Themes/BaseControlStyles/LoadingSpinner.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/SysadminsLV.WPF;component/Themes/BaseControlStyles/NotificationItem.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/SysadminsLV.WPF;component/Themes/BaseControlStyles/NotificationPanel.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/SysadminsLV.WPF;component/Themes/BaseControlStyles/RichTextBox.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     <Style TargetType="controls:ClosableTabControl" BasedOn="{StaticResource {x:Type TabControl}}"/>
 </ResourceDictionary>
