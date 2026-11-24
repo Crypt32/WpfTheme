@@ -48,28 +48,24 @@
     <ControlTemplate x:Key="ExpanderUpDownTemplate" TargetType="{x:Type ToggleButton}">
         <Border x:Name="HeaderBorder"
                 Style="{StaticResource Panel.HeaderBandBorder}">
-            <DockPanel>
-                <Rectangle Style="{StaticResource Panel.HeaderTopEdge}"/>
-                <Rectangle Style="{StaticResource Panel.HeaderSideEdge}"/>
-                <DockPanel Margin="{StaticResource Panel.Header.Padding}"
-                           UseLayoutRounding="True">
-                    <Grid x:Name="ExButton" DockPanel.Dock="Right">
-                        <Grid.LayoutTransform>
-                            <TransformGroup>
-                                <TransformGroup.Children>
-                                    <TransformCollection>
-                                        <RotateTransform Angle="0"/>
-                                    </TransformCollection>
-                                </TransformGroup.Children>
-                            </TransformGroup>
-                        </Grid.LayoutTransform>
-                        <Ellipse x:Name="circle"
-                                 Style="{StaticResource ExpanderEllipse}"/>
-                        <Path x:Name="arrow"
-                              Style="{StaticResource ExpanderPath}"/>
-                    </Grid>
-                    <ContentPresenter Style="{StaticResource ExpanderContentPresenter}"/>
-                </DockPanel>
+            <DockPanel Margin="{StaticResource Panel.Header.Padding}"
+                       UseLayoutRounding="True">
+                <Grid x:Name="ExButton" DockPanel.Dock="Right">
+                    <Grid.LayoutTransform>
+                        <TransformGroup>
+                            <TransformGroup.Children>
+                                <TransformCollection>
+                                    <RotateTransform Angle="0"/>
+                                </TransformCollection>
+                            </TransformGroup.Children>
+                        </TransformGroup>
+                    </Grid.LayoutTransform>
+                    <Ellipse x:Name="circle"
+                             Style="{StaticResource ExpanderEllipse}"/>
+                    <Path x:Name="arrow"
+                          Style="{StaticResource ExpanderPath}"/>
+                </Grid>
+                <ContentPresenter Style="{StaticResource ExpanderContentPresenter}"/>
             </DockPanel>
         </Border>
         <ControlTemplate.Triggers>
@@ -116,30 +112,26 @@
     <ControlTemplate x:Key="ExpanderLeftRightTemplate" TargetType="{x:Type ToggleButton}">
         <Border x:Name="HeaderBorder"
                 Style="{StaticResource Panel.HeaderBandBorder}">
-            <DockPanel>
-                <Rectangle Style="{StaticResource Panel.HeaderTopEdge}"/>
-                <Rectangle Style="{StaticResource Panel.HeaderSideEdge}"/>
-                <DockPanel x:Name="Header"
-                           Margin="{StaticResource Panel.Header.Padding}"
-                           UseLayoutRounding="True">
-                    <DockPanel.LayoutTransform>
-                        <TransformGroup>
-                            <TransformGroup.Children>
-                                <TransformCollection>
-                                    <RotateTransform Angle="90"/>
-                                </TransformCollection>
-                            </TransformGroup.Children>
-                        </TransformGroup>
-                    </DockPanel.LayoutTransform>
-                    <Grid x:Name="ExButton"
-                          DockPanel.Dock="Left">
-                        <Ellipse x:Name="circle"
-                                 Style="{StaticResource ExpanderEllipse}"/>
-                        <Path x:Name="arrow"
-                              Style="{StaticResource ExpanderPath}"/>
-                    </Grid>
-                    <ContentPresenter x:Name="Content" Style="{StaticResource ExpanderContentPresenter}"/>
-                </DockPanel>
+            <DockPanel x:Name="Header"
+                       Margin="{StaticResource Panel.Header.Padding}"
+                       UseLayoutRounding="True">
+                <DockPanel.LayoutTransform>
+                    <TransformGroup>
+                        <TransformGroup.Children>
+                            <TransformCollection>
+                                <RotateTransform Angle="90"/>
+                            </TransformCollection>
+                        </TransformGroup.Children>
+                    </TransformGroup>
+                </DockPanel.LayoutTransform>
+                <Grid x:Name="ExButton"
+                      DockPanel.Dock="Left">
+                    <Ellipse x:Name="circle"
+                             Style="{StaticResource ExpanderEllipse}"/>
+                    <Path x:Name="arrow"
+                          Style="{StaticResource ExpanderPath}"/>
+                </Grid>
+                <ContentPresenter x:Name="Content" Style="{StaticResource ExpanderContentPresenter}"/>
             </DockPanel>
         </Border>
         <ControlTemplate.Triggers>

@@ -22,15 +22,11 @@
                         <DockPanel>
                             <Border DockPanel.Dock="Top"
                                     Style="{StaticResource Panel.HeaderBandBorder}">
-                                <DockPanel>
-                                    <Rectangle Style="{StaticResource Panel.HeaderTopEdge}"/>
-                                    <Rectangle Style="{StaticResource Panel.HeaderSideEdge}"/>
-                                    <ContentPresenter ContentSource="Header"
-                                                      Margin="{StaticResource Panel.Header.Padding}"
-                                                      RecognizesAccessKey="True"
-                                                      TextElement.FontWeight="Bold"
-                                                      TextElement.Foreground="{StaticResource Panel.Header.FgBrush}"/>
-                                </DockPanel>
+                                <ContentPresenter ContentSource="Header"
+                                                  Margin="{StaticResource Panel.Header.Padding}"
+                                                  RecognizesAccessKey="True"
+                                                  TextElement.FontWeight="Bold"
+                                                  TextElement.Foreground="{StaticResource Panel.Header.FgBrush}"/>
                             </Border>
                             <!-- Padding insets the content only, and defaults to nothing: see Panel.ContentAreaBorder. -->
                             <Border Background="{TemplateBinding Background}"
