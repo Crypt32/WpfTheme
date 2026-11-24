@@ -4,6 +4,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Border.xaml"/>
         <ResourceDictionary Source="../Brushes/DefaultColorTheme.xaml"/>
+        <ResourceDictionary Source="Panels/PanelChrome.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 
@@ -20,11 +21,6 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-    </Style>
-    <Style x:Key="ExpanderHeaderBorder" TargetType="Border" BasedOn="{StaticResource {x:Type Border}}">
-        <Setter Property="Background" Value="{StaticResource Expander.Header.BgBrush}"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="BorderBrush" Value="{StaticResource Expander.Header.BorderBrush}"/>
     </Style>
     <Style x:Key="ExpanderPath" TargetType="Path">
         <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -47,31 +43,34 @@
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="Margin" Value="4,0"/>
-    </Style>
-    <Style x:Key="ExpanderContentPresenterUpDown" TargetType="ContentPresenter" BasedOn="{StaticResource ExpanderContentPresenter}">
+        <!-- Only the gap to the toggle circle: the band's own padding comes from Panel.Header.Padding below. -->
+        <Setter Property="Margin" Value="0,0,4,0"/>
     </Style>
     <ControlTemplate x:Key="ExpanderUpDownTemplate" TargetType="{x:Type ToggleButton}">
         <Border x:Name="HeaderBorder"
-                Style="{StaticResource ExpanderHeaderBorder}">
-            <DockPanel Margin="2"
-                       UseLayoutRounding="True">
-                <Grid x:Name="ExButton" DockPanel.Dock="Right">
-                    <Grid.LayoutTransform>
-                        <TransformGroup>
-                            <TransformGroup.Children>
-                                <TransformCollection>
-                                    <RotateTransform Angle="0"/>
-                                </TransformCollection>
-                            </TransformGroup.Children>
-                        </TransformGroup>
-                    </Grid.LayoutTransform>
-                    <Ellipse x:Name="circle"
-                             Style="{StaticResource ExpanderEllipse}"/>
-                    <Path x:Name="arrow"
-                          Style="{StaticResource ExpanderPath}"/>
-                </Grid>
-                <ContentPresenter Style="{StaticResource ExpanderContentPresenter}"/>
+                Style="{StaticResource Panel.HeaderBandBorder}">
+            <DockPanel>
+                <Rectangle Style="{StaticResource Panel.HeaderTopEdge}"/>
+                <Rectangle Style="{StaticResource Panel.HeaderSideEdge}"/>
+                <DockPanel Margin="{StaticResource Panel.Header.Padding}"
+                           UseLayoutRounding="True">
+                    <Grid x:Name="ExButton" DockPanel.Dock="Right">
+                        <Grid.LayoutTransform>
+                            <TransformGroup>
+                                <TransformGroup.Children>
+                                    <TransformCollection>
+                                        <RotateTransform Angle="0"/>
+                                    </TransformCollection>
+                                </TransformGroup.Children>
+                            </TransformGroup>
+                        </Grid.LayoutTransform>
+                        <Ellipse x:Name="circle"
+                                 Style="{StaticResource ExpanderEllipse}"/>
+                        <Path x:Name="arrow"
+                              Style="{StaticResource ExpanderPath}"/>
+                    </Grid>
+                    <ContentPresenter Style="{StaticResource ExpanderContentPresenter}"/>
+                </DockPanel>
             </DockPanel>
         </Border>
         <ControlTemplate.Triggers>
@@ -100,7 +99,7 @@
                 <Setter Property="Stroke" TargetName="circle" Value="{StaticResource Expander.Circle.Hover.BorderBrush}"/>
                 <Setter Property="Fill" TargetName="circle" Value="{StaticResource Expander.Circle.Hover.BgBrush}"/>
                 <Setter Property="Stroke" TargetName="arrow" Value="{StaticResource Expander.Arrow.Hover.FgBrush}"/>
-                <Setter TargetName="HeaderBorder" Property="Background" Value="{StaticResource Expander.Header.Hover.BgBrush}"/>
+                <Setter TargetName="HeaderBorder" Property="Background" Value="{StaticResource Panel.Header.Hover.BgBrush}"/>
             </Trigger>
             <Trigger Property="IsPressed" Value="True">
                 <Setter Property="Stroke" TargetName="circle" Value="{StaticResource Expander.Circle.Pressed.BorderBrush}"/>
@@ -117,27 +116,31 @@
     </ControlTemplate>
     <ControlTemplate x:Key="ExpanderLeftRightTemplate" TargetType="{x:Type ToggleButton}">
         <Border x:Name="HeaderBorder"
-                Style="{StaticResource ExpanderHeaderBorder}">
-            <DockPanel x:Name="Header"
-                       Margin="2"
-                       UseLayoutRounding="True">
-                <DockPanel.LayoutTransform>
-                    <TransformGroup>
-                        <TransformGroup.Children>
-                            <TransformCollection>
-                                <RotateTransform Angle="90"/>
-                            </TransformCollection>
-                        </TransformGroup.Children>
-                    </TransformGroup>
-                </DockPanel.LayoutTransform>
-                <Grid x:Name="ExButton"
-                      DockPanel.Dock="Left">
-                    <Ellipse x:Name="circle"
-                             Style="{StaticResource ExpanderEllipse}"/>
-                    <Path x:Name="arrow"
-                          Style="{StaticResource ExpanderPath}"/>
-                </Grid>
-                <ContentPresenter x:Name="Content" Style="{StaticResource ExpanderContentPresenter}"/>
+                Style="{StaticResource Panel.HeaderBandBorder}">
+            <DockPanel>
+                <Rectangle Style="{StaticResource Panel.HeaderTopEdge}"/>
+                <Rectangle Style="{StaticResource Panel.HeaderSideEdge}"/>
+                <DockPanel x:Name="Header"
+                           Margin="{StaticResource Panel.Header.Padding}"
+                           UseLayoutRounding="True">
+                    <DockPanel.LayoutTransform>
+                        <TransformGroup>
+                            <TransformGroup.Children>
+                                <TransformCollection>
+                                    <RotateTransform Angle="90"/>
+                                </TransformCollection>
+                            </TransformGroup.Children>
+                        </TransformGroup>
+                    </DockPanel.LayoutTransform>
+                    <Grid x:Name="ExButton"
+                          DockPanel.Dock="Left">
+                        <Ellipse x:Name="circle"
+                                 Style="{StaticResource ExpanderEllipse}"/>
+                        <Path x:Name="arrow"
+                              Style="{StaticResource ExpanderPath}"/>
+                    </Grid>
+                    <ContentPresenter x:Name="Content" Style="{StaticResource ExpanderContentPresenter}"/>
+                </DockPanel>
             </DockPanel>
         </Border>
         <ControlTemplate.Triggers>
@@ -159,7 +162,7 @@
                 <Setter Property="Stroke" TargetName="circle" Value="{StaticResource Expander.Circle.Hover.BorderBrush}"/>
                 <Setter Property="Fill" TargetName="circle" Value="{StaticResource Expander.Circle.Hover.BgBrush}"/>
                 <Setter Property="Stroke" TargetName="arrow" Value="{StaticResource Expander.Arrow.Hover.FgBrush}"/>
-                <Setter TargetName="HeaderBorder" Property="Background" Value="{StaticResource Expander.Header.Hover.BgBrush}"/>
+                <Setter TargetName="HeaderBorder" Property="Background" Value="{StaticResource Panel.Header.Hover.BgBrush}"/>
             </Trigger>
             <Trigger Property="IsPressed" Value="True">
                 <Setter Property="Stroke" TargetName="circle" Value="{StaticResource Expander.Circle.Pressed.BorderBrush}"/>
@@ -176,25 +179,27 @@
     </ControlTemplate>
 
     <Style TargetType="{x:Type Expander}">
-        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource Panel.FgBrush}"/>
+        <Setter Property="Background" Value="{StaticResource Panel.Surface.BgBrush}"/>
         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
         <Setter Property="VerticalContentAlignment" Value="Stretch"/>
-        <Setter Property="BorderBrush" Value="Transparent"/>
-        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Panel.BorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="4"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Expander}">
-                    <Border Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}">
+                    <!-- The frame around the whole control. It paints no fill: Background belongs to the content area. -->
+                    <Border BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            SnapsToDevicePixels="True">
                         <DockPanel>
                             <ToggleButton x:Name="HeaderSite"
                                           DockPanel.Dock="Top"
                                           Content="{TemplateBinding Header}"
                                           ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}"
                                           FontStretch="{TemplateBinding FontStretch}"
-                                          Foreground="{StaticResource Expander.Header.FgBrush}"
+                                          Foreground="{StaticResource Panel.Header.FgBrush}"
                                           FocusVisualStyle="{StaticResource ExpanderHeaderFocusVisual}"
                                           FontStyle="{TemplateBinding FontStyle}"
                                           FontFamily="{TemplateBinding FontFamily}"
@@ -204,34 +209,42 @@
                                           IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
                                           MinWidth="0"
                                           MinHeight="0"
-                                          Padding="{TemplateBinding Padding}"
                                           Template="{StaticResource ExpanderUpDownTemplate}"
                                           VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                            <ContentPresenter x:Name="ExpandSite"
-                                              DockPanel.Dock="Bottom"
-                                              Focusable="False"
-                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                              Margin="{TemplateBinding Padding}"
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                              Visibility="Collapsed"/>
+                            <!-- Padding is the content inset only; the header band is padded by Panel.Header.Padding. -->
+                            <Border x:Name="ExpandArea"
+                                    DockPanel.Dock="Bottom"
+                                    Background="{TemplateBinding Background}"
+                                    Padding="{TemplateBinding Padding}"
+                                    Style="{StaticResource Panel.ContentAreaBorder}"
+                                    Visibility="Collapsed">
+                                <ContentPresenter x:Name="ExpandSite"
+                                                  Focusable="False"
+                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            </Border>
                         </DockPanel>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsExpanded" Value="True">
-                            <Setter Property="Visibility" TargetName="ExpandSite" Value="Visible"/>
+                            <Setter Property="Visibility" TargetName="ExpandArea" Value="Visible"/>
                         </Trigger>
+                        <!-- Each direction also moves the content area's single border to the side facing the header. -->
                         <Trigger Property="ExpandDirection" Value="Right">
-                            <Setter Property="DockPanel.Dock" TargetName="ExpandSite" Value="Right"/>
+                            <Setter Property="DockPanel.Dock" TargetName="ExpandArea" Value="Right"/>
+                            <Setter Property="BorderThickness" TargetName="ExpandArea" Value="1,0,0,0"/>
                             <Setter Property="DockPanel.Dock" TargetName="HeaderSite" Value="Left"/>
                             <Setter Property="Template" TargetName="HeaderSite" Value="{StaticResource ExpanderLeftRightTemplate}"/>
                         </Trigger>
                         <Trigger Property="ExpandDirection" Value="Up">
-                            <Setter Property="DockPanel.Dock" TargetName="ExpandSite" Value="Top"/>
+                            <Setter Property="DockPanel.Dock" TargetName="ExpandArea" Value="Top"/>
+                            <Setter Property="BorderThickness" TargetName="ExpandArea" Value="0,0,0,1"/>
                             <Setter Property="DockPanel.Dock" TargetName="HeaderSite" Value="Bottom"/>
                             <Setter Property="Template" TargetName="HeaderSite" Value="{StaticResource ExpanderUpDownTemplate}"/>
                         </Trigger>
                         <Trigger Property="ExpandDirection" Value="Left">
-                            <Setter Property="DockPanel.Dock" TargetName="ExpandSite" Value="Left"/>
+                            <Setter Property="DockPanel.Dock" TargetName="ExpandArea" Value="Left"/>
+                            <Setter Property="BorderThickness" TargetName="ExpandArea" Value="0,0,1,0"/>
                             <Setter Property="DockPanel.Dock" TargetName="HeaderSite" Value="Right"/>
                             <Setter Property="Template" TargetName="HeaderSite" Value="{StaticResource ExpanderLeftRightTemplate}"/>
                         </Trigger>
