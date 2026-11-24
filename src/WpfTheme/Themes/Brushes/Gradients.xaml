@@ -125,21 +125,6 @@
         <GradientStop Color="{StaticResource Status.Primary.SolidColor}" Offset="1.0"/>
     </RadialGradientBrush>
 
-    <!-- ClosableTabControl -->
-    <LinearGradientBrush x:Key="ClosableTabControl.InnerBorder.Bright.BorderGradient" StartPoint="0,0" EndPoint="1,1" po:Freeze="True">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Offset="0" Color="Transparent"/>
-            <GradientStop Offset="1" Color="#FFC0F9FF"/>
-        </LinearGradientBrush.GradientStops>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="ClosableTabControl.Panel.BgGradient" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Offset="0.98" Color="Transparent"/>
-            <GradientStop Offset="0.99" 
-               Color="{StaticResource Neutral.GrayColor}"/>
-        </LinearGradientBrush.GradientStops>
-    </LinearGradientBrush>
-
     <!-- ClosableTabItem -->
     <LinearGradientBrush x:Key="ClosableTabItem.BgGradient" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
         <LinearGradientBrush.GradientStops>
@@ -147,20 +132,16 @@
             <GradientStop Color="#DFE9F6" Offset="0.3"/>
             <GradientStop Color="#C7D8EE" Offset="0.7"/>
             <GradientStop Color="#B9CADE" Offset="0.98"/>
-            <!-- See the ClosableTabControl.Panel.BgGradient comment. -->
+            <!-- See the ScrollableTabControl.Panel.BgGradient comment. -->
             <GradientStop Color="{StaticResource Neutral.GrayColor}" Offset="0.99"/>
         </LinearGradientBrush.GradientStops>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="ClosableTabItem.BorderGradient" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
-        <GradientStop Color="{StaticResource Border.DisabledColor}" Offset="0"/>
-        <GradientStop Color="{StaticResource Neutral.GrayColor}" Offset="0.8"/>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="ClosableTabItem.Disabled.BgGradient" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
         <LinearGradientBrush.GradientStops>
             <GradientStop Color="{StaticResource Neutral.PaleColor}" Offset="0"/>
             <GradientStop Color="#BBB" Offset="0.98"/>
             <!-- 
-               This is the same trick as with the ClosableTabControl.Panel.BgGradient (see there).
+               This is the same trick as with the ScrollableTabControl.Panel.BgGradient (see there).
             -->
             <GradientStop Color="{StaticResource Neutral.GrayColor}" Offset="0.99"/>
         </LinearGradientBrush.GradientStops>
@@ -297,7 +278,8 @@
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="ScrollableTabControl.Panel.BgGradient" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
         <LinearGradientBrush.GradientStops>
-            <GradientStop Offset="0.98" Color="{StaticResource ClosableTabControl.PanelBgColor}"/>
+            <!-- Tabbed documents sit right under the menu and toolbar tray, which have no border: the strip must be the same color. -->
+            <GradientStop Offset="0.98" Color="{StaticResource Menu.BgColor}"/>
             <GradientStop Offset="0.99" Color="{StaticResource Neutral.GrayColor}"/>
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>

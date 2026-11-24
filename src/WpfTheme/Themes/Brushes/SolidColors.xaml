@@ -8,7 +8,6 @@
     <Color x:Key="Border.InputColor">               #FFABC1DE</Color>
     <Color x:Key="Border.LightColor">               #FFADD1FF</Color>
     <Color x:Key="Border.PressedColor">             #FF839ED8</Color>
-    <Color x:Key="ClosableTabControl.PanelBgColor"> #FFBEDAFE</Color>
     <Color x:Key="Control.BgColor">                 #FFF4F4F4</Color>
     <Color x:Key="Menu.Active.BorderColor">         #FFF4AD56</Color>
     <Color x:Key="Menu.BgColor">                    #FFBFDBFF</Color>
@@ -87,11 +86,11 @@
     <SolidColorBrush x:Key="CheckBox.Inner.Disabled.BorderBrush" Color="{StaticResource Neutral.LineColor}" po:Freeze="True"/>
 
     <!--ClosableTabControl, ClosableTabItem-->
-    <SolidColorBrush x:Key="ClosableTabControl.InnerBorderBrush"         Color="{StaticResource Border.AccentColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ClosableTabItem.FgBrush"                     Color="{StaticResource Text.MutedFgColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ClosableTabItem.Disabled.FgBrush"            Color="{StaticResource Neutral.GrayColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ClosableTabItem.Selected.FgBrush"            Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="ClosableTabItem.Selected.BorderBrush"        Color="{StaticResource Neutral.GrayColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ClosableTabItem.BorderBrush"                 Color="{StaticResource Neutral.GrayColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ClosableTabItem.Selected.BorderBrush"        Color="{StaticResource Border.Color}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ClosableTabItem.CloseButton.FgBrush"         Color="{StaticResource Text.MutedFgColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ClosableTabItem.CloseButton.Hover.FgBrush"   Color="{StaticResource Neutral.WhiteColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ClosableTabItem.CloseButton.Pressed.FgBrush" Color="#EEEEEEEE" po:Freeze="True"/>
