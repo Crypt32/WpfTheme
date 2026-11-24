@@ -4,7 +4,6 @@
     <!--Palette Colors-->
     <Color x:Key="Border.AccentColor">              #FF88B0E4</Color>
     <Color x:Key="Border.Color">                    #FF6592CE</Color>
-    <Color x:Key="Border.DisabledColor">            #FFAAAAAA</Color>
     <Color x:Key="Border.InputColor">               #FFABC1DE</Color>
     <Color x:Key="Border.LightColor">               #FFADD1FF</Color>
     <Color x:Key="Border.PressedColor">             #FF839ED8</Color>
@@ -68,7 +67,7 @@
 
     <!--Button-->
     <SolidColorBrush x:Key="Button.BorderBrush"       Color="{StaticResource Neutral.DimGrayColor}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Button.Disabled.FgBrush"  Color="{StaticResource Border.DisabledColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Button.Disabled.FgBrush"  Color="{StaticResource Neutral.DisabledGrayColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="Button.Focus.BorderBrush" Color="{StaticResource Neutral.BlackColor}" po:Freeze="True"/>
 
     <!--CheckBox, RadioButton-->
