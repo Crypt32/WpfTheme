@@ -9,12 +9,7 @@
         <HeaderedContentControl Header="Headered Content Control" Height="100">
             <TextBox AcceptsReturn="True"/>
         </HeaderedContentControl>
-        <HeaderedContentControl Height="100" Margin="0,10,0,0">
-            <HeaderedContentControl.Header>
-                <TextBlock Text="Headered Content Control bold"
-                           FontWeight="Bold"></TextBlock>
-            </HeaderedContentControl.Header>
-            <TextBox AcceptsReturn="True"/>
+        <HeaderedContentControl Header="Headered Content Control empty" Height="100" Margin="0,10,0,0">
         </HeaderedContentControl>
         <HeaderedContentControl Height="100" Margin="0,10,0,0" IsEnabled="False">
             <HeaderedContentControl.Header>
