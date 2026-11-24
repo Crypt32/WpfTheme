@@ -44,6 +44,11 @@
                                 <ContentPresenter.Resources>
                                     <Style TargetType="{x:Type TextBlock}">
                                         <Setter Property="Foreground" Value="{StaticResource GroupBox.FgBrush}"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsEnabled, RelativeSource={RelativeSource AncestorType={x:Type GroupBox}}}" Value="False">
+                                                <Setter Property="Foreground" Value="{StaticResource TabItem.Disabled.FgBrush}"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
                                     </Style>
                                 </ContentPresenter.Resources>
                             </ContentPresenter>
@@ -53,7 +58,8 @@
                                           Grid.ColumnSpan="2"
                                           Margin="{TemplateBinding Padding}"
                                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
-                        <Border CornerRadius="4"
+                        <Border x:Name="HighlightOuter"
+                                CornerRadius="4"
                                 Grid.Row="1"
                                 Grid.RowSpan="3"
                                 Grid.ColumnSpan="4"
@@ -71,15 +77,25 @@
                                 </MultiBinding>
                             </Border.OpacityMask>
 
-                            <Border BorderThickness="{TemplateBinding BorderThickness}"
+                            <Border x:Name="Frame"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     CornerRadius="3">
-                                <Border BorderThickness="{TemplateBinding BorderThickness}"
+                                <Border x:Name="HighlightInner"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
                                         BorderBrush="{StaticResource GroupBox.Highlight.BorderBrush}"
                                         CornerRadius="2"/>
                             </Border>
                         </Border>
                     </Grid>
+                    <ControlTemplate.Triggers>
+                        <!-- Flat, like the other disabled controls: the highlight bevel goes, the frame turns gray. -->
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Frame" Property="BorderBrush" Value="{StaticResource TabItem.Disabled.BorderBrush}"/>
+                            <Setter TargetName="HighlightOuter" Property="BorderBrush" Value="Transparent"/>
+                            <Setter TargetName="HighlightInner" Property="BorderBrush" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
