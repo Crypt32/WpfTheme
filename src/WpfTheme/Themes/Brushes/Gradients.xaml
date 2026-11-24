@@ -175,17 +175,18 @@
     </LinearGradientBrush>
 
     <!-- DataGrid -->
-    <LinearGradientBrush x:Key="DataGrid.Header.BgGradient" StartPoint="0.5,0.0" EndPoint="0.5,1.0" po:Freeze="True">
-        <GradientStop Color="#FF98BFEB" Offset="1"/>
-        <GradientStop Color="#FFB8D4F2" Offset="0"/>
+    <!-- Column headers (DataGrid and GridView) and the select-all corner share these; the corner is one step darker. -->
+    <LinearGradientBrush x:Key="DataGrid.Header.BgGradient" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
+        <GradientStop Color="#FFF9FCFD" Offset="0"/>
+        <GradientStop Color="#FFD3DBE9" Offset="1"/>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="DataGrid.Header.Hover.BgGradient" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
-        <GradientStop Color="#FFA3CBF7" Offset="1"/>
-        <GradientStop Color="#FFD9E6F9" Offset="0"/>
+        <GradientStop Color="#FFDEE4EB" Offset="0"/>
+        <GradientStop Color="#FFBCC4D0" Offset="1"/>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="DataGrid.Header.Pressed.BgGradient" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
-        <GradientStop Color="#FFA3CBF7" Offset="0"/>
-        <GradientStop Color="#FFD9E6F9" Offset="1"/>
+    <LinearGradientBrush x:Key="DataGrid.Corner.Hover.BgGradient" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
+        <GradientStop Color="#FFCDD5E1" Offset="0"/>
+        <GradientStop Color="#FFA9B3C2" Offset="1"/>
     </LinearGradientBrush>
 
     <!-- Gradient -->
@@ -197,24 +198,6 @@
         <GradientStop Color="#FFED91" Offset="0"/>
         <GradientStop Color="#FED22B" Offset="0.5"/>
         <GradientStop Color="#FCA301" Offset="1"/>
-    </LinearGradientBrush>
-
-    <!-- GridViewColumnHeader -->
-    <LinearGradientBrush x:Key="GridViewColumnHeader.BgGradient" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Color="{StaticResource Neutral.WhiteColor}" Offset="0"/>
-            <GradientStop Color="#C3DCFE" Offset="1"/>
-        </LinearGradientBrush.GradientStops>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="GridViewColumnHeader.Hover.BgGradient" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
-        <GradientStop Color="#DEE1E3" Offset="0"/>
-        <GradientStop Color="#BAC3D0" Offset="1"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="GridViewColumnHeader.Pressed.BgGradient" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Color="#C3DCFE" Offset="0"/>
-            <GradientStop Color="{StaticResource Neutral.WhiteColor}" Offset="1"/>
-        </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
 
     <!-- ListViewItem -->
