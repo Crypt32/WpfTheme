@@ -38,7 +38,7 @@
                         <Border BorderThickness="1,0,1,1"
                                 Grid.Row="1"
                                 BorderBrush="{StaticResource ClosableTabItem.Selected.BorderBrush}"
-                                Background="{StaticResource ClosableTabControl.BgBrush}">
+                                Background="{StaticResource Panel.Surface.BgBrush}">
                             <!-- This is the first/outer Border drawn on the TabPage -->
                             <Border BorderThickness="1" BorderBrush="{StaticResource ClosableTabControl.InnerBorderBrush}" CornerRadius="3" Margin="5">
                                 <!-- 

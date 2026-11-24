@@ -8,7 +8,7 @@
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
         <Setter Property="BorderThickness" Value="1,0,1,1"/>
         <Setter Property="BorderBrush" Value="{StaticResource TabControl.BorderBrush}"/>
-        <Setter Property="Background" Value="{StaticResource TabControl.BgBrush}"/>
+        <Setter Property="Background" Value="{StaticResource Panel.Surface.BgBrush}"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Template">

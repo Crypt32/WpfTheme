@@ -87,11 +87,9 @@
     <SolidColorBrush x:Key="CheckBox.Inner.Disabled.BorderBrush" Color="{StaticResource Neutral.LineColor}" po:Freeze="True"/>
 
     <!--ClosableTabControl, ClosableTabItem-->
-    <SolidColorBrush x:Key="ClosableTabControl.BgBrush"                  Color="{StaticResource Panel.PaleBlueColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ClosableTabControl.InnerBorderBrush"         Color="{StaticResource Border.AccentColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ClosableTabItem.FgBrush"                     Color="{StaticResource Text.MutedFgColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ClosableTabItem.Disabled.FgBrush"            Color="{StaticResource Neutral.GrayColor}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="ClosableTabItem.Hover.FgBrush"               Color="Indigo" po:Freeze="True"/>
     <SolidColorBrush x:Key="ClosableTabItem.Selected.FgBrush"            Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ClosableTabItem.Selected.BorderBrush"        Color="{StaticResource Neutral.GrayColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ClosableTabItem.CloseButton.FgBrush"         Color="{StaticResource Text.MutedFgColor}" po:Freeze="True"/>
@@ -267,7 +265,6 @@
     <SolidColorBrush x:Key="StatusBar.FgBrush"     Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
 
     <!--TabControl, TabItem-->
-    <SolidColorBrush x:Key="TabControl.BgBrush"            Color="{StaticResource Panel.BgColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="TabControl.BorderBrush"        Color="{StaticResource Border.LightColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="TabControl.Header.BorderBrush" Color="{StaticResource Border.Color}" po:Freeze="True"/>
     <SolidColorBrush x:Key="TabItem.FgBrush"               Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
