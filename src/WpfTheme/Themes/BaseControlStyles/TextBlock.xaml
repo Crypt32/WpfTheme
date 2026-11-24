@@ -7,7 +7,8 @@
     <Style TargetType="{x:Type TextBlock}">
         <Style.Triggers>
             <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="OpacityMask" Value="{StaticResource TextBlock.Disabled.OpacityMask}"/>
+                <!-- Gray like every other disabled label, rather than the old translucent mask that only faded the text. -->
+                <Setter Property="Foreground" Value="{StaticResource TabItem.Disabled.FgBrush}"/>
             </Trigger>
         </Style.Triggers>
     </Style>

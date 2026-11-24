@@ -231,6 +231,7 @@
     <SolidColorBrush x:Key="ProgressBar.FgBrush"           Color="#FF01D328" po:Freeze="True"/>
     <SolidColorBrush x:Key="ProgressBar.BorderBrush"       Color="#80FFFFFF" po:Freeze="True"/>
     <SolidColorBrush x:Key="ProgressBar.Animation.BgBrush" Color="#80B5FFA9" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ProgressBar.Disabled.FgBrush"  Color="{StaticResource Neutral.DisabledLightColor}" po:Freeze="True"/>
 
     <!--ResizeGrip-->
     <SolidColorBrush x:Key="ResizeGrip.BgBrush"        Color="#00FFFFFF" po:Freeze="True"/>
@@ -270,9 +271,6 @@
     <SolidColorBrush x:Key="TabItem.Disabled.BgBrush"      Color="{StaticResource Neutral.PaleColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="TabItem.Disabled.BorderBrush"  Color="{StaticResource Neutral.DisabledLightColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="TabItem.Disabled.FgBrush"      Color="{StaticResource Neutral.DimGrayColor}" po:Freeze="True"/>
-
-    <!--TextBlock-->
-    <SolidColorBrush x:Key="TextBlock.Disabled.OpacityMask" Color="#A0FFFFFF" po:Freeze="True"/>
 
     <!--TextBox, PasswordBox, Editable ComboBox-->
     <SolidColorBrush x:Key="PasswordBox.BgBrush"              Color="{StaticResource Neutral.WhiteColor}" po:Freeze="True"/>
