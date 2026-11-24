@@ -9,7 +9,6 @@
         <Setter Property="Background" Value="{StaticResource Panel.Surface.BgBrush}"/>
         <Setter Property="BorderBrush" Value="{StaticResource Panel.BorderBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Padding" Value="4"/>
         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
         <Setter Property="VerticalContentAlignment" Value="Stretch"/>
         <Setter Property="IsTabStop" Value="False"/>
@@ -33,6 +32,7 @@
                                                       TextElement.Foreground="{StaticResource Panel.Header.FgBrush}"/>
                                 </DockPanel>
                             </Border>
+                            <!-- Padding insets the content only, and defaults to nothing: see Panel.ContentAreaBorder. -->
                             <Border Background="{TemplateBinding Background}"
                                     Padding="{TemplateBinding Padding}"
                                     Style="{StaticResource Panel.ContentAreaBorder}">
