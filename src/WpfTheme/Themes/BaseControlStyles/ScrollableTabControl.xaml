@@ -15,7 +15,41 @@
     <Geometry x:Key="ArrowRight" po:Freeze="True">M0,0 L10,5 L0,10Z</Geometry>
     <Geometry x:Key="TabMenuButton" po:Freeze="True">M0,1 H0,5 M7,8 L0,8 0,2 10,2 L10,5 M10,8 L10,10 8,10Z</Geometry>
     
-    <Thickness x:Key="TabPanelPadding">4,0,4,0</Thickness>
+    <!-- Plus sign of fixed proportions (arms 3 units thick in an 11x11 box); scales with the button. -->
+    <Geometry x:Key="TabAddGlyph" po:Freeze="True">M4,0 H7 V4 H11 V7 H7 V11 H4 V7 H0 V4 H4Z</Geometry>
+    <Style x:Key="TabAddButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="Background" Value="{StaticResource ClosableTabItem.BgGradient}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ClosableTabItem.BorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1,1,1,0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="Bd"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="3,3,0,0">
+                        <ContentPresenter HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource ToolBar.Hover.BorderBrush}"/>
+                            <Setter TargetName="Bd" Property="Background" Value="{StaticResource Gradient.Yellow.Hover.Down}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource ToolBar.Pressed.BorderBrush}"/>
+                            <Setter TargetName="Bd" Property="Background" Value="{StaticResource Gradient.Yellow.Pressed.Down}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.4"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Thickness x:Key="TabPanelPadding">0,0,4,0</Thickness>
     <Thickness x:Key="TabPanelScrollControlsPanelMargin">5,0,0,2</Thickness>
     <!-- Glyphs are templates, not Path elements: an element resource can have only one parent, so it cannot be shared by several controls. -->
     <DataTemplate x:Key="TabScrollButtonGlyphTemplate">
@@ -96,27 +130,28 @@
                         <Border x:Name="NewTabButton"
                                 Grid.Row="0"
                                 Grid.Column="0"
-                                MinWidth="25"
                                 Background="{StaticResource ScrollableTabControl.Panel.BgGradient}"
                                 Visibility="Collapsed">
-                            <!-- Same size and bottom margin as the scroll buttons, so the header can grow upwards. -->
-                            <Button Style="{StaticResource ToolBarButtonStyle}"
-                                    Height="{StaticResource ButtonWidthAndHeight}"
-                                    VerticalAlignment="Bottom"
-                                    Margin="0,0,0,2"
-                                    Background="{StaticResource Gradient.Blue.Down}"
-                                    BorderThickness="1"
-                                    BorderBrush="{StaticResource Panel.BorderBrush}"
+                            <!--
+                            Stretches over the header row and leaves the same 4px at the top that inactive
+                            tabs leave for the selected one, so its height always equals an inactive tab's
+                            and it is square.
+                            -->
+                            <Button Style="{StaticResource TabAddButtonStyle}"
+                                    VerticalAlignment="Stretch"
+                                    Margin="0,4,0,0"
+                                    Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
                                     Command="{Binding Path=AddTabCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type c:ClosableTabControl}}}">
-                                <Grid>
-                                    <Path Fill="{StaticResource Panel.FgBrush}"
-                                          Data="M 4,0 L 4,12 8,12 8,0Z"
-                                          SnapsToDevicePixels="True"/>
-                                    <Path Fill="{StaticResource Panel.FgBrush}"
-                                          Data="M 0,4 L 12,4 12,8 0,8Z"
-                                          SnapsToDevicePixels="True">
-                                    </Path>
-                                </Grid>
+                                <!--
+                                The header row is Auto-sized, so the button is measured without a height limit and
+                                a Path would keep its natural size. A Viewbox rescales to whatever it is arranged at.
+                                -->
+                                <Viewbox Stretch="Uniform" Margin="4" UseLayoutRounding="True" SnapsToDevicePixels="True">
+                                    <Path Data="{StaticResource TabAddGlyph}"
+                                          Fill="{StaticResource Panel.FgBrush}"
+                                          SnapsToDevicePixels="True"
+                                          RenderOptions.EdgeMode="Aliased"/>
+                                </Viewbox>
                             </Button>
                         </Border>
                         <!--
