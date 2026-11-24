@@ -169,18 +169,6 @@
         <GradientStop Color="#CCC" Offset="0"/>
         <GradientStop Color="{StaticResource Neutral.GrayColor}" Offset="0.8"/>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="ClosableTabItem.Hover.BgGradient" EndPoint="0.5,1" StartPoint="0.5,0" po:Freeze="True">
-        <GradientStop Color="#FFFFD5A0" Offset="0.3" />
-        <GradientStop Color="#FFFFA335" Offset="0.51" />
-        <GradientStop Color="#FFFFC14A" Offset="0.98" />
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="ClosableTabItem.Hover.BorderGradient" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Offset="0.98" Color="DarkOrange"/>
-            <!-- See the ClosableTabControl.Panel.BgGradient comment. -->
-            <GradientStop Offset="0.99" Color="{StaticResource Neutral.GrayColor}"/>
-        </LinearGradientBrush.GradientStops>
-    </LinearGradientBrush>
     <LinearGradientBrush x:Key="ClosableTabItem.Selected.BgGradient" 
                            StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
         <LinearGradientBrush.GradientStops>
