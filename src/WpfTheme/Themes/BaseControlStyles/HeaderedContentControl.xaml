@@ -16,20 +16,24 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type HeaderedContentControl}">
                     <!-- The frame around the whole control. It paints no fill: Background belongs to the content area. -->
-                    <Border BorderThickness="{TemplateBinding BorderThickness}"
+                    <Border x:Name="Frame"
+                            BorderThickness="{TemplateBinding BorderThickness}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             SnapsToDevicePixels="True">
                         <DockPanel>
-                            <Border DockPanel.Dock="Top"
+                            <Border x:Name="HeaderBand"
+                                    DockPanel.Dock="Top"
                                     Style="{StaticResource Panel.HeaderBandBorder}">
-                                <ContentPresenter ContentSource="Header"
+                                <ContentPresenter x:Name="HeaderSite"
+                                                  ContentSource="Header"
                                                   Margin="{StaticResource Panel.Header.Padding}"
                                                   RecognizesAccessKey="True"
                                                   TextElement.FontWeight="Bold"
                                                   TextElement.Foreground="{StaticResource Panel.Header.FgBrush}"/>
                             </Border>
                             <!-- Padding insets the content only, and defaults to nothing: see Panel.ContentAreaBorder. -->
-                            <Border Background="{TemplateBinding Background}"
+                            <Border x:Name="ContentArea"
+                                    Background="{TemplateBinding Background}"
                                     Padding="{TemplateBinding Padding}"
                                     Style="{StaticResource Panel.ContentAreaBorder}">
                                 <ContentPresenter ContentSource="Content"
@@ -38,6 +42,17 @@
                             </Border>
                         </DockPanel>
                     </Border>
+                    <ControlTemplate.Triggers>
+                        <!-- Flat and gray, like the other disabled panels: no relief, no colored band. -->
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Frame" Property="BorderBrush" Value="{StaticResource TabItem.Disabled.BorderBrush}"/>
+                            <Setter TargetName="HeaderBand" Property="Background" Value="{StaticResource TabItem.Disabled.BgBrush}"/>
+                            <Setter TargetName="HeaderBand" Property="BorderBrush" Value="Transparent"/>
+                            <Setter TargetName="HeaderSite" Property="TextElement.Foreground" Value="{StaticResource TabItem.Disabled.FgBrush}"/>
+                            <Setter TargetName="ContentArea" Property="Background" Value="{StaticResource TabItem.Disabled.BgBrush}"/>
+                            <Setter TargetName="ContentArea" Property="BorderBrush" Value="{StaticResource TabItem.Disabled.BorderBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

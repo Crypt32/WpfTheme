@@ -15,14 +15,17 @@
                 <ControlTemplate TargetType="{x:Type ProgressBar}">
                     <Grid Name="Background" SnapsToDevicePixels="true">
                         <!--sets base background to progressbar control-->
-                        <Border Background="{TemplateBinding Background}"
+                        <Border x:Name="Base"
+                                Background="{TemplateBinding Background}"
                                 CornerRadius="2"/>
                         <!--adds glassy background to unfilled progressbar area-->
-                        <Border Background="{StaticResource ProgressBar.Glass.BgGradient}"
+                        <Border x:Name="TrackGlass"
+                                Background="{StaticResource ProgressBar.Glass.BgGradient}"
                                 Margin="1"
                                 CornerRadius="2"/>
                         <!--a tiny 1pt semi-white border inside outer border to make it more glassy-->
-                        <Border BorderBrush="{StaticResource ProgressBar.BorderBrush}"
+                        <Border x:Name="TrackHighlight"
+                                BorderBrush="{StaticResource ProgressBar.BorderBrush}"
                                 Background="{StaticResource ProgressBar.TopHighlight.BgGradient}"
                                 BorderThickness="1,0,1,1"
                                 Margin="1"/>
@@ -59,7 +62,8 @@
                             </Grid>
                         </Decorator>
                         <!--renders actual border around progressbar-->
-                        <Border BorderThickness="{TemplateBinding BorderThickness}"
+                        <Border x:Name="Frame"
+                                BorderThickness="{TemplateBinding BorderThickness}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 CornerRadius="2"/>
                     </Grid>
@@ -95,6 +99,17 @@
                         </Trigger>
                         <Trigger Property="Validation.HasError" Value="True">
                             <Setter Property="Background" Value="Red"/>
+                        </Trigger>
+                        <!-- Flat and gray: no glass, no shimmer. Last, so it also wins over the IsIndeterminate triggers. -->
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Base" Property="Background" Value="{StaticResource TabItem.Disabled.BgBrush}"/>
+                            <Setter TargetName="TrackGlass" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="TrackHighlight" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="Frame" Property="BorderBrush" Value="{StaticResource TabItem.Disabled.BorderBrush}"/>
+                            <Setter TargetName="Indicator" Property="Background" Value="{StaticResource ProgressBar.Disabled.FgBrush}"/>
+                            <Setter TargetName="Animation" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="Highlight1" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="Highlight2" Property="Visibility" Value="Collapsed"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
