@@ -96,19 +96,16 @@
     <SolidColorBrush x:Key="ComboBox.Hover.BorderBrush"                    Color="{StaticResource Border.Color}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ComboBox.Editable.Hover.BgBrush"               Color="{StaticResource Neutral.WhiteColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ComboBox.Editable.Hover.BorderBrush"           Color="{StaticResource Border.Color}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="ComboBox.Editable.Button.Hover.BorderBrush"    Color="{StaticResource Border.Color}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ComboBox.Glyph.Pressed.FgBrush"                Color="{StaticResource Neutral.BlackColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ComboBox.Pressed.BorderBrush"                  Color="#FF569DE5" po:Freeze="True"/>
     <SolidColorBrush x:Key="ComboBox.Editable.Pressed.BgBrush"             Color="{StaticResource Neutral.WhiteColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ComboBox.Editable.Pressed.BorderBrush"         Color="#FF569DE5" po:Freeze="True"/>
-    <SolidColorBrush x:Key="ComboBox.Editable.Button.Pressed.BorderBrush"  Color="#FF569DE5" po:Freeze="True"/>
     <SolidColorBrush x:Key="ComboBox.Glyph.Disabled.FgBrush"               Color="{StaticResource Neutral.DisabledLightColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ComboBox.Disabled.BgBrush"                     Color="{StaticResource Neutral.PaleColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ComboBox.Disabled.BorderBrush"                 Color="{StaticResource Neutral.LineColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ComboBox.Editable.Disabled.BgBrush"            Color="{StaticResource Neutral.WhiteColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ComboBox.Editable.Disabled.BorderBrush"        Color="{StaticResource Neutral.DisabledLightColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ComboBox.Editable.Button.Disabled.BgBrush"     Color="Transparent" po:Freeze="True"/>
-    <SolidColorBrush x:Key="ComboBox.Editable.Button.Disabled.BorderBrush" Color="Transparent" po:Freeze="True"/>
 
     <!--DataGrid-->
     <SolidColorBrush x:Key="DataGrid.Header.FgBrush"          Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
