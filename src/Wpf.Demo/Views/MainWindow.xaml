@@ -79,6 +79,8 @@
             <TabItem Header="Headered">
                 <uc:HeaderedContentControlUC/>
             </TabItem>
+            <TabItem Header="Disabled" IsEnabled="False"/>
+            <TabItem Header="Empty"/>
         </TabControl>
     </DockPanel>
 </Window>
