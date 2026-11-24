@@ -75,6 +75,14 @@
     <SolidColorBrush x:Key="CheckBox.BorderBrush"       Color="{StaticResource Neutral.GrayColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="CheckBox.Focus.BorderBrush" Color="{StaticResource Neutral.BlackColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="CheckBox.FgBrush"           Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="CheckBox.Glyph.OutlineBrush"        Color="{StaticResource Neutral.WhiteColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="CheckBox.Hover.BgBrush"             Color="{StaticResource Panel.BgColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="CheckBox.Hover.BorderBrush"         Color="{StaticResource Border.Color}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="CheckBox.Pressed.BgBrush"           Color="{StaticResource Status.Primary.SoftColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="CheckBox.Pressed.BorderBrush"       Color="#FF569DE5" po:Freeze="True"/>
+    <SolidColorBrush x:Key="CheckBox.Disabled.BgBrush"          Color="{StaticResource Neutral.PaleColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="CheckBox.Disabled.BorderBrush"      Color="{StaticResource Neutral.DisabledLightColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="CheckBox.Inner.Disabled.BorderBrush" Color="{StaticResource Neutral.LineColor}" po:Freeze="True"/>
 
     <!--ClosableTabControl, ClosableTabItem-->
     <SolidColorBrush x:Key="ClosableTabControl.BgBrush"                  Color="{StaticResource Panel.PaleBlueColor}" po:Freeze="True"/>
