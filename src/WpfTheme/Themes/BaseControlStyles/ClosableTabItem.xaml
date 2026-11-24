@@ -10,7 +10,6 @@
     </ResourceDictionary.MergedDictionaries>
     <converters:BooleanToVisibilityReverse x:Key="BooleanToVisibilityConverter" />
     <Thickness x:Key="TabItemMarginBase">0,4,0,0</Thickness>
-    <Thickness x:Key="TabItemPanelPadding">0,0,0,0</Thickness>
     <Style x:Key="TabItemFocusVisual">
         <Setter Property="Control.Template">
             <Setter.Value>
@@ -63,7 +62,7 @@
                         <!-- The appearance of a TabItem when it's inactive/unselected -->
                         <Trigger Property="IsSelected" Value="False">
                             <Setter Property="Panel.ZIndex" Value="90" />
-                            <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource ClosableTabItem.BorderGradient}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource ClosableTabItem.BorderBrush}" />
                             <Setter Property="Foreground" Value="{StaticResource ClosableTabItem.FgBrush}" />
                             <!-- Except for the selected TabItem, tabs are to appear smaller in height. -->
                             <Setter TargetName="Border" Property="Margin" Value="{StaticResource TabItemMarginBase}"/>
