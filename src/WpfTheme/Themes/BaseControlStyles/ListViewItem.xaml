@@ -9,8 +9,6 @@
             <Setter.Value>
                 <ControlTemplate>
                     <Rectangle StrokeThickness="1"
-                               RadiusX="2"
-                               RadiusY="2"
                                Stroke="{StaticResource ListItem.Focus.BorderBrush}"/>
                 </ControlTemplate>
             </Setter.Value>
@@ -22,7 +20,7 @@
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Margin" Value="0,0,0,1"/>
+        <Setter Property="Margin" Value="0"/>
         <Setter Property="Padding" Value="5,2,5,2"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Template">
@@ -30,25 +28,21 @@
                 <ControlTemplate TargetType="{x:Type ListViewItem}">
                     <Border BorderThickness="{TemplateBinding BorderThickness}"
                             BorderBrush="{TemplateBinding BorderBrush}"
-                            Background="{TemplateBinding Background}"
-                            CornerRadius="2">
-                        <Border Name="InnerBorder"
-                                CornerRadius="1"
-                                BorderThickness="1">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition MaxHeight="11"/>
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
-                                <Rectangle Name="UpperHighlight"
-                                           Visibility="Collapsed"
-                                           Fill="{StaticResource ListItem.HighlightBrush}"/>
-                                <GridViewRowPresenter Grid.Row="0"
-                                                      Grid.RowSpan="2"
-                                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
-                            </Grid>
-                        </Border>
+                            Background="{TemplateBinding Background}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition MaxHeight="11"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Rectangle Name="UpperHighlight"
+                                       Visibility="Collapsed"
+                                       Fill="{StaticResource ListItem.HighlightBrush}"/>
+                            <GridViewRowPresenter Grid.Row="0"
+                                                  Grid.RowSpan="2"
+                                                  Margin="1"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
@@ -59,7 +53,6 @@
                         <Trigger Property="IsSelected" Value="true">
                             <Setter Property="Background" Value="{StaticResource ListViewItem.Selected.BgGradient}"/>
                             <Setter Property="BorderBrush" Value="{StaticResource ListItem.Selected.BorderBrush}"/>
-                            <Setter TargetName="InnerBorder" Property="BorderBrush" Value="{StaticResource ListItem.Selected.InnerBorderBrush}"/>
                             <Setter TargetName="UpperHighlight" Property="Visibility" Value="Visible"/>
                             <Setter TargetName="UpperHighlight" Property="Fill" Value="{StaticResource ListItem.Selected.HighlightBrush}"/>
                         </Trigger>
