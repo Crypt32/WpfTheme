@@ -94,6 +94,37 @@
         <GradientStop Color="#CDCDCD" Offset="1"/>
     </LinearGradientBrush>
 
+    <!-- CheckBox, RadioButton: the inner box (and, for RadioButton, the dot) of the bullet. -->
+    <LinearGradientBrush x:Key="CheckBox.Inner.BgGradient" StartPoint="0,0" EndPoint="1,1" po:Freeze="True">
+        <GradientStop Color="{StaticResource Neutral.SoftColor}" Offset="0.2"/>
+        <GradientStop Color="{StaticResource Neutral.PaleColor}" Offset="0.8"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="CheckBox.Inner.BorderGradient" StartPoint="0,0" EndPoint="1,1" po:Freeze="True">
+        <GradientStop Color="{StaticResource Neutral.DisabledLightColor}" Offset="0.25"/>
+        <GradientStop Color="{StaticResource Neutral.LineColor}" Offset="1.0"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="CheckBox.Inner.Hover.BgGradient" StartPoint="0,0" EndPoint="1,1" po:Freeze="True">
+        <GradientStop Color="{StaticResource Border.LightColor}" Offset="0.2"/>
+        <GradientStop Color="{StaticResource Panel.PaleBlueColor}" Offset="0.8"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="CheckBox.Inner.Hover.BorderGradient" StartPoint="0,0" EndPoint="1,1" po:Freeze="True">
+        <GradientStop Color="{StaticResource Border.AccentColor}" Offset="0.3"/>
+        <GradientStop Color="{StaticResource Border.LightColor}" Offset="1.0"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="CheckBox.Inner.Pressed.BgGradient" StartPoint="0,0" EndPoint="1,1" po:Freeze="True">
+        <GradientStop Color="{StaticResource Border.AccentColor}" Offset="0.2"/>
+        <GradientStop Color="{StaticResource Status.Primary.SoftColor}" Offset="0.8"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="CheckBox.Inner.Pressed.BorderGradient" StartPoint="0,0" EndPoint="1,1" po:Freeze="True">
+        <GradientStop Color="{StaticResource Border.PressedColor}" Offset="0.3"/>
+        <GradientStop Color="{StaticResource Status.Primary.SoftColor}" Offset="1.0"/>
+    </LinearGradientBrush>
+    <RadialGradientBrush x:Key="RadioButton.Dot.BgGradient" Center="0.25,0.25" GradientOrigin="0.25,0.25" RadiusX="0.75" RadiusY="0.75" po:Freeze="True">
+        <GradientStop Color="{StaticResource Panel.BgColor}" Offset="0.1"/>
+        <GradientStop Color="{StaticResource Border.AccentColor}" Offset="0.35"/>
+        <GradientStop Color="{StaticResource Status.Primary.SolidColor}" Offset="1.0"/>
+    </RadialGradientBrush>
+
     <!-- ClosableTabControl -->
     <LinearGradientBrush x:Key="ClosableTabControl.InnerBorder.Bright.BorderGradient" StartPoint="0,0" EndPoint="1,1" po:Freeze="True">
         <LinearGradientBrush.GradientStops>
