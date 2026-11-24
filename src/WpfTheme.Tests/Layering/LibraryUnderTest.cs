@@ -8,7 +8,7 @@ namespace SysadminsLV.WPF.Tests.Layering;
 /// Locates the library assembly and its sources.
 /// </summary>
 static class LibraryUnderTest {
-    public const String AssemblyName = "Wpf.OfficeTheme";
+    public const String AssemblyName = "SysadminsLV.WPF";
     public const String ProjectDirectoryName = "WpfTheme";
 
     public static readonly Assembly Library = Assembly.Load(AssemblyName);
