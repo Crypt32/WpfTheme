@@ -25,6 +25,18 @@
                     </GridView>
                 </ListView.View>
             </ListView>
+            <ListView x:Name="GroupedListView"
+                      Height="150">
+                <ListView.GroupStyle>
+                    <GroupStyle/>
+                </ListView.GroupStyle>
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                        <GridViewColumn Header="Group" DisplayMemberBinding="{Binding Group}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </StackPanel>
     </HeaderedContentControl>
 </UserControl>
