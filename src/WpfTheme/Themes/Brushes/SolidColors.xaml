@@ -214,22 +214,22 @@
        Panels: the chrome shared by Expander and HeaderedContentControl. Three surfaces form a ramp.
        Panel.BgBrush is the window the panels sit on, Panel.Surface.BgBrush is the panel body (lighter, so a panel
        reads as a card on that window), and Panel.Header.BgBrush is the header band (the most saturated of the three,
-       so the panel's top edge stays legible against the window). Panel.Header.TopHighlight.BorderBrush and its Side
-       counterpart are the light top and left edges that, against the darker Panel.Header.BorderBrush below the band,
-       make the header look relieved; the side edge is the softer of the two because it runs beside the frame.
+       so the panel's top edge stays legible against the window). Panel.Header.Highlight.BorderBrush is the light top
+       and left edge of the band which, against the darker Panel.Header.BorderBrush below it, makes the header look
+       relieved. It is the window colour rather than white, because both of those edges run directly beside the
+       control's own frame, and a white hairline against that darker line reads as piping instead of as a lit edge.
        Panel.BorderBrush frames the whole control; the header's own separator is a separate key so the two can diverge.
     -->
-    <SolidColorBrush x:Key="Panel.BgBrush"                          Color="{StaticResource Panel.BgColor}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Panel.Surface.BgBrush"                  Color="{StaticResource Panel.PaleBlueColor}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Panel.BorderBrush"                      Color="{StaticResource Border.Color}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Panel.BorderLightBrush"                 Color="{StaticResource Border.LightColor}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Panel.FgBrush"                          Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Panel.Header.BgBrush"                   Color="{StaticResource Panel.HeaderColor}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Panel.Header.Hover.BgBrush"             Color="{StaticResource Panel.HeaderHoverColor}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Panel.Header.FgBrush"                   Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Panel.Header.BorderBrush"               Color="{StaticResource Border.Color}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Panel.Header.TopHighlight.BorderBrush"  Color="{StaticResource Neutral.WhiteColor}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Panel.Header.SideHighlight.BorderBrush" Color="{StaticResource Panel.BgColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Panel.BgBrush"                      Color="{StaticResource Panel.BgColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Panel.Surface.BgBrush"              Color="{StaticResource Panel.PaleBlueColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Panel.BorderBrush"                  Color="{StaticResource Border.Color}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Panel.BorderLightBrush"             Color="{StaticResource Border.LightColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Panel.FgBrush"                      Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Panel.Header.BgBrush"               Color="{StaticResource Panel.HeaderColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Panel.Header.Hover.BgBrush"         Color="{StaticResource Panel.HeaderHoverColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Panel.Header.FgBrush"               Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Panel.Header.BorderBrush"           Color="{StaticResource Border.Color}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Panel.Header.Highlight.BorderBrush" Color="{StaticResource Panel.BgColor}" po:Freeze="True"/>
 
     <!--ProgressBar-->
     <SolidColorBrush x:Key="ProgressBar.FgBrush"           Color="#FF01D328" po:Freeze="True"/>
