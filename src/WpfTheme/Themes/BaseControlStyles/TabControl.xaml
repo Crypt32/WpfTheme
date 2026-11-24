@@ -17,18 +17,6 @@
                     <DockPanel KeyboardNavigation.TabNavigation="Local"
                                SnapsToDevicePixels="True"
                                ClipToBounds="True">
-                        <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup x:Name="CommonStates">
-                                <VisualState x:Name="Disabled">
-                                    <Storyboard>
-                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
-                                                                      Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)">
-                                            <EasingColorKeyFrame KeyTime="0" Value="{StaticResource Border.DisabledColor}" />
-                                        </ColorAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </VisualState>
-                            </VisualStateGroup>
-                        </VisualStateManager.VisualStateGroups>
                         <TabPanel x:Name="HeaderPanel"
                                   DockPanel.Dock="Top"
                                   Panel.ZIndex ="1" 
@@ -79,6 +67,9 @@
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            <Setter TargetName="ContentPanel" Property="Background" Value="{StaticResource TabItem.Disabled.BgBrush}"/>
+                            <Setter TargetName="ContentPanel" Property="BorderBrush" Value="{StaticResource TabItem.Disabled.BorderBrush}"/>
+                            <Setter TargetName="TabHeaderBorder" Property="BorderBrush" Value="{StaticResource TabItem.Disabled.BorderBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
