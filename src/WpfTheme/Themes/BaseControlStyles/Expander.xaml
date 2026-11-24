@@ -106,6 +106,9 @@
                 <Setter Property="Stroke" TargetName="circle" Value="{StaticResource Expander.Circle.Disabled.BorderBrush}"/>
                 <Setter Property="Fill" TargetName="circle" Value="{StaticResource Expander.Circle.Disabled.BgBrush}"/>
                 <Setter Property="Stroke" TargetName="arrow" Value="{StaticResource Expander.Arrow.Disabled.FgBrush}"/>
+                <!-- Declared after hover, which still fires on a disabled control, so it wins. -->
+                <Setter TargetName="HeaderBorder" Property="Background" Value="{StaticResource TabItem.Disabled.BgBrush}"/>
+                <Setter TargetName="HeaderBorder" Property="BorderBrush" Value="Transparent"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -165,6 +168,9 @@
                 <Setter Property="Stroke" TargetName="circle" Value="{StaticResource Expander.Circle.Disabled.BorderBrush}"/>
                 <Setter Property="Fill" TargetName="circle" Value="{StaticResource Expander.Circle.Disabled.BgBrush}"/>
                 <Setter Property="Stroke" TargetName="arrow" Value="{StaticResource Expander.Arrow.Disabled.FgBrush}"/>
+                <!-- Declared after hover, which still fires on a disabled control, so it wins. -->
+                <Setter TargetName="HeaderBorder" Property="Background" Value="{StaticResource TabItem.Disabled.BgBrush}"/>
+                <Setter TargetName="HeaderBorder" Property="BorderBrush" Value="Transparent"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -282,7 +288,11 @@
                             <Setter Property="HorizontalAlignment" TargetName="FrameBorder" Value="Right"/>
                         </MultiTrigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            <!-- The header's ToggleButton sets its own Foreground, so the control's never reaches it. -->
+                            <Setter TargetName="HeaderSite" Property="Foreground" Value="{StaticResource TabItem.Disabled.FgBrush}"/>
+                            <Setter TargetName="FrameBorder" Property="BorderBrush" Value="{StaticResource TabItem.Disabled.BorderBrush}"/>
+                            <Setter TargetName="ExpandArea" Property="Background" Value="{StaticResource TabItem.Disabled.BgBrush}"/>
+                            <Setter TargetName="ExpandArea" Property="BorderBrush" Value="{StaticResource TabItem.Disabled.BorderBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
