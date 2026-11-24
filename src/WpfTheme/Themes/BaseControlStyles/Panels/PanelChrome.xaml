@@ -45,6 +45,12 @@
        The content area. Background is deliberately not set here: every template template-binds it to the control's own
        Background, so that setting Background on a panel means "fill the content area" and nothing else. The border is
        the single edge facing the header band, which the ExpandDirection triggers of the Expander move to another side.
+       Padding is not defaulted either, by the same division: the theme pads the header band because the band is chrome
+       it draws itself and nobody else can inset it, while the content area is the consumer's canvas. A panel cannot
+       know whether it has been handed a ListView, DataGrid or TreeView, which has to bleed to the frame, or a stack of
+       text boxes, which needs air, so an inset there would be a guess that every full-bleed host has to take back out.
+       Content that wants air asks for it with a Margin, or by setting Padding on the panel; content that wants none
+       gets none. The templates still template-bind Padding, so setting it on a panel works as it always did.
     -->
     <Style x:Key="Panel.ContentAreaBorder" TargetType="Border" BasedOn="{StaticResource {x:Type Border}}">
         <Setter Property="BorderBrush" Value="{StaticResource Panel.Header.BorderBrush}"/>
