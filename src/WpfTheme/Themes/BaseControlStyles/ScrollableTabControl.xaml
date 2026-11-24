@@ -92,13 +92,25 @@
         <Setter Property="BorderBrush" Value="{StaticResource TabScrollButton.BorderBrush}"/>
         <Setter Property="Background" Value="{StaticResource Gradient.Blue.Down}"/>
         <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsMouseOver" Value="True"/>
+                    <Condition Property="IsEnabled" Value="True"/>
+                </MultiTrigger.Conditions>
                 <Setter Property="BorderBrush" Value="{StaticResource ToolBar.Hover.BorderBrush}"/>
                 <Setter Property="Background" Value="{StaticResource Gradient.Yellow.Hover.Down}"/>
-            </Trigger>
-            <Trigger Property="IsPressed" Value="True">
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsPressed" Value="True"/>
+                    <Condition Property="IsEnabled" Value="True"/>
+                </MultiTrigger.Conditions>
                 <Setter Property="BorderBrush" Value="{StaticResource ToolBar.Pressed.BorderBrush}"/>
                 <Setter Property="Background" Value="{StaticResource Gradient.Yellow.Pressed.Down}"/>
+            </MultiTrigger>
+            <!-- Same dimming as the scroll buttons, which are disabled when there is nothing to scroll. -->
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.4"/>
             </Trigger>
         </Style.Triggers>
     </Style>
