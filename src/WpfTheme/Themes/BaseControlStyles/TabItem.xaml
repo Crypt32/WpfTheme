@@ -27,7 +27,7 @@
                                                 <Setter Property="FontWeight" Value="Bold" />
                                             </DataTrigger>
                                             <DataTrigger Binding="{Binding IsEnabled, RelativeSource={RelativeSource AncestorType={x:Type TabItem}}}" Value="false">
-                                                <Setter Property="Foreground" Value="{StaticResource TabItem.Disabled.FgBrush}" />
+                                                <Setter Property="Foreground" Value="{StaticResource Disabled.FgBrush}" />
                                             </DataTrigger>
                                         </Style.Triggers>
                                     </Style>
@@ -61,8 +61,8 @@
                             <Setter Property="Background" TargetName="Border" Value="{StaticResource Gradient.Yellow.Hover.Down}"/>
                         </MultiTrigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="Border" Property="Background" Value="{StaticResource TabItem.Disabled.BgBrush}"/>
-                            <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource TabItem.Disabled.BorderBrush}"/>
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Disabled.BgBrush}"/>
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource Disabled.BorderBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

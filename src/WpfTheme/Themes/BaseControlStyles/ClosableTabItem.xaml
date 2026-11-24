@@ -81,11 +81,11 @@
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Panel.ZIndex" Value="80" />
                             <Setter TargetName="Border" Property="BorderBrush"
-                                Value="{StaticResource TabItem.Disabled.BorderBrush}" />
+                                Value="{StaticResource Disabled.BorderBrush}" />
                             <Setter TargetName="Border" Property="Background"
                                 Value="{StaticResource ClosableTabItem.Disabled.BgGradient}" />
                             <Setter Property="Foreground"
-                                Value="{StaticResource TabItem.Disabled.FgBrush}" />
+                                Value="{StaticResource Disabled.FgBrush}" />
                         </Trigger>
                         <!-- The appearance of a TabItem when the mouse hovers over it -->
                         <MultiTrigger>

@@ -46,7 +46,7 @@
                                         <Setter Property="Foreground" Value="{StaticResource GroupBox.FgBrush}"/>
                                         <Style.Triggers>
                                             <DataTrigger Binding="{Binding IsEnabled, RelativeSource={RelativeSource AncestorType={x:Type GroupBox}}}" Value="False">
-                                                <Setter Property="Foreground" Value="{StaticResource TabItem.Disabled.FgBrush}"/>
+                                                <Setter Property="Foreground" Value="{StaticResource Disabled.FgBrush}"/>
                                             </DataTrigger>
                                         </Style.Triggers>
                                     </Style>
@@ -91,7 +91,7 @@
                     <ControlTemplate.Triggers>
                         <!-- Flat, like the other disabled controls: the highlight bevel goes, the frame turns gray. -->
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="Frame" Property="BorderBrush" Value="{StaticResource TabItem.Disabled.BorderBrush}"/>
+                            <Setter TargetName="Frame" Property="BorderBrush" Value="{StaticResource Disabled.BorderBrush}"/>
                             <Setter TargetName="HighlightOuter" Property="BorderBrush" Value="Transparent"/>
                             <Setter TargetName="HighlightInner" Property="BorderBrush" Value="Transparent"/>
                         </Trigger>

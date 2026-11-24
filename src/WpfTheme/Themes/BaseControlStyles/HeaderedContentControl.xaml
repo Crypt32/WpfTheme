@@ -45,12 +45,12 @@
                     <ControlTemplate.Triggers>
                         <!-- Flat and gray, like the other disabled panels: no relief, no colored band. -->
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="Frame" Property="BorderBrush" Value="{StaticResource TabItem.Disabled.BorderBrush}"/>
-                            <Setter TargetName="HeaderBand" Property="Background" Value="{StaticResource TabItem.Disabled.BgBrush}"/>
+                            <Setter TargetName="Frame" Property="BorderBrush" Value="{StaticResource Disabled.BorderBrush}"/>
+                            <Setter TargetName="HeaderBand" Property="Background" Value="{StaticResource Disabled.BgBrush}"/>
                             <Setter TargetName="HeaderBand" Property="BorderBrush" Value="Transparent"/>
-                            <Setter TargetName="HeaderSite" Property="TextElement.Foreground" Value="{StaticResource TabItem.Disabled.FgBrush}"/>
-                            <Setter TargetName="ContentArea" Property="Background" Value="{StaticResource TabItem.Disabled.BgBrush}"/>
-                            <Setter TargetName="ContentArea" Property="BorderBrush" Value="{StaticResource TabItem.Disabled.BorderBrush}"/>
+                            <Setter TargetName="HeaderSite" Property="TextElement.Foreground" Value="{StaticResource Disabled.FgBrush}"/>
+                            <Setter TargetName="ContentArea" Property="Background" Value="{StaticResource Disabled.BgBrush}"/>
+                            <Setter TargetName="ContentArea" Property="BorderBrush" Value="{StaticResource Disabled.BorderBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

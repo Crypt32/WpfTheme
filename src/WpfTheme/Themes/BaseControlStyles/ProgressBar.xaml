@@ -102,10 +102,10 @@
                         </Trigger>
                         <!-- Flat and gray: no glass, no shimmer. Last, so it also wins over the IsIndeterminate triggers. -->
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="Base" Property="Background" Value="{StaticResource TabItem.Disabled.BgBrush}"/>
+                            <Setter TargetName="Base" Property="Background" Value="{StaticResource Disabled.BgBrush}"/>
                             <Setter TargetName="TrackGlass" Property="Visibility" Value="Collapsed"/>
                             <Setter TargetName="TrackHighlight" Property="Visibility" Value="Collapsed"/>
-                            <Setter TargetName="Frame" Property="BorderBrush" Value="{StaticResource TabItem.Disabled.BorderBrush}"/>
+                            <Setter TargetName="Frame" Property="BorderBrush" Value="{StaticResource Disabled.BorderBrush}"/>
                             <Setter TargetName="Indicator" Property="Background" Value="{StaticResource ProgressBar.Disabled.FgBrush}"/>
                             <Setter TargetName="Animation" Property="Visibility" Value="Collapsed"/>
                             <Setter TargetName="Highlight1" Property="Visibility" Value="Collapsed"/>
