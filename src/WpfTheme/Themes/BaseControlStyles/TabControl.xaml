@@ -6,7 +6,6 @@
     
     <Style TargetType="{x:Type TabControl}">
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-        <Setter Property="Padding" Value="4,4,4,4"/>
         <Setter Property="BorderThickness" Value="1,0,1,1"/>
         <Setter Property="BorderBrush" Value="{StaticResource TabControl.BorderBrush}"/>
         <Setter Property="Background" Value="{StaticResource TabControl.BgBrush}"/>
@@ -46,6 +45,12 @@
                             <Border x:Name="TabHeaderBorder"
                                     BorderThickness="0,1,0,0"
                                     BorderBrush="{StaticResource TabControl.Header.BorderBrush}">
+                                <!--
+                                   Padding insets the selected tab's content, and defaults to nothing: a tab page is
+                                   as often a DataGrid or ListView that has to bleed to the frame as it is a stack of
+                                   small controls, and only the content knows which. TabItem.Padding is a different
+                                   thing, the tab label's own inset, and the theme keeps that one because it draws it.
+                                -->
                                 <ContentPresenter x:Name="PART_SelectedContentHost"
                                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                                   Margin="{TemplateBinding Padding}"

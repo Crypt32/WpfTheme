@@ -189,7 +189,6 @@
         -->
         <Setter Property="BorderBrush" Value="{StaticResource Panel.BorderBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Padding" Value="4"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Expander}">
@@ -216,7 +215,7 @@
                                           MinHeight="0"
                                           Template="{StaticResource ExpanderUpDownTemplate}"
                                           VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                            <!-- Padding is the content inset only; the header band is padded by Panel.Header.Padding. -->
+                            <!-- Padding insets the content only, and defaults to nothing: see Panel.ContentAreaBorder. -->
                             <Border x:Name="ExpandArea"
                                     DockPanel.Dock="Bottom"
                                     Background="{TemplateBinding Background}"
