@@ -52,5 +52,27 @@
             <ComboBoxItem>One</ComboBoxItem>
             <ComboBoxItem>One</ComboBoxItem>
         </ComboBox>
+
+        <TextBlock Text="ComboBox grouped (default header, group Name)"/>
+        <ComboBox x:Name="GroupedByName"
+                  DisplayMemberPath="Name">
+            <ComboBox.GroupStyle>
+                <GroupStyle/>
+            </ComboBox.GroupStyle>
+        </ComboBox>
+
+        <TextBlock Text="ComboBox grouped (custom header path: Name.DisplayName)"/>
+        <ComboBox x:Name="GroupedByKind"
+                  DisplayMemberPath="Name">
+            <ComboBox.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name.DisplayName}"/>
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+                </GroupStyle>
+            </ComboBox.GroupStyle>
+        </ComboBox>
     </StackPanel>
 </UserControl>

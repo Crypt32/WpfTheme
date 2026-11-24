@@ -20,5 +20,6 @@ public partial class ListViewUC {
         ListView.Items.Add(new Oid("sha256"));
         ListView2.Items.Add(new Oid("sha1"));
         ListView2.Items.Add(new Oid("sha256"));
+        GroupedListView.ItemsSource = GroupedSampleItem.CreateView(nameof(GroupedSampleItem.Group));
     }
 }
