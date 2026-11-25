@@ -31,8 +31,7 @@ public class BindableRichTextBox : RichTextBox {
         new UIPropertyMetadata(false, OnObserveCaretPropertyChanged));
 
     static void OnObserveCaretPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) {
-        var rtb = (RichTextBox)d;
-        if (rtb != null) {
+        if (d is RichTextBox rtb) {
             if ((Boolean)e.NewValue) {
                 rtb.SelectionChanged += RtbSelectionChanged;
             } else {
@@ -41,7 +40,7 @@ public class BindableRichTextBox : RichTextBox {
         }
     }
     static void RtbSelectionChanged(Object sender, RoutedEventArgs e) {
-        if (!(sender is BindableRichTextBox rtb)) {
+        if (sender is not BindableRichTextBox rtb) {
             return;
         }
 
@@ -72,7 +71,7 @@ public class BindableRichTextBox : RichTextBox {
     }
 
     public static void OnDocumentChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args) {
-        if (!(obj is RichTextBox rtb)) {
+        if (obj is not RichTextBox rtb) {
             return;
         }
         rtb.Document = args.NewValue == null
