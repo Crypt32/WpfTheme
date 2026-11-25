@@ -31,6 +31,7 @@
         <ResourceDictionary Source="BaseControlStyles/RichTextBox.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/ScrollableTabControl.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/ScrollBar.xaml"/>
+        <ResourceDictionary Source="BaseControlStyles/Slider.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/StatusBar.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/TabControl.xaml"/>
         <ResourceDictionary Source="BaseControlStyles/TabItem.xaml"/>
