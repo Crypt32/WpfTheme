@@ -1,4 +1,5 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../Brushes/DefaultColorTheme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
@@ -8,5 +9,28 @@
         <Setter Property="BorderThickness" Value="0,1,0,0"/>
         <Setter Property="BorderBrush" Value="{StaticResource StatusBar.BorderBrush}"/>
         <Setter Property="Background" Value="{StaticResource StatusBar.BgGradient}"/>
+    </Style>
+    <Style x:Key="{x:Static StatusBar.SeparatorStyleKey}" TargetType="{x:Type Separator}">
+        <Setter Property="BorderBrush" Value="{StaticResource StatusBar.Separator.BgBrush}"/>
+        <Setter Property="BorderThickness" Value="1,0,0,0"/>
+        <Setter Property="MinWidth" Value="1"/>
+        <Setter Property="MinHeight" Value="1"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Separator}">
+                    <StackPanel Orientation="Horizontal">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                SnapsToDevicePixels="true"/>
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{StaticResource StatusBar.Separator.Accent.BgBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                SnapsToDevicePixels="true"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 </ResourceDictionary>
