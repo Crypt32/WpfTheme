@@ -258,6 +258,17 @@
     <SolidColorBrush x:Key="ScrollBar.Gripper.Pressed.ShadowBrush"  Color="{StaticResource Border.PressedColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="ScrollBar.Gripper.Disabled.ShadowBrush" Color="#FFB9B9B2" po:Freeze="True"/>
 
+    <!--Slider-->
+    <SolidColorBrush x:Key="Slider.Tick.FgBrush"                Color="{StaticResource Text.MutedFgColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Slider.Track.BgBrush"               Color="{StaticResource Panel.HeaderColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Slider.SelectionRange.BgBrush"      Color="{StaticResource Border.AccentColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Slider.SelectionRange.BorderBrush"  Color="{StaticResource Border.Color}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Slider.Thumb.BorderBrush"           Color="{StaticResource Neutral.GrayColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Slider.Thumb.Highlight.BorderBrush" Color="{StaticResource Neutral.WhiteColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Slider.Thumb.Hover.BorderBrush"     Color="{StaticResource Border.Color}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Slider.Thumb.Pressed.BorderBrush"   Color="{StaticResource Text.MutedFgColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Slider.Thumb.Disabled.BgBrush"      Color="{StaticResource Control.BgColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Slider.Thumb.Disabled.BorderBrush"  Color="{StaticResource Neutral.DisabledLightColor}" po:Freeze="True"/>
     <!--StatusBar-->
     <SolidColorBrush x:Key="StatusBar.BorderBrush" Color="{StaticResource Border.LightColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="StatusBar.FgBrush"     Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
