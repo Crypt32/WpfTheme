@@ -1,5 +1,9 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Brushes/SolidColors.xaml"/>
+        <ResourceDictionary Source="../Brushes/Gradients.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
     <Geometry x:Key="SliderPointedThumbOuterBorderGeometry">M 4.5,-7.5 A 1 1 0 0 0 3.5,-8.5 L -3.5,-8.5 A 1 1 0 0 0 -4.5,-7.5 L -4.5,4.5 L -0.5,8.5 L 0.5,8.5 L 4.5,4.5 Z
     </Geometry>
 
@@ -20,110 +24,6 @@
 
     <Geometry x:Key="SliderThumbDisabledGeometry">M -5,-10.5 L 5,-10.5 L 5,10.5 L -5,10.5 Z
     </Geometry>
-    <LinearGradientBrush x:Key="HorizontalSliderThumbNormalBackground" EndPoint="0,1" StartPoint="0,0">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Color="White" Offset="0"/>
-            <GradientStop Color="#F0EFEF" Offset="0.4"/>
-            <GradientStop Color="#D6D5D5" Offset=".8"/>
-        </LinearGradientBrush.GradientStops>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="HorizontalSliderThumbNormalBackgroundInverted" EndPoint="0,0" StartPoint="0,1">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Color="White" Offset="0"/>
-            <GradientStop Color="#F0EFEF" Offset="0.4"/>
-            <GradientStop Color="#D6D5D5" Offset=".8"/>
-        </LinearGradientBrush.GradientStops>
-    </LinearGradientBrush>
-
-    <LinearGradientBrush x:Key="VerticalSliderThumbNormalBackground" EndPoint="1,0" StartPoint="0,0">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Color="White" Offset="0"/>
-            <GradientStop Color="#F0EFEF" Offset="0.4"/>
-            <GradientStop Color="#D6D5D5" Offset=".8"/>
-        </LinearGradientBrush.GradientStops>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="VerticalSliderThumbNormalBackgroundInverted" EndPoint="0,0" StartPoint="1,0">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Color="White" Offset="0"/>
-            <GradientStop Color="#F0EFEF" Offset="0.4"/>
-            <GradientStop Color="#D6D5D5" Offset=".8"/>
-        </LinearGradientBrush.GradientStops>
-    </LinearGradientBrush>
-
-    <LinearGradientBrush x:Key="HorizontalSliderThumbHoverBackground" EndPoint="0,1" StartPoint="0,0">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Color="white" Offset="0"/>
-            <GradientStop Color="#B8E2F9" Offset="0.5"/>
-            <GradientStop Color="#B0DFF8" Offset="1"/>
-        </LinearGradientBrush.GradientStops>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="HorizontalSliderThumbHoverBackgroundInverted" EndPoint="0,0" StartPoint="0,1">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Color="white" Offset="0"/>
-            <GradientStop Color="#B8E2F9" Offset="0.5"/>
-            <GradientStop Color="#B0DFF8" Offset="1"/>
-        </LinearGradientBrush.GradientStops>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="VerticalSliderThumbHoverBackground" EndPoint="1,0" StartPoint="0,0">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Color="white" Offset="0"/>
-            <GradientStop Color="#B8E2F9" Offset="0.5"/>
-            <GradientStop Color="#B0DFF8" Offset="1"/>
-        </LinearGradientBrush.GradientStops>
-    </LinearGradientBrush>
-
-    <LinearGradientBrush x:Key="VerticalSliderThumbHoverBackgroundInverted" EndPoint="0,0" StartPoint="1,0">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Color="white" Offset="0"/>
-            <GradientStop Color="#B8E2F9" Offset="0.5"/>
-            <GradientStop Color="#B0DFF8" Offset="1"/>
-        </LinearGradientBrush.GradientStops>
-    </LinearGradientBrush>
-
-    <SolidColorBrush x:Key="HorizontalSliderThumbHoverBorder" Color="#3C7FB1"/>
-
-    <LinearGradientBrush x:Key="HorizontalSliderThumbPressedBackground" EndPoint="0,1" StartPoint="0,0">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Color="#B8E4FA" Offset="0.25"/>
-            <GradientStop Color="#5EB4E3" Offset="0.5"/>
-            <GradientStop Color="#4C8BB4" Offset="1"/>
-        </LinearGradientBrush.GradientStops>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="HorizontalSliderThumbPressedBackgroundInverted" EndPoint="0,0" StartPoint="0,1">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Color="#B8E4FA" Offset="0.25"/>
-            <GradientStop Color="#5EB4E3" Offset="0.5"/>
-            <GradientStop Color="#4C8BB4" Offset="1"/>
-        </LinearGradientBrush.GradientStops>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="VerticalSliderThumbPressedBackground"
-                         EndPoint="1,0"
-                         StartPoint="0,0">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Color="#B8E4FA" Offset="0.25"/>
-            <GradientStop Color="#5EB4E3" Offset="0.5"/>
-            <GradientStop Color="#4C8BB4" Offset="1"/>
-        </LinearGradientBrush.GradientStops>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="VerticalSliderThumbPressedBackgroundInverted"
-                         EndPoint="0,0"
-                         StartPoint="1,0">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Color="#B8E4FA" Offset="0.25"/>
-            <GradientStop Color="#5EB4E3" Offset="0.5"/>
-            <GradientStop Color="#4C8BB4" Offset="1"/>
-        </LinearGradientBrush.GradientStops>
-    </LinearGradientBrush>
-    <SolidColorBrush x:Key="HorizontalSliderThumbPressedBorder" Color="#2C628B"/>
-
-
-    <SolidColorBrush x:Key="HorizontalSliderTrackNormalBackground" Color="#FFE7EAEA"/>
-    <LinearGradientBrush x:Key="HorizontalSliderTrackNormalBorder" EndPoint="0,1" StartPoint="0,0">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Color="#FFAEB1AF" Offset="0.1"/>
-            <GradientStop Color="White" Offset=".9"/>
-        </LinearGradientBrush.GradientStops>
-    </LinearGradientBrush>
     <Style x:Key="SliderRepeatButtonStyle" TargetType="{x:Type RepeatButton}">
         <Setter Property="OverridesDefaultStyle" Value="true"/>
         <Setter Property="IsTabStop" Value="false"/>
@@ -150,33 +50,33 @@
                             <TranslateTransform X="5.5" Y="11"/>
                         </Canvas.RenderTransform>
                         <Path x:Name="Background"
-                              Fill="{StaticResource HorizontalSliderThumbNormalBackground}"
+                              Fill="{StaticResource Slider.Thumb.Horizontal.BgGradient}"
                               Data="{StaticResource SliderThumbOuterBorderGeometry}"/>
                         <Path x:Name="InnerBorder"
-                              Stroke="White"
+                              Stroke="{StaticResource Slider.Thumb.Highlight.BorderBrush}"
                               Data="{StaticResource SliderThumbMiddleBorderGeometry}"/>
                         <Path x:Name="OuterBorder"
-                              Stroke="#FF929292"
+                              Stroke="{StaticResource Slider.Thumb.BorderBrush}"
                               Data="{StaticResource SliderThumbOuterBorderGeometry}"/>
                     </Canvas>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource HorizontalSliderThumbHoverBackground}"/>
-                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource HorizontalSliderThumbHoverBorder}"/>
+                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource Slider.Thumb.Hover.Horizontal.BgGradient}"/>
+                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource Slider.Thumb.Hover.BorderBrush}"/>
                         </Trigger>
                         <Trigger Property="Foreground" Value="Blue">
-                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource HorizontalSliderThumbHoverBackground}"/>
-                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource HorizontalSliderThumbHoverBorder}"/>
+                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource Slider.Thumb.Hover.Horizontal.BgGradient}"/>
+                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource Slider.Thumb.Hover.BorderBrush}"/>
                         </Trigger>
                         <Trigger Property="IsDragging" Value="true">
-                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource HorizontalSliderThumbPressedBackground}"/>
-                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource HorizontalSliderThumbPressedBorder}"/>
+                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource Slider.Thumb.Pressed.Horizontal.BgGradient}"/>
+                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource Slider.Thumb.Pressed.BorderBrush}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter TargetName="Background" Property="Fill" Value="#FFF4F4F4"/>
+                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource Slider.Thumb.Disabled.BgBrush}"/>
                             <Setter TargetName="InnerBorder" Property="Stroke" Value="{x:Null}"/>
                             <Setter TargetName="OuterBorder" Property="Data" Value="{StaticResource SliderThumbDisabledGeometry}"/>
-                            <Setter TargetName="OuterBorder" Property="Stroke" Value="#FFAEB1AF"/>
+                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource Slider.Thumb.Disabled.BorderBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -204,35 +104,35 @@
                             </TransformGroup>
                         </Canvas.RenderTransform>
                         <Path x:Name="Background"
-                              Fill="{StaticResource HorizontalSliderThumbNormalBackgroundInverted}"
+                              Fill="{StaticResource Slider.Thumb.Horizontal.Inverted.BgGradient}"
                               Data="{StaticResource SliderPointedThumbOuterBorderGeometry}"/>
                         <Path x:Name="InnerBorder"
-                              Stroke="White"
+                              Stroke="{StaticResource Slider.Thumb.Highlight.BorderBrush}"
                               StrokeThickness="1"
                               Data="{StaticResource SliderPointedThumbMiddleBorderGeometry}"/>
                         <Path x:Name="OuterBorder"
-                              Stroke="#FF929292"
+                              Stroke="{StaticResource Slider.Thumb.BorderBrush}"
                               StrokeThickness="1"
                               Data="{StaticResource SliderPointedThumbOuterBorderGeometry}"/>
                     </Canvas>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource HorizontalSliderThumbHoverBackgroundInverted}"/>
-                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource HorizontalSliderThumbHoverBorder}"/>
+                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource Slider.Thumb.Hover.Horizontal.Inverted.BgGradient}"/>
+                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource Slider.Thumb.Hover.BorderBrush}"/>
                         </Trigger>
                         <Trigger Property="Foreground" Value="Blue">
-                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource HorizontalSliderThumbHoverBackgroundInverted}"/>
-                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource HorizontalSliderThumbHoverBorder}"/>
+                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource Slider.Thumb.Hover.Horizontal.Inverted.BgGradient}"/>
+                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource Slider.Thumb.Hover.BorderBrush}"/>
                         </Trigger>
                         <Trigger Property="IsDragging" Value="true">
-                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource HorizontalSliderThumbPressedBackgroundInverted}"/>
-                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource HorizontalSliderThumbPressedBorder}"/>
+                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource Slider.Thumb.Pressed.Horizontal.Inverted.BgGradient}"/>
+                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource Slider.Thumb.Pressed.BorderBrush}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter TargetName="Background" Property="Fill" Value="#FFF4F4F4"/>
+                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource Slider.Thumb.Disabled.BgBrush}"/>
                             <Setter TargetName="InnerBorder" Property="Stroke" Value="{x:Null}"/>
                             <Setter TargetName="OuterBorder" Property="Data" Value="{StaticResource SliderThumbDisabledGeometry}"/>
-                            <Setter TargetName="OuterBorder" Property="Stroke" Value="#FFAEB1AF"/>
+                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource Slider.Thumb.Disabled.BorderBrush}"/>
                             <Setter TargetName="OuterBorder" Property="Data" Value="{StaticResource SliderPointedThumbDisabledGeometry}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
@@ -254,35 +154,35 @@
                             <TranslateTransform X="5" Y="9"/>
                         </Canvas.RenderTransform>
                         <Path x:Name="Background"
-                              Fill="{StaticResource HorizontalSliderThumbNormalBackground}"
+                              Fill="{StaticResource Slider.Thumb.Horizontal.BgGradient}"
                               Data="{StaticResource SliderPointedThumbOuterBorderGeometry}"/>
                         <Path x:Name="InnerBorder"
-                              Stroke="White"
+                              Stroke="{StaticResource Slider.Thumb.Highlight.BorderBrush}"
                               StrokeThickness="1"
                               Data="{StaticResource SliderPointedThumbMiddleBorderGeometry}"/>
                         <Path x:Name="OuterBorder"
-                              Stroke="#FF929292"
+                              Stroke="{StaticResource Slider.Thumb.BorderBrush}"
                               StrokeThickness="1"
                               Data="{StaticResource SliderPointedThumbOuterBorderGeometry}"/>
                     </Canvas>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource HorizontalSliderThumbHoverBackground}"/>
-                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource HorizontalSliderThumbHoverBorder}"/>
+                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource Slider.Thumb.Hover.Horizontal.BgGradient}"/>
+                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource Slider.Thumb.Hover.BorderBrush}"/>
                         </Trigger>
                         <Trigger Property="Foreground" Value="Blue">
-                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource HorizontalSliderThumbHoverBackground}"/>
-                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource HorizontalSliderThumbHoverBorder}"/>
+                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource Slider.Thumb.Hover.Horizontal.BgGradient}"/>
+                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource Slider.Thumb.Hover.BorderBrush}"/>
                         </Trigger>
                         <Trigger Property="IsDragging" Value="true">
-                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource HorizontalSliderThumbPressedBackground}"/>
-                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource HorizontalSliderThumbPressedBorder}"/>
+                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource Slider.Thumb.Pressed.Horizontal.BgGradient}"/>
+                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource Slider.Thumb.Pressed.BorderBrush}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter TargetName="Background" Property="Fill" Value="#FFF4F4F4"/>
+                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource Slider.Thumb.Disabled.BgBrush}"/>
                             <Setter TargetName="InnerBorder" Property="Stroke" Value="{x:Null}"/>
                             <Setter TargetName="OuterBorder" Property="Data" Value="{StaticResource SliderThumbDisabledGeometry}"/>
-                            <Setter TargetName="OuterBorder" Property="Stroke" Value="#FFAEB1AF"/>
+                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource Slider.Thumb.Disabled.BorderBrush}"/>
                             <Setter TargetName="OuterBorder" Property="Data" Value="{StaticResource SliderPointedThumbDisabledGeometry}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
@@ -290,12 +190,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <LinearGradientBrush x:Key="VerticalSliderTrackNormalBorder" EndPoint="1,0" StartPoint="0,0">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Color="#FFAEB1AF" Offset="0.1"/>
-            <GradientStop Color="White" Offset=".9"/>
-        </LinearGradientBrush.GradientStops>
-    </LinearGradientBrush>
 
 
 
@@ -320,35 +214,35 @@
                             </TransformGroup>
                         </Canvas.RenderTransform>
                         <Path x:Name="Background"
-                              Fill="{StaticResource VerticalSliderThumbNormalBackground}"
+                              Fill="{StaticResource Slider.Thumb.Vertical.BgGradient}"
                               Data="{StaticResource SliderThumbOuterBorderGeometry}"/>
                         <Path x:Name="InnerBorder"
-                              Stroke="White"
+                              Stroke="{StaticResource Slider.Thumb.Highlight.BorderBrush}"
                               StrokeThickness="1"
                               Data="{StaticResource SliderThumbMiddleBorderGeometry}"/>
                         <Path x:Name="OuterBorder"
-                              Stroke="#FF929292"
+                              Stroke="{StaticResource Slider.Thumb.BorderBrush}"
                               StrokeThickness="1"
                               Data="{StaticResource SliderThumbOuterBorderGeometry}"/>
                     </Canvas>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource VerticalSliderThumbHoverBackground}"/>
-                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource HorizontalSliderThumbHoverBorder}"/>
+                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource Slider.Thumb.Hover.Vertical.BgGradient}"/>
+                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource Slider.Thumb.Hover.BorderBrush}"/>
                         </Trigger>
                         <Trigger Property="Foreground" Value="Blue">
-                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource VerticalSliderThumbHoverBackground}"/>
-                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource HorizontalSliderThumbHoverBorder}"/>
+                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource Slider.Thumb.Hover.Vertical.BgGradient}"/>
+                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource Slider.Thumb.Hover.BorderBrush}"/>
                         </Trigger>
                         <Trigger Property="IsDragging" Value="true">
-                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource VerticalSliderThumbPressedBackground}"/>
-                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource HorizontalSliderThumbPressedBorder}"/>
+                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource Slider.Thumb.Pressed.Vertical.BgGradient}"/>
+                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource Slider.Thumb.Pressed.BorderBrush}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter TargetName="Background" Property="Fill" Value="#FFF4F4F4"/>
+                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource Slider.Thumb.Disabled.BgBrush}"/>
                             <Setter TargetName="InnerBorder" Property="Stroke" Value="{x:Null}"/>
                             <Setter TargetName="OuterBorder" Property="Data" Value="{StaticResource SliderThumbDisabledGeometry}"/>
-                            <Setter TargetName="OuterBorder" Property="Stroke" Value="#FFAEB1AF"/>
+                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource Slider.Thumb.Disabled.BorderBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -376,35 +270,35 @@
                             </TransformGroup>
                         </Canvas.RenderTransform>
                         <Path x:Name="Background"
-                              Fill="{StaticResource VerticalSliderThumbNormalBackground}"
+                              Fill="{StaticResource Slider.Thumb.Vertical.BgGradient}"
                               Data="{StaticResource SliderPointedThumbOuterBorderGeometry}"/>
                         <Path x:Name="InnerBorder"
-                              Stroke="White"
+                              Stroke="{StaticResource Slider.Thumb.Highlight.BorderBrush}"
                               StrokeThickness="1"
                               Data="{StaticResource SliderPointedThumbMiddleBorderGeometry}"/>
                         <Path x:Name="OuterBorder"
-                              Stroke="#FF929292"
+                              Stroke="{StaticResource Slider.Thumb.BorderBrush}"
                               StrokeThickness="1"
                               Data="{StaticResource SliderPointedThumbOuterBorderGeometry}"/>
                     </Canvas>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource VerticalSliderThumbHoverBackground}"/>
-                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource HorizontalSliderThumbHoverBorder}"/>
+                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource Slider.Thumb.Hover.Vertical.BgGradient}"/>
+                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource Slider.Thumb.Hover.BorderBrush}"/>
                         </Trigger>
                         <Trigger Property="Foreground" Value="Blue">
-                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource VerticalSliderThumbHoverBackground}"/>
-                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource HorizontalSliderThumbHoverBorder}"/>
+                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource Slider.Thumb.Hover.Vertical.BgGradient}"/>
+                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource Slider.Thumb.Hover.BorderBrush}"/>
                         </Trigger>
                         <Trigger Property="IsDragging" Value="true">
-                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource VerticalSliderThumbPressedBackground}"/>
-                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource HorizontalSliderThumbPressedBorder}"/>
+                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource Slider.Thumb.Pressed.Vertical.BgGradient}"/>
+                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource Slider.Thumb.Pressed.BorderBrush}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter TargetName="Background" Property="Fill" Value="#FFF4F4F4"/>
+                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource Slider.Thumb.Disabled.BgBrush}"/>
                             <Setter TargetName="InnerBorder" Property="Stroke" Value="{x:Null}"/>
                             <Setter TargetName="OuterBorder" Property="Data" Value="{StaticResource SliderPointedThumbDisabledGeometry}"/>
-                            <Setter TargetName="OuterBorder" Property="Stroke" Value="#FFAEB1AF"/>
+                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource Slider.Thumb.Disabled.BorderBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -432,35 +326,35 @@
                             </TransformGroup>
                         </Canvas.RenderTransform>
                         <Path x:Name="Background"
-                              Fill="{StaticResource VerticalSliderThumbNormalBackgroundInverted}"
+                              Fill="{StaticResource Slider.Thumb.Vertical.Inverted.BgGradient}"
                               Data="{StaticResource SliderPointedThumbOuterBorderGeometry}"/>
                         <Path x:Name="InnerBorder"
-                              Stroke="White"
+                              Stroke="{StaticResource Slider.Thumb.Highlight.BorderBrush}"
                               StrokeThickness="1"
                               Data="{StaticResource SliderPointedThumbMiddleBorderGeometry}"/>
                         <Path x:Name="OuterBorder"
-                              Stroke="#FF929292"
+                              Stroke="{StaticResource Slider.Thumb.BorderBrush}"
                               StrokeThickness="1"
                               Data="{StaticResource SliderPointedThumbOuterBorderGeometry}"/>
                     </Canvas>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource VerticalSliderThumbHoverBackgroundInverted}"/>
-                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource HorizontalSliderThumbHoverBorder}"/>
+                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource Slider.Thumb.Hover.Vertical.Inverted.BgGradient}"/>
+                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource Slider.Thumb.Hover.BorderBrush}"/>
                         </Trigger>
                         <Trigger Property="Foreground" Value="Blue">
-                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource VerticalSliderThumbHoverBackgroundInverted}"/>
-                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource HorizontalSliderThumbHoverBorder}"/>
+                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource Slider.Thumb.Hover.Vertical.Inverted.BgGradient}"/>
+                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource Slider.Thumb.Hover.BorderBrush}"/>
                         </Trigger>
                         <Trigger Property="IsDragging" Value="true">
-                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource VerticalSliderThumbPressedBackgroundInverted}"/>
-                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource HorizontalSliderThumbPressedBorder}"/>
+                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource Slider.Thumb.Pressed.Vertical.Inverted.BgGradient}"/>
+                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource Slider.Thumb.Pressed.BorderBrush}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter TargetName="Background" Property="Fill" Value="#FFF4F4F4"/>
+                            <Setter TargetName="Background" Property="Fill" Value="{StaticResource Slider.Thumb.Disabled.BgBrush}"/>
                             <Setter TargetName="InnerBorder" Property="Stroke" Value="{x:Null}"/>
                             <Setter TargetName="OuterBorder" Property="Data" Value="{StaticResource SliderPointedThumbDisabledGeometry}"/>
-                            <Setter TargetName="OuterBorder" Property="Stroke" Value="#FFAEB1AF"/>
+                            <Setter TargetName="OuterBorder" Property="Stroke" Value="{StaticResource Slider.Thumb.Disabled.BorderBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -470,7 +364,7 @@
     <Style x:Key="{x:Type Slider}" TargetType="{x:Type Slider}">
         <Setter Property="Stylus.IsPressAndHoldEnabled" Value="false"/>
         <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="Foreground" Value="#FFC4C4C4"/>
+        <Setter Property="Foreground" Value="{StaticResource Slider.Tick.FgBrush}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Slider}">
@@ -501,18 +395,18 @@
                                     Grid.Row="1"
                                     Margin="5,0"
                                     VerticalAlignment="center"
-                                    BorderBrush="{StaticResource HorizontalSliderTrackNormalBorder}"
+                                    BorderBrush="{StaticResource Slider.Track.Horizontal.BorderGradient}"
                                     BorderThickness="1"
                                     CornerRadius="1"
-                                    Background="{StaticResource HorizontalSliderTrackNormalBackground}"
+                                    Background="{StaticResource Slider.Track.BgBrush}"
                                     Height="4.0">
                                 <Canvas Margin="-6,-1">
                                     <Rectangle x:Name="PART_SelectionRange"
-                                               Fill="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"
+                                               Fill="{StaticResource Slider.SelectionRange.BgBrush}"
                                                Height="4.0"
                                                Visibility="Hidden"
                                                StrokeThickness="1.0"
-                                               Stroke="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}"/>
+                                               Stroke="{StaticResource Slider.SelectionRange.BorderBrush}"/>
                                 </Canvas>
                             </Border>
                             <Track Grid.Row="1" Name="PART_Track">
@@ -590,19 +484,19 @@
                                             Grid.Column="1"
                                             Margin="0,5"
                                             HorizontalAlignment="center"
-                                            BorderBrush="{StaticResource VerticalSliderTrackNormalBorder}"
+                                            BorderBrush="{StaticResource Slider.Track.Vertical.BorderGradient}"
                                             BorderThickness="1"
                                             CornerRadius="1"
-                                            Background="{StaticResource HorizontalSliderTrackNormalBackground}"
+                                            Background="{StaticResource Slider.Track.BgBrush}"
                                             Width="4.0">
 
                                         <Canvas Margin="-1,-6">
                                             <Rectangle x:Name="PART_SelectionRange"
-                                                       Fill="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"
+                                                       Fill="{StaticResource Slider.SelectionRange.BgBrush}"
                                                        Width="4.0"
                                                        Visibility="Hidden"
                                                        StrokeThickness="1.0"
-                                                       Stroke="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}"/>
+                                                       Stroke="{StaticResource Slider.SelectionRange.BorderBrush}"/>
                                         </Canvas>
                                     </Border>
 
