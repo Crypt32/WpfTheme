@@ -1,4 +1,4 @@
-# WpfTheme
+# OfficeBlue WPF theme
 
 A light-blue "Office" style theme and a few helper controls for WPF desktop apps. It is mostly built for my own
 applications, so expect it to follow what they need rather than to be a general-purpose toolkit.
