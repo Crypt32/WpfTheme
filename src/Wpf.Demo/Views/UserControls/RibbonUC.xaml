@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Wpf.Demo.Views.UserControls.RibbonUC"
+<UserControl x:Class="Wpf.Demo.Views.UserControls.RibbonUC"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -17,15 +17,14 @@
         </Ribbon.ApplicationMenu>
         <RibbonTab Header="One">
             <RibbonGroup Header="Clipboard">
-                <RibbonMenuButton LargeImageSource="/Views/Images/paste_16x16.png" Label="Paste" KeyTip="V">
+                <RibbonMenuButton LargeImageSource="/Views/Images/paste_32x32.png" Label="Paste" KeyTip="V">
                     <RibbonMenuItem ImageSource="/Views/Images/paste_16x16.png" Header="Keep Text Only" KeyTip="T"/>
                     <RibbonMenuItem ImageSource="/Views/Images/paste_16x16.png" Header="Paste Special..." KeyTip="S"/>
                 </RibbonMenuButton>
                 <RibbonButton SmallImageSource="/Views/Images/paste_16x16.png" Label="Cut" KeyTip="X" />
                 <RibbonButton SmallImageSource="/Views/Images/paste_16x16.png" Label="Copy" KeyTip="C" />
                 <RibbonButton SmallImageSource="/Views/Images/paste_16x16.png" Label="Format Painter" KeyTip="FP" />
-
-</RibbonGroup>
+            </RibbonGroup>
         </RibbonTab>
         <RibbonTab Header="Two"></RibbonTab>
     </Ribbon>
