@@ -23,6 +23,13 @@
     </Style>
     <Style TargetType="{x:Type c:ClosableTabItem}">
         <!--<Setter Property="FocusVisualStyle" Value="{StaticResource TabItemFocusVisual}"/>-->
+        <!--
+        The TabControl copies these two onto the host of the selected tab's content, so they decide whether
+        the content fills the page. A TabItem gets Stretch from the system default style; ClosableTabItem has
+        its own default style key and so has to say it itself.
+        -->
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type c:ClosableTabItem}">
