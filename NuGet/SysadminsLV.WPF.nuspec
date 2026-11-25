@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>SysadminsLV.WPF</id>
+    <version>$version$</version>
+    <authors>Vadims Podāns</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <repository type="git" url="https://github.com/Crypt32/WpfTheme" />
+    <projectUrl>https://github.com/Crypt32/WpfTheme</projectUrl>
+    <description>This package contains a custom OfficeBlue WPF theme.</description>
+    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <copyright>Copyright © Sysadmins LV 2014-$year$</copyright>
+    <tags>WPF, OfficeBlue, Theme</tags>
+    <dependencies/>
+  </metadata>
+  <files>
+    <file src="..\src\WpfTheme\bin\Release\net472\SysadminsLV.WPF.*" target="lib/net472"/>
+  </files>
+</package>
