@@ -52,6 +52,9 @@
             <TabItem Header="Notifications">
                 <uc:NotificationPanelUC/>
             </TabItem>
+            <TabItem Header="Slider">
+                <uc:SliderUC/>
+            </TabItem>
             <TabItem Header="Disabled" IsEnabled="False"/>
             <TabItem Header="Empty"/>
         </TabControl>
