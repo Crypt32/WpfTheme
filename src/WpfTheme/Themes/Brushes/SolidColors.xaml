@@ -272,8 +272,8 @@
     <!--StatusBar-->
     <SolidColorBrush x:Key="StatusBar.BorderBrush"              Color="{StaticResource Border.LightColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="StatusBar.FgBrush"                  Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="StatusBar.Separator.BgBrush"        Color="{StaticResource Border.PressedColor}" po:Freeze="True"/>
-    <SolidColorBrush x:Key="StatusBar.Separator.Accent.BgBrush" Color="{StaticResource Neutral.WhiteColor}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="StatusBar.Separator.BgBrush"        Color="{StaticResource Border.Color}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="StatusBar.Separator.Accent.BgBrush" Color="{StaticResource Panel.PaleBlueColor}" po:Freeze="True"/>
 
     <!--TabControl, TabItem-->
     <SolidColorBrush x:Key="TabControl.BorderBrush"        Color="{StaticResource Border.LightColor}" po:Freeze="True"/>
