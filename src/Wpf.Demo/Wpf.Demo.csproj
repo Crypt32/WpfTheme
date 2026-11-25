@@ -19,7 +19,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Resource Include="Views\Images\paste_16x16.png" />
+    <Resource Include="Views\Images\**" />
   </ItemGroup>
 
   <ItemGroup>
