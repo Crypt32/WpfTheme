@@ -11,8 +11,8 @@
         WindowStyle="SingleBorderWindow"
         WindowStartupLocation="CenterScreen"
         Title="MainWindow"
-        Height="600"
-        Width="800">
+        Height="800"
+        Width="1000">
     <Window.DataContext>
         <vm:FormViewModel/>
     </Window.DataContext>
@@ -22,23 +22,8 @@
         <uc:ToolBarUC DockPanel.Dock="Top"/>
         <uc:StatusBarUC DockPanel.Dock="Bottom"/>
         <TabControl>
-            <TabItem Header="Checkbox">
-                <uc:CheckBoxUC/>
-            </TabItem>
-            <TabItem Header="ComboBox">
-                <uc:ComboBoxUC/>
-            </TabItem>
-            <TabItem Header="ListBox">
-                <uc:ListBoxUC/>
-            </TabItem>
-            <TabItem Header="ListView">
-                <uc:ListViewUC/>
-            </TabItem>
-            <TabItem Header="Radio">
-                <uc:RadioUC/>
-            </TabItem>
-            <TabItem Header="TextBox">
-                <uc:TextBoxBaseUC/>
+            <TabItem Header="Basic Controls">
+                <uc:BasicControlsUC/>
             </TabItem>
             <TabItem Header="Badge">
                 <uc:BadgesUC/>
@@ -55,17 +40,8 @@
             <TabItem Header="Expander">
                 <uc:ExpanderUC/>
             </TabItem>
-            <TabItem Header="Button">
-                <uc:ButtonUC/>
-            </TabItem>
-            <TabItem Header="ProgressBar">
-                <uc:ProgressBarUC/>
-            </TabItem>
             <TabItem Header="DataGrid">
                 <uc:DataGridUC/>
-            </TabItem>
-            <TabItem Header="TreeView">
-                <uc:TreeViewUC/>
             </TabItem>
             <TabItem Header="ScrollBar">
                 <uc:ScrollBarUC/>
@@ -75,9 +51,6 @@
             </TabItem>
             <TabItem Header="Notifications">
                 <uc:NotificationPanelUC/>
-            </TabItem>
-            <TabItem Header="Headered">
-                <uc:HeaderedContentControlUC/>
             </TabItem>
             <TabItem Header="Disabled" IsEnabled="False"/>
             <TabItem Header="Empty"/>
