@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -34,7 +34,7 @@ public class MarginSetter {
     }
     
     static void panelLoaded(Object sender, RoutedEventArgs e) {
-        if (!(sender is Panel panel)) { return; }
+        if (sender is not Panel panel) { return; }
         // Go over the children and set margin for them:
         foreach (FrameworkElement fe in panel.Children.OfType<FrameworkElement>()) {
             fe.Margin = GetMargin(panel);
