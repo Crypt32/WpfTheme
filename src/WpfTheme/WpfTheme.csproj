@@ -15,7 +15,11 @@
     <Description>Windows Presentation Framework Helper Library</Description>
     <PackageId>SysadminsLV.WPF</PackageId>
     <AssemblyName>SysadminsLV.WPF</AssemblyName>
-  </PropertyGroup>     
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TF_BUILD)' == 'true'">
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+  </PropertyGroup>
 
   <ItemGroup>
     <Reference Include="PresentationFramework.Aero" />
