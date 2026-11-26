@@ -1,13 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFrameworks>net472;net10.0-windows</TargetFrameworks>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <LangVersion>latest</LangVersion>
     <RootNamespace>SysadminsLV.WPF</RootNamespace>
     <Title>SysadminsLV.Wpf</Title>
-    <Version>2.0.0-preview</Version>
+    <Version>2.0.0-preview.2</Version>
     <Authors>Vadims Podāns</Authors>
     <Copyright>Copyright © Sysadmins LV  2018 - 2026</Copyright>
     <Company>Sysadmins LV</Company>
@@ -21,7 +21,7 @@
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
     <Reference Include="PresentationFramework.Aero" />
   </ItemGroup>
 
