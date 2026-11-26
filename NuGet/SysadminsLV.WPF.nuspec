@@ -16,5 +16,6 @@
   </metadata>
   <files>
     <file src="..\src\WpfTheme\bin\Release\net472\SysadminsLV.WPF.*" target="lib/net472"/>
+    <file src="..\src\WpfTheme\bin\Release\net10.0-windows\SysadminsLV.WPF.*" target="lib/net10.0-windows7.0"/>
   </files>
 </package>
