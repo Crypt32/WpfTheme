@@ -9,6 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Xml.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SysadminsLV.WPF.Controls;
 using SysadminsLV.WPF.Tests.Layering;
 
 namespace SysadminsLV.WPF.Tests.Xaml;
@@ -22,6 +23,9 @@ public sealed class ThemeResourceTests {
     static readonly DependencyProperty _defaultStyleKey = (DependencyProperty)typeof(FrameworkElement)
         .GetField("DefaultStyleKeyProperty", BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy)!
         .GetValue(null)!;
+    // Controls that deliberately use the default style of their base class instead of having a style of their own.
+    // Each of them is checked by ExemptControlsDoNotOverrideDefaultStyleKey.
+    static readonly Type[] ControlsWithInheritedStyle = [typeof(BindableRichTextBox)];
     static readonly Regex _packUri = new(@"^pack://application:,,,/(?<assembly>[^;/]+);component/(?<path>.+)$", RegexOptions.IgnoreCase);
 
     [TestMethod]
@@ -53,6 +57,7 @@ public sealed class ThemeResourceTests {
         Type[] controls = LibraryUnderTest.Library.GetExportedTypes()
             .Where(x => x.Namespace == $"{LayerMap.Root}.Controls")
             .Where(x => !x.IsAbstract && x.IsSubclassOf(typeof(Control)))
+            .Where(x => !ControlsWithInheritedStyle.Contains(x))
             .ToArray();
         Assert.IsNotEmpty(controls, "No custom controls were found; the scan is broken.");
 
@@ -66,6 +71,21 @@ public sealed class ThemeResourceTests {
             }
             if (!styled.Contains(control.Name)) {
                 violations.Add($"{control.Name} has no style with its TargetType in {GenericFileName} (or the files it merges).");
+            }
+        }
+
+        Assert.IsEmpty(violations, String.Join(Environment.NewLine, violations));
+    }
+
+    [TestMethod]
+    public void ExemptControlsDoNotOverrideDefaultStyleKey() {
+        // such a control must get the theme style of its base class; its own key would cut it off from that style
+        List<String> violations = [];
+        foreach (Type control in ControlsWithInheritedStyle) {
+            RuntimeHelpers.RunClassConstructor(control.TypeHandle);
+            Object? key = _defaultStyleKey.GetMetadata(control).DefaultValue;
+            if (Equals(key, control)) {
+                violations.Add($"{control.Name} overrides DefaultStyleKey, but is listed as using the style of its base class.");
             }
         }
 
