@@ -296,6 +296,7 @@
     <SolidColorBrush x:Key="TextBox.BorderBrush"              Color="{StaticResource Border.InputColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="TextBox.Focused.BorderBrush"      Color="{StaticResource Text.FgColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="TextBox.Hover.BorderBrush"        Color="{StaticResource Border.Color}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="TextBox.Caret.Brush"              Color="{StaticResource Neutral.BlackColor}" po:Freeze="True"/>
     <SolidColorBrush x:Key="TextBox.Disabled.BgBrush"         Color="Transparent" po:Freeze="True"/>
     <SolidColorBrush x:Key="TextBox.HasError.BorderBrush"     Color="Red" po:Freeze="True"/>
     <SolidColorBrush x:Key="TextBox.HasError.BorderSoftBrush" Color="#FFFF7F7F" po:Freeze="True"/>
