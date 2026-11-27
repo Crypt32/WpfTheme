@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/Crypt32/WpfTheme</projectUrl>
     <description>This package contains a custom OfficeBlue WPF theme.</description>
     <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
-    <copyright>Copyright © Sysadmins LV 2014-$year$</copyright>
+    <copyright>Copyright © Sysadmins LV 2018-$year$</copyright>
     <tags>WPF, OfficeBlue, Theme</tags>
     <dependencies/>
   </metadata>
