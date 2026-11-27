@@ -16,9 +16,14 @@
                             HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                             VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                             BorderThickness="1"
-                            CornerRadius="4"
+                            CornerRadius="3"
                             Padding="3,0,3,1">
-                        <ContentPresenter RecognizesAccessKey="True" />
+                        <ContentPresenter RecognizesAccessKey="True">
+                            <ContentPresenter.Resources>
+                                <!-- Badge dims itself via Opacity; opt out of the themed TextBlock disabled foreground so badge colors are preserved. -->
+                                <Style TargetType="{x:Type TextBlock}"/>
+                            </ContentPresenter.Resources>
+                        </ContentPresenter>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="false">
