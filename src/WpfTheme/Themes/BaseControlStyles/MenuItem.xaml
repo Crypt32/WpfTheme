@@ -292,6 +292,12 @@
                             </ScrollViewer>
                         </ContentControl>
                     </themes:SystemDropShadowChrome>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="HasDropShadow" Value="True">
+                            <Setter TargetName="Shdw" Property="Margin" Value="0,0,5,5"/>
+                            <Setter TargetName="Shdw" Property="Color" Value="{StaticResource Shadow.Color}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
