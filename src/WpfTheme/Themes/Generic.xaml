@@ -1,0 +1,23 @@
+<!-- Default styles of the custom controls of this library (used through ThemeInfo + DefaultStyleKey).
+     They are needed when an application does not merge OfficeBlue.xaml. An application that merges it gets the same
+     styles from there first (implicit styles win over default styles), so nothing changes for it.
+     Only the styles of the custom controls are default styles here. The standard-control styles that are merged below
+     (TabControl, RichTextBox and the files they depend on) are dependencies: ClosableTabControl and BindableRichTextBox
+     are based on them. They do NOT restyle standard WPF controls; a plain TabControl, Button, TextBox etc. still
+     needs OfficeBlue.xaml.
+     Source paths must be absolute pack URIs: a relative Source in a generic dictionary is resolved against the
+     application, not against this assembly. The assembly name in them must follow AssemblyName of the project. -->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:SysadminsLV.WPF.Controls">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/SysadminsLV.WPF;component/Themes/BaseControlStyles/TabControl.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/SysadminsLV.WPF;component/Themes/BaseControlStyles/Badge.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/SysadminsLV.WPF;component/Themes/BaseControlStyles/ClosableTabItem.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/SysadminsLV.WPF;component/Themes/BaseControlStyles/LoadingSpinner.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/SysadminsLV.WPF;component/Themes/BaseControlStyles/NotificationItem.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/SysadminsLV.WPF;component/Themes/BaseControlStyles/NotificationPanel.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/SysadminsLV.WPF;component/Themes/BaseControlStyles/RichTextBox.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    <Style TargetType="controls:ClosableTabControl" BasedOn="{StaticResource {x:Type TabControl}}"/>
+</ResourceDictionary>

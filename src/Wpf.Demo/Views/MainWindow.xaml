@@ -1,0 +1,62 @@
+<Window x:Class="Wpf.Demo.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:uc="clr-namespace:Wpf.Demo.Views.UserControls"
+        xmlns:vm="clr-namespace:Wpf.Demo.ViewModels"
+        mc:Ignorable="d"
+        Background="{StaticResource Panel.BgBrush}"
+        ResizeMode="CanResizeWithGrip"
+        WindowStyle="SingleBorderWindow"
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow"
+        Height="800"
+        Width="1000">
+    <Window.DataContext>
+        <vm:FormViewModel/>
+    </Window.DataContext>
+    <DockPanel>
+        <uc:RibbonUC DockPanel.Dock="Top"/>
+        <uc:MenuUC DockPanel.Dock="Top"/>
+        <uc:ToolBarUC DockPanel.Dock="Top"/>
+        <uc:StatusBarUC DockPanel.Dock="Bottom"/>
+        <TabControl>
+            <TabItem Header="Basic Controls">
+                <uc:BasicControlsUC/>
+            </TabItem>
+            <TabItem Header="Badge">
+                <uc:BadgesUC/>
+            </TabItem>
+            <TabItem Header="TabControl">
+                <uc:TabControlUC/>
+            </TabItem>
+            <TabItem Header="ClosableTabControl">
+                <uc:ClosableTabControlUC/>
+            </TabItem>
+            <TabItem Header="GridSplitter">
+                <uc:GridUC/>
+            </TabItem>
+            <TabItem Header="Expander">
+                <uc:ExpanderUC/>
+            </TabItem>
+            <TabItem Header="DataGrid">
+                <uc:DataGridUC/>
+            </TabItem>
+            <TabItem Header="ScrollBar">
+                <uc:ScrollBarUC/>
+            </TabItem>
+            <TabItem Header="Loading Spinner">
+                <uc:LoadingSpinnerUC/>
+            </TabItem>
+            <TabItem Header="Notifications">
+                <uc:NotificationPanelUC/>
+            </TabItem>
+            <TabItem Header="Slider">
+                <uc:SliderUC/>
+            </TabItem>
+            <TabItem Header="Disabled" IsEnabled="False"/>
+            <TabItem Header="Empty"/>
+        </TabControl>
+    </DockPanel>
+</Window>

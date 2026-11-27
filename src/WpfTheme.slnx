@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/NuGet/">
+    <File Path="../NuGet/SysadminsLV.WPF.nuspec" />
+  </Folder>
+  <Project Path="Wpf.Demo/Wpf.Demo.csproj" />
+  <Project Path="WpfTheme.Tests/WpfTheme.Tests.csproj" />
+  <Project Path="WpfTheme/WpfTheme.csproj" />
+</Solution>

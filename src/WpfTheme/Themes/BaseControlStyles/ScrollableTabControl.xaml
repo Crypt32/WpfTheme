@@ -1,0 +1,283 @@
+<!--Credits: http://www.blogs.intuidev.com/post/2010/post/2010/01/25/TabControlStyling_PartOne.aspx-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    xmlns:c="clr-namespace:SysadminsLV.WPF.Controls">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Brushes/SolidColors.xaml"/>
+        <ResourceDictionary Source="../Brushes/Gradients.xaml"/>
+        <ResourceDictionary Source="ClosableTabItem.xaml"/>
+        <ResourceDictionary Source="ToolBar.xaml"/>
+        <ResourceDictionary Source="MenuItem.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    <Geometry x:Key="ArrowLeft" po:Freeze="True">M0,5 L10,10 10,0Z</Geometry>
+    <Geometry x:Key="ArrowRight" po:Freeze="True">M0,0 L10,5 L0,10Z</Geometry>
+    <Geometry x:Key="TabMenuButton" po:Freeze="True">M0,1 H0,5 M7,8 L0,8 0,2 10,2 L10,5 M10,8 L10,10 8,10Z</Geometry>
+    
+    <!-- Plus sign of fixed proportions (arms 3 units thick in an 11x11 box); scales with the button. -->
+    <Geometry x:Key="TabAddGlyph" po:Freeze="True">M4,0 H7 V4 H11 V7 H7 V11 H4 V7 H0 V4 H4Z</Geometry>
+    <Style x:Key="TabAddButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="Background" Value="{StaticResource ClosableTabItem.BgGradient}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ClosableTabItem.BorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1,1,1,0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="Bd"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="3,3,0,0">
+                        <ContentPresenter HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource ToolBar.Hover.BorderBrush}"/>
+                            <Setter TargetName="Bd" Property="Background" Value="{StaticResource Gradient.Yellow.Hover.Down}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource ToolBar.Pressed.BorderBrush}"/>
+                            <Setter TargetName="Bd" Property="Background" Value="{StaticResource Gradient.Yellow.Pressed.Down}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.4"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Thickness x:Key="TabPanelPadding">0,0,4,0</Thickness>
+    <Thickness x:Key="TabPanelScrollControlsPanelMargin">5,0,0,2</Thickness>
+    <!-- Glyphs are templates, not Path elements: an element resource can have only one parent, so it cannot be shared by several controls. -->
+    <DataTemplate x:Key="TabScrollButtonGlyphTemplate">
+        <Path Margin="4,3"
+              Data="{Binding}"
+              Stroke="{StaticResource TabScrollButton.FgBrush}"
+              Fill="{StaticResource TabScrollButton.FgBrush}"
+              Stretch="Fill"
+              VerticalAlignment="Center"
+              HorizontalAlignment="Center"/>
+    </DataTemplate>
+    <DataTemplate x:Key="TabMenuButtonGlyphTemplate">
+        <Path Margin="2"
+              Data="{Binding}"
+              Stroke="{StaticResource TabScrollButton.FgBrush}"
+              Fill="{StaticResource ScrollableTabControl.MenuButton.BgGradient}"
+              Stretch="Fill"
+              VerticalAlignment="Center"
+              HorizontalAlignment="Center"/>
+    </DataTemplate>
+    <system:Double x:Key="ButtonWidthAndHeight">20</system:Double>
+    <Style x:Key="TabScrollButtonStyle" TargetType="{x:Type RepeatButton}" BasedOn="{StaticResource ToolBarButtonStyle}">
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="ContentTemplate" Value="{StaticResource TabScrollButtonGlyphTemplate}"/>
+        <Setter Property="Height" Value="{StaticResource ButtonWidthAndHeight}"/>
+        <Setter Property="Width" Value="{StaticResource ButtonWidthAndHeight}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource TabScrollButton.BorderBrush}"/>
+        <Setter Property="Background" Value="{StaticResource Gradient.Blue.Down}"/>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.4"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="TabTopMenuItemStyle" TargetType="MenuItem" BasedOn="{x:Null}">
+        <Setter Property="Height" Value="22"/>
+        <Setter Property="Width" Value="22"/>
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="BorderBrush" Value="{StaticResource TabScrollButton.BorderBrush}"/>
+        <Setter Property="Background" Value="{StaticResource Gradient.Blue.Down}"/>
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsMouseOver" Value="True"/>
+                    <Condition Property="IsEnabled" Value="True"/>
+                </MultiTrigger.Conditions>
+                <Setter Property="BorderBrush" Value="{StaticResource ToolBar.Hover.BorderBrush}"/>
+                <Setter Property="Background" Value="{StaticResource Gradient.Yellow.Hover.Down}"/>
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsPressed" Value="True"/>
+                    <Condition Property="IsEnabled" Value="True"/>
+                </MultiTrigger.Conditions>
+                <Setter Property="BorderBrush" Value="{StaticResource ToolBar.Pressed.BorderBrush}"/>
+                <Setter Property="Background" Value="{StaticResource Gradient.Yellow.Pressed.Down}"/>
+            </MultiTrigger>
+            <!-- Same dimming as the scroll buttons, which are disabled when there is nothing to scroll. -->
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.4"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="TabMenuItemStyle" TargetType="{x:Type MenuItem}" BasedOn="{StaticResource {x:Type MenuItem}}">
+        <Setter Property="IsChecked" Value="{Binding Path=IsSelected}" />
+        <Setter Property="Command" Value="{Binding Path=MenuCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type c:ClosableTabControl}}}"/>
+        <Setter Property="CommandParameter" Value="{Binding DataContext, RelativeSource={RelativeSource Self}}"/>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="FontWeight" Value="Bold"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ScrollableTabControl" TargetType="{x:Type c:ClosableTabControl}">
+        <Setter Property="SnapsToDevicePixels" Value="true"/>
+        <Setter Property="BorderThickness" Value="1,0,1,1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="c:ClosableTabControl">
+                    <Grid KeyboardNavigation.TabNavigation="Local">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border x:Name="NewTabButton"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Background="{StaticResource ScrollableTabControl.Panel.BgGradient}"
+                                Visibility="Collapsed">
+                            <!--
+                            Stretches over the header row and leaves the same 4px at the top that inactive
+                            tabs leave for the selected one, so its height always equals an inactive tab's
+                            and it is square.
+                            -->
+                            <Button Style="{StaticResource TabAddButtonStyle}"
+                                    VerticalAlignment="Stretch"
+                                    Margin="0,4,0,0"
+                                    Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
+                                    Command="{Binding Path=AddTabCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type c:ClosableTabControl}}}">
+                                <!--
+                                The header row is Auto-sized, so the button is measured without a height limit and
+                                a Path would keep its natural size. A Viewbox rescales to whatever it is arranged at.
+                                -->
+                                <Viewbox Stretch="Uniform" Margin="4" UseLayoutRounding="True" SnapsToDevicePixels="True">
+                                    <Path Data="{StaticResource TabAddGlyph}"
+                                          Fill="{StaticResource Panel.FgBrush}"
+                                          SnapsToDevicePixels="True"
+                                          RenderOptions.EdgeMode="Aliased"/>
+                                </Viewbox>
+                            </Button>
+                        </Border>
+                        <!--
+                        In order to still draw the LinearGradient that makes up for the bottom
+                        line of the TabPanel, we need to wrap the ScrollViewer in a Border 
+                        control that will be responsible for drawing the background.
+                        -->
+                        <Border Grid.Row="0"
+                                Grid.Column="1"
+                                Name="TabPanelBorder"
+                                MinHeight="25"
+                                Background="{StaticResource ScrollableTabControl.Panel.BgGradient}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <!-- The TabItems (resp. the TabPanel) will appear here -->
+                                    <ColumnDefinition Width="*"/>
+                                    <!-- The ScrollViewer controls will appear here -->
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <ScrollViewer Grid.Row="0" Grid.RowSpan="2"
+                                              VerticalScrollBarVisibility="Disabled"
+                                              CanContentScroll="True" 
+                                              HorizontalScrollBarVisibility="Hidden"
+                                              IsDeferredScrollingEnabled="False"
+                                              SnapsToDevicePixels="True"
+                                              Name="svTP"
+                                              HorizontalAlignment="Stretch" 
+                                              VerticalAlignment="Stretch">
+                                    <!--
+                                    This is the area in which TabItems (the strips) will be drawn.
+
+                                    Unselected TabItems will apply a right margin of -4px in 
+                                    order to overlay the item to their right. In order to allow 
+                                    the rightmost TabItem to be fully displayed (rather than
+                                    being overlayed with the Button-Panel), we need to apply this
+                                    as the Margin here.
+                                 -->
+                                    <c:ScrollableTabPanel IsItemsHost="True"
+                                                          x:Name="PART_ScrollContentPresenter"
+                                                          Margin="{StaticResource TabPanelPadding}"
+                                                          RightOverflowMargin="4"
+                                                          AnimationTimeSpan="0:0:0.25"
+                                                          LineScrollPixelCount="100"
+                                                          KeyboardNavigation.TabIndex="1"/>
+                                </ScrollViewer>
+                                <StackPanel Grid.Row="1"
+                                            Grid.Column="1"
+                                            MinHeight="20"
+                                            Orientation="Horizontal"
+                                            Margin="{StaticResource TabPanelScrollControlsPanelMargin}">
+                                    <!-- 
+                                 The two RepeatButtons below will actually provide the scroll-
+                                 functionality for the TabItems. Since the ScrollableTabPanel
+                                 does not implements PageLeft/PageRight, LineLeft/LineRight
+                                 are used.
+                              -->
+                                    <RepeatButton x:Name="cmdScrollLeft"
+                                                  Style="{StaticResource TabScrollButtonStyle}"
+                                                  CommandTarget="{Binding ElementName=svTP}"
+                                                  Command="ScrollBar.LineLeftCommand"
+                                                  Content="{StaticResource ArrowLeft}"
+                                                  IsEnabled="{Binding ElementName=PART_ScrollContentPresenter, Path=CanScrollLeft}"/>
+                                    <RepeatButton x:Name="cmdScrollRight"
+                                                  Style="{StaticResource TabScrollButtonStyle}"
+                                                  CommandTarget="{Binding ElementName=svTP}"
+                                                  Command="ScrollBar.LineRightCommand"
+                                                  Content="{StaticResource ArrowRight}"
+                                                  IsEnabled="{Binding ElementName=PART_ScrollContentPresenter, Path=CanScrollRight}"/>
+                                    <!-- 
+                                 This will present another "button" which will open up the Menu
+                                 containing all TabItems, with the selected one being checked.
+                                 Clicking an item here will select the respective TabItem.
+                              -->
+                                    <Menu Background="Transparent">
+                                        <MenuItem ItemContainerStyle="{StaticResource TabMenuItemStyle}"
+                                                  ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type c:ClosableTabControl}}, Path=Items}"
+                                                  DisplayMemberPath="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type c:ClosableTabControl}}, Path=MenuDisplayMemberPath}"
+                                                  Header="{StaticResource TabMenuButton}"
+                                                  HeaderTemplate="{StaticResource TabMenuButtonGlyphTemplate}"
+                                                  Style="{StaticResource TabTopMenuItemStyle}"/>
+                                    </Menu>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+
+                        <!-- 
+                        This is the outer border of the TabControl itself, actually meaning
+                        the Panel that will host a TabItem's content.
+                        The top-border here will not be drawn as, otherwise, the TabPanel
+                        would always show a thin line for the selected Tab (which we want 
+                        to avoid).
+                     -->
+                        <Border Grid.ColumnSpan="2"
+                                Grid.Column="0"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Grid.Row="1"
+                                BorderBrush="{StaticResource ClosableTabItem.Selected.BorderBrush}"
+                                Background="{StaticResource Panel.Surface.BgBrush}">
+                            <ContentPresenter x:Name="PART_SelectedContentHost"
+                                              ContentSource="SelectedContent"
+                                              Margin="0"/>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="ShowNewTabButton" Value="True">
+                            <Setter TargetName="NewTabButton" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

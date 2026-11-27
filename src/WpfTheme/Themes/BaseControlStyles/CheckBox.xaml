@@ -1,0 +1,110 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Brushes/DefaultColorTheme.xaml"/>
+        <ResourceDictionary Source="../NamedStyles/CheckRadioFocusVisual.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="EmptyCheckBoxFocusVisual" TargetType="CheckBox">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle Margin="1"
+                               StrokeThickness="1"
+                               Stroke="{StaticResource CheckBox.Focus.BorderBrush}"
+                               StrokeDashArray="1 2"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- Check mark in the 13x13 coordinates of the original Aero glyph; Stretch keeps it centered in the 16x16 box. -->
+    <Style x:Key="CheckBoxGlyph" TargetType="Path">
+        <Setter Property="Data" Value="M 9,1.833 L 10.667,3.167 L 7,10.667 L 5.333,10.667 L 3.333,8.167 L 3.333,6.833 L 4.833,6.5 L 6,8 Z"/>
+        <Setter Property="Stretch" Value="Uniform"/>
+        <Setter Property="Height" Value="10"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Visibility" Value="Collapsed"/>
+    </Style>
+    <Style TargetType="{x:Type CheckBox}">
+        <Setter Property="Foreground" Value="{StaticResource CheckBox.FgBrush}"/>
+        <Setter Property="Background" Value="{StaticResource CheckBox.BgBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource CheckBox.BorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="FocusVisualStyle" Value="{StaticResource EmptyCheckBoxFocusVisual}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CheckBox}">
+                    <BulletDecorator Background="Transparent" SnapsToDevicePixels="true">
+                        <BulletDecorator.Bullet>
+                            <Grid Width="16" Height="16" Margin="0,1,1,1">
+                                <Border x:Name="box"
+                                        Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="1"/>
+                                <Border x:Name="inner"
+                                        Margin="2"
+                                        Background="{StaticResource CheckBox.Inner.BgGradient}"
+                                        BorderBrush="{StaticResource CheckBox.Inner.BorderGradient}"
+                                        BorderThickness="1"/>
+                                <Rectangle x:Name="indeterminate"
+                                           Margin="5"
+                                           Fill="{TemplateBinding Foreground}"
+                                           Visibility="Collapsed"/>
+                                <Path x:Name="checkOutline"
+                                      Style="{StaticResource CheckBoxGlyph}"
+                                      Stroke="{StaticResource CheckBox.Glyph.OutlineBrush}"
+                                      StrokeThickness="1.5"
+                                      StrokeLineJoin="Round"/>
+                                <Path x:Name="check"
+                                      Style="{StaticResource CheckBoxGlyph}"
+                                      Fill="{TemplateBinding Foreground}"/>
+                            </Grid>
+                        </BulletDecorator.Bullet>
+                        <ContentPresenter Margin="{TemplateBinding Padding}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          RecognizesAccessKey="True"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                    </BulletDecorator>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="HasContent" Value="true">
+                            <Setter Property="FocusVisualStyle" Value="{StaticResource CheckRadioFocusVisual}"/>
+                            <Setter Property="Padding" Value="4,0,0,0"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="check" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="checkOutline" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="{x:Null}">
+                            <Setter TargetName="indeterminate" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="box" Property="Background" Value="{StaticResource CheckBox.Hover.BgBrush}"/>
+                            <Setter TargetName="box" Property="BorderBrush" Value="{StaticResource CheckBox.Hover.BorderBrush}"/>
+                            <Setter TargetName="inner" Property="Background" Value="{StaticResource CheckBox.Inner.Hover.BgGradient}"/>
+                            <Setter TargetName="inner" Property="BorderBrush" Value="{StaticResource CheckBox.Inner.Hover.BorderGradient}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="box" Property="Background" Value="{StaticResource CheckBox.Pressed.BgBrush}"/>
+                            <Setter TargetName="box" Property="BorderBrush" Value="{StaticResource CheckBox.Pressed.BorderBrush}"/>
+                            <Setter TargetName="inner" Property="Background" Value="{StaticResource CheckBox.Inner.Pressed.BgGradient}"/>
+                            <Setter TargetName="inner" Property="BorderBrush" Value="{StaticResource CheckBox.Inner.Pressed.BorderGradient}"/>
+                            <Setter TargetName="check" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="checkOutline" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="check" Property="Opacity" Value="0.7"/>
+                            <Setter TargetName="checkOutline" Property="Opacity" Value="0.7"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            <Setter TargetName="box" Property="Background" Value="{StaticResource CheckBox.Disabled.BgBrush}"/>
+                            <Setter TargetName="box" Property="BorderBrush" Value="{StaticResource CheckBox.Disabled.BorderBrush}"/>
+                            <Setter TargetName="inner" Property="Background" Value="{x:Null}"/>
+                            <Setter TargetName="inner" Property="BorderBrush" Value="{StaticResource CheckBox.Inner.Disabled.BorderBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

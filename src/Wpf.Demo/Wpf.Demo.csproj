@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net472</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>Wpf.Demo</RootNamespace>
+    <PackageId>$(AssemblyName)</PackageId>
+    <Product>SysadminsLV.Wpf</Product>
+    <Version>1.0.0</Version>
+    <Authors>Vadims Podāns</Authors>
+    <Company>Sysadmins LV</Company>
+    <Title>Wpf.Demo</Title>
+    <Description></Description>
+    <Copyright>Copyright © Sysadmins LV  2018 - 2026</Copyright>
+    <LangVersion>latest</LangVersion>
+    <Platforms>AnyCPU;x64;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="Views\Images\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WpfTheme\WpfTheme.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+</Project>

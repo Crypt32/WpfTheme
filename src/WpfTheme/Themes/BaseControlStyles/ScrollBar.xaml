@@ -1,0 +1,400 @@
+ <!--Credits: Microsoft WPF Luna theme https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-3.0/aa972127(v=vs.85)-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Brushes/SolidColors.xaml"/>
+        <ResourceDictionary Source="../Brushes/Gradients.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    <ControlTemplate x:Key="ScrollViewerControlTemplate1" TargetType="{x:Type ScrollViewer}">
+        <Grid x:Name="Grid" Background="{TemplateBinding Background}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Rectangle x:Name="Corner"
+                       Grid.Column="1"
+                       Fill="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"
+                       Grid.Row="1"/>
+            <ScrollContentPresenter x:Name="PART_ScrollContentPresenter"
+                                    CanContentScroll="{TemplateBinding CanContentScroll}"
+                                    CanHorizontallyScroll="False"
+                                    CanVerticallyScroll="False"
+                                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                                    Content="{TemplateBinding Content}"
+                                    Grid.Column="0"
+                                    Margin="{TemplateBinding Padding}"
+                                    Grid.Row="0"/>
+            <ScrollBar x:Name="PART_VerticalScrollBar"
+                       AutomationProperties.AutomationId="VerticalScrollBar"
+                       Cursor="Arrow"
+                       Grid.Column="1"
+                       Maximum="{TemplateBinding ScrollableHeight}"
+                       Minimum="0"
+                       Grid.Row="0"
+                       Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
+                       Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
+                       ViewportSize="{TemplateBinding ViewportHeight}"/>
+            <ScrollBar x:Name="PART_HorizontalScrollBar"
+                       AutomationProperties.AutomationId="HorizontalScrollBar"
+                       Cursor="Arrow"
+                       Grid.Column="0"
+                       Maximum="{TemplateBinding ScrollableWidth}"
+                       Minimum="0"
+                       Orientation="Horizontal"
+                       Grid.Row="1"
+                       Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
+                       Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
+                       ViewportSize="{TemplateBinding ViewportWidth}"/>
+        </Grid>
+    </ControlTemplate>
+    <!-- Scroll bar line (arrow) button. -->
+    <StreamGeometry x:Key="ScrollBarUpArrowGeometry" po:Freeze="True">M0,4.5 L4.5,0 L9,4.5 L7.5,6 L4.5,3 L1.5,6 Z</StreamGeometry>
+    <StreamGeometry x:Key="ScrollBarDownArrowGeometry" po:Freeze="True">M0,3.5 L4.5,8 L9,3.5 L7.5,2 L4.5,5 L1.5,2 Z</StreamGeometry>
+    <StreamGeometry x:Key="ScrollBarLeftArrowGeometry" po:Freeze="True">M4.5,0 L0,4.5 L4.5,9 L6,7.5 L3,4.5 L6,1.5 Z</StreamGeometry>
+    <StreamGeometry x:Key="ScrollBarRightArrowGeometry" po:Freeze="True">M3.5,0 L8,4.5 L3.5,9 L2,7.5 L5,4.5 L2,1.5 Z</StreamGeometry>
+    <Style x:Key="ScrollBarVerticalLineButtonStyle" TargetType="{x:Type RepeatButton}">
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Grid SnapsToDevicePixels="True">
+                        <Rectangle x:Name="Shadow"
+                                   Margin="1,2,0,0"
+                                   RadiusX="3"
+                                   RadiusY="3"
+                                   Stroke="{StaticResource ScrollBar.Shadow.BgGradient}"/>
+                        <Border x:Name="Outer"
+                                Margin="1,0,1,1"
+                                Background="{StaticResource ScrollBar.Button.BgGradient}"
+                                BorderBrush="White"
+                                BorderThickness="1"
+                                CornerRadius="2.5">
+                            <Border x:Name="Inner"
+                                    BorderBrush="{StaticResource ScrollBar.Button.BorderBrush}"
+                                    BorderThickness="1"
+                                    CornerRadius="2">
+                                <Path x:Name="Glyph"
+                                      Width="9"
+                                      Height="8"
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"
+                                      Data="{TemplateBinding Content}"
+                                      Fill="{StaticResource ScrollBar.Glyph.FgBrush}"
+                                      Stretch="None"/>
+                            </Border>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBar.Button.Hover.BgGradient}"/>
+                            <Setter TargetName="Inner" Property="BorderBrush" Value="{StaticResource ScrollBar.Button.Hover.BorderBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBar.Button.Pressed.BgGradient}"/>
+                            <Setter TargetName="Inner" Property="BorderBrush" Value="{StaticResource ScrollBar.Button.Pressed.BorderBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Shadow" Property="Stroke" Value="{StaticResource ScrollBar.Shadow.Disabled.BgGradient}"/>
+                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBar.Button.Disabled.BgGradient}"/>
+                            <Setter TargetName="Inner" Property="BorderBrush" Value="{StaticResource ScrollBar.Button.Disabled.BorderBrush}"/>
+                            <Setter TargetName="Glyph" Property="Fill" Value="{StaticResource ScrollBar.Glyph.Disabled.FgBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ScrollBarHorizontalLineButtonStyle" TargetType="{x:Type RepeatButton}">
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Grid SnapsToDevicePixels="True">
+                        <Rectangle x:Name="Shadow"
+                                   Margin="0,3,0,0"
+                                   RadiusX="3"
+                                   RadiusY="3"
+                                   Stroke="{StaticResource ScrollBar.Shadow.BgGradient}"/>
+                        <Border x:Name="Outer"
+                                Margin="0,1,1,1"
+                                Background="{StaticResource ScrollBar.Button.BgGradient}"
+                                BorderBrush="White"
+                                BorderThickness="1"
+                                CornerRadius="2.5">
+                            <Border x:Name="Inner"
+                                    BorderBrush="{StaticResource ScrollBar.Button.BorderBrush}"
+                                    BorderThickness="1"
+                                    CornerRadius="2">
+                                <Path x:Name="Glyph"
+                                      Width="8"
+                                      Height="9"
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"
+                                      Data="{TemplateBinding Content}"
+                                      Fill="{StaticResource ScrollBar.Glyph.FgBrush}"
+                                      Stretch="None"/>
+                            </Border>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBar.Button.Hover.BgGradient}"/>
+                            <Setter TargetName="Inner" Property="BorderBrush" Value="{StaticResource ScrollBar.Button.Hover.BorderBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBar.Button.Pressed.BgGradient}"/>
+                            <Setter TargetName="Inner" Property="BorderBrush" Value="{StaticResource ScrollBar.Button.Pressed.BorderBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Shadow" Property="Stroke" Value="{StaticResource ScrollBar.Shadow.Disabled.BgGradient}"/>
+                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBar.Button.Disabled.BgGradient}"/>
+                            <Setter TargetName="Inner" Property="BorderBrush" Value="{StaticResource ScrollBar.Button.Disabled.BorderBrush}"/>
+                            <Setter TargetName="Glyph" Property="Fill" Value="{StaticResource ScrollBar.Glyph.Disabled.FgBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ScrollBarVerticalPageButtonStyle" TargetType="{x:Type RepeatButton}">
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Rectangle x:Name="Bg" Fill="{TemplateBinding Background}"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Fill" TargetName="Bg" Value="{StaticResource ScrollBar.Track.Pressed.Vertical.BgGradient}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ScrollBarHorizontalPageButtonStyle" TargetType="{x:Type RepeatButton}" BasedOn="{StaticResource ScrollBarVerticalPageButtonStyle}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Rectangle x:Name="Bg" Fill="{TemplateBinding Background}"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Fill" TargetName="Bg" Value="{StaticResource ScrollBar.Track.Pressed.Horizontal.BgGradient}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- Four 1px grip lines, 2px apart. The shadow is the same shape drawn 1px right and down. -->
+    <StreamGeometry x:Key="ScrollBarVerticalGripperGeometry" po:Freeze="True">M0,0 H5 V1 H0 Z M0,2 H5 V3 H0 Z M0,4 H5 V5 H0 Z M0,6 H5 V7 H0 Z</StreamGeometry>
+    <StreamGeometry x:Key="ScrollBarHorizontalGripperGeometry" po:Freeze="True">M0,0 H1 V5 H0 Z M2,0 H3 V5 H2 Z M4,0 H5 V5 H4 Z M6,0 H7 V5 H6 Z</StreamGeometry>
+    <Style x:Key="ScrollBarVerticalThumbStyle" TargetType="{x:Type Thumb}">
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Thumb}">
+                    <Grid SnapsToDevicePixels="True">
+                        <Rectangle x:Name="Shadow"
+                                   Margin="1,2,0,0"
+                                   RadiusX="3"
+                                   RadiusY="3"
+                                   Stroke="{StaticResource ScrollBar.Shadow.BgGradient}"/>
+                        <Border x:Name="Outer"
+                                Margin="1,0,1,1"
+                                Background="{StaticResource ScrollBar.Thumb.Vertical.BgGradient}"
+                                BorderBrush="White"
+                                BorderThickness="1"
+                                CornerRadius="2.5">
+                            <Border x:Name="Inner"
+                                    BorderBrush="{StaticResource ScrollBar.Button.BorderBrush}"
+                                    BorderThickness="1"
+                                    CornerRadius="2">
+                                <Grid Width="6"
+                                      Height="8"
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center">
+                                    <Path x:Name="GripperShadow"
+                                          Margin="1,1,0,0"
+                                          Data="{StaticResource ScrollBarVerticalGripperGeometry}"
+                                          Fill="{StaticResource ScrollBar.Gripper.ShadowBrush}"
+                                          Stretch="None"/>
+                                    <Path x:Name="Gripper"
+                                          Data="{StaticResource ScrollBarVerticalGripperGeometry}"
+                                          Fill="{StaticResource ScrollBar.Gripper.BgBrush}"
+                                          Stretch="None"/>
+                                </Grid>
+                            </Border>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBar.Thumb.Hover.Vertical.BgGradient}"/>
+                            <Setter TargetName="Inner" Property="BorderBrush" Value="{StaticResource ScrollBar.Thumb.Hover.BorderBrush}"/>
+                            <Setter TargetName="Gripper" Property="Fill" Value="{StaticResource ScrollBar.Gripper.Hover.BgBrush}"/>
+                            <Setter TargetName="GripperShadow" Property="Fill" Value="{StaticResource ScrollBar.Gripper.Hover.ShadowBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsDragging" Value="True">
+                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBar.Thumb.Pressed.Vertical.BgGradient}"/>
+                            <Setter TargetName="Inner" Property="BorderBrush" Value="{StaticResource ScrollBar.Button.Pressed.BorderBrush}"/>
+                            <Setter TargetName="Gripper" Property="Fill" Value="{StaticResource ScrollBar.Gripper.Pressed.BgBrush}"/>
+                            <Setter TargetName="GripperShadow" Property="Fill" Value="{StaticResource ScrollBar.Gripper.Pressed.ShadowBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Shadow" Property="Stroke" Value="{StaticResource ScrollBar.Shadow.Disabled.BgGradient}"/>
+                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBar.Button.Disabled.BgGradient}"/>
+                            <Setter TargetName="Inner" Property="BorderBrush" Value="{StaticResource ScrollBar.Button.Disabled.BorderBrush}"/>
+                            <Setter TargetName="Gripper" Property="Fill" Value="{StaticResource ScrollBar.Glyph.Disabled.FgBrush}"/>
+                            <Setter TargetName="GripperShadow" Property="Fill" Value="{StaticResource ScrollBar.Gripper.Disabled.ShadowBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ScrollBarHorizontalThumbStyle" TargetType="{x:Type Thumb}">
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Thumb}">
+                    <Grid SnapsToDevicePixels="True">
+                        <Rectangle x:Name="Shadow"
+                                   Margin="0,3,0,0"
+                                   RadiusX="3"
+                                   RadiusY="3"
+                                   Stroke="{StaticResource ScrollBar.Shadow.BgGradient}"/>
+                        <Border x:Name="Outer"
+                                Margin="0,1,1,1"
+                                Background="{StaticResource ScrollBar.Thumb.Horizontal.BgGradient}"
+                                BorderBrush="White"
+                                BorderThickness="1"
+                                CornerRadius="2.5">
+                            <Border x:Name="Inner"
+                                    BorderBrush="{StaticResource ScrollBar.Button.BorderBrush}"
+                                    BorderThickness="1"
+                                    CornerRadius="2">
+                                <Grid Width="8"
+                                      Height="6"
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center">
+                                    <Path x:Name="GripperShadow"
+                                          Margin="1,1,0,0"
+                                          Data="{StaticResource ScrollBarHorizontalGripperGeometry}"
+                                          Fill="{StaticResource ScrollBar.Gripper.ShadowBrush}"
+                                          Stretch="None"/>
+                                    <Path x:Name="Gripper"
+                                          Data="{StaticResource ScrollBarHorizontalGripperGeometry}"
+                                          Fill="{StaticResource ScrollBar.Gripper.BgBrush}"
+                                          Stretch="None"/>
+                                </Grid>
+                            </Border>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBar.Thumb.Hover.Horizontal.BgGradient}"/>
+                            <Setter TargetName="Inner" Property="BorderBrush" Value="{StaticResource ScrollBar.Thumb.Hover.BorderBrush}"/>
+                            <Setter TargetName="Gripper" Property="Fill" Value="{StaticResource ScrollBar.Gripper.Hover.BgBrush}"/>
+                            <Setter TargetName="GripperShadow" Property="Fill" Value="{StaticResource ScrollBar.Gripper.Hover.ShadowBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsDragging" Value="True">
+                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBar.Thumb.Pressed.Horizontal.BgGradient}"/>
+                            <Setter TargetName="Inner" Property="BorderBrush" Value="{StaticResource ScrollBar.Button.Pressed.BorderBrush}"/>
+                            <Setter TargetName="Gripper" Property="Fill" Value="{StaticResource ScrollBar.Gripper.Pressed.BgBrush}"/>
+                            <Setter TargetName="GripperShadow" Property="Fill" Value="{StaticResource ScrollBar.Gripper.Pressed.ShadowBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Shadow" Property="Stroke" Value="{StaticResource ScrollBar.Shadow.Disabled.BgGradient}"/>
+                            <Setter TargetName="Outer" Property="Background" Value="{StaticResource ScrollBar.Button.Disabled.BgGradient}"/>
+                            <Setter TargetName="Inner" Property="BorderBrush" Value="{StaticResource ScrollBar.Button.Disabled.BorderBrush}"/>
+                            <Setter TargetName="Gripper" Property="Fill" Value="{StaticResource ScrollBar.Glyph.Disabled.FgBrush}"/>
+                            <Setter TargetName="GripperShadow" Property="Fill" Value="{StaticResource ScrollBar.Gripper.Disabled.ShadowBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type ScrollBar}">
+        <Setter Property="Stylus.IsPressAndHoldEnabled" Value="False"/>
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+        <Setter Property="Background" Value="{StaticResource ScrollBar.Track.Vertical.BgGradient}"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="Width" Value="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}"/>
+        <Setter Property="MinWidth" Value="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ScrollBar}">
+                    <Grid Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                        <Grid.RowDefinitions>
+                            <RowDefinition MaxHeight="{DynamicResource {x:Static SystemParameters.VerticalScrollBarButtonHeightKey}}"/>
+                            <RowDefinition Height="1E-05*"/>
+                            <RowDefinition MaxHeight="{DynamicResource {x:Static SystemParameters.VerticalScrollBarButtonHeightKey}}"/>
+                        </Grid.RowDefinitions>
+                        <RepeatButton Command="ScrollBar.LineUpCommand" Height="17" VerticalAlignment="Bottom" Content="{StaticResource ScrollBarUpArrowGeometry}" Style="{StaticResource ScrollBarVerticalLineButtonStyle}"/>
+                        <Track x:Name="PART_Track" IsDirectionReversed="True" Grid.Row="1">
+                            <Track.DecreaseRepeatButton>
+                                <RepeatButton Command="ScrollBar.PageUpCommand" Style="{StaticResource ScrollBarVerticalPageButtonStyle}"/>
+                            </Track.DecreaseRepeatButton>
+                            <Track.IncreaseRepeatButton>
+                                <RepeatButton Command="ScrollBar.PageDownCommand" Style="{StaticResource ScrollBarVerticalPageButtonStyle}"/>
+                            </Track.IncreaseRepeatButton>
+                            <Track.Thumb>
+                                <Thumb Style="{StaticResource ScrollBarVerticalThumbStyle}"/>
+                            </Track.Thumb>
+                        </Track>
+                        <RepeatButton Command="ScrollBar.LineDownCommand" Grid.Row="2" Content="{StaticResource ScrollBarDownArrowGeometry}" Style="{StaticResource ScrollBarVerticalLineButtonStyle}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="Orientation" Value="Horizontal">
+                <Setter Property="Width" Value="Auto"/>
+                <Setter Property="MinWidth" Value="0"/>
+                <Setter Property="Background" Value="{StaticResource ScrollBar.Track.Horizontal.BgGradient}"/>
+                <Setter Property="Height" Value="{DynamicResource {x:Static SystemParameters.HorizontalScrollBarHeightKey}}"/>
+                <Setter Property="MinHeight" Value="{DynamicResource {x:Static SystemParameters.HorizontalScrollBarHeightKey}}"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ScrollBar}">
+                            <Grid Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition MaxWidth="{DynamicResource {x:Static SystemParameters.HorizontalScrollBarButtonWidthKey}}"/>
+                                    <ColumnDefinition Width="1E-05*"/>
+                                    <ColumnDefinition MaxWidth="{DynamicResource {x:Static SystemParameters.HorizontalScrollBarButtonWidthKey}}"/>
+                                </Grid.ColumnDefinitions>
+                                <RepeatButton Command="ScrollBar.LineLeftCommand" Content="{StaticResource ScrollBarLeftArrowGeometry}" Style="{StaticResource ScrollBarHorizontalLineButtonStyle}"/>
+                                <Track x:Name="PART_Track" Grid.Column="1">
+                                    <Track.DecreaseRepeatButton>
+                                        <RepeatButton Command="ScrollBar.PageLeftCommand" Style="{StaticResource ScrollBarHorizontalPageButtonStyle}"/>
+                                    </Track.DecreaseRepeatButton>
+                                    <Track.IncreaseRepeatButton>
+                                        <RepeatButton Command="ScrollBar.PageRightCommand" Style="{StaticResource ScrollBarHorizontalPageButtonStyle}"/>
+                                    </Track.IncreaseRepeatButton>
+                                    <Track.Thumb>
+                                        <Thumb Style="{StaticResource ScrollBarHorizontalThumbStyle}"/>
+                                    </Track.Thumb>
+                                </Track>
+                                <RepeatButton Grid.Column="2" Command="ScrollBar.LineRightCommand" Content="{StaticResource ScrollBarRightArrowGeometry}" Style="{StaticResource ScrollBarHorizontalLineButtonStyle}"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>
